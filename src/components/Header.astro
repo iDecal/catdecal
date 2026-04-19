@@ -1,5 +1,5 @@
 ---
-// Header.astro - Đã fix khoảng trống dư thừa
+// Header.astro
 ---
 
 <header class="bg-white border-b border-divider sticky top-0 z-50 shadow-sm font-heading">
@@ -7,9 +7,12 @@
     <div class="flex justify-between h-20 items-center">
       
       <div class="flex items-center">
-        <a href="/" class="text-2xl font-bold text-primary tracking-tighter flex items-center gap-1">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
-          catdecal<span class="text-secondary">.vn</span>
+        <a href="/" class="flex items-center">
+          <img 
+            src="/images/logo-catdecal.vn.jpg" 
+            alt="catdecal.vn" 
+            class="h-12 w-auto object-contain"
+          />
         </a>
       </div>
 
@@ -17,10 +20,7 @@
         <a href="/" class="text-copy hover:text-primary font-medium transition-colors">Trang chủ</a>
         
         <div class="relative group h-full flex items-center">
-          <a 
-            href="/dich-vu" 
-            class="text-copy group-hover:text-primary font-medium flex items-center gap-1 transition-colors h-full"
-          >
+          <a href="/dich-vu" class="text-copy group-hover:text-primary font-medium flex items-center gap-1 transition-colors h-full">
             Dịch vụ cắt 
             <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
@@ -48,26 +48,53 @@
       </div>
 
       <div class="md:hidden">
-        <button id="menu-btn" class="p-2 text-secondary">
-          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16m-7 6h7" stroke-width="2" stroke-linecap="round"></path></svg>
+        <button id="menu-btn" class="p-2 text-black focus:outline-none" aria-label="Toggle Menu">
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path id="menu-icon" d="M4 6h16M4 12h16m-7 6h7" stroke-width="2" stroke-linecap="round"></path>
+          </svg>
         </button>
       </div>
     </div>
   </div>
 
-  <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-divider">
+  <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-divider shadow-inner">
     <div class="px-4 py-6 space-y-4">
-      <a href="/" class="block text-lg font-medium">Trang chủ</a>
-      <a href="/dich-vu" class="block text-lg font-medium">Dịch vụ cắt</a>
-      <a href="/bao-gia" class="block text-lg font-medium">Báo giá nhanh</a>
-      <a href="/giao-hang-thanh-toan" class="block text-lg font-medium">Giao hàng</a>
-      <a href="https://zalo.me/0862208108" class="w-full block text-center bg-primary text-white py-4 rounded-lg font-bold">GỬI FILE QUA ZALO</a>
+      <a href="/" class="block text-lg font-medium border-b border-gray-50 pb-2">Trang chủ</a>
+      <a href="/dich-vu" class="block text-lg font-medium border-b border-gray-50 pb-2">Dịch vụ cắt</a>
+      <a href="/bao-gia" class="block text-lg font-medium border-b border-gray-50 pb-2">Báo giá nhanh</a>
+      <a href="/giao-hang-thanh-toan" class="block text-lg font-medium border-b border-gray-50 pb-2">Giao hàng</a>
+      <a href="https://zalo.me/0862208108" class="w-full block text-center bg-primary text-white py-4 rounded-lg font-bold shadow-lg">GỬI FILE QUA ZALO</a>
     </div>
   </div>
 </header>
 
 <script>
-  import initMenu from '../scripts/menu.js';
-  initMenu();
-  document.addEventListener('astro:after-swap', initMenu);
+  function setupMenu() {
+    const btn = document.getElementById('menu-btn');
+    const menu = document.getElementById('mobile-menu');
+
+    if (btn && menu) {
+      // Xóa bỏ listener cũ để tránh trùng lặp khi Astro swap trang
+      btn.replaceWith(btn.cloneNode(true));
+      const newBtn = document.getElementById('menu-btn');
+      
+      newBtn?.addEventListener('click', () => {
+        menu.classList.toggle('hidden');
+      });
+    }
+  }
+
+  // Chạy khi lần đầu load trang
+  setupMenu();
+
+  // Chạy lại khi chuyển trang (View Transitions)
+  document.addEventListener('astro:after-swap', setupMenu);
 </script>
+
+<style>
+  /* Đảm bảo ảnh logo không bị méo */
+  img {
+    max-height: 50px;
+    width: auto;
+  }
+</style>
