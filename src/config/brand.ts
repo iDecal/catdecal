@@ -18,8 +18,8 @@ export const brand = {
   tagline: 'Cắt Decal nhanh - Giao hàng toàn quốc.',
   description:
     'A fast, mobile-first small-business website template built with Astro 6 and Tailwind v4. Fully customisable for any trade or service business.',
-  url: 'https://example.com',
-  locale: 'en_US',
+  url: 'https://catdecal.vn',
+  locale: 'vi_UVN',
 
   // ── Fonts ──────────────────────────────────────────────────────────────────
   // To swap fonts: change the `name` values here AND update astro.config.mjs
