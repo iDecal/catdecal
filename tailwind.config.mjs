@@ -1,33 +1,14 @@
-/** @type {import('tailwindcss').Config} */
+// tailwind.config.mjs
 export default {
-	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
-	theme: {
-		extend: {
-			colors: {
-				// Đổi Đen thành Primary (Chủ đạo)
-				primary: '#0F172A',   
-				
-				// Đổi Vàng chanh thành Secondary (Màu nhấn cho button, link)
-				secondary: '#CAEF0F', 
-				
-				// Màu bổ trợ cho các vùng cần sự nhẹ nhàng
-				accent: '#1E293B',    
-				
-				// Nền sạch sẽ
-				background: '#FFFFFF',
-				
-				// Màu chữ trên nền sáng
-				copy: '#0F172A',
-				'copy-muted': '#475569',
-			},
-			fontFamily: {
-				heading: ['"Be Vietnam Pro"', 'sans-serif'],
-				body: ['Inter', 'sans-serif'],
-			},
-			borderRadius: {
-				'custom': '0.625rem', // Theo chuẩn brand md của bạn
-			}
-		},
-	},
-	plugins: [],
+  theme: {
+    extend: {
+      colors: {
+        'primary': '#F1F5F9',    // Xanh xám rất nhạt cho nền Header/Footer
+        'secondary': '#90CDF4',  // Xanh Pastel cho các điểm nhấn quan trọng
+        'accent': '#A3BFFA',     // Màu bổ trợ nhẹ nhàng
+        'copy-muted': '#718096', // Màu chữ phụ
+        'copy-dark': '#2D3748',  // Màu chữ chính (giúp mắt thư giãn hơn)
+      },
+    },
+  },
 }
