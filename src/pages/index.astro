@@ -3,7 +3,6 @@
 import Layout from '../layouts/BaseLayout.astro';
 
 // 2. Import các components - Khớp 100% tên file trong thư mục components
-import Header from '../components/Header.astro';
 import Hero from '../components/Hero.astro';
 import HeaderSlide from '../components/HeaderSlide.astro'; // Đã bỏ chữ 's' dư thừa
 import AboutHome from '../components/AboutHome.astro';
@@ -11,7 +10,6 @@ import ServicesHome from '../components/ServicesHome.astro';
 import Calculator from '../components/Calculator.astro';
 import BlogSection from '../components/BlogSection.astro';
 import FAQSection from '../components/FAQSection.astro';
-import Footer from '../components/Footer.astro';
 
 // SEO Meta Data
 const title = "catdecal.vn - Xưởng Gia Công Cắt Decal Chuyên Nghiệp Quy Nhơn";
@@ -19,7 +17,6 @@ const description = "Chuyên cắt gia công decal chữ, logo, bế tem nhãn v
 ---
 
 <Layout title={title} description={description}>
-  <Header />
 
   <main>
     <Hero />
@@ -31,5 +28,4 @@ const description = "Chuyên cắt gia công decal chữ, logo, bế tem nhãn v
     <FAQSection />
   </main>
 
-  <Footer />
 </Layout>
