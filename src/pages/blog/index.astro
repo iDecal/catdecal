@@ -2,37 +2,34 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 
-// Lấy dữ liệu an toàn với try-catch để tránh trang trắng khi chưa có bài viết
-let allPosts = [];
-try {
-  const blogEntries = await getCollection('blog');
-  allPosts = blogEntries.map(post => ({
-    ...post.data,
-    slug: post.slug
-  }));
-} catch (e) {
-  console.log("Chưa tìm thấy bộ sưu tập bài viết");
-}
-
-// Trích xuất danh sách chuyên mục
-const categories = ["Tất cả", ...new Set(allPosts.map(post => post.category))];
+// Lấy trực tiếp không qua trung gian để test
+const posts = await getCollection('blog');
 ---
 
-<BaseLayout title="Blog | CatDecal.vn">
-  <section class="pt-24 pb-12">
+<BaseLayout title="Blog">
+  <section class="py-20">
     <div class="container mx-auto px-4">
+      <h1>BLOG</h1>
       
-      {allPosts.length === 0 ? (
-        <div class="py-20 text-center">
-          <p class="text-slate-400 italic">Hiện tại chưa có bài viết nào được đăng.</p>
-          <p class="text-xs text-slate-300 mt-2">Hãy kiểm tra thư mục src/content/blog/ xem đã có file .md chưa nhé!</p>
-        </div>
-      ) : (
-        <div>
-           <h1>Blog</h1>
-           </div>
-      )}
+      <p class="mb-10 text-slate-400">Số lượng bài viết tìm thấy: {posts.length}</p>
 
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {posts.map((post) => (
+          <article>
+            <a href={`/blog/${post.slug}`}>
+              <img src={post.data.image} alt={post.data.title} class="rounded-2xl mb-4" />
+              <h3 class="text-xl font-bold">{post.data.title}</h3>
+              <p class="text-slate-500">{post.data.excerpt}</p>
+            </a>
+          </article>
+        ))}
+      </div>
+
+      {posts.length === 0 && (
+        <div class="bg-slate-50 p-10 rounded-3xl text-center">
+          <p>Hệ thống chưa tìm thấy file .md nào trong thư mục src/content/blog/</p>
+        </div>
+      )}
     </div>
   </section>
 </BaseLayout>
