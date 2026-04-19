@@ -1,6 +1,6 @@
 ---
 import Header from '../components/Header.astro';
-import { brand } from '../config/brand'; // File cấu hình brand đã tạo trước đó
+import Footer from '../components/Footer.astro';
 
 interface Props {
   title?: string;
@@ -9,8 +9,8 @@ interface Props {
 }
 
 const { 
-  title = "CẮT DECAL PRO - Chính xác, Tốc độ, Giá xưởng", 
-  description = "Dịch vụ cắt decal vi tính lấy liền, dán kính văn phòng, tem nhãn sticker chuyên nghiệp tại TP.HCM và Bình Định.",
+  title = "CATDECAL.VN - Gia công Decal & Interior Film Chuyên Nghiệp", 
+  description = "Dịch vụ cắt decal vi tính, bế tem nhãn, trang trí nội thất và film dán nội thất lấy liền tại Bình Định và TP.HCM.",
   image = "/og-image.jpg" 
 } = Astro.props;
 ---
@@ -29,7 +29,7 @@ const {
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,700;0,800;1,400;1,700;1,800&family=Inter:wght@400;500;700&display=swap" rel="stylesheet" />
 
     <meta property="og:type" content="website" />
     <meta property="og:url" content={Astro.url} />
@@ -43,71 +43,60 @@ const {
     <meta property="twitter:description" content={description} />
     <meta property="twitter:image" content={new URL(image, Astro.url)} />
   </head>
-  <body class="bg-background text-copy font-body antialiased">
+  <body class="bg-white text-copy-dark font-body antialiased selection:bg-secondary/30">
     
     <Header />
 
-    <main>
-      <slot /> </main>
+    <main class="pt-20"> <slot />
+    </main>
 
-    <footer class="bg-primary text-white pt-16 pb-8">
-      <div class="container mx-auto px-4">
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
-          <div class="col-span-1 md:col-span-2">
-            <h2 class="text-2xl font-heading font-bold mb-4">
-              CATDECAL<span class="text-secondary">.VN</span>
-            </h2>
-            <p class="text-white/70 max-w-sm mb-6">
-              Đơn vị chuyên nghiệp trong lĩnh vực cắt decal vi tính, dán kính văn phòng và gia công tem nhãn theo yêu cầu.
-            </p>
-            <div class="flex gap-4">
-              </div>
-          </div>
-          
-          <div>
-            <h3 class="font-heading font-bold text-lg mb-4 text-secondary">Dịch vụ</h3>
-            <ul class="space-y-2 text-white/70 text-sm">
-              <li><a href="/dich-vu/cat-decal-chu-logo" class="hover:text-secondary">Cắt decal Chữ/Logo</a></li>
-              <li><a href="/dich-vu/tem-nhan-sticker" class="hover:text-secondary">Tem nhãn & Sticker</a></li>
-              <li><a href="/dich-vu/decal-phan-quang" class="hover:text-secondary">Decal Phản quang</a></li>
-              <li><a href="/dich-vu/dan-decal-tan-noi" class="hover:text-secondary">Dán decal tận nơi</a></li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 class="font-heading font-bold text-lg mb-4 text-secondary">Liên hệ</h3>
-            <p class="text-white/70 text-sm mb-2">📍 TP. Hồ Chí Minh & Bình Định</p>
-            <p class="text-white/70 text-sm mb-2">📞 Hotline: 090x xxx xxx</p>
-            <p class="text-white/70 text-sm">✉️ Email: contact@catdecal.vn</p>
-          </div>
-        </div>
-        
-        <div class="border-t border-white/10 pt-8 text-center text-white/40 text-xs">
-          <p>&copy; {new URL(Astro.url).hostname}. {new Date().getFullYear()} All rights reserved.</p>
-        </div>
-      </div>
-    </footer>
+    <Footer />
 
     <style is:global>
-      /* Định nghĩa các quy tắc chung cho toàn bộ site */
-      h1, h2, h3, h4, h5, h6 {
-        @apply font-heading tracking-tight;
+      /* 1. QUẢN LÝ KÍCH THƯỚC FONT CHỮ TOÀN SITE */
+      :root {
+        --font-main: 'Be Vietnam Pro', sans-serif;
       }
-      
-      /* Tối ưu cuộn trang mượt mà */
+
+      body {
+        font-family: var(--font-main);
+      }
+
+      h1 {
+        @apply text-3xl md:text-5xl lg:text-6xl font-extrabold italic tracking-tighter uppercase leading-[1.1];
+      }
+
+      h2 {
+        @apply text-2xl md:text-4xl font-bold italic tracking-tight leading-snug;
+      }
+
+      h3 {
+        @apply text-xl md:text-2xl font-bold italic tracking-tight;
+      }
+
+      p {
+        @apply leading-relaxed;
+      }
+
+      /* 2. TỐI ƯU HIỆU ỨNG */
       html {
         scroll-behavior: smooth;
       }
 
-      /* Custom scrollbar kiểu hiện đại cho hợp với tone Đen - Vàng */
+      /* Custom scrollbar Pastel nhẹ nhàng */
       ::-webkit-scrollbar {
-        width: 8px;
+        width: 6px;
       }
       ::-webkit-scrollbar-track {
-        @apply bg-primary;
+        @apply bg-slate-50;
       }
       ::-webkit-scrollbar-thumb {
-        @apply bg-secondary rounded-full;
+        @apply bg-slate-300 rounded-full hover:bg-secondary transition-colors;
+      }
+
+      /* Khắc phục lỗi build font-heading */
+      .font-heading {
+        font-family: var(--font-main);
       }
     </style>
   </body>
