@@ -1,0 +1,32 @@
+---
+const posts = [
+  { title: "Cách dán decal kính mờ không bị bong bóng", date: "15/04", img: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=400", slug: "huong-dan-dan" },
+  { title: "Quy chuẩn file AI/PDF khi gửi xưởng cắt", date: "12/04", img: "https://images.unsplash.com/photo-1561070791-2526d30994b5?q=80&w=400", slug: "quy-chuan-file" }
+];
+---
+<section class="py-20 bg-slate-50 border-t border-slate-100">
+  <div class="container mx-auto px-4">
+    <div class="flex justify-between items-end mb-10">
+      <div>
+        <h2 class="text-2xl font-heading font-bold italic text-primary uppercase">Blog & Kinh nghiệm</h2>
+        <div class="h-1 w-12 bg-secondary mt-2"></div>
+      </div>
+      <a href="/blog" class="text-xs font-bold border-b border-primary pb-1">XEM TẤT CẢ</a>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {posts.map(p => (
+        <a href={`/blog/${p.slug}`} class="flex gap-4 group bg-white p-4 rounded-2xl shadow-sm hover:shadow-md transition-all">
+          <div class="w-32 h-24 shrink-0 rounded-xl overflow-hidden bg-slate-200">
+            <img src={p.img} class="w-full h-full object-cover group-hover:scale-110 transition-all duration-500" alt={p.title}/>
+          </div>
+          <div>
+            <span class="text-[10px] font-bold text-secondary bg-primary px-2 py-0.5 rounded uppercase">{p.date}</span>
+            <h3 class="text-sm font-bold text-primary mt-2 group-hover:text-secondary leading-snug">{p.title}</h3>
+            <p class="text-[11px] text-copy-muted mt-2 line-clamp-2">Kiến thức chuyên sâu giúp bạn có sản phẩm decal hoàn hảo nhất...</p>
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>
