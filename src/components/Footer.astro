@@ -23,97 +23,76 @@ const commitments = [
 ];
 ---
 
-<section class="commitments-section">
-  <div class="container">
-    <div class="commitments-grid">
+<section class="bg-white py-16 border-t border-gray-100">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
       {commitments.map(item => (
-        <div class="commitment-card">
-          <div class="icon-wrapper" set:html={item.icon}></div>
-          <h3>{item.title}</h3>
-          <p>{item.desc}</p>
+        <div class="text-center group">
+          <div class="w-12 h-12 mx-auto mb-4 text-primary transition-transform group-hover:scale-110" set:html={item.icon}></div>
+          <h3 class="text-sm font-bold text-black uppercase mb-2 tracking-tight">{item.title}</h3>
+          <p class="text-gray-500 text-xs leading-relaxed">{item.desc}</p>
         </div>
       ))}
     </div>
   </div>
 </section>
 
-<footer class="main-footer">
-  <div class="container footer-grid">
+<footer class="bg-[#F5F5F5] text-[#2D3436] pt-16 pb-8">
+  <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-12">
     
-    <div class="footer-brand">
-      <h2>catdecal.vn</h2>
-      <p>Xưởng gia công cắt decal chuyên nghiệp tại Bình Định. Đảm bảo độ chính xác trên mọi chất liệu.</p>
+    <div>
+      <h2 class="text-2xl font-bold text-primary mb-2">catdecal.vn</h2>
+      <div class="w-10 h-0.5 bg-primary mb-4"></div>
+      <p class="text-gray-500 text-sm leading-relaxed">
+        Xưởng gia công cắt decal chuyên nghiệp tại Bình Định. Đảm bảo độ chính xác tuyệt đối trên mọi chất liệu.
+      </p>
     </div>
 
-    <div class="footer-links">
-      <h3>Dịch vụ chính</h3>
-      <ul>
-        <li><a href="/dich-vu/cat-decal-mau">Cắt Decal màu quảng cáo</a></li>
-        <li><a href="/dich-vu/cat-decal-mo">Cắt Decal mờ vách kính</a></li>
-        <li><a href="/dich-vu/cat-be-tem-nhan">Bế tem nhãn sản phẩm</a></li>
-        <li><a href="/dich-vu/cat-decal-phan-quang">Cắt Decal phản quang</a></li>
+    <div>
+      <h3 class="text-sm font-bold uppercase tracking-wider mb-2 text-black">Dịch vụ chính</h3>
+      <div class="w-8 h-0.5 bg-primary mb-4"></div>
+      <ul class="text-gray-600 text-sm space-y-3">
+        <li><a href="/dich-vu/cat-decal-mau" class="hover:text-primary transition-colors">Cắt Decal màu quảng cáo</a></li>
+        <li><a href="/dich-vu/cat-decal-mo" class="hover:text-primary transition-colors">Cắt Decal mờ vách kính</a></li>
+        <li><a href="/dich-vu/cat-be-tem-nhan" class="hover:text-primary transition-colors">Bế tem nhãn sản phẩm</a></li>
+        <li><a href="/dich-vu/cat-decal-phan-quang" class="hover:text-primary transition-colors">Cắt Decal phản quang</a></li>
       </ul>
     </div>
 
-    <div class="footer-links">
-      <h3>Hỗ trợ khách hàng</h3>
-      <ul>
-        <li><a href="/quy-trinh-dat-hang">Quy trình đặt hàng</a></li>
-        <li><a href="/giao-hang-thanh-toan">Giao hàng & Thanh toán</a></li>
-        <li><a href="#">Hướng dẫn chuẩn bị file</a></li>
-        <li><a href="#">Chính sách bảo hành</a></li>
+    <div>
+      <h3 class="text-sm font-bold uppercase tracking-wider mb-2 text-black">Hỗ trợ khách hàng</h3>
+      <div class="w-8 h-0.5 bg-primary mb-4"></div>
+      <ul class="text-gray-600 text-sm space-y-3">
+        <li><a href="/quy-trinh-dat-hang" class="hover:text-primary transition-colors">Quy trình đặt hàng</a></li>
+        <li><a href="/giao-hang-thanh-toan" class="hover:text-primary transition-colors">Giao hàng & Thanh toán</a></li>
+        <li><a href="#" class="hover:text-primary transition-colors">Hướng dẫn chuẩn bị file</a></li>
+        <li><a href="#" class="hover:text-primary transition-colors">Chính sách bảo hành</a></li>
       </ul>
     </div>
 
-    <div class="footer-contact">
-      <h3>Thông tin liên hệ</h3>
-      <p class="phone">0862 208 108</p>
-      <p>Zalo/Hotline hỗ trợ 24/7</p>
-      <address>
-        <strong>Địa chỉ xưởng:</strong><br/>
+    <div>
+      <h3 class="text-sm font-bold uppercase tracking-wider mb-2 text-black">Thông tin liên hệ</h3>
+      <div class="w-8 h-0.5 bg-primary mb-4"></div>
+      <p class="text-primary font-bold text-xl mb-1">0862 208 108</p>
+      <p class="text-gray-600 text-sm">Zalo/Hotline hỗ trợ 24/7</p>
+      <p class="text-gray-500 text-sm mt-4">
+        <span class="block font-medium text-black">Địa chỉ xưởng:</span>
         TP. Quy Nhơn, Tỉnh Bình Định
-      </address>
+      </p>
     </div>
 
   </div>
   
-  <div class="footer-bottom">
-    <p>© 2026 catdecal.vn - Thiết kế bởi iDecal Ecosystem.</p>
+  <div class="max-w-7xl mx-auto px-4 mt-16 pt-8 border-t border-gray-200 text-center">
+    <p class="text-gray-400 text-xs">
+      © 2026 catdecal.vn - Thiết kế bởi iDecal Ecosystem.
+    </p>
   </div>
 </footer>
 
 <style>
-  /* Cấu trúc Grid cho cam kết */
-  .commitments-grid {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    gap: 2rem;
-  }
-  @media (min-width: 768px) {
-    .commitments-grid {
-      grid-template-columns: repeat(4, 1fr);
-    }
-  }
-
-  /* Cấu trúc Grid cho Footer */
-  .footer-grid {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    gap: 3rem;
-  }
-  @media (min-width: 768px) {
-    .footer-grid {
-      grid-template-columns: repeat(4, 1fr);
-    }
-  }
-
-  .icon-wrapper svg {
-    width: 2rem;
-    height: 2rem;
-  }
-
-  /* Đảm bảo chữ đứng chân phương theo yêu cầu của bạn */
-  h1, h2, h3, p, a, span {
+  /* Triệt tiêu in nghiêng toàn bộ */
+  h2, h3, p, a, span, li {
     font-style: normal !important;
   }
 </style>
