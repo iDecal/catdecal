@@ -1,176 +1,25 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-
-// Dữ liệu Dịch vụ
-const services = [
-  { title: "Cắt Chữ & Logo", img: "https://images.unsplash.com/photo-1626708722760-466033488825?q=80&w=500", desc: "Decal vách kính văn phòng, logo công ty chính xác tuyệt đối." },
-  { title: "Tem Nhãn Sticker", img: "https://images.unsplash.com/photo-1589987607627-616cac5c2c5a?q=80&w=500", desc: "In và cắt bế tem nhãn sản phẩm lấy ngay, số lượng linh hoạt." },
-  { title: "Decal Phản Quang", img: "https://images.unsplash.com/photo-1616432043562-3671ea2e5241?q=80&w=500", desc: "Vật liệu 3M cao cấp cho biển báo, tem xe, bảo hộ công trình." },
-  { title: "Gia Công B2B", img: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=500", desc: "Hỗ trợ thợ quảng cáo, nhận file vector online, ship toàn quốc." }
-];
-
-// Dữ liệu Blog
-const posts = [
-  { title: "Cách dán decal kính mờ không bị bong bóng", date: "15/04", img: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=400", slug: "huong-dan-dan" },
-  { title: "Quy chuẩn file AI/PDF khi gửi xưởng cắt", date: "12/04", img: "https://images.unsplash.com/photo-1561070791-2526d30994b5?q=80&w=400", slug: "quy-chuan-file" }
-];
-
-// Dữ liệu FAQ
-const faqs = [
-  { q: "Có ship hàng về tỉnh không?", a: "Chúng tôi đóng hàng trong lõi cứng bảo vệ và ship COD toàn quốc qua GHTK, Viettel Post." },
-  { q: "Xưởng dùng máy cắt thương hiệu gì?", a: "Hệ thống máy cắt Nhật Bản đảm bảo đường nét mịn, không bị răng cưa kể cả chữ nhỏ." }
-];
+import Hero from '../components/Hero.astro';
+import AboutHome from '../components/AboutHome.astro';
+import ServicesHome from '../components/ServicesHome.astro';
+import Calculator from '../components/Calculator.astro';
+import BlogHome from '../components/BlogHome.astro';
+import FaqHome from '../components/FaqHome.astro';
 ---
 
-<BaseLayout title="Cắt Decal Toàn Quốc - Tính Giá & Gửi File Online">
+<BaseLayout title="Cắt Decal Toàn Quốc - CatDecal.vn">
   
-  <section class="relative h-[70vh] flex items-center bg-primary overflow-hidden">
-    <div class="absolute inset-0 z-0 opacity-40">
-      <img src="https://images.unsplash.com/photo-1611532736597-de2d4265fba3?q=80&w=2000" class="w-full h-full object-cover" />
-      <div class="absolute inset-0 bg-gradient-to-r from-primary via-primary/60 to-transparent"></div>
-    </div>
-    <div class="container mx-auto px-4 relative z-10">
-      <div class="max-w-2xl">
-        <h1 class="text-3xl md:text-5xl font-heading font-extrabold text-white leading-tight mb-6 uppercase italic">
-          Hệ thống cắt Decal <br/> <span class="text-secondary">Giao hàng toàn quốc</span>
-        </h1>
-        <p class="text-lg text-white/70 mb-10 italic leading-relaxed">Gia công chính xác từ file AI, PDF. Đóng gói chuyên nghiệp, bảo vệ decal tuyệt đối khi vận chuyển xa.</p>
-        <div class="flex flex-wrap gap-4">
-          <a href="#calculator" class="bg-secondary text-primary px-8 py-4 rounded-xl font-black hover:scale-105 transition-all shadow-lg shadow-secondary/20">TÍNH GIÁ & GỬI FILE</a>
-          <a href="https://zalo.me/your-number" class="bg-white/10 backdrop-blur-md text-white border border-white/20 px-8 py-4 rounded-xl font-bold hover:bg-white/20 transition-all">TƯ VẤN ZALO</a>
-        </div>
-      </div>
-    </div>
-  </section>
+  <Hero />
 
-  <section class="py-20 bg-white">
-    <div class="container mx-auto px-4">
-      <div class="flex flex-col md:flex-row items-center gap-12">
-        <div class="md:w-1/2">
-          <h2 class="text-2xl font-heading font-extrabold text-primary italic mb-6 uppercase tracking-tight">Về CatDecal.vn</h2>
-          <p class="text-copy-muted leading-relaxed mb-6">Chúng tôi là hệ thống gia công decal chuyên nghiệp với kinh nghiệm phục vụ hàng nghìn dự án vách kính văn phòng và tem nhãn sản phẩm. Với tiêu chí <strong>"Chính xác - Tốc độ - Toàn quốc"</strong>, chúng tôi loại bỏ rào cản địa lý bằng quy trình đặt hàng online tối ưu.</p>
-          <div class="grid grid-cols-2 gap-6">
-            <div class="border-l-4 border-secondary pl-4"><div class="text-2xl font-black text-primary">24h</div><div class="text-xs text-copy-muted uppercase font-bold">Giao hàng</div></div>
-            <div class="border-l-4 border-secondary pl-4"><div class="text-2xl font-black text-primary">100%</div><div class="text-xs text-copy-muted uppercase font-bold">Chính xác</div></div>
-          </div>
-        </div>
-        <div class="md:w-1/2 bg-slate-100 rounded-3xl h-64 overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=800" class="w-full h-full object-cover grayscale" />
-        </div>
-      </div>
-    </div>
-  </section>
+  <AboutHome />
 
-  <section class="py-24 bg-slate-50">
-    <div class="container mx-auto px-4 text-center">
-      <h2 class="text-2xl md:text-3xl font-heading font-extrabold text-primary italic mb-16 uppercase">Dịch vụ tại xưởng</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-left">
-        {services.map(s => (
-          <div class="bg-white rounded-2xl overflow-hidden shadow-sm group hover:shadow-xl transition-all">
-            <div class="h-40 overflow-hidden"><img src={s.img} class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"/></div>
-            <div class="p-6">
-              <h3 class="font-bold text-primary mb-2 group-hover:text-secondary transition-colors">{s.title}</h3>
-              <p class="text-xs text-copy-muted leading-relaxed">{s.desc}</p>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
+  <ServicesHome />
 
-  <section id="calculator" class="py-24 bg-white">
-    <div class="container mx-auto px-4">
-      <div class="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-5 bg-primary rounded-[2rem] shadow-2xl overflow-hidden">
-        <div class="lg:col-span-3 bg-white p-8 md:p-12 space-y-6 text-primary">
-          <h2 class="text-2xl font-heading font-bold italic mb-8">1. Thông số cắt</h2>
-          <div class="grid grid-cols-2 gap-6">
-            <div class="col-span-2 space-y-2">
-                <label class="text-[10px] font-black text-slate-400 uppercase tracking-widest">Vật liệu</label>
-                <select id="mat" class="w-full p-4 rounded-xl bg-slate-50 border-none outline-none focus:ring-2 focus:ring-secondary transition-all">
-                    <option value="120000">Decal Mờ (Văn phòng)</option>
-                    <option value="450000">Decal Phản Quang 3M</option>
-                    <option value="180000">Decal Trong/Sữa</option>
-                </select>
-            </div>
-            <div class="space-y-2">
-                <label class="text-[10px] font-black text-slate-400 uppercase tracking-widest">Dài (cm)</label>
-                <input type="number" id="L" class="w-full p-4 rounded-xl bg-slate-50 border-none outline-none focus:ring-2 focus:ring-secondary transition-all" />
-            </div>
-            <div class="space-y-2">
-                <label class="text-[10px] font-black text-slate-400 uppercase tracking-widest">Rộng (cm)</label>
-                <input type="number" id="W" class="w-full p-4 rounded-xl bg-slate-50 border-none outline-none focus:ring-2 focus:ring-secondary transition-all" />
-            </div>
-          </div>
-          <button id="calc" class="w-full bg-primary text-secondary font-black p-5 rounded-xl hover:brightness-125 transition-all">XEM BÁO GIÁ</button>
-        </div>
-        <div class="lg:col-span-2 p-8 md:p-12 flex flex-col justify-center text-white">
-            <h2 class="text-xl font-heading font-bold text-secondary mb-4 italic">2. Kết quả & Gửi file</h2>
-            <div id="resBox" class="hidden mb-8"><span class="text-white/40 text-xs uppercase block">Tổng cộng:</span><div id="price" class="text-4xl font-black text-secondary tracking-tighter">0đ</div></div>
-            <div class="border-2 border-dashed border-white/20 rounded-2xl p-6 text-center group relative hover:border-secondary transition-all">
-                <input type="file" id="fUp" class="absolute inset-0 opacity-0 cursor-pointer" />
-                <p class="text-xs font-bold text-white uppercase">Upload file AI/PDF</p>
-                <p id="fName" class="text-[10px] text-secondary mt-2 italic"></p>
-            </div>
-            <button class="mt-6 w-full bg-white text-primary font-bold p-4 rounded-xl hover:bg-secondary transition-all">GỬI ZALO NGAY</button>
-        </div>
-      </div>
-    </div>
-  </section>
+  <Calculator />
 
-  <section class="py-24 bg-slate-50">
-    <div class="container mx-auto px-4">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
-        <div>
-          <h2 class="text-2xl font-heading font-bold italic mb-10 text-primary uppercase">Kinh nghiệm & Tin tức</h2>
-          <div class="space-y-6">
-            {posts.map(p => (
-              <a href={`/blog/${p.slug}`} class="flex gap-4 group">
-                <div class="w-24 h-24 shrink-0 rounded-xl overflow-hidden bg-slate-200"><img src={p.img} class="w-full h-full object-cover group-hover:scale-110 transition-all"/></div>
-                <div>
-                  <span class="text-[10px] font-bold text-secondary bg-primary px-2 py-0.5 rounded uppercase">{p.date}</span>
-                  <h3 class="text-sm font-bold text-primary mt-2 group-hover:underline">{p.title}</h3>
-                </div>
-              </a>
-            ))}
-          </div>
-        </div>
-        <div>
-          <h2 class="text-2xl font-heading font-bold italic mb-10 text-primary uppercase">Câu hỏi thường gặp</h2>
-          <div class="space-y-4">
-            {faqs.map(f => (
-              <details class="group bg-white border border-slate-100 rounded-xl">
-                <summary class="p-5 cursor-pointer font-bold text-sm text-primary group-open:bg-primary group-open:text-secondary list-none flex justify-between items-center">{f.q} <span>▼</span></summary>
-                <div class="p-5 text-xs text-copy-muted leading-relaxed border-t border-slate-50">{f.a}</div>
-              </details>
-            ))}
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <BlogHome />
+
+  <FaqHome />
+
 </BaseLayout>
-
-<script>
-  const btn = document.getElementById('calc');
-  const price = document.getElementById('price');
-  const resBox = document.getElementById('resBox');
-  const fUp = document.getElementById('fUp') as HTMLInputElement;
-  const fName = document.getElementById('fName');
-
-  fUp?.addEventListener('change', (e) => {
-    const file = (e.target as HTMLInputElement).files?.[0];
-    if (file && fName) fName.innerText = `📄 ${file.name}`;
-  });
-
-  btn?.addEventListener('click', () => {
-    const rate = parseFloat((document.getElementById('mat') as HTMLSelectElement).value);
-    const l = parseFloat((document.getElementById('L') as HTMLInputElement).value) || 0;
-    const w = parseFloat((document.getElementById('W') as HTMLInputElement).value) || 0;
-    let total = (l * w / 10000) * rate;
-    if (total > 0 && total < 30000) total = 30000;
-    if (l > 0 && w > 0) {
-      price!.innerText = new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(total);
-      resBox?.classList.remove('hidden');
-    }
-  });
-</script>
