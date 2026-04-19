@@ -1,128 +1,105 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import ServiceCard from '../components/ServiceCard.astro'; // Nếu bạn đã tạo component này
 
-// Dữ liệu dịch vụ để render nhanh
-const topServices = [
-  {
-    title: "Cắt Chữ & Logo",
-    desc: "Chuyên decal mờ vách kính văn phòng, slogan công ty và biển bảng cửa hiệu.",
-    icon: "🏢",
-    link: "/dich-vu/cat-decal-chu-logo"
-  },
-  {
-    title: "Tem Nhãn Sticker",
-    desc: "Cắt bế tem nhãn sản phẩm, sticker trà sữa, mỹ phẩm lấy nhanh số lượng linh hoạt.",
-    icon: "🏷️",
-    link: "/dich-vu/tem-nhan-sticker"
-  },
-  {
-    title: "Decal Phản Quang",
-    desc: "Vật liệu 3M cao cấp cho biển báo công trình, tem xe hội nhóm và bảo hộ.",
-    icon: "✨",
-    link: "/dich-vu/decal-phan-quang"
-  },
-  {
-    title: "Cắt Gia Công B2B",
-    desc: "Nhận file vector qua Zalo, cắt lẻ lấy ngay, hỗ trợ khổ lớn cho thợ thi công.",
-    icon: "⚙️",
-    link: "/dich-vu/cat-decal-gia-cong"
-  }
+const faqs = [
+  { q: "Cắt decal bao lâu thì lấy được?", a: "Với đơn hàng nhỏ dưới 5 mét, bạn có thể lấy ngay sau 15-30 phút. Đơn hàng số lượng lớn sẽ được giao trong ngày." },
+  { q: "Có hỗ trợ thiết kế file vector không?", a: "Có, chúng tôi hỗ trợ kiểm tra và chỉnh sửa file vector miễn phí. Nếu bạn chưa có file, chúng tôi nhận vẽ lại theo mẫu." },
+  { q: "Bên mình có dán tận nơi không?", a: "Đội ngũ thợ có mặt tại 22 quận huyện TP.HCM và Bình Định để thi công dán kính, biển hiệu tận nơi." }
 ];
 ---
 
-<BaseLayout 
-  title="Cắt Decal Vi Tính Lấy Liền - Dán Kính Văn Phòng - CatDecal.vn"
-  description="Xưởng chuyên cắt decal theo yêu cầu, dán kính mờ văn phòng, tem nhãn sticker lấy ngay tại TP.HCM và Bình Định. Uy tín - Tốc độ - Giá xưởng."
->
-  <section class="relative bg-primary pt-20 pb-32 overflow-hidden">
-    <div class="absolute top-0 right-0 w-1/3 h-full bg-secondary/5 blur-[120px] rounded-full translate-x-1/2"></div>
-    
-    <div class="container mx-auto px-4 relative z-10">
-      <div class="max-w-3xl">
-        <div class="inline-flex items-center gap-2 bg-white/5 border border-white/10 px-3 py-1 rounded-full mb-6">
-          <span class="flex h-2 w-2 rounded-full bg-secondary animate-pulse"></span>
-          <span class="text-secondary text-xs font-bold uppercase tracking-widest">Dịch vụ cắt decal chuyên nghiệp</span>
-        </div>
-        
-        <h1 class="text-4xl md:text-7xl font-heading font-extrabold text-white leading-tight mb-8">
-          CẮT DECAL NHANH <br />
-          <span class="text-secondary">CHÍNH XÁC & GIÁ XƯỞNG</span>
+<BaseLayout>
+  <section class="bg-primary pt-16 pb-20">
+    <div class="container mx-auto px-4">
+      <div class="max-w-2xl">
+        <h1 class="text-3xl md:text-5xl font-heading font-extrabold text-white leading-tight mb-6">
+          Dịch vụ cắt Decal <span class="text-secondary">Chuyên nghiệp</span>
         </h1>
-        
-        <p class="text-xl text-white/70 mb-10 max-w-xl leading-relaxed">
-          Chúng tôi cung cấp giải pháp cắt decal vi tính lấy liền cho văn phòng, shop online và công trình. Đội ngũ thợ dán tận nơi tại <span class="text-white font-bold">TP.HCM & Bình Định</span>.
+        <p class="text-lg text-white/70 mb-8 leading-relaxed">
+          Gia công chính xác, tốc độ bàn giao nhanh và hỗ trợ thi công tận nơi tại TP.HCM & Bình Định.
         </p>
-        
-        <div class="flex flex-col sm:flex-row gap-4">
-          <a href="https://zalo.me/your-number" class="bg-secondary text-primary px-8 py-4 rounded-custom font-extrabold text-center hover:brightness-110 hover:-translate-y-1 transition-all shadow-xl shadow-secondary/20">
-            NHẬN BÁO GIÁ QUA ZALO
+        <div class="flex gap-4">
+          <a href="#calculator" class="bg-secondary text-primary px-6 py-3 rounded-custom font-bold text-sm hover:brightness-110 transition-all">
+            TÍNH GIÁ NHANH
           </a>
-          <a href="/kho-mau" class="border border-white/20 text-white px-8 py-4 rounded-custom font-bold text-center hover:bg-white/5 transition-all">
-            KHO MẪU THIẾT KẾ
+          <a href="https://zalo.me/your-number" class="bg-white/10 text-white px-6 py-3 rounded-custom font-bold text-sm hover:bg-white/20 transition-all">
+            ZALO BÁO GIÁ
           </a>
-        </div>
-        
-        <div class="mt-12 flex items-center gap-8 text-white/40 text-sm">
-          <div class="flex items-center gap-2">
-            <svg class="w-5 h-5 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-            Cắt lấy liền 15p
-          </div>
-          <div class="flex items-center gap-2">
-            <svg class="w-5 h-5 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-            Ship toàn quốc
-          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="py-24 bg-background">
+  <section id="calculator" class="py-20 bg-background">
     <div class="container mx-auto px-4">
-      <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
-        <div>
-          <h2 class="text-3xl md:text-5xl font-heading font-extrabold text-primary mb-4 italic">DỊCH VỤ THẾ MẠNH</h2>
-          <p class="text-copy-muted max-w-md">Tập trung vào chất lượng cắt tỉ mỉ và vật liệu decal bền màu nhất hiện nay.</p>
+      <div class="max-w-4xl mx-auto bg-slate-50 border border-slate-200 p-8 rounded-3xl shadow-sm">
+        <div class="text-center mb-10">
+          <h2 class="text-2xl font-heading font-bold text-primary italic">CÔNG CỤ TÍNH GIÁ SƠ BỘ</h2>
+          <p class="text-sm text-copy-muted mt-2">Nhập kích thước để ước tính chi phí (Giá thay đổi tùy loại decal)</p>
         </div>
-        <a href="/dich-vu" class="text-primary font-bold border-b-2 border-secondary pb-1 flex items-center gap-2 group">
-          Tất cả dịch vụ 
-          <svg class="w-5 h-5 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-        </a>
-      </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        {topServices.map((s) => (
-          <div class="group p-8 rounded-custom bg-slate-50 border border-slate-100 hover:bg-primary transition-all duration-300">
-            <div class="text-4xl mb-6">{s.icon}</div>
-            <h3 class="text-xl font-heading font-bold mb-4 group-hover:text-secondary transition-colors">{s.title}</h3>
-            <p class="text-copy-muted group-hover:text-white/60 mb-6 text-sm leading-relaxed">{s.desc}</p>
-            <a href={s.link} class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-primary group-hover:text-secondary">
-              Xem chi tiết
-              <span class="w-6 h-[1px] bg-secondary group-hover:w-10 transition-all"></span>
-            </a>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-end">
+          <div class="space-y-2">
+            <label class="text-xs font-bold uppercase text-primary/60">Chiều dài (cm)</label>
+            <input type="number" id="length" placeholder="Ví dụ: 100" class="w-full p-3 rounded-xl border-slate-200 focus:ring-2 focus:ring-secondary outline-none" />
           </div>
+          <div class="space-y-2">
+            <label class="text-xs font-bold uppercase text-primary/60">Chiều rộng (cm)</label>
+            <input type="number" id="width" placeholder="Ví dụ: 60" class="w-full p-3 rounded-xl border-slate-200 focus:ring-2 focus:ring-secondary outline-none" />
+          </div>
+          <button id="calcBtn" class="bg-primary text-secondary font-bold p-3 rounded-xl hover:bg-primary/90 transition-all">
+            TÍNH KẾT QUẢ
+          </button>
+        </div>
+
+        <div id="resultBox" class="mt-8 p-6 bg-secondary/10 border border-secondary/20 rounded-2xl hidden">
+          <div class="flex justify-between items-center">
+            <span class="text-primary font-medium">Ước tính chi phí:</span>
+            <span id="priceResult" class="text-2xl font-black text-primary">0đ</span>
+          </div>
+          <p class="text-[10px] text-primary/50 mt-2">* Lưu ý: Giá trên chỉ mang tính tham khảo cho decal thường, chưa bao gồm công dán và phí thiết kế phức tạp.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-slate-50">
+    <div class="container mx-auto px-4 max-w-3xl">
+      <h2 class="text-2xl font-heading font-bold text-primary mb-10 text-center uppercase tracking-widest">Hỏi đáp dịch vụ</h2>
+      <div class="space-y-4">
+        {faqs.map((faq) => (
+          <details class="group bg-white border border-slate-200 rounded-2xl overflow-hidden">
+            <summary class="flex justify-between items-center p-5 cursor-pointer list-none font-bold text-primary group-open:bg-primary group-open:text-secondary transition-all">
+              {faq.q}
+              <span class="group-open:rotate-180 transition-transform">▼</span>
+            </summary>
+            <div class="p-5 text-sm leading-relaxed text-copy-muted border-t border-slate-100">
+              {faq.a}
+            </div>
+          </details>
         ))}
       </div>
     </div>
   </section>
-
-  <section class="py-20 bg-primary/5">
-    <div class="container mx-auto px-4">
-      <div class="bg-primary rounded-3xl p-8 md:p-16 text-center relative overflow-hidden">
-        <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(var(--color-secondary) 1px, transparent 1px); background-size: 20px 20px;"></div>
-        
-        <h2 class="text-2xl md:text-4xl font-heading font-bold text-white mb-6">Bạn đang cần dán decal tận nơi tại TP.HCM?</h2>
-        <p class="text-white/60 mb-10 max-w-2xl mx-auto">
-          Đội ngũ kỹ thuật của chúng tôi có mặt tại 22 quận huyện TP.HCM và khu vực Quy Nhơn, Bình Định. Khảo sát mẫu và thi công trong ngày.
-        </p>
-        <div class="flex flex-wrap justify-center gap-3">
-          <span class="bg-white/5 border border-white/10 px-4 py-2 rounded-lg text-white/80 text-sm">Quận 1</span>
-          <span class="bg-white/5 border border-white/10 px-4 py-2 rounded-lg text-white/80 text-sm">Quận 7</span>
-          <span class="bg-white/5 border border-white/10 px-4 py-2 rounded-lg text-white/80 text-sm">TP. Thủ Đức</span>
-          <span class="bg-white/5 border border-white/10 px-4 py-2 rounded-lg text-white/80 text-sm">Quy Nhơn</span>
-          <span class="text-secondary flex items-center px-4 py-2 font-bold cursor-pointer">...và hơn thế nữa</span>
-        </div>
-      </div>
-    </div>
-  </section>
 </BaseLayout>
+
+<script>
+  // Script tính toán đơn giản
+  const btn = document.getElementById('calcBtn');
+  const resultBox = document.getElementById('resultBox');
+  const priceResult = document.getElementById('priceResult');
+
+  btn?.addEventListener('click', () => {
+    const l = parseFloat((document.getElementById('length') as HTMLInputElement).value) || 0;
+    const w = parseFloat((document.getElementById('width') as HTMLInputElement).value) || 0;
+    
+    // Giả sử đơn giá: 150.000đ/m2
+    const area = (l * w) / 10000;
+    const price = Math.max(area * 150000, 30000); // Tối thiểu 30k/đơn
+
+    if (l > 0 && w > 0) {
+      priceResult!.innerText = new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(price);
+      resultBox?.classList.remove('hidden');
+    }
+  });
+</script>
