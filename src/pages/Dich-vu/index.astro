@@ -1,114 +1,93 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import Calculator from '../../components/Calculator.astro';
+import Layout from '../layouts/BaseLayout.astro';
+import Calculator from '../components/Calculator.astro';
 
-const allServices = [
-  {
-    id: "cat-chu",
-    title: "Cắt Chữ & Logo (Decal Cắt Viền)",
-    desc: "Dịch vụ cơ bản phục vụ bảng hiệu, vách kính văn phòng, thông tin liên hệ trên cửa kính và tường.",
-    img: "https://images.unsplash.com/photo-1626708722760-466033488825?q=80&w=600",
-    features: ["Cắt viền sắc nét", "Dễ thi công", "Độ bền màu cao"],
-    material: "mo"
-  },
-  {
-    id: "be-tem",
-    title: "Cắt Tem Nhãn (Bế Tem)",
-    desc: "Gia công cắt theo đường viền (tròn, vuông, hình phức tạp) cho tem bảo hành, nhãn dán sản phẩm, giúp bóc dán dễ dàng.",
-    img: "https://images.unsplash.com/photo-1589987607627-616cac5c2c5a?q=80&w=600",
-    features: ["Cắt bế chính xác", "Lấy ngay trong ngày", "Mọi số lượng"],
-    material: "trong"
-  },
-  {
-    id: "noi-that",
-    title: "Decal Trang Trí Nội Thất",
-    desc: "Hoa văn dán tường, dán kính mờ (decal cát), tạo hình nghệ thuật cho nhà ở, văn phòng và quán cafe.",
-    img: "https://images.unsplash.com/photo-1615873968403-89e068629275?q=80&w=600",
-    features: ["Thẩm mỹ cao", "Che chắn riêng tư", "Vật liệu cao cấp"],
-    material: "mo"
-  },
-  {
-    id: "dan-xe",
-    title: "Cắt Decal Dán Xe",
-    desc: "Sản xuất bộ tem rời, tem phản quang hoặc chi tiết trang trí chuyên dụng cho xe máy và ô tô.",
-    img: "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?q=80&w=600",
-    features: ["Bám dính cực tốt", "Chống tia UV", "Phản quang 3M"],
-    material: "phanquang"
-  },
-  {
-    id: "chuyen-nhiet",
-    title: "Decal Chuyển Nhiệt",
-    desc: "Cắt decal chuyên dụng để ép nhiệt lên áo thun, đồng phục, túi vải với độ bền cao, không bong tróc.",
-    img: "https://images.unsplash.com/photo-1563125287-17559ec18cbb?q=80&w=600",
-    features: ["Co giãn tốt", "Màu sắc đa dạng", "Ép mọi loại vải"],
-    material: "mau"
-  },
-  {
-    id: "kho-lon",
-    title: "Quảng Cáo Khổ Lớn",
-    desc: "Gia công decal dán backdrop sự kiện, bảng hiệu ngoài trời hoặc trang trí dự án quy mô lớn.",
-    img: "https://images.unsplash.com/photo-1506143925201-0252c51780b0?q=80&w=600",
-    features: ["Đáp ứng tiến độ", "Khổ cắt rộng", "Giá gốc tại xưởng"],
-    material: "mau"
-  }
-];
+// SEO Meta
+const title = "Dịch vụ cắt Decal & Gia công chuyên nghiệp - CatDecal.vn";
+const description = "Xưởng gia công decal tại Bình Định: Cắt decal màu, mờ dán kính, phản quang 3M, tem nhãn và decal chuyển nhiệt ép áo. Nhận hàng ngay trong ngày, giao hàng toàn quốc.";
 ---
 
-<BaseLayout title="Dịch vụ Cắt Decal Chuyên Nghiệp - CatDecal.vn">
-  
-  <section class="bg-primary pt-24 pb-20 overflow-hidden relative">
-    <div class="absolute right-0 top-0 w-1/3 h-full bg-secondary/5 skew-x-12 translate-x-1/2"></div>
-    <div class="container mx-auto px-4 relative z-10">
-      <h1 class="text-4xl md:text-6xl font-heading font-black italic text-white uppercase mb-6 tracking-tighter">
-        Dịch vụ <span class="text-secondary">Gia công Decal</span>
+<Layout title={title} description={description}>
+  <section class="bg-secondary py-16 px-4 text-center">
+    <div class="max-w-4xl mx-auto">
+      <h1 class="text-4xl md:text-5xl font-heading font-bold text-white mb-6">
+        Giải Pháp <span class="text-primary">Cắt Decal</span> Gia Công Chuyên Nghiệp
       </h1>
-      <p class="text-white/60 max-w-2xl text-lg italic leading-relaxed">
-        Từ cắt chữ viền đơn giản đến bế tem nhãn kỹ thuật cao. Chúng tôi sở hữu công nghệ cắt Nhật Bản chính xác trên mọi loại vật liệu.
+      <p class="text-gray-400 text-lg mb-8">
+        Từ cắt chữ quảng cáo đến tem nhãn kỹ thuật cao. Chúng tôi giúp bạn hoàn thiện sản phẩm với độ chính xác tuyệt đối và thời gian nhanh nhất.
       </p>
-    </div>
-  </section>
-
-  <section class="py-24 bg-white">
-    <div class="container mx-auto px-4">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-        {allServices.map((s, index) => (
-          <div class="flex flex-col lg:flex-row gap-8 group">
-            <div class="lg:w-1/2 aspect-[4/3] rounded-3xl overflow-hidden bg-slate-100 relative shadow-lg">
-              <img src={s.img} alt={s.title} class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-              <div class="absolute top-4 left-4 bg-primary text-secondary text-[10px] font-black px-3 py-1 rounded-full uppercase italic shadow-lg">
-                Dịch vụ 0{index + 1}
-              </div>
-            </div>
-            <div class="lg:w-1/2 flex flex-col justify-center">
-              <h2 class="text-2xl font-heading font-extrabold text-primary italic uppercase mb-4 group-hover:text-secondary transition-colors">
-                {s.title}
-              </h2>
-              <p class="text-sm text-copy-muted leading-relaxed mb-6">
-                {s.desc}
-              </p>
-              <ul class="space-y-2 mb-8">
-                {s.features.map(f => (
-                  <li class="flex items-center gap-2 text-[11px] font-bold text-primary/70 uppercase tracking-wider">
-                    <span class="w-1.5 h-1.5 bg-secondary rounded-full"></span> {f}
-                  </li>
-                ))}
-              </ul>
-              <a href={`#calculator`} class="inline-flex items-center gap-2 text-xs font-black uppercase text-primary border-b-2 border-secondary pb-1 self-start hover:gap-4 transition-all">
-                Tính giá ngay <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M17 8l4 4m0 0l-4 4m4-4H3" stroke-width="2"></path></svg>
-              </a>
-            </div>
-          </div>
-        ))}
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="#bao-gia" class="bg-primary hover:bg-primary-dark text-white px-8 py-3 rounded-full font-bold transition-all">Tính giá ngay</a>
+        <a href="https://zalo.me/SĐT_CỦA_BẠN" class="bg-white/10 hover:bg-white/20 text-white px-8 py-3 rounded-full font-bold transition-all border border-white/20">Tư vấn qua Zalo</a>
       </div>
     </div>
   </section>
 
-  <div class="bg-slate-50 py-24 border-t border-slate-100">
-    <div class="container mx-auto px-4 text-center mb-16">
-      <h2 class="text-3xl font-heading font-black text-primary italic uppercase">Báo giá nhanh toàn quốc</h2>
-      <p class="text-copy-muted mt-2 text-sm italic">Chọn vật liệu và nhập kích thước để nhận báo giá dự kiến ngay lập tức.</p>
+  <section class="py-20 px-4 max-w-7xl mx-auto">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl font-bold text-secondary mb-4">Các dịch vụ trọng tâm</h2>
+      <p class="text-copy-muted">Phục vụ nhu cầu quảng cáo, trang trí nội thất và may mặc</p>
     </div>
-    <Calculator />
-  </div>
 
-</BaseLayout>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="bg-surface p-8 rounded-2xl border border-divider hover:shadow-xl transition-all group">
+        <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-all">
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+        </div>
+        <h3 class="text-xl font-bold mb-3 text-secondary">Cắt Decal Màu & Mờ</h3>
+        <p class="text-sm text-copy-muted leading-relaxed">Chuyên cắt chữ quảng cáo, logo công ty và decal mờ dán kính văn phòng. Đường cắt sắc nét, dễ lột nền.</p>
+      </div>
+
+      <div class="bg-surface p-8 rounded-2xl border border-divider hover:shadow-xl transition-all group">
+        <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-all">
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path></svg>
+        </div>
+        <h3 class="text-xl font-bold mb-3 text-secondary">Cắt Bế Tem Nhãn</h3>
+        <p class="text-sm text-copy-muted leading-relaxed">Gia công cắt bế chính xác theo đường viền cho tem xe, tem nhãn sản phẩm sau khi in. Hỗ trợ file khổ lớn.</p>
+      </div>
+
+      <div class="bg-surface p-8 rounded-2xl border border-divider hover:shadow-xl transition-all group">
+        <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-all">
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+        </div>
+        <h3 class="text-xl font-bold mb-3 text-secondary">Decal Phản Quang & Nhiệt</h3>
+        <p class="text-sm text-copy-muted leading-relaxed">Cung cấp và gia công decal phản quang 3M cho biển báo và decal chuyển nhiệt chất lượng cao cho ngành may mặc.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="bao-gia" class="py-20 bg-background-alt px-4">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-secondary">Báo giá hỏa tốc</h2>
+        <p class="text-copy-muted mt-2">Nhập kích thước để nhận báo giá và đặt lịch nhận hàng ngay</p>
+      </div>
+      <Calculator />
+    </div>
+  </section>
+
+  <section class="py-20 px-4 max-w-5xl mx-auto">
+    <div class="bg-secondary rounded-3xl p-8 md:p-12 text-white relative overflow-hidden">
+      <div class="relative z-10">
+        <h2 class="text-3xl font-bold mb-8 italic">"Gói hàng bằng tâm - Giao hàng bằng tốc"</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="flex gap-4">
+            <div class="text-primary text-2xl font-bold">01.</div>
+            <div>
+              <h4 class="font-bold mb-2">Đúng tiến độ</h4>
+              <p class="text-gray-400 text-sm">Hệ thống quản lý đơn hàng thông minh giúp chúng tôi cam kết thời gian giao hàng chính xác.</p>
+            </div>
+          </div>
+          <div class="flex gap-4">
+            <div class="text-primary text-2xl font-bold">02.</div>
+            <div>
+              <h4 class="font-bold mb-2">Giá xưởng tại gốc</h4>
+              <p class="text-gray-400 text-sm">Không qua trung gian, tối ưu chi phí cho anh em thợ quảng cáo và đại lý.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full -mr-32 -mt-32"></div>
+    </div>
+  </section>
+</Layout>
