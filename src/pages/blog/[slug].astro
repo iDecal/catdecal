@@ -1,0 +1,90 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+// Thông tin bài viết mẫu
+const post = {
+  title: "Quy trình đóng gói decal gửi tỉnh đảm bảo không gãy nếp",
+  date: "19/04/2026",
+  author: "Kỹ thuật viên catdecal.vn",
+  category: "Vận chuyển",
+  image: "https://images.unsplash.com/photo-1566197730469-510629d8a042?auto=format&fit=crop&q=80&w=1200",
+  content: `
+    <p>Khi đặt gia công decal từ xa, nỗi lo lớn nhất của khách hàng là sản phẩm bị nếp gãy, bong tróc đường cắt trong quá trình vận chuyển. Tại catdecal.vn, chúng tôi áp dụng quy trình đóng gói 3 lớp chuyên dụng.</p>
+    
+    <h2>1. Sử dụng lõi cứng chịu lực</h2>
+    <p>Mọi đơn hàng decal dù lớn hay nhỏ đều được cuộn tròn quanh lõi giấy cứng hoặc ống nhựa PVC. Việc này đảm bảo decal không bị ép bẹp dưới sức nặng của các kiện hàng khác trong kho của đơn vị vận chuyển.</p>
+    
+    <h2>2. Lớp màng co bảo vệ bề mặt</h2>
+    <p>Sau khi cuộn, sản phẩm được quấn một lớp màng PE mỏng để cố định các mép cắt, tránh việc các chi tiết nhỏ bị bong ra do ma sát. Lớp màng này cũng giúp chống ẩm cho lớp đế giấy của decal.</p>
+    
+    <h2>3. Đóng ống PVC hoặc hộp carton cứng</h2>
+    <p>Đối với các đơn hàng gửi đi các tỉnh xa như Hà Nội, Đà Nẵng hay các khu vực miền Tây, chúng tôi sử dụng ống nhựa PVC có nắp đậy hai đầu. Đây là giải pháp an toàn tuyệt đối, giúp sản phẩm đến tay khách hàng luôn ở trạng thái hoàn hảo như vừa ra khỏi máy cắt.</p>
+  `
+};
+---
+
+<BaseLayout title={post.title}>
+  <article class="py-12 md:py-24 bg-white">
+    <div class="max-w-3xl mx-auto px-4">
+      
+      <div class="flex items-center gap-4 mb-6">
+        <span class="bg-primary/10 text-primary px-3 py-1 rounded-lg text-xs font-bold uppercase tracking-wider">
+          {post.category}
+        </span>
+        <span class="text-gray-400 text-sm">{post.date}</span>
+      </div>
+
+      <h1 class="text-3xl md:text-5xl font-bold text-black mb-8 leading-tight tracking-tighter">
+        {post.title}
+      </h1>
+
+      <div class="flex items-center gap-3 mb-10 pb-10 border-b border-divider">
+        <div class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center font-bold text-gray-500">C</div>
+        <div>
+          <p class="text-sm font-bold text-black">{post.author}</p>
+          <p class="text-xs text-gray-400">Chuyên gia kỹ thuật Decal</p>
+        </div>
+      </div>
+
+      <div class="aspect-video rounded-3xl overflow-hidden border border-divider mb-12 shadow-sm">
+        <img src={post.image} alt={post.title} class="w-full h-full object-cover" />
+      </div>
+
+      <div class="prose prose-lg max-w-none 
+        prose-headings:text-black prose-headings:font-bold prose-headings:mb-4 
+        prose-p:text-gray-600 prose-p:leading-relaxed prose-p:mb-6
+        prose-strong:text-black
+        prose-li:text-gray-600
+        prose-h2:text-2xl prose-h2:mt-10
+        italic-none">
+        <div set:html={post.content} />
+      </div>
+
+      <div class="mt-16 p-8 bg-[#F5F5F5] rounded-3xl border border-divider">
+        <h3 class="text-xl font-bold text-black mb-3">Bạn cần gia công và gửi hàng đi tỉnh?</h3>
+        <p class="text-gray-500 text-sm mb-6">Chúng tôi xử lý mọi yêu cầu về file vector và hỗ trợ vận chuyển an toàn toàn quốc qua các nhà xe và CPN uy tín.</p>
+        <a href="https://zalo.me/0862208108" class="inline-block bg-black text-white px-8 py-3 rounded-full font-bold hover:bg-primary transition-all">
+          Nhận tư vấn ngay
+        </a>
+      </div>
+
+      <div class="mt-12 pt-8 border-t border-divider flex items-center justify-between">
+        <a href="/blog" class="text-sm font-bold text-gray-400 hover:text-black transition-colors">← Quay lại danh sách</a>
+        <div class="flex gap-4">
+          <span class="text-xs text-gray-400 font-bold uppercase tracking-widest pt-1">Chia sẻ:</span>
+          <div class="flex gap-2">
+            <div class="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center hover:bg-primary/10 hover:text-primary cursor-pointer transition-all">f</div>
+            <div class="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center hover:bg-primary/10 hover:text-primary cursor-pointer transition-all">z</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+</BaseLayout>
+
+<style is:global>
+  /* Đảm bảo nội dung từ CMS hoặc HTML không bị dính in nghiêng */
+  .italic-none * {
+    font-style: normal !important;
+  }
+</style>
