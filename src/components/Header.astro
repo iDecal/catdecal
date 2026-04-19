@@ -1,5 +1,5 @@
 ---
-// Header.astro
+// Header.astro - Đã fix khoảng trống dư thừa
 ---
 
 <header class="bg-white border-b border-divider sticky top-0 z-50 shadow-sm font-heading">
@@ -17,14 +17,17 @@
         <a href="/" class="text-copy hover:text-primary font-medium transition-colors">Trang chủ</a>
         
         <div class="relative group h-full flex items-center">
-          <a href="/dich-vu" class="text-copy group-hover:text-primary font-medium flex items-center gap-1 transition-colors py-2">
+          <a 
+            href="/dich-vu" 
+            class="text-copy group-hover:text-primary font-medium flex items-center gap-1 transition-colors h-full"
+          >
             Dịch vụ cắt 
             <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
             </svg>
           </a>
 
-          <div class="absolute top-[80%] left-0 w-64 bg-white shadow-xl rounded-xl border border-divider opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50 py-2 mt-1">
+          <div class="absolute top-full left-0 w-64 bg-white shadow-xl rounded-b-xl border border-divider opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50 py-2 border-t-0">
             <a href="/dich-vu/cat-decal-mau" class="block px-4 py-3 hover:bg-primary/5 hover:text-primary transition-colors text-sm">Cắt Decal màu (Quảng cáo)</a>
             <a href="/dich-vu/cat-decal-mo" class="block px-4 py-3 hover:bg-primary/5 hover:text-primary transition-colors text-sm">Cắt Decal mờ (Dán kính)</a>
             <a href="/dich-vu/cat-be-tem-nhan" class="block px-4 py-3 hover:bg-primary/5 hover:text-primary transition-colors text-sm">Cắt bế Tem nhãn (Sau in)</a>
@@ -45,10 +48,8 @@
       </div>
 
       <div class="md:hidden">
-        <button id="menu-btn" class="p-2 text-secondary" aria-label="Toggle Menu">
-          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path id="icon-path" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-          </svg>
+        <button id="menu-btn" class="p-2 text-secondary">
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16m-7 6h7" stroke-width="2" stroke-linecap="round"></path></svg>
         </button>
       </div>
     </div>
@@ -56,12 +57,11 @@
 
   <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-divider">
     <div class="px-4 py-6 space-y-4">
-      <a href="/" class="block text-lg font-medium text-copy">Trang chủ</a>
-      <a href="/dich-vu" class="block text-lg font-medium text-copy">Dịch vụ cắt</a>
-      <a href="/bao-gia" class="block text-lg font-medium text-copy">Báo giá nhanh</a>
-      <a href="/giao-hang-thanh-toan" class="block text-lg font-medium text-copy">Giao hàng</a>
-      <a href="/thu-vien-mau" class="block text-lg font-medium text-copy">Thư viện mẫu</a>
-      <a href="https://zalo.me/0862208108" class="w-full flex justify-center bg-primary text-white py-4 rounded-lg font-bold">GỬI FILE QUA ZALO</a>
+      <a href="/" class="block text-lg font-medium">Trang chủ</a>
+      <a href="/dich-vu" class="block text-lg font-medium">Dịch vụ cắt</a>
+      <a href="/bao-gia" class="block text-lg font-medium">Báo giá nhanh</a>
+      <a href="/giao-hang-thanh-toan" class="block text-lg font-medium">Giao hàng</a>
+      <a href="https://zalo.me/0862208108" class="w-full block text-center bg-primary text-white py-4 rounded-lg font-bold">GỬI FILE QUA ZALO</a>
     </div>
   </div>
 </header>
