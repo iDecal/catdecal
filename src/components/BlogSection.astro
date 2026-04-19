@@ -39,9 +39,11 @@ const latestPosts = allPosts
 
           <div class="flex flex-col flex-1 px-2">
             <span class="text-[11px] font-bold text-slate-300 uppercase tracking-[0.2em] mb-4">{post.data.date}</span>
-            <h3 class="text-2xl md:text-xl font-bold text-slate-900 group-hover:text-secondary transition-colors leading-tight mb-4">
+            
+            <h3 class="text-2xl md:text-xl text-slate-900 group-hover:text-secondary transition-colors leading-tight mb-4">
               <a href={`/blog/${post.slug}`}>{post.data.title}</a>
             </h3>
+            
             <p class="text-slate-500 text-[16px] md:text-sm leading-relaxed line-clamp-2 mb-8">
               {post.data.excerpt}
             </p>
@@ -54,19 +56,3 @@ const latestPosts = allPosts
     </div>
   </div>
 </section>
-
-<style>
-  .scrollbar-hide::-webkit-scrollbar {
-    display: none;
-  }
-  .scrollbar-hide {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
-  
-  /* Reset nhẹ để đảm bảo CSS global của bạn không bị ghi đè bởi các thuộc tính font mặc định của trình duyệt */
-  h2, a {
-    font-style: normal;
-    text-transform: none;
-  }
-</style>
