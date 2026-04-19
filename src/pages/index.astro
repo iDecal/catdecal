@@ -1,7 +1,6 @@
 ---
 import Layout from '../layouts/BaseLayout.astro';
 
-// Dữ liệu dịch vụ chính dựa trên cấu trúc thư mục của bạn
 const services = [
   { 
     title: "Cắt Decal màu (Quảng cáo)", 
@@ -24,22 +23,22 @@ const services = [
 ];
 ---
 
-<Layout title="CATDECAL.VN - Giải Pháp Cắt Decal Gia Công Chuyên Nghiệp">
+<Layout title="catdecal.vn - Giải pháp cắt decal gia công chuyên nghiệp">
   
   <section class="relative bg-[#2D3436] py-24 md:py-32 overflow-hidden">
     <div class="max-w-7xl mx-auto px-4 relative z-10 text-center">
-      <h1 class="text-4xl md:text-6xl font-bold text-white uppercase tracking-tighter leading-tight mb-6">
-        GIẢI PHÁP <span class="text-primary text-secondary">CẮT DECAL</span> GIA CÔNG <br/> CHUYÊN NGHIỆP
+      <h1 class="text-4xl md:text-6xl text-white leading-tight mb-6">
+        Giải pháp cắt decal gia công chuyên nghiệp
       </h1>
       <div class="w-24 h-1.5 bg-primary mx-auto mb-8"></div>
       <p class="text-gray-300 text-lg md:text-xl max-w-3xl mx-auto mb-10">
-        Từ cắt chữ quảng cáo đến tem nhãn kỹ thuật cao. Chúng tôi giúp bạn hoàn thiện sản phẩm với độ chính xác tuyệt đối và thời gian nhanh nhất tại <span class="text-white font-bold">Bình Định</span>.
+        Từ cắt chữ quảng cáo đến tem nhãn kỹ thuật cao. Chúng tôi giúp bạn hoàn thiện sản phẩm với độ chính xác tuyệt đối tại Bình Định.
       </p>
       <div class="flex flex-col sm:flex-row justify-center gap-4">
-        <a href="/bao-gia" class="bg-primary text-white px-10 py-4 rounded-full font-bold hover:brightness-110 transition-all uppercase text-sm shadow-lg">
+        <a href="/bao-gia" class="bg-primary text-white px-10 py-4 rounded-full font-bold hover:brightness-110 transition-all text-sm shadow-lg">
           Tính giá ngay
         </a>
-        <a href="https://zalo.me/0862208108" class="bg-transparent border-2 border-gray-500 text-white px-10 py-4 rounded-full font-bold hover:bg-white hover:text-black transition-all uppercase text-sm">
+        <a href="https://zalo.me/0862208108" class="bg-transparent border-2 border-gray-500 text-white px-10 py-4 rounded-full font-bold hover:bg-white hover:text-black transition-all text-sm">
           Tư vấn qua Zalo
         </a>
       </div>
@@ -50,7 +49,7 @@ const services = [
   <section class="py-20 bg-white">
     <div class="max-w-7xl mx-auto px-4">
       <div class="text-center mb-16">
-        <h2 class="text-3xl font-bold text-black uppercase tracking-tight mb-3">Dịch vụ thế mạnh</h2>
+        <h2 class="text-3xl text-black mb-3">Dịch vụ thế mạnh</h2>
         <div class="w-12 h-1 bg-primary mx-auto mb-4"></div>
         <p class="text-gray-500">Công nghệ Nhật Bản - Độ chính xác 0.1mm</p>
       </div>
@@ -63,9 +62,9 @@ const services = [
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d={service.icon}></path>
               </svg>
             </div>
-            <h3 class="text-xl font-bold text-black mb-3">{service.title}</h3>
+            <h3 class="text-xl text-black mb-3">{service.title}</h3>
             <p class="text-gray-500 text-sm leading-relaxed mb-6">{service.desc}</p>
-            <a href={service.link} class="text-primary font-bold text-sm uppercase tracking-wider hover:underline">
+            <a href={service.link} class="text-primary font-bold text-sm hover:underline">
               Tìm hiểu thêm →
             </a>
           </div>
@@ -77,39 +76,35 @@ const services = [
   <section class="py-20 bg-[#F5F5F5]">
     <div class="max-w-5xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
       <div>
-        <h2 class="text-3xl font-bold text-black uppercase mb-4 tracking-tighter">Tại sao chọn <br/> catdecal.vn?</h2>
+        <h2 class="text-3xl text-black mb-4">Tại sao chọn catdecal.vn?</h2>
         <div class="w-12 h-1 bg-primary mb-8"></div>
         <ul class="space-y-6">
           <li class="flex gap-4">
             <span class="text-primary font-bold text-xl">01.</span>
             <div>
-              <p class="font-bold text-black uppercase text-sm tracking-wide">Lấy ngay trong ngày</p>
+              <p class="font-bold text-black text-sm tracking-wide">Lấy ngay trong ngày</p>
               <p class="text-gray-500 text-sm">Hệ thống máy cắt tốc độ cao giúp đáp ứng đơn hàng gấp lấy liền.</p>
             </div>
           </li>
           <li class="flex gap-4">
             <span class="text-primary font-bold text-xl">02.</span>
             <div>
-              <p class="font-bold text-black uppercase text-sm tracking-wide">Hỗ trợ File tận tâm</p>
-              <p class="text-gray-500 text-sm">Không có máy in nhưng chuyên sâu gia công, chúng tôi hỗ trợ xử lý file vector hoàn toàn miễn phí.</p>
+              <p class="font-bold text-black text-sm tracking-wide">Hỗ trợ File tận tâm</p>
+              <p class="text-gray-500 text-sm">Xử lý file vector hoàn toàn miễn phí cho khách hàng gia công.</p>
             </div>
           </li>
           <li class="flex gap-4">
             <span class="text-primary font-bold text-xl">03.</span>
             <div>
-              <p class="font-bold text-black uppercase text-sm tracking-wide">Giao hàng toàn quốc</p>
-              <p class="text-gray-500 text-sm">Đóng gói ống nhựa PVC chuyên dụng, đảm bảo decal không bị nếp gãy khi vận chuyển xa.</p>
+              <p class="font-bold text-black text-sm tracking-wide">Giao hàng toàn quốc</p>
+              <p class="text-gray-500 text-sm">Đóng gói chuyên dụng, đảm bảo decal không bị nếp gãy.</p>
             </div>
           </li>
         </ul>
       </div>
       <div class="relative">
         <div class="aspect-square bg-white rounded-3xl shadow-2xl p-4 border border-divider">
-          <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=800" alt="Máy cắt Decal hiện đại" class="w-full h-full object-cover rounded-2xl" />
-          <div class="absolute -bottom-6 -left-6 bg-white p-6 rounded-2xl shadow-xl border border-divider hidden md:block">
-            <p class="text-4xl font-bold text-primary">100%</p>
-            <p class="text-xs text-gray-400 font-bold uppercase tracking-widest">Độ chính xác</p>
-          </div>
+          <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=800" alt="Máy cắt hiện đại" class="w-full h-full object-cover rounded-2xl" />
         </div>
       </div>
     </div>
