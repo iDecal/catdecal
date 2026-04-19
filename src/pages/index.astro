@@ -1,1 +1,128 @@
-213
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ServiceCard from '../components/ServiceCard.astro'; // Nếu bạn đã tạo component này
+
+// Dữ liệu dịch vụ để render nhanh
+const topServices = [
+  {
+    title: "Cắt Chữ & Logo",
+    desc: "Chuyên decal mờ vách kính văn phòng, slogan công ty và biển bảng cửa hiệu.",
+    icon: "🏢",
+    link: "/dich-vu/cat-decal-chu-logo"
+  },
+  {
+    title: "Tem Nhãn Sticker",
+    desc: "Cắt bế tem nhãn sản phẩm, sticker trà sữa, mỹ phẩm lấy nhanh số lượng linh hoạt.",
+    icon: "🏷️",
+    link: "/dich-vu/tem-nhan-sticker"
+  },
+  {
+    title: "Decal Phản Quang",
+    desc: "Vật liệu 3M cao cấp cho biển báo công trình, tem xe hội nhóm và bảo hộ.",
+    icon: "✨",
+    link: "/dich-vu/decal-phan-quang"
+  },
+  {
+    title: "Cắt Gia Công B2B",
+    desc: "Nhận file vector qua Zalo, cắt lẻ lấy ngay, hỗ trợ khổ lớn cho thợ thi công.",
+    icon: "⚙️",
+    link: "/dich-vu/cat-decal-gia-cong"
+  }
+];
+---
+
+<BaseLayout 
+  title="Cắt Decal Vi Tính Lấy Liền - Dán Kính Văn Phòng - CatDecal.vn"
+  description="Xưởng chuyên cắt decal theo yêu cầu, dán kính mờ văn phòng, tem nhãn sticker lấy ngay tại TP.HCM và Bình Định. Uy tín - Tốc độ - Giá xưởng."
+>
+  <section class="relative bg-primary pt-20 pb-32 overflow-hidden">
+    <div class="absolute top-0 right-0 w-1/3 h-full bg-secondary/5 blur-[120px] rounded-full translate-x-1/2"></div>
+    
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="max-w-3xl">
+        <div class="inline-flex items-center gap-2 bg-white/5 border border-white/10 px-3 py-1 rounded-full mb-6">
+          <span class="flex h-2 w-2 rounded-full bg-secondary animate-pulse"></span>
+          <span class="text-secondary text-xs font-bold uppercase tracking-widest">Dịch vụ cắt decal chuyên nghiệp</span>
+        </div>
+        
+        <h1 class="text-4xl md:text-7xl font-heading font-extrabold text-white leading-tight mb-8">
+          CẮT DECAL NHANH <br />
+          <span class="text-secondary">CHÍNH XÁC & GIÁ XƯỞNG</span>
+        </h1>
+        
+        <p class="text-xl text-white/70 mb-10 max-w-xl leading-relaxed">
+          Chúng tôi cung cấp giải pháp cắt decal vi tính lấy liền cho văn phòng, shop online và công trình. Đội ngũ thợ dán tận nơi tại <span class="text-white font-bold">TP.HCM & Bình Định</span>.
+        </p>
+        
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="https://zalo.me/your-number" class="bg-secondary text-primary px-8 py-4 rounded-custom font-extrabold text-center hover:brightness-110 hover:-translate-y-1 transition-all shadow-xl shadow-secondary/20">
+            NHẬN BÁO GIÁ QUA ZALO
+          </a>
+          <a href="/kho-mau" class="border border-white/20 text-white px-8 py-4 rounded-custom font-bold text-center hover:bg-white/5 transition-all">
+            KHO MẪU THIẾT KẾ
+          </a>
+        </div>
+        
+        <div class="mt-12 flex items-center gap-8 text-white/40 text-sm">
+          <div class="flex items-center gap-2">
+            <svg class="w-5 h-5 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+            Cắt lấy liền 15p
+          </div>
+          <div class="flex items-center gap-2">
+            <svg class="w-5 h-5 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+            Ship toàn quốc
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-24 bg-background">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+        <div>
+          <h2 class="text-3xl md:text-5xl font-heading font-extrabold text-primary mb-4 italic">DỊCH VỤ THẾ MẠNH</h2>
+          <p class="text-copy-muted max-w-md">Tập trung vào chất lượng cắt tỉ mỉ và vật liệu decal bền màu nhất hiện nay.</p>
+        </div>
+        <a href="/dich-vu" class="text-primary font-bold border-b-2 border-secondary pb-1 flex items-center gap-2 group">
+          Tất cả dịch vụ 
+          <svg class="w-5 h-5 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {topServices.map((s) => (
+          <div class="group p-8 rounded-custom bg-slate-50 border border-slate-100 hover:bg-primary transition-all duration-300">
+            <div class="text-4xl mb-6">{s.icon}</div>
+            <h3 class="text-xl font-heading font-bold mb-4 group-hover:text-secondary transition-colors">{s.title}</h3>
+            <p class="text-copy-muted group-hover:text-white/60 mb-6 text-sm leading-relaxed">{s.desc}</p>
+            <a href={s.link} class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-primary group-hover:text-secondary">
+              Xem chi tiết
+              <span class="w-6 h-[1px] bg-secondary group-hover:w-10 transition-all"></span>
+            </a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-primary/5">
+    <div class="container mx-auto px-4">
+      <div class="bg-primary rounded-3xl p-8 md:p-16 text-center relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(var(--color-secondary) 1px, transparent 1px); background-size: 20px 20px;"></div>
+        
+        <h2 class="text-2xl md:text-4xl font-heading font-bold text-white mb-6">Bạn đang cần dán decal tận nơi tại TP.HCM?</h2>
+        <p class="text-white/60 mb-10 max-w-2xl mx-auto">
+          Đội ngũ kỹ thuật của chúng tôi có mặt tại 22 quận huyện TP.HCM và khu vực Quy Nhơn, Bình Định. Khảo sát mẫu và thi công trong ngày.
+        </p>
+        <div class="flex flex-wrap justify-center gap-3">
+          <span class="bg-white/5 border border-white/10 px-4 py-2 rounded-lg text-white/80 text-sm">Quận 1</span>
+          <span class="bg-white/5 border border-white/10 px-4 py-2 rounded-lg text-white/80 text-sm">Quận 7</span>
+          <span class="bg-white/5 border border-white/10 px-4 py-2 rounded-lg text-white/80 text-sm">TP. Thủ Đức</span>
+          <span class="bg-white/5 border border-white/10 px-4 py-2 rounded-lg text-white/80 text-sm">Quy Nhơn</span>
+          <span class="text-secondary flex items-center px-4 py-2 font-bold cursor-pointer">...và hơn thế nữa</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
