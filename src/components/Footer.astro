@@ -28,9 +28,9 @@ const socials = [
 ---
 
 <footer class="bg-[#f0f9ff] text-slate-600 pt-16 md:pt-24 pb-12 border-t border-slate-100">
-  <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-12 lg:gap-20">
+  <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12 lg:gap-20">
     
-    <div class="footer-column mb-6 md:mb-0">
+    <div class="footer-column">
       <h2 class="text-4xl md:text-3xl font-black text-slate-900 mb-6 tracking-tighter relative inline-block">
         catdecal<span class="text-secondary">.vn</span>
         <div class="hidden md:block absolute -bottom-2 left-0 w-12 h-1 bg-secondary rounded-full"></div>
@@ -89,17 +89,18 @@ const socials = [
       </div>
     </div>
 
-    <div class="footer-accordion md:border-0">
-      <button class="w-full flex justify-between items-center py-5 md:py-0 md:cursor-default accordion-btn">
-        <div class="relative inline-block">
-          <h3 class="text-xl md:text-[13px] font-bold md:uppercase md:tracking-[0.2em] text-slate-900">Liên hệ</h3>
-          <div class="hidden md:block absolute -bottom-3 left-0 w-8 h-1 bg-secondary rounded-full"></div>
-        </div>
-        <span class="md:hidden text-2xl font-light text-primary">+</span>
-      </button>
-      <div class="footer-content hidden md:block mt-6 md:mt-10 pb-8 md:pb-0">
-        <p class="text-secondary font-black text-4xl md:text-2xl mb-2 tracking-tight">0862 208 108</p>
-        <p class="text-slate-400 text-[14px] md:text-[11px] tracking-wide mb-6">Zalo hỗ trợ 24/7</p>
+    <div class="footer-column py-6 md:py-0">
+      <div class="relative inline-block mb-8 md:mb-10">
+        <h3 class="text-xl md:text-[13px] font-bold md:uppercase md:tracking-[0.2em] text-slate-900">Liên hệ</h3>
+        <div class="hidden md:block absolute -bottom-3 left-0 w-8 h-1 bg-secondary rounded-full"></div>
+      </div>
+      
+      <div class="contact-info">
+        <a href="tel:0862208108" class="block">
+          <p class="text-secondary font-black text-4xl md:text-2xl mb-2 tracking-tight">0862 208 108</p>
+        </a>
+        <p class="text-slate-400 text-[14px] md:text-[11px] tracking-wide mb-6 uppercase font-bold">Zalo hỗ trợ 24/7</p>
+        
         <div class="text-[16px] md:text-sm text-slate-500 leading-relaxed">
           <p class="font-bold text-slate-900 mb-1">Xưởng sản xuất:</p>
           <p>TP. Quy Nhơn, Tỉnh Bình Định</p>
@@ -109,7 +110,7 @@ const socials = [
 
   </div>
   
-  <div class="max-w-7xl mx-auto px-6 mt-16 md:mt-24 pt-8 border-t border-slate-200/40 text-center">
+  <div class="max-w-7xl mx-auto px-6 mt-12 md:mt-24 pt-8 border-t border-slate-200/40 text-center">
     <p class="text-slate-300 text-[11px] font-medium tracking-[0.3em] uppercase">
       © 2026 CATDECAL.VN — iDecal
     </p>
@@ -124,26 +125,36 @@ const socials = [
     transform: translateY(-3px);
   }
   .social-icon:hover .icon-svg { color: white; }
+  
   @media (max-width: 767px) {
-    .footer-accordion h3 { text-transform: none; letter-spacing: normal; }
+    /* Đảm bảo Heading không bị viết hoa toàn bộ và font style bình thường */
+    h2, h3 { 
+      font-style: normal !important;
+      text-transform: none !important;
+      letter-spacing: -0.01em !important;
+    }
   }
 </style>
 
 <script>
   function setupFooter() {
+    // Chỉ áp dụng Accordion cho 2 cột giữa (Dịch vụ & Thông tin)
     const accordions = document.querySelectorAll('.footer-accordion');
     accordions.forEach(item => {
       const btn = item.querySelector('.accordion-btn');
       const content = item.querySelector('.footer-content');
       const span = item.querySelector('span');
+      
       btn?.addEventListener('click', () => {
         if (window.innerWidth < 768) {
           const isOpen = !content?.classList.contains('hidden');
-          document.querySelectorAll('.footer-content').forEach(c => c.classList.add('hidden'));
-          document.querySelectorAll('.footer-accordion span').forEach(s => s.textContent = '+');
+          // Không đóng các cột khác khi mở cột này để khách dễ xem
           if (!isOpen) {
             content?.classList.remove('hidden');
             if (span) span.textContent = '−';
+          } else {
+            content?.classList.add('hidden');
+            if (span) span.textContent = '+';
           }
         }
       });
