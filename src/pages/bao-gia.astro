@@ -1,0 +1,81 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const pageTitle = "Bảng Giá Gia Công Cắt Decal & Tem Nhãn Mới Nhất 2026";
+const pageDescription = "Cập nhật báo giá cắt decal vi tính, bế tem nhãn, cắt chữ quảng cáo giá rẻ tại Bình Định & TP.HCM. Cam kết độ chính xác cao, lấy liền trong ngày.";
+
+const priceData = [
+  { name: "Cắt Decal màu (Quảng cáo)", price: "Từ 50.000đ/m", unit: "Mét tới", feature: "Decal sữa, decal trong, decal màu" },
+  { name: "Cắt Decal mờ (Dán kính)", price: "Từ 60.000đ/m", unit: "Mét tới", feature: "Dán kính văn phòng, shop" },
+  { name: "Bế Tem nhãn (Sau in)", price: "Từ 500đ/tem", unit: "Con", feature: "Cắt bế mọi hình dáng phức tạp" },
+  { name: "Decal Phản quang", price: "Liên hệ", unit: "Mét", feature: "Decal 3M, decal tổ ong" },
+];
+---
+
+<BaseLayout title={pageTitle} description={pageDescription}>
+  <section class="bg-surface py-16">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <nav class="flex justify-center space-x-2 text-sm text-gray-500 mb-4">
+        <a href="/" class="hover:text-primary">Trang chủ</a>
+        <span>/</span>
+        <span class="text-black font-medium">Báo giá</span>
+      </nav>
+      <h1 class="text-4xl md:text-5xl font-bold mb-4 text-black italic">BÁO GIÁ GIA CÔNG 2026</h1>
+      <div class="w-20 h-1.5 bg-primary mx-auto mb-6"></div>
+      <p class="text-lg text-gray-600">
+        Bảng giá minh bạch cho dịch vụ cắt decal tại <span class="text-black font-bold">Bình Định</span>. 
+        Chúng tôi hỗ trợ cắt lẻ và gia công số lượng lớn cho quảng cáo & nội thất.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-12 bg-white">
+    <div class="max-w-5xl mx-auto px-4">
+      <div class="overflow-x-auto rounded-xl border border-divider shadow-sm">
+        <table class="w-full text-left border-collapse">
+          <thead>
+            <tr class="bg-surface border-b border-divider">
+              <th class="px-6 py-4 font-bold text-black uppercase text-sm">Hạng mục dịch vụ</th>
+              <th class="px-6 py-4 font-bold text-black uppercase text-sm">Đặc điểm</th>
+              <th class="px-6 py-4 font-bold text-black uppercase text-sm">Đơn giá tham khảo</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-divider">
+            {priceData.map((item) => (
+              <tr class="hover:bg-gray-50 transition-colors">
+                <td class="px-6 py-5 font-bold text-primary">{item.name}</td>
+                <td class="px-6 py-5 text-gray-600 text-sm">{item.feature}</td>
+                <td class="px-6 py-5">
+                  <span class="text-black font-bold">{item.price}</span>
+                  <span class="text-gray-400 text-xs ml-1">/{item.unit}</span>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      
+      <p class="mt-6 text-sm text-gray-500 italic">
+        * Lưu ý: Giá trên chưa bao gồm VAT và có thể thay đổi tùy theo độ phức tạp của file vector hoặc chất liệu decal khách hàng yêu cầu.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16 bg-surface">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl font-bold mb-2 text-black italic">TẠI SAO CHỌN CATDECAL.VN?</h2>
+      <div class="w-12 h-1 bg-primary mb-8"></div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-copy">
+        <div>
+          <h3 class="font-bold text-lg mb-2 text-black">Độ chính xác tuyệt đối</h3>
+          <p class="text-sm text-gray-600">Sử dụng các dòng máy cắt Nhật Bản đời mới, đảm bảo đường cắt sắc nét, không bị răng cưa ngay cả với chi tiết nhỏ dưới 1mm.</p>
+        </div>
+        <div>
+          <h3 class="font-bold text-lg mb-2 text-black">Hỗ trợ File tận tâm</h3>
+          <p class="text-sm text-gray-600">Chúng tôi hỗ trợ kiểm tra file .AI, .Corel, .DXF miễn phí. Nếu bạn chưa có file vector, đội ngũ thiết kế sẽ hỗ trợ vẽ lại.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
