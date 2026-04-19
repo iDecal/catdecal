@@ -1,0 +1,104 @@
+---
+import Layout from '../../layouts/BaseLayout.astro';
+import Calculator from '../../components/Calculator.astro';
+
+const title = "Xưởng Cắt Decal Màu Gia Công - Giao Hàng Toàn Quốc | CatDecal.vn";
+const description = "Dịch vụ cắt chữ decal màu, logo, tem xe chuyên nghiệp. Hệ thống máy Mimaki Nhật Bản sắc nét. Nhận file online, gia công hỏa tốc và giao hàng tận nơi trên toàn quốc.";
+---
+
+<Layout title={title} description={description}>
+  <section class="bg-secondary py-20 px-4 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto relative z-10 text-center md:text-left">
+      <h1 class="text-4xl md:text-6xl font-black text-white mb-6 uppercase leading-tight">
+        Cắt Decal Màu <br/><span class="text-primary">Giao Hàng Toàn Quốc</span>
+      </h1>
+      <p class="text-gray-400 max-w-2xl text-lg mb-8">
+        Không còn rào cản địa lý. Bạn chỉ cần gửi file, chúng tôi gia công và gửi hàng đến tận tay bạn dù bạn ở bất kỳ tỉnh thành nào. Đảm bảo đóng gói chuẩn ngành decal, không gãy gập.
+      </p>
+      <div class="flex flex-wrap gap-4 justify-center md:justify-start">
+        <a href="#tinh-gia" class="bg-primary text-white px-8 py-4 rounded-xl font-bold hover:scale-105 transition-all">Tính giá & Đặt hàng</a>
+        <div class="flex items-center gap-2 text-white/80 border border-white/20 px-6 py-4 rounded-xl">
+          <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20"><path d="M8 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM15 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"/><path d="M3 4a1 1 0 00-1 1v10a1 1 0 001 1h1.05a2.5 2.5 0 014.9 0H10a1 1 0 001-1V5a1 1 0 00-1-1H3zM14 7a1 1 0 00-1 1v6.05a2.5 2.5 0 014.9 0H19a1 1 0 001-1V9a1 1 0 00-1-1h-5z"/></svg>
+          Hỗ trợ ship COD tỉnh
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 px-4 max-w-7xl mx-auto border-b border-divider">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div class="text-center">
+        <div class="text-primary text-3xl mb-2">⚡</div>
+        <h4 class="font-bold text-secondary">Nhận file 24/7</h4>
+        <p class="text-xs text-copy-muted">Xử lý file qua Zalo/Email nhanh chóng.</p>
+      </div>
+      <div class="text-center">
+        <div class="text-primary text-3xl mb-2">📦</div>
+        <h4 class="font-bold text-secondary">Đóng gói chuẩn</h4>
+        <p class="text-xs text-copy-muted">Sử dụng ống lõi cứng, chống móp méo.</p>
+      </div>
+      <div class="text-center">
+        <div class="text-primary text-3xl mb-2">🚚</div>
+        <h4 class="font-bold text-secondary">Giao hàng nhanh</h4>
+        <p class="text-xs text-copy-muted">Hợp tác cùng các đơn vị vận chuyển uy tín.</p>
+      </div>
+      <div class="text-center">
+        <div class="text-primary text-3xl mb-2">💰</div>
+        <h4 class="font-bold text-secondary">Thanh toán linh hoạt</h4>
+        <p class="text-xs text-copy-muted">Chuyển khoản hoặc thu hộ COD toàn quốc.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 px-4 bg-background-alt" id="tinh-gia">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-10">
+        <h2 class="text-3xl font-bold text-secondary italic uppercase tracking-tighter text-shadow">Công cụ báo giá trực tuyến</h2>
+        <p class="text-copy-muted mt-2">Dành cho khách hàng toàn quốc - Tự động quy đổi mét tới</p>
+      </div>
+      <Calculator />
+    </div>
+  </section>
+
+  <section class="py-20 px-4 max-w-5xl mx-auto">
+    <h2 class="text-3xl font-bold text-secondary text-center mb-16 uppercase">Quy trình làm việc từ xa</h2>
+    <div class="relative space-y-12 after:absolute after:inset-0 after:left-4 md:after:left-1/2 after:w-0.5 after:bg-divider after:-z-10">
+      
+      <div class="flex flex-col md:flex-row items-center gap-8">
+        <div class="flex-1 text-right hidden md:block">
+          <h4 class="font-bold text-lg text-secondary">Gửi File & Yêu Cầu</h4>
+          <p class="text-sm text-copy-muted">Gửi file vector qua Zalo để kỹ thuật kiểm tra khổ vật liệu.</p>
+        </div>
+        <div class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-bold z-10 shrink-0">1</div>
+        <div class="flex-1 md:hidden">
+            <h4 class="font-bold text-lg text-secondary">Gửi File & Yêu Cầu</h4>
+            <p class="text-sm text-copy-muted">Gửi file vector qua Zalo để kỹ thuật kiểm tra khổ vật liệu.</p>
+        </div>
+        <div class="flex-1"></div>
+      </div>
+
+      <div class="flex flex-col md:flex-row items-center gap-8">
+        <div class="flex-1"></div>
+        <div class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-bold z-10 shrink-0">2</div>
+        <div class="flex-1">
+          <h4 class="font-bold text-lg text-secondary">Xác Nhận & Gia Công</h4>
+          <p class="text-sm text-copy-muted">Sau khi chốt giá và thời gian, chúng tôi tiến hành cắt máy Mimaki ngay lập tức.</p>
+        </div>
+      </div>
+
+      <div class="flex flex-col md:flex-row items-center gap-8">
+        <div class="flex-1 text-right hidden md:block">
+          <h4 class="font-bold text-lg text-secondary">Đóng Gói & Giao Hàng</h4>
+          <p class="text-sm text-copy-muted">Sản phẩm được cuộn tròn trong lõi cứng, bọc màng co chống thấm và gửi cho đơn vị vận chuyển.</p>
+        </div>
+        <div class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-bold z-10 shrink-0">3</div>
+        <div class="flex-1 md:hidden">
+            <h4 class="font-bold text-lg text-secondary">Đóng Gói & Giao Hàng</h4>
+            <p class="text-sm text-copy-muted">Sản phẩm được cuộn tròn trong lõi cứng, bọc màng co chống thấm và gửi cho đơn vị vận chuyển.</p>
+        </div>
+        <div class="flex-1"></div>
+      </div>
+
+    </div>
+  </section>
+</Layout>
