@@ -1,41 +1,208 @@
 ---
 const services = [
-  { title: "Cắt Chữ & Logo", icon: "🏢", desc: "Dán kính văn phòng, cửa hiệu chuyên nghiệp." },
-  { title: "Tem Nhãn & Sticker", icon: "🏷️", desc: "Giải pháp cho Shop Online và quán Cafe." },
-  { title: "Decal Phản Quang", icon: "✨", desc: "Biển báo công trình và cá nhân hóa xe." },
-  { title: "Trang Trí Nội Thất", icon: "🏠", desc: "Làm mới không gian sống với chi phí rẻ." },
-  { title: "Cắt Gia Công", icon: "⚙️", desc: "Cắt decal lẻ lấy ngay, hỗ trợ file vector." }
+  {
+    id: "cat-decal-chu-logo",
+    title: "Cắt Decal Chữ & Logo",
+    subtitle: "Phân khúc Văn phòng & Cửa hàng",
+    desc: "Chuyên giải pháp dán kính mờ, slogan công ty và logo mặt tiền shop. Độ sắc nét cực cao.",
+    icon: "office-icon", // Bạn có thể thay bằng SVG
+    tags: ["Dán kính mờ", "Slogan", "Biển bảng"],
+    image: "/images/service-office.jpg" // Thêm ảnh minh họa nếu có
+  },
+  {
+    id: "tem-nhan-sticker",
+    title: "Tem Nhãn & Sticker",
+    subtitle: "Shop Online & F&B",
+    desc: "Cắt bế tem nhãn sản phẩm, sticker niêm phong, logo dán chai lọ trà sữa, mỹ phẩm lấy nhanh.",
+    icon: "tag-icon",
+    tags: ["Tem bế", "Sticker nhựa", "Nhãn chai"],
+  },
+  {
+    id: "decal-phan-quang",
+    title: "Decal Phản Quang",
+    subtitle: "Kỹ thuật & Cá nhân hóa",
+    desc: "Vật liệu 3M cao cấp cho biển báo công trình, tem xe hội nhóm và trang phục bảo hộ.",
+    icon: "reflect-icon",
+    tags: ["Phản quang 3M", "Tem xe", "Biển báo"],
+  },
+  {
+    id: "trang-tri-noi-that",
+    title: "Trang Trí Nội Thất",
+    subtitle: "Cá nhân & Gia đình",
+    desc: "Cắt decal dán tường, skin laptop, và film vân gỗ/vân đá làm mới đồ dùng nội thất.",
+    icon: "home-icon",
+    tags: ["Dán tường", "Skin Laptop", "Vân gỗ"],
+  },
+  {
+    id: "cat-decal-gia-cong",
+    title: "Cắt Decal Gia Công",
+    subtitle: "Đối tác B2B & Thợ thi công",
+    desc: "Cắt lẻ lấy ngay theo file vector qua Zalo. Hỗ trợ khổ lớn và cắt khuôn sơn stencil.",
+    icon: "settings-icon",
+    tags: ["Cắt lẻ", "Khổ lớn", "Hỗ trợ Zalo"],
+  }
 ];
 ---
 
-<div class="services-grid">
-  {services.map(s => (
-    <div class="card">
-      <span class="icon">{s.icon}</span>
-      <h3>{s.title}</h3>
-      <p>{s.desc}</p>
-      <a href={`/services/${s.title.toLowerCase()}`}>Xem chi tiết</a>
+<section class="services-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="badge">Dịch vụ thế mạnh</span>
+      <h2>Giải pháp cắt Decal chuyên nghiệp</h2>
+      <p>Chúng tôi tập trung vào độ chính xác, tốc độ và chất lượng vật liệu hàng đầu.</p>
     </div>
-  ))}
-</div>
+
+    <div class="services-grid">
+      {services.map((s, index) => (
+        <div class={`service-card ${index === 0 ? 'featured' : ''}`}>
+          <div class="card-content">
+            <span class="subtitle">{s.subtitle}</span>
+            <h3>{s.title}</h3>
+            <p>{s.desc}</p>
+            <div class="tags">
+              {s.tags.map(tag => <span>{tag}</span>)}
+            </div>
+            <a href={`/dich-vu/${s.id}`} class="learn-more">
+              Khám phá thêm 
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-7-7 7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
 
 <style>
+  .services-section {
+    padding: 80px 0;
+    background-color: var(--bg-light, #f8f9fa);
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  .badge {
+    color: var(--primary-color);
+    background: rgba(var(--primary-rgb, 230, 57, 70), 0.1);
+    padding: 6px 15px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  h2 {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    margin: 15px 0;
+    color: var(--text-heading);
+  }
+
+  /* Grid Layout theo phong cách hiện đại */
   .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-    padding: 40px 0;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
   }
-  .card {
-    padding: 20px;
-    border: 1px solid #eee;
-    border-radius: 12px;
-    transition: transform 0.3s;
-    background: var(--bg-card, #fff); /* Sử dụng biến CSS của bạn */
+
+  .service-card {
+    background: var(--bg-white, #ffffff);
+    border-radius: 16px;
+    padding: 40px;
+    border: 1px solid rgba(0,0,0,0.05);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
   }
-  .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+
+  .service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+    border-color: var(--primary-color);
   }
-  h3 { color: var(--primary-color); } /* Tự động lấy màu của bạn */
+
+  /* Thẻ đầu tiên nổi bật hơn (Featured Card) */
+  .featured {
+    grid-column: span 1;
+    background: var(--primary-color);
+  }
+
+  .featured h3, .featured p, .featured .subtitle, .featured .learn-more {
+    color: #ffffff !important;
+  }
+  
+  .featured .tags span {
+    background: rgba(255,255,255,0.2);
+    color: #fff;
+  }
+
+  .subtitle {
+    font-size: 0.9rem;
+    color: var(--primary-color);
+    font-weight: 500;
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  h3 {
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+  }
+
+  p {
+    color: var(--text-body);
+    line-height: 1.6;
+    margin-bottom: 25px;
+    font-size: 1rem;
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 30px;
+  }
+
+  .tags span {
+    font-size: 0.75rem;
+    background: #f0f0f0;
+    padding: 4px 12px;
+    border-radius: 4px;
+    color: #666;
+  }
+
+  .learn-more {
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    color: var(--primary-color);
+    transition: gap 0.3s;
+  }
+
+  .learn-more:hover {
+    gap: 12px;
+  }
+
+  /* Mobile */
+  @media (max-width: 768px) {
+    .services-grid {
+      grid-template-columns: 1fr;
+    }
+    h2 { font-size: 2rem; }
+  }
 </style>
