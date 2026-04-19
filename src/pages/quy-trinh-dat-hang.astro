@@ -1,0 +1,106 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const steps = [
+  {
+    step: "01",
+    title: "Gửi File & Tư Vấn",
+    desc: "Khách hàng gửi file (AI, PDF, CDR) qua Zalo hoặc Website. Kỹ thuật viên kiểm tra độ sắc nét và tư vấn vật liệu phù hợp."
+  },
+  {
+    step: "02",
+    title: "Chốt Đơn & Thanh Toán",
+    desc: "Xác nhận số lượng, kích thước và đơn giá. Khách hàng thanh toán chuyển khoản hoặc đặt cọc cho các đơn hàng gia công riêng."
+  },
+  {
+    step: "03",
+    title: "Sản Xuất & Đóng Gói",
+    desc: "Tiến hành cắt bằng máy cao cấp. Decal được cuộn tròn và lồng vào ống nhựa/lõi cứng để chống gãy gập trong quá trình vận chuyển."
+  },
+  {
+    step: "04",
+    title: "Giao Hàng Toàn Quốc",
+    desc: "Hàng được gửi qua các đơn vị vận chuyển uy tín (GHTK, Viettel Post). Khách hàng nhận mã vận đơn để theo dõi hành trình."
+  }
+];
+---
+
+<BaseLayout title="Quy trình đặt hàng & Giao hàng toàn quốc - CatDecal.vn">
+  
+  <section class="bg-primary pt-20 pb-16 text-center">
+    <div class="container mx-auto px-4">
+      <h1 class="text-3xl md:text-4xl font-heading font-extrabold text-secondary mb-4 italic">QUY TRÌNH ĐẶT HÀNG & GIAO NHẬN</h1>
+      <p class="text-white/60 max-w-2xl mx-auto">Chúng tôi tối ưu hóa quy trình Online để phục vụ khách hàng trên khắp 63 tỉnh thành một cách nhanh chóng và an toàn nhất.</p>
+    </div>
+  </section>
+
+  <section class="py-20 bg-background">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {steps.map((s) => (
+          <div class="relative p-8 rounded-2xl border border-slate-100 bg-slate-50 hover:border-secondary transition-colors group">
+            <span class="text-5xl font-black text-primary/5 absolute -top-4 left-4 group-hover:text-secondary/20">{s.step}</span>
+            <h3 class="text-xl font-heading font-bold text-primary mb-4 relative z-10">{s.title}</h3>
+            <p class="text-sm text-copy-muted leading-relaxed relative z-10">{s.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-primary">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col md:flex-row items-center gap-12">
+        <div class="md:w-1/2">
+          <img 
+            src="https://images.unsplash.com/photo-1566576721346-d4a3b4eaad5b?q=80&w=800&auto=format&fit=crop" 
+            alt="Đóng gói decal" 
+            class="rounded-3xl shadow-2xl grayscale hover:grayscale-0 transition-all duration-500"
+          />
+        </div>
+        <div class="md:w-1/2 space-y-8">
+          <h2 class="text-2xl md:text-4xl font-heading font-bold text-secondary italic">CAM KẾT VẬN CHUYỂN AN TOÀN</h2>
+          
+          <div class="space-y-6">
+            <div class="flex gap-4">
+              <div class="w-12 h-12 bg-secondary/20 rounded-xl flex items-center justify-center shrink-0">
+                <svg class="w-6 h-6 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+              </div>
+              <div>
+                <h4 class="text-white font-bold mb-1">Đóng gói chống gãy gập</h4>
+                <p class="text-white/60 text-sm">Decal được bảo vệ trong lõi cứng chuyên dụng, chịu được va đập mạnh trong quá trình vận chuyển xa.</p>
+              </div>
+            </div>
+
+            <div class="flex gap-4">
+              <div class="w-12 h-12 bg-secondary/20 rounded-xl flex items-center justify-center shrink-0">
+                <svg class="w-6 h-6 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+              </div>
+              <div>
+                <h4 class="text-white font-bold mb-1">Kiểm tra hàng trước khi nhận</h4>
+                <p class="text-white/60 text-sm">Chúng tôi khuyến khích khách hàng kiểm tra đúng mẫu mã, màu sắc và số lượng trước khi thanh toán (COD).</p>
+              </div>
+            </div>
+
+            <div class="flex gap-4">
+              <div class="w-12 h-12 bg-secondary/20 rounded-xl flex items-center justify-center shrink-0">
+                <svg class="w-6 h-6 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+              </div>
+              <div>
+                <h4 class="text-white font-bold mb-1">Hỗ trợ thiết kế từ xa</h4>
+                <p class="text-white/60 text-sm">Bạn chỉ cần gửi ý tưởng, chúng tôi sẽ vẽ lại file vector và gửi mẫu duyệt online trước khi sản xuất.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-6">
+            <a href="https://zalo.me/your-number" class="inline-flex items-center gap-3 bg-secondary text-primary font-black px-8 py-4 rounded-xl hover:brightness-110 transition-all">
+              ĐẶT HÀNG NGAY TOÀN QUỐC
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M17 8l4 4m0 0l-4 4m4-4H3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
