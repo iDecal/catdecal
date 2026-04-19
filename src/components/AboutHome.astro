@@ -1,68 +1,28 @@
 ---
+const steps = [
+  { n: "01", title: "Gửi File & Tư vấn", desc: "Tiếp nhận file Vector (AI, Corel). Hỗ trợ fix lỗi file hoàn toàn miễn phí." },
+  { n: "02", title: "Báo Giá & Cọc", desc: "Minh bạch chi phí vật liệu và công cắt. Không phát sinh phí ẩn." },
+  { n: "03", title: "Gia Công Siêu Tốc", desc: "Hệ thống máy cắt Nhật Bản đảm bảo đường nét sắc sảo, không răng cưa." },
+  { n: "04", title: "Đóng Gói Chuyên Nghiệp", desc: "Cuộn tròn trong ống PVC cứng, đảm bảo decal không bị nhăn gãy khi ship xa." }
+];
 ---
-<section class="py-24 bg-white overflow-hidden">
-  <div class="container mx-auto px-4">
-    <div class="flex flex-col lg:flex-row items-center gap-16">
-      
-      <div class="lg:w-1/2 relative">
-        <div class="absolute -top-4 -left-4 w-24 h-24 bg-secondary rounded-2xl z-0"></div>
-        <div class="relative z-10 rounded-[2rem] overflow-hidden shadow-2xl">
-          <img 
-            src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=800&auto=format&fit=crop" 
-            alt="Máy cắt decal cao cấp" 
-            class="w-full h-[450px] object-cover grayscale hover:grayscale-0 transition-all duration-700"
-          />
-        </div>
-        <div class="absolute -bottom-6 -right-6 bg-primary text-secondary p-8 rounded-2xl shadow-xl hidden md:block">
-          <div class="text-4xl font-black italic">10+</div>
-          <div class="text-[10px] font-bold uppercase tracking-widest mt-1 text-white/60">Năm kinh nghiệm</div>
-        </div>
-      </div>
+<section class="py-24 bg-white">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl font-black italic uppercase text-black">Quy trình chuyên nghiệp</h2>
+      <div class="w-20 h-1.5 bg-primary mx-auto mt-4"></div>
+    </div>
 
-      <div class="lg:w-1/2 space-y-8">
-        <div>
-          <h2 class="text-2xl md:text-4xl font-heading font-extrabold text-primary italic uppercase leading-tight">
-            Xưởng Gia Công Decal <br /> 
-            <span class="text-secondary bg-primary px-2">Tiêu Chuẩn Công Nghiệp</span>
-          </h2>
-          <div class="h-1.5 w-20 bg-secondary mt-4"></div>
-        </div>
-
-        <p class="text-lg text-copy-muted leading-relaxed">
-          Tại <span class="text-primary font-bold">CatDecal.vn</span>, chúng tôi không chỉ cung cấp dịch vụ cắt decal đơn thuần. Chúng tôi mang đến giải pháp gia công chính xác tuyệt đối bằng hệ thống máy cắt Nhật Bản hiện đại nhất.
-        </p>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div class="flex items-start gap-4">
-            <div class="w-10 h-10 bg-slate-100 rounded-lg flex items-center justify-center shrink-0">
-              <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke-width="2" stroke-linecap="round"></path></svg>
-            </div>
-            <div>
-              <h4 class="font-bold text-primary italic">Chính xác 0.1mm</h4>
-              <p class="text-xs text-copy-muted">Đảm bảo mọi chi tiết nhỏ nhất đều sắc nét, không răng cưa.</p>
-            </div>
-          </div>
-
-          <div class="flex items-start gap-4">
-            <div class="w-10 h-10 bg-slate-100 rounded-lg flex items-center justify-center shrink-0">
-              <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-width="2" stroke-linecap="round"></path></svg>
-            </div>
-            <div>
-              <h4 class="font-bold text-primary italic">Tốc độ hỏa tốc</h4>
-              <p class="text-xs text-copy-muted">Nhận file và xử lý ngay trong ngày, giao hàng toàn quốc cực nhanh.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="pt-4">
-          <p class="text-sm italic text-primary/60 mb-6">"Chúng tôi hiểu rằng mỗi bản cắt là bộ mặt thương hiệu của bạn. Đó là lý do CatDecal luôn tỉ mỉ trong từng công đoạn đóng gói và vận chuyển."</p>
-          <a href="/ve-chuong-toi" class="inline-flex items-center gap-2 text-sm font-black uppercase tracking-widest text-primary border-b-2 border-secondary pb-1 hover:text-secondary transition-colors">
-            Tìm hiểu thêm về chúng tôi 
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M17 8l4 4m0 0l-4 4m4-4H3" stroke-width="2"></path></svg>
-          </a>
-        </div>
-      </div>
-
-    </div>
-  </div>
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+      {steps.map(step => (
+        <div class="relative group">
+          <span class="text-6xl font-black text-slate-100 absolute -top-10 -left-4 group-hover:text-primary/10 transition-colors">{step.n}</span>
+          <div class="relative z-10">
+            <h3 class="text-lg font-bold text-black mb-3 italic uppercase">{step.title}</h3>
+            <p class="text-sm text-gray-500 leading-relaxed">{step.desc}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
 </section>
