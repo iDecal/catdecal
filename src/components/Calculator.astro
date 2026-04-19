@@ -1,5 +1,8 @@
 ---
+// Nhận props để biết đang ở trang dịch vụ nào
+const { defaultMaterial = "", serviceName = "Trang chủ" } = Astro.props;
 ---
+
 <section id="calculator" class="py-24 bg-white">
   <div class="container mx-auto px-4">
     <div class="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-5 bg-primary rounded-[2.5rem] shadow-2xl overflow-hidden">
@@ -9,10 +12,10 @@
           <div class="col-span-2 space-y-2">
             <label class="text-[10px] font-black text-slate-400 uppercase tracking-widest">Loại vật liệu</label>
             <select id="mat" class="w-full p-4 rounded-xl bg-slate-50 border-none outline-none focus:ring-2 focus:ring-secondary transition-all">
-              <option value="120000">Decal Mờ (Văn phòng)</option>
-              <option value="450000">Decal Phản Quang 3M</option>
-              <option value="180000">Decal Trong/Sữa</option>
-              <option value="150000">Decal Màu (Thường)</option>
+              <option value="120000" selected={defaultMaterial === 'mo'}>Decal Mờ (Văn phòng)</option>
+              <option value="450000" selected={defaultMaterial === 'phanquang'}>Decal Phản Quang 3M</option>
+              <option value="180000" selected={defaultMaterial === 'trong'}>Decal Trong/Sữa</option>
+              <option value="150000" selected={defaultMaterial === 'mau'}>Decal Màu (Thường)</option>
             </select>
           </div>
           <div class="space-y-2">
@@ -40,17 +43,20 @@
             <span class="text-white/40 text-[10px] uppercase block mb-1">Tổng cộng ước tính:</span>
             <div id="price" class="text-5xl font-black text-secondary tracking-tighter">0đ</div>
           </div>
-          <div class="border-2 border-dashed border-white/10 rounded-2xl p-6 text-center group relative hover:border-secondary transition-all cursor-pointer">
+          
+          <div class="border-2 border-dashed border-white/10 rounded-2xl p-6 text-center group relative hover:border-secondary transition-all cursor-pointer mb-6">
             <input type="file" id="fUp" class="absolute inset-0 opacity-0 cursor-pointer" />
             <div class="space-y-2">
-              <svg class="w-8 h-8 mx-auto text-white/20 group-hover:text-secondary transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-              <p class="text-xs font-bold text-white uppercase tracking-tight italic">Tải file AI / PDF / CDR</p>
+              <svg class="w-8 h-8 mx-auto text-white/20 group-hover:text-secondary transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" stroke-width="2" stroke-linecap="round"></path></svg>
+              <p class="text-xs font-bold text-white uppercase tracking-tight italic">Tải file thiết kế</p>
             </div>
             <p id="fName" class="text-[10px] text-secondary mt-3 italic truncate"></p>
           </div>
-          <button class="mt-8 w-full bg-white text-primary font-black p-4 rounded-xl hover:bg-secondary transition-all flex items-center justify-center gap-2">
+
+          <button id="sendZalo" data-service={serviceName} class="w-full bg-white text-primary font-black p-4 rounded-xl hover:bg-secondary transition-all flex items-center justify-center gap-2 uppercase text-sm">
             GỬI ĐƠN QUA ZALO
           </button>
+          <p class="text-[10px] text-white/30 text-center mt-4 italic">Hệ thống sẽ soạn sẵn tin nhắn báo giá gửi đến Zalo của xưởng.</p>
         </div>
       </div>
     </div>
@@ -63,29 +69,49 @@
   const resBox = document.getElementById('resBox');
   const fUp = document.getElementById('fUp') as HTMLInputElement;
   const fName = document.getElementById('fName');
+  const sendZalo = document.getElementById('sendZalo');
 
+  let currentTotal = "0đ";
+
+  // Hiển thị tên file khi upload
   fUp?.addEventListener('change', (e) => {
     const file = (e.target as HTMLInputElement).files?.[0];
-    if (file && fName) {
-        fName.innerText = `📄 Đã chọn: ${file.name}`;
-    }
+    if (file && fName) fName.innerText = `📄 Đã chọn: ${file.name}`;
   });
 
+  // Logic tính giá
   btn?.addEventListener('click', () => {
-    const rate = parseFloat((document.getElementById('mat') as HTMLSelectElement).value);
+    const matSelect = document.getElementById('mat') as HTMLSelectElement;
+    const rate = parseFloat(matSelect.value);
     const l = parseFloat((document.getElementById('L') as HTMLInputElement).value) || 0;
     const w = parseFloat((document.getElementById('W') as HTMLInputElement).value) || 0;
     const q = parseFloat((document.getElementById('Qty') as HTMLInputElement).value) || 1;
     
     let total = (l * w / 10000) * rate * q;
-    
-    // Giá sàn 30k cho các đơn quá nhỏ
     if (total > 0 && total < 30000) total = 30000;
 
     if (l > 0 && w > 0) {
-      price!.innerText = new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(total);
+      currentTotal = new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(total);
+      price!.innerText = currentTotal;
       resBox?.classList.remove('hidden');
       resBox?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    } else {
+      alert("Vui lòng nhập đầy đủ Kích thước!");
     }
+  });
+
+  // Gửi nội dung sang Zalo
+  sendZalo?.addEventListener('click', () => {
+    const matText = (document.getElementById('mat') as HTMLSelectElement).selectedOptions[0].text;
+    const l = (document.getElementById('L') as HTMLInputElement).value;
+    const w = (document.getElementById('W') as HTMLInputElement).value;
+    const q = (document.getElementById('Qty') as HTMLInputElement).value;
+    const service = sendZalo.getAttribute('data-service');
+    const fileName = fName?.innerText || "Chưa có file";
+
+    const phone = "0900000000"; // THAY SỐ ZALO CỦA BẠN VÀO ĐÂY
+    const message = `Chào CatDecal, mình cần đặt hàng:\n- Dịch vụ: ${service}\n- Vật liệu: ${matText}\n- KT: ${l}x${w}cm (SL: ${q})\n- Giá dự kiến: ${currentTotal}\n- File: ${fileName}`;
+    
+    window.open(`https://zalo.me/${phone}?text=${encodeURIComponent(message)}`, '_blank');
   });
 </script>
