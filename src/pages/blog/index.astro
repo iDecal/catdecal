@@ -1,0 +1,123 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const pageTitle = "Chia sẻ kinh nghiệm gia công & kỹ thuật Decal - catdecal.vn";
+const pageDescription = "Tổng hợp các bài viết hướng dẫn chuẩn bị file vector, phân biệt chất liệu decal và vận chuyển toàn quốc.";
+
+const posts = [
+  {
+    title: "Cách chuẩn bị file vector chuẩn cho máy cắt decal",
+    category: "Ky-thuat",
+    categoryName: "Kỹ thuật",
+    excerpt: "Làm thế nào để đường cắt sắc nét, không bị răng cưa? Hướng dẫn chi tiết cách xuất file .AI và .Corel chuẩn máy cắt.",
+    image: "https://images.unsplash.com/photo-1572044162444-ad60f128bde7?auto=format&fit=crop&q=80&w=800",
+    date: "18/04/2026",
+    link: "/blog/chuan-bi-file-vector"
+  },
+  {
+    title: "Quy trình đóng gói decal gửi tỉnh đảm bảo không gãy nếp",
+    category: "Van-chuyen",
+    categoryName: "Vận chuyển",
+    excerpt: "Khám phá cách chúng tôi sử dụng ống nhựa PVC và màng bảo vệ để decal luôn hoàn hảo khi giao tận nơi toàn quốc.",
+    image: "https://images.unsplash.com/photo-1566197730469-510629d8a042?auto=format&fit=crop&q=80&w=800",
+    date: "15/04/2026",
+    link: "/blog/quy-trinh-dong-goi"
+  },
+  {
+    title: "Phân biệt Decal sữa, Decal trong và Decal mờ dán kính",
+    category: "Chat-lieu",
+    categoryName: "Chất liệu",
+    excerpt: "Mỗi loại decal có đặc tính và ứng dụng riêng. Bài viết này giúp bạn chọn đúng loại vật liệu cho nhu cầu của mình.",
+    image: "https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&q=80&w=800",
+    date: "12/04/2026",
+    link: "/blog/phan-biet-chat-lieu"
+  }
+];
+
+const categories = [
+  { name: "Tất cả", slug: "all" },
+  { name: "Kỹ thuật", slug: "Ky-thuat" },
+  { name: "Chất liệu", slug: "Chat-lieu" },
+  { name: "Vận chuyển", slug: "Van-chuyen" }
+];
+---
+
+<BaseLayout title={pageTitle} description={pageDescription}>
+  <section class="bg-[#F5F5F5] py-16 border-b border-divider">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h1 class="text-3xl md:text-5xl font-bold text-black mb-4 tracking-tighter">Kinh nghiệm gia công</h1>
+      <div class="w-20 h-1 bg-primary mx-auto"></div>
+    </div>
+  </section>
+
+  <section class="py-12 bg-white">
+    <div class="max-w-7xl mx-auto px-4">
+      
+      <div class="flex flex-wrap justify-center gap-3 mb-16" id="filter-buttons">
+        {categories.map((cat) => (
+          <button 
+            data-filter={cat.slug}
+            class="filter-btn px-6 py-2 rounded-full text-sm font-bold border border-divider text-gray-500 hover:border-black hover:text-black transition-all"
+          >
+            {cat.name}
+          </button>
+        ))}
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10" id="blog-grid">
+        {posts.map((post) => (
+          <article class="blog-post flex flex-col transition-all duration-300" data-category={post.category}>
+            <a href={post.link} class="relative aspect-[16/10] overflow-hidden rounded-2xl border border-divider mb-6 block">
+              <img src={post.image} alt={post.title} class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+            </a>
+            <div class="px-2">
+              <div class="text-xs font-bold text-primary mb-2">{post.categoryName}</div>
+              <h2 class="text-xl text-black mb-3 leading-tight hover:text-primary">
+                <a href={post.link}>{post.title}</a>
+              </h2>
+              <p class="text-gray-500 text-sm line-clamp-2">{post.excerpt}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  // Script xử lý lọc bài viết
+  const buttons = document.querySelectorAll('.filter-btn');
+  const posts = document.querySelectorAll('.blog-post');
+
+  // Mặc định chọn nút "Tất cả"
+  document.querySelector('[data-filter="all"]')?.classList.add('bg-black', 'text-white', 'border-black');
+
+  buttons.forEach(button => {
+    button.addEventListener('click', () => {
+      const filter = button.getAttribute('data-filter');
+
+      // Cập nhật UI nút bấm
+      buttons.forEach(btn => btn.classList.remove('bg-black', 'text-white', 'border-black'));
+      button.classList.add('bg-black', 'text-white', 'border-black');
+
+      // Lọc bài viết
+      posts.forEach(post => {
+        const postCategory = post.getAttribute('data-category');
+        if (filter === 'all' || postCategory === filter) {
+          (post as HTMLElement).style.display = 'flex';
+          setTimeout(() => (post as HTMLElement).style.opacity = '1', 10);
+        } else {
+          (post as HTMLElement).style.opacity = '0';
+          setTimeout(() => (post as HTMLElement).style.display = 'none', 300);
+        }
+      });
+    });
+  });
+</script>
+
+<style>
+  .blog-post {
+    opacity: 1;
+    transition: opacity 0.3s ease;
+  }
+</style>
