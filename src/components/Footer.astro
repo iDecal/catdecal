@@ -30,17 +30,20 @@ const socials = [
 <footer class="bg-[#f0f9ff] text-slate-600 pt-16 md:pt-24 pb-12 border-t border-slate-100">
   <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-12 lg:gap-20">
     
-    <div class="footer-column mb-4 md:mb-0">
-      <h2 class="text-3xl font-black text-slate-900 mb-6 tracking-tighter">catdecal<span class="text-secondary">.vn</span></h2>
-      <p class="text-[15px] md:text-sm leading-7 mb-6 text-slate-400">
-        Hệ sinh thái iDecal - Xưởng gia công cắt decal và interior film chuyên nghiệp tại Quy Nhơn.
+    <div class="footer-column mb-6 md:mb-0">
+      <h2 class="text-4xl md:text-3xl font-black text-slate-900 mb-6 tracking-tighter relative inline-block">
+        catdecal<span class="text-secondary">.vn</span>
+        <div class="hidden md:block absolute -bottom-2 left-0 w-12 h-1 bg-secondary rounded-full"></div>
+      </h2>
+      <p class="text-[15px] md:text-sm leading-7 mb-8 text-slate-400 mt-4">
+        Hệ sinh thái iDecal - Xưởng gia công cắt decal chuyên nghiệp - Giao hàng toàn quốc.
       </p>
       
       <div class="flex gap-3 md:gap-4">
         {socials.map(social => (
           <a 
             href={social.url} 
-            class="social-icon w-11 h-11 md:w-10 md:h-10 bg-white rounded-xl flex items-center justify-center transition-all shadow-sm border border-slate-50 p-2.5"
+            class="social-icon w-12 h-12 md:w-10 md:h-10 bg-white rounded-xl flex items-center justify-center transition-all shadow-sm border border-slate-50 p-2.5"
             style={`--brand-color: ${social.color}`}
             aria-label={social.name}
           >
@@ -51,45 +54,54 @@ const socials = [
     </div>
 
     <div class="footer-accordion border-b border-slate-200/50 md:border-0">
-      <button class="w-full flex justify-between items-center py-4 md:py-0 md:cursor-default accordion-btn">
-        <h3 class="text-lg md:text-[11px] font-bold md:uppercase md:tracking-[0.2em] text-slate-900">Dịch vụ chính</h3>
+      <button class="w-full flex justify-between items-center py-5 md:py-0 md:cursor-default accordion-btn">
+        <div class="relative inline-block">
+          <h3 class="text-xl md:text-[13px] font-bold md:uppercase md:tracking-[0.2em] text-slate-900">Dịch vụ chính</h3>
+          <div class="hidden md:block absolute -bottom-3 left-0 w-8 h-1 bg-secondary rounded-full"></div>
+        </div>
         <span class="md:hidden text-2xl font-light text-primary">+</span>
       </button>
-      <div class="footer-content hidden md:block mt-6 md:mt-8 pb-3 md:pb-0">
-        <ul class="text-[16px] md:text-sm space-y-3 md:space-y-5">
-          <li><a href="/dich-vu/cat-decal-mau" class="hover:text-secondary transition-colors py-1.5 block md:py-0">Cắt Decal quảng cáo</a></li>
-          <li><a href="/dich-vu/cat-decal-mo" class="hover:text-secondary transition-colors py-1.5 block md:py-0">Cắt Decal mờ vách kính</a></li>
-          <li><a href="/dich-vu/cat-be-tem-nhan" class="hover:text-secondary transition-colors py-1.5 block md:py-0">Bế tem nhãn sản phẩm</a></li>
-          <li><a href="/dich-vu/cat-decal-phan-quang" class="hover:text-secondary transition-colors py-1.5 block md:py-0">Cắt Decal phản quang</a></li>
+      <div class="footer-content hidden md:block mt-6 md:mt-10 pb-4 md:pb-0">
+        <ul class="text-[17px] md:text-sm space-y-4 md:space-y-5">
+          <li><a href="/dich-vu/cat-decal-mau" class="hover:text-secondary transition-colors py-1 block md:py-0">Cắt Decal quảng cáo</a></li>
+          <li><a href="/dich-vu/cat-decal-mo" class="hover:text-secondary transition-colors py-1 block md:py-0">Cắt Decal mờ vách kính</a></li>
+          <li><a href="/dich-vu/cat-be-tem-nhan" class="hover:text-secondary transition-colors py-1 block md:py-0">Bế tem nhãn sản phẩm</a></li>
+          <li><a href="/dich-vu/cat-decal-phan-quang" class="hover:text-secondary transition-colors py-1 block md:py-0">Cắt Decal phản quang</a></li>
         </ul>
       </div>
     </div>
 
     <div class="footer-accordion border-b border-slate-200/50 md:border-0">
-      <button class="w-full flex justify-between items-center py-4 md:py-0 md:cursor-default accordion-btn">
-        <h3 class="text-lg md:text-[11px] font-bold md:uppercase md:tracking-[0.2em] text-slate-900">Thông tin hỗ trợ</h3>
+      <button class="w-full flex justify-between items-center py-5 md:py-0 md:cursor-default accordion-btn">
+        <div class="relative inline-block">
+          <h3 class="text-xl md:text-[13px] font-bold md:uppercase md:tracking-[0.2em] text-slate-900">Thông tin hỗ trợ</h3>
+          <div class="hidden md:block absolute -bottom-3 left-0 w-8 h-1 bg-secondary rounded-full"></div>
+        </div>
         <span class="md:hidden text-2xl font-light text-primary">+</span>
       </button>
-      <div class="footer-content hidden md:block mt-6 md:mt-8 pb-3 md:pb-0">
-        <ul class="text-[16px] md:text-sm space-y-3 md:space-y-5">
-          <li><a href="/blog" class="hover:text-secondary transition-colors py-1.5 block md:py-0">Blog kiến thức</a></li>
-          <li><a href="/quy-trinh-dat-hang" class="hover:text-secondary transition-colors py-1.5 block md:py-0">Quy trình đặt hàng</a></li>
-          <li><a href="/giao-hang-thanh-toan" class="hover:text-secondary transition-colors py-1.5 block md:py-0">Giao hàng & Thanh toán</a></li>
-          <li><a href="#" class="hover:text-secondary transition-colors py-1.5 block md:py-0">Chính sách dịch vụ</a></li>
+      <div class="footer-content hidden md:block mt-6 md:mt-10 pb-4 md:pb-0">
+        <ul class="text-[17px] md:text-sm space-y-4 md:space-y-5">
+          <li><a href="/blog" class="hover:text-secondary transition-colors py-1 block md:py-0">Blog kiến thức</a></li>
+          <li><a href="/quy-trinh-dat-hang" class="hover:text-secondary transition-colors py-1 block md:py-0">Quy trình đặt hàng</a></li>
+          <li><a href="/giao-hang-thanh-toan" class="hover:text-secondary transition-colors py-1 block md:py-0">Giao hàng & Thanh toán</a></li>
+          <li><a href="#" class="hover:text-secondary transition-colors py-1 block md:py-0">Chính sách dịch vụ</a></li>
         </ul>
       </div>
     </div>
 
     <div class="footer-accordion md:border-0">
-      <button class="w-full flex justify-between items-center py-4 md:py-0 md:cursor-default accordion-btn">
-        <h3 class="text-lg md:text-[11px] font-bold md:uppercase md:tracking-[0.2em] text-slate-900">Liên hệ</h3>
+      <button class="w-full flex justify-between items-center py-5 md:py-0 md:cursor-default accordion-btn">
+        <div class="relative inline-block">
+          <h3 class="text-xl md:text-[13px] font-bold md:uppercase md:tracking-[0.2em] text-slate-900">Liên hệ</h3>
+          <div class="hidden md:block absolute -bottom-3 left-0 w-8 h-1 bg-secondary rounded-full"></div>
+        </div>
         <span class="md:hidden text-2xl font-light text-primary">+</span>
       </button>
-      <div class="footer-content hidden md:block mt-6 md:mt-8 pb-6 md:pb-0">
-        <p class="text-secondary font-black text-3xl md:text-2xl mb-1 md:mb-2 tracking-tight">0862 208 108</p>
-        <p class="text-slate-400 text-[13px] md:text-[11px] tracking-wide mb-5">Zalo hỗ trợ 24/7</p>
-        <div class="text-[15px] md:text-sm text-slate-500 leading-relaxed">
-          <p class="font-bold text-slate-900 mb-0.5">Xưởng sản xuất:</p>
+      <div class="footer-content hidden md:block mt-6 md:mt-10 pb-8 md:pb-0">
+        <p class="text-secondary font-black text-4xl md:text-2xl mb-2 tracking-tight">0862 208 108</p>
+        <p class="text-slate-400 text-[14px] md:text-[11px] tracking-wide mb-6">Zalo hỗ trợ 24/7</p>
+        <div class="text-[16px] md:text-sm text-slate-500 leading-relaxed">
+          <p class="font-bold text-slate-900 mb-1">Xưởng sản xuất:</p>
           <p>TP. Quy Nhơn, Tỉnh Bình Định</p>
         </div>
       </div>
@@ -97,9 +109,9 @@ const socials = [
 
   </div>
   
-  <div class="max-w-7xl mx-auto px-6 mt-12 md:mt-24 pt-8 border-t border-slate-200/40 text-center">
-    <p class="text-slate-300 text-[10px] font-medium tracking-[0.3em] uppercase">
-      © 2026 CATDECAL.VN — iDecal Ecosystem
+  <div class="max-w-7xl mx-auto px-6 mt-16 md:mt-24 pt-8 border-t border-slate-200/40 text-center">
+    <p class="text-slate-300 text-[11px] font-medium tracking-[0.3em] uppercase">
+      © 2026 CATDECAL.VN — iDecal
     </p>
   </div>
 </footer>
