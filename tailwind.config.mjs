@@ -5,7 +5,7 @@ export default {
 		extend: {
 			colors: {
 				// Đổi Đen thành Primary (Chủ đạo)
-				primary: '#0F172A',   
+				primary: '#EB4C4C',   
 				
 				// Đổi Vàng chanh thành Secondary (Màu nhấn cho button, link)
 				secondary: '#DB1A1A', 
