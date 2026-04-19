@@ -1,42 +1,65 @@
-<footer class="bg-[#2D3436] text-white pt-12 pb-6 font-body">
-  <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
-    
-    <div>
-      <h2 class="text-2xl font-bold text-[#EB4C4C] mb-4">catdecal.vn</h2>
-      <p class="text-gray-400 text-sm leading-relaxed">
-        Xưởng gia công cắt decal chuyên nghiệp. Sử dụng công nghệ cắt hiện đại, đảm bảo độ chính xác tuyệt đối trên mọi chất liệu.
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Chính sách Giao hàng & Thanh toán - catdecal.vn">
+  <Header />
+  
+  <main class="bg-background min-h-screen pb-20">
+    <div class="bg-secondary py-16 px-4 text-center">
+      <h1 class="text-3xl md:text-4xl font-heading font-bold text-white mb-4">Giao hàng & Thanh toán</h1>
+      <p class="text-gray-400 max-w-2xl mx-auto italic">
+        "Gói hàng bằng tâm - Giao hàng bằng tốc"
       </p>
     </div>
 
-    <div>
-      <h3 class="text-lg font-bold mb-4 border-l-4 border-[#EB4C4C] pl-2">Dịch vụ</h3>
-      <ul class="text-gray-400 text-sm space-y-2">
-        <li><a href="#" class="hover:text-white">Cắt Decal màu quảng cáo</a></li>
-        <li><a href="#" class="hover:text-white">Cắt Decal mờ vách kính</a></li>
-        <li><a href="#" class="hover:text-white">Bế tem nhãn sản phẩm</a></li>
-        <li><a href="#" class="hover:text-white">Cắt Decal phản quang xe</a></li>
-      </ul>
-    </div>
+    <div class="max-w-5xl mx-auto px-4 -mt-10">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        
+        <div class="bg-surface p-8 rounded-custom shadow-soft border-t-4 border-primary transition-transform hover:scale-[1.02]">
+          <div class="flex items-center gap-4 mb-6">
+            <div class="bg-primary/10 p-3 rounded-full text-primary">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg>
+            </div>
+            <h2 class="text-xl font-bold text-secondary">Quy chuẩn đóng gói</h2>
+          </div>
+          <ul class="space-y-4 text-copy">
+            <li class="flex items-start gap-2">
+              <span class="text-primary font-bold">✓</span>
+              <span>Sử dụng <strong>ống nhựa PVC</strong> hoặc ống giấy cứng chịu lực cao.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-primary font-bold">✓</span>
+              <span>Decal được cuộn mặt lưng ra ngoài giúp <strong>bảo vệ đường cắt</strong> tuyệt đối.</span>
+            </li>
+          </ul>
+        </div>
 
-    <div>
-      <h3 class="text-lg font-bold mb-4 border-l-4 border-[#EB4C4C] pl-2">Hỗ trợ khách hàng</h3>
-      <ul class="text-gray-400 text-sm space-y-2">
-        <li><a href="#" class="hover:text-white">Quy trình đóng gói gửi tỉnh</a></li>
-        <li><a href="#" class="hover:text-white">Hướng dẫn chuẩn bị file vector</a></li>
-        <li><a href="#" class="hover:text-white">Chính sách hoàn tiền/đổi trả</a></li>
-      </ul>
-    </div>
+        <div class="bg-surface p-8 rounded-custom shadow-soft border-t-4 border-primary transition-transform hover:scale-[1.02]">
+          <div class="flex items-center gap-4 mb-6">
+            <div class="bg-primary/10 p-3 rounded-full text-primary">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+            </div>
+            <h2 class="text-xl font-bold text-secondary">Vận chuyển toàn quốc</h2>
+          </div>
+          <div class="space-y-4 text-copy">
+            <p><strong>Chành xe:</strong> Gửi đi từ Bình Định, nhận ngay sau 6-12 tiếng (Khu vực miền Trung/Tây Nguyên).</p>
+            <p><strong>Bưu cục:</strong> GHTK, Viettel Post cho các đơn hàng lẻ tận nhà.</p>
+          </div>
+        </div>
 
-    <div>
-      <h3 class="text-lg font-bold mb-4 border-l-4 border-[#EB4C4C] pl-2">Kết nối</h3>
-      <p class="text-[#EB4C4C] font-bold text-xl mb-2">09xx xxx xxx</p>
-      <p class="text-gray-400 text-sm">Zalo làm việc: 09xx xxx xxx</p>
-      <p class="text-gray-400 text-sm mt-2">Địa chỉ: Quy Nhơn, Bình Định</p>
-    </div>
+        </div>
 
-  </div>
-  
-  <div class="max-w-7xl mx-auto px-4 mt-12 pt-6 border-t border-gray-700 text-center text-gray-500 text-xs">
-    © 2026 catdecal.vn - Thiết kế bởi iDecal Ecosystem.
-  </div>
-</footer>
+      <div class="mt-12 p-8 bg-primary rounded-custom text-center text-white shadow-xl">
+        <h3 class="text-2xl font-bold mb-2">Cần gửi hàng gấp đi tỉnh?</h3>
+        <p class="mb-6 opacity-90">Liên hệ ngay để chúng tôi kiểm tra lịch xe chạy gần nhất cho bạn.</p>
+        <a href="https://zalo.me/09xxxxxxxx" class="bg-white text-primary px-10 py-4 rounded-full font-bold hover:shadow-2xl transition-all inline-block uppercase tracking-wider">
+          Liên hệ Zalo báo phí ship
+        </a>
+      </div>
+    </div>
+  </main>
+  <Footer />
+</Layout>
