@@ -6,20 +6,23 @@ const steps = [
   { n: "04", title: "Đóng Gói Chuyên Nghiệp", desc: "Cuộn tròn trong ống PVC cứng, đảm bảo decal không bị nhăn gãy khi ship xa." }
 ];
 ---
-<section class="py-24 bg-white">
+<section class="py-20 bg-white">
   <div class="container mx-auto px-4">
-    <div class="text-center mb-16">
-      <h2 class="text-3xl font-black italic uppercase text-black">Quy trình chuyên nghiệp</h2>
-      <div class="w-20 h-1.5 bg-primary mx-auto mt-4"></div>
+    <div class="text-center mb-20">
+      <h2>Quy trình chuyên nghiệp</h2>
+      <div class="w-16 h-1 bg-secondary/30 mx-auto mt-4 rounded-full"></div>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-12 lg:gap-16">
       {steps.map(step => (
         <div class="relative group">
-          <span class="text-6xl font-black text-slate-100 absolute -top-10 -left-4 group-hover:text-primary/10 transition-colors">{step.n}</span>
+          <span class="text-7xl font-bold text-slate-50 absolute -top-12 -left-2 z-0 transition-colors group-hover:text-secondary/10 selection:bg-transparent">
+            {step.n}
+          </span>
+          
           <div class="relative z-10">
-            <h3 class="text-lg font-bold text-black mb-3 italic uppercase">{step.title}</h3>
-            <p class="text-sm text-gray-500 leading-relaxed">{step.desc}</p>
+            <h3>{step.title}</h3>
+            <p>{step.desc}</p>
           </div>
         </div>
       ))}
