@@ -1,8 +1,12 @@
-// astro.config.mjs
 import { defineConfig } from 'astro/config';
-import cloudflare from '@astrojs/cloudflare';
+import tailwind from '@astrojs/tailwind';
+import sitemap from '@astrojs/sitemap';
 
+// https://astro.build/config
 export default defineConfig({
-  output: 'server', // Hoặc 'hybrid' nếu bạn muốn kết hợp cả trang tĩnh và trang động
-  adapter: cloudflare()
+  site: 'https://idecal.vn', // Thay bằng domain của bạn
+  integrations: [tailwind(), sitemap()],
+  // Tích hợp Tailwind CSS
+  integrations: [tailwind()],
+  
 });
