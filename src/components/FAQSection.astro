@@ -26,28 +26,32 @@ const faqs = [
 <section class="py-20 bg-[#F5F5F5]">
   <div class="max-w-6xl mx-auto px-4">
     <div class="text-center mb-16">
-      <h2 class="text-3xl text-black mb-3 font-bold tracking-tighter">Câu hỏi thường gặp</h2>
-      <div class="w-16 h-1.5 bg-primary mx-auto mb-4"></div>
-      <p class="text-gray-400 text-xs font-bold uppercase tracking-widest">Hỗ trợ giải đáp thắc mắc về gia công và vận chuyển toàn quốc</p>
+      <h2 class="text-3xl md:text-4xl text-black mb-3">
+        Câu hỏi thường gặp
+      </h2>
+      <div class="w-16 h-1 bg-secondary mx-auto mb-6 rounded-full"></div>
+      <p class="text-gray-500 text-sm md:text-base">
+        Hỗ trợ giải đáp thắc mắc về gia công và vận chuyển toàn quốc
+      </p>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="faq-container">
       {faqs.map((faq) => (
-        <div class="faq-item bg-white rounded-2xl border border-divider overflow-hidden h-fit transition-all duration-300">
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 overflow-hidden h-fit transition-all duration-300">
           <button class="faq-question w-full p-6 text-left flex justify-between items-center gap-4 group">
-            <h3 class="text-base md:text-lg text-black font-bold flex items-start gap-3">
-              <span class="text-primary">Q:</span>
+            <h3 class="text-base md:text-lg text-slate-900 font-bold flex items-start gap-3">
+              <span class="text-secondary">Q:</span>
               {faq.q}
             </h3>
-            <span class="faq-icon text-gray-300 transition-transform duration-300 group-hover:text-black">
+            <span class="faq-icon text-slate-300 transition-transform duration-300 group-hover:text-black">
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
             </span>
           </button>
           
-          <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out bg-gray-50/50">
-            <div class="p-6 pt-0 pl-14 border-t border-gray-50 mt-4">
-              <p class="text-gray-600 text-sm leading-relaxed py-4">
-                <span class="font-bold text-gray-400 mr-2 uppercase text-[10px]">Trả lời:</span>
+          <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out bg-slate-50/30">
+            <div class="p-6 pt-0 md:pl-14 border-t border-slate-50 mt-4">
+              <p class="text-slate-600 text-sm md:text-base leading-relaxed py-4">
+                <span class="font-bold text-slate-400 mr-2 uppercase text-[10px]">Trả lời:</span>
                 {faq.a}
               </p>
             </div>
@@ -70,36 +74,35 @@ const faqs = [
       button?.addEventListener('click', () => {
         const isOpen = answer?.style.maxHeight && answer.style.maxHeight !== '0px';
 
-        // Đóng các cái khác (nếu muốn dạng chỉ mở 1 cái 1 lúc)
-        // document.querySelectorAll('.faq-answer').forEach(el => el.style.maxHeight = '0px');
-        // document.querySelectorAll('.faq-icon').forEach(el => el.style.transform = 'rotate(0deg)');
-
         if (isOpen) {
           (answer as HTMLElement).style.maxHeight = '0px';
           (icon as HTMLElement).style.transform = 'rotate(0deg)';
-          item.classList.remove('border-black');
+          item.classList.remove('border-secondary', 'shadow-lg');
         } else {
+          // Đóng những cái khác nếu muốn
+          document.querySelectorAll('.faq-answer').forEach(el => (el as HTMLElement).style.maxHeight = '0px');
+          document.querySelectorAll('.faq-icon').forEach(el => (el as HTMLElement).style.transform = 'rotate(0deg)');
+          document.querySelectorAll('.faq-item').forEach(el => el.classList.remove('border-secondary', 'shadow-lg'));
+
           (answer as HTMLElement).style.maxHeight = answer?.scrollHeight + 'px';
           (icon as HTMLElement).style.transform = 'rotate(180deg)';
-          item.classList.add('border-black');
+          item.classList.add('border-secondary', 'shadow-lg');
         }
       });
     });
   }
 
-  // Chạy khi trang load
   initFAQ();
-  // Chạy lại khi chuyển trang trong Astro (nếu dùng View Transitions)
-  document.addEventListener('astro:page-load', initFAQ);
+  document.addEventListener('astro:after-swap', initFAQ);
 </script>
 
 <style>
-  /* Loại bỏ in nghiêng cho toàn bộ section */
+  /* Đảm bảo font-style chân phương */
   section {
     font-style: normal !important;
   }
   
-  .faq-item.border-black {
-    box-shadow: 0 10px 30px -10px rgba(0,0,0,0.1);
+  .faq-item.border-secondary {
+    border-color: var(--color-secondary, #0068FF) !important;
   }
 </style>
