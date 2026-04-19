@@ -1,0 +1,38 @@
+<section id="calculator" class="py-16 bg-white">
+  <div class="container mx-auto px-4">
+    <div class="max-w-4xl mx-auto bg-slate-50 rounded-3xl p-8 border border-slate-200 shadow-xl flex flex-col md:flex-row gap-12">
+      <div class="md:w-1/2">
+        <h2 class="text-2xl font-bold mb-6">Tính giá cắt nhanh</h2>
+        <div class="space-y-4">
+          <select id="type" class="w-full p-3 rounded-lg border border-slate-300">
+            <option value="60000">Decal sữa / Trong (60k/m2)</option>
+            <option value="150000">Decal phản quang (150k/m2)</option>
+          </select>
+          <div class="grid grid-cols-2 gap-4">
+            <input type="number" id="w" placeholder="Rộng (cm)" class="p-3 rounded-lg border border-slate-300" />
+            <input type="number" id="h" placeholder="Dài (cm)" class="p-3 rounded-lg border border-slate-300" />
+          </div>
+        </div>
+      </div>
+      <div class="md:w-1/2 bg-orange-600 rounded-2xl p-8 text-white text-center flex flex-col justify-center">
+        <span class="mb-2">Tổng tạm tính</span>
+        <div class="text-4xl font-black mb-6"><span id="result">0</span> VNĐ</div>
+        <button class="w-full bg-white text-orange-600 py-3 rounded-xl font-bold">Đặt hàng ngay</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script is:inline>
+  const w = document.getElementById('w');
+  const h = document.getElementById('h');
+  const type = document.getElementById('type');
+  const res = document.getElementById('result');
+
+  function calc() {
+    const area = (w.value / 100) * (h.value / 100);
+    const total = area * type.value;
+    res.innerText = total > 0 ? Math.round(total).toLocaleString() : 0;
+  }
+  [w, h, type].forEach(el => el.addEventListener('input', calc));
+</script>
