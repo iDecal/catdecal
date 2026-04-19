@@ -1,13 +1,29 @@
 ---
 import Layout from '../layouts/BaseLayout.astro';
+
+const faqs = [
+  { 
+    q: "Tôi có được kiểm tra hàng trước khi thanh toán không?", 
+    a: "Dạ có, bạn hoàn toàn được đồng kiểm cùng bưu tá hoặc nhà xe để đảm bảo decal không bị gãy gập và đúng mẫu mã trước khi nhận." 
+  },
+  { 
+    q: "Phí vận chuyển đi tỉnh khoảng bao nhiêu?", 
+    a: "Phí ship tùy thuộc vào kích thước ống đóng gói. Thông thường, phí chuyển phát nhanh từ 30.000đ - 50.000đ. Với nhà xe, phí sẽ theo quy định của từng chành xe (thường từ 20.000đ)." 
+  },
+  { 
+    q: "Nếu decal bị hư hỏng do vận chuyển thì xử lý thế nào?", 
+    a: "Bạn vui lòng quay video khi mở hàng. Nếu sản phẩm bị hỏng nặng, catdecal.vn sẽ hỗ trợ cắt lại bản mới và gửi bù hoàn toàn miễn phí cho bạn." 
+  }
+];
 ---
 
 <Layout title="Chính sách Giao hàng & Thanh toán - catdecal.vn">
-  <main class="bg-background min-h-screen pb-20">
-    <div class="bg-secondary py-16 px-4 text-center">
-      <h1 class="text-3xl md:text-4xl font-heading font-bold text-white mb-4">Giao hàng & Thanh toán</h1>
-      <p class="text-gray-400 max-w-2xl mx-auto">
-        Chúng tôi tối ưu quy trình đóng gói và vận chuyển để đảm bảo sản phẩm cắt decal 
+  <main class="bg-white min-h-screen pb-20">
+    <div class="bg-[#F5F5F5] py-16 px-4 text-center">
+      <h1 class="text-3xl md:text-4xl font-bold text-black mb-4 uppercase tracking-tighter">Giao hàng & Thanh toán</h1>
+      <div class="w-20 h-1.5 bg-primary mx-auto mb-6"></div>
+      <p class="text-gray-600 max-w-2xl mx-auto">
+        Chúng tôi tối ưu quy trình đóng gói và vận chuyển để đảm bảo sản phẩm decal 
         đến tay bạn hoàn hảo nhất, dù bạn ở bất kỳ tỉnh thành nào.
       </p>
     </div>
@@ -15,17 +31,18 @@ import Layout from '../layouts/BaseLayout.astro';
     <div class="max-w-5xl mx-auto px-4 -mt-10">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         
-        <div class="bg-surface p-8 rounded-custom shadow-soft border-t-4 border-primary">
-          <div class="flex items-center gap-4 mb-6">
-            <div class="bg-primary/10 p-3 rounded-full text-primary">
+        <div class="bg-white p-8 rounded-xl shadow-sm border border-divider">
+          <div class="flex items-center gap-4 mb-4">
+            <div class="text-primary">
               <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg>
             </div>
-            <h2 class="text-xl font-bold text-secondary">Quy chuẩn đóng gói</h2>
+            <h2 class="text-xl font-bold text-black uppercase tracking-tight">Quy chuẩn đóng gói</h2>
           </div>
-          <ul class="space-y-4 text-copy">
+          <div class="w-10 h-1 bg-primary mb-6"></div>
+          <ul class="space-y-4 text-gray-600 text-sm">
             <li class="flex items-start gap-2">
               <span class="text-primary font-bold">✓</span>
-              <span>Sử dụng <strong>ống nhựa PVC hoặc ống giấy cứng</strong> chịu lực.</span>
+              <span>Sử dụng <strong>ống nhựa PVC hoặc ống giấy cứng</strong> chịu lực cao.</span>
             </li>
             <li class="flex items-start gap-2">
               <span class="text-primary font-bold">✓</span>
@@ -38,66 +55,78 @@ import Layout from '../layouts/BaseLayout.astro';
           </ul>
         </div>
 
-        <div class="bg-surface p-8 rounded-custom shadow-soft border-t-4 border-primary">
-          <div class="flex items-center gap-4 mb-6">
-            <div class="bg-primary/10 p-3 rounded-full text-primary">
+        <div class="bg-white p-8 rounded-xl shadow-sm border border-divider">
+          <div class="flex items-center gap-4 mb-4">
+            <div class="text-primary">
               <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
             </div>
-            <h2 class="text-xl font-bold text-secondary">Vận chuyển toàn quốc</h2>
+            <h2 class="text-xl font-bold text-black uppercase tracking-tight">Vận chuyển toàn quốc</h2>
           </div>
-          <div class="space-y-4 text-copy">
+          <div class="w-10 h-1 bg-primary mb-6"></div>
+          <div class="space-y-4 text-gray-600 text-sm">
             <div>
-              <p class="font-bold text-primary">Chuyển phát nhanh:</p>
-              <p class="text-sm">GHTK, Viettel Post (2-4 ngày tận nhà).</p>
+              <p class="font-bold text-black italic">Chuyển phát nhanh:</p>
+              <p>GHTK, Viettel Post (2-4 ngày tận nhà).</p>
             </div>
             <div>
-              <p class="font-bold text-primary">Gửi Chành xe (Nhà xe):</p>
-              <p class="text-sm">Nhận ngay trong ngày hoặc sáng hôm sau (Khu vực miền Trung & lân cận).</p>
+              <p class="font-bold text-black italic">Gửi Chành xe (Nhà xe):</p>
+              <p>Nhận ngay trong ngày (Khu vực Bình Định & miền Trung).</p>
             </div>
           </div>
         </div>
 
-        <div class="bg-surface p-8 rounded-custom shadow-soft border-t-4 border-primary">
-          <div class="flex items-center gap-4 mb-6">
-            <div class="bg-primary/10 p-3 rounded-full text-primary">
+        <div class="bg-white p-8 rounded-xl shadow-sm border border-divider">
+          <div class="flex items-center gap-4 mb-4">
+            <div class="text-primary">
               <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
             </div>
-            <h2 class="text-xl font-bold text-secondary">Thanh toán</h2>
+            <h2 class="text-xl font-bold text-black uppercase tracking-tight">Thanh toán</h2>
           </div>
+          <div class="w-10 h-1 bg-primary mb-6"></div>
           <div class="space-y-4">
-            <div class="p-4 bg-background rounded-lg border-l-4 border-secondary">
-              <p class="text-sm font-bold">1. Chốt đơn & Tạm ứng</p>
-              <p class="text-xs text-copy-muted">Quý khách chuyển khoản 50% sau khi chốt file.</p>
+            <div class="p-4 bg-[#F5F5F5] rounded-lg">
+              <p class="text-sm font-bold text-black">1. Tạm ứng</p>
+              <p class="text-xs text-gray-500">Quý khách chuyển khoản 50% sau khi chốt file thiết kế.</p>
             </div>
-            <div class="p-4 bg-background rounded-lg border-l-4 border-secondary">
-              <p class="text-sm font-bold">2. Hoàn tất</p>
-              <p class="text-xs text-copy-muted">Thanh toán phần còn lại khi nhận hàng (COD) hoặc khi gửi nhà xe.</p>
+            <div class="p-4 bg-[#F5F5F5] rounded-lg">
+              <p class="text-sm font-bold text-black">2. Hoàn tất</p>
+              <p class="text-xs text-gray-500">Thanh toán phần còn lại khi nhận hàng (COD) hoặc khi gửi nhà xe.</p>
             </div>
           </div>
         </div>
 
-        <div class="bg-surface p-8 rounded-custom shadow-soft border-t-4 border-primary">
-          <div class="flex items-center gap-4 mb-6">
-            <div class="bg-primary/10 p-3 rounded-full text-primary">
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04customA12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+        <div class="bg-white p-8 rounded-xl shadow-sm border border-divider">
+          <div class="flex items-center gap-4 mb-4">
+            <div class="text-primary">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
             </div>
-            <h2 class="text-xl font-bold text-secondary">Bảo hành & Đổi trả</h2>
+            <h2 class="text-xl font-bold text-black uppercase tracking-tight">Bảo hành 1 đổi 1</h2>
           </div>
-          <p class="text-copy text-sm leading-relaxed">
-            Cam kết <strong>lỗi 1 đổi 1</strong> nếu sản phẩm không đúng mẫu mã, 
-            sai kích thước file vector đã chốt hoặc hư hỏng nặng do lỗi vận chuyển 
-            (khi có video mở hàng).
+          <div class="w-10 h-1 bg-primary mb-6"></div>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Cam kết <strong>lỗi 1 đổi 1</strong> nếu sản phẩm sai mẫu mã, 
+            sai kích thước file đã chốt hoặc hư hỏng do vận chuyển 
+            (khi có video mở hàng đối với khách tỉnh).
           </p>
         </div>
-
       </div>
 
-      <div class="mt-12 p-8 bg-primary rounded-custom text-center text-white">
-        <h3 class="text-2xl font-bold mb-4">Bạn cần tư vấn phí giao hàng?</h3>
-        <p class="mb-6 opacity-90">Gửi kích thước hoặc địa chỉ của bạn, chúng tôi sẽ báo giá ship chính xác nhất.</p>
-        <a href="https://zalo.me/sdt-cua-ban" class="bg-white text-primary px-8 py-3 rounded-full font-bold hover:bg-gray-100 transition-all inline-block">
-          CHAT QUA ZALO NGAY
-        </a>
+      <div class="mt-20">
+        <h2 class="text-2xl font-bold text-black uppercase text-center mb-2 tracking-tight">Giải đáp thắc mắc</h2>
+        <div class="w-12 h-1 bg-primary mx-auto mb-10"></div>
+        
+        <div class="grid grid-cols-1 gap-6">
+          {faqs.map((faq) => (
+            <div class="bg-white p-6 rounded-xl border border-divider hover:shadow-md transition-all">
+              <h3 class="font-bold text-black mb-3 flex gap-2">
+                <span class="text-primary">●</span> {faq.q}
+              </h3>
+              <p class="text-gray-600 text-sm leading-relaxed pl-5 border-l border-gray-100">
+                {faq.a}
+              </p>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   </main>
