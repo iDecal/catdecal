@@ -2,147 +2,116 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 
 const topServices = [
-  {
-    title: "Cắt Chữ & Logo",
-    desc: "Decal mờ vách kính văn phòng, slogan công ty.",
-    image: "https://images.unsplash.com/photo-1626708722760-466033488825?q=80&w=500&auto=format&fit=crop", 
-    link: "/dich-vu/cat-decal-chu-logo"
-  },
-  {
-    title: "Tem Nhãn Sticker",
-    desc: "Cắt bế tem nhãn sản phẩm, sticker lấy nhanh.",
-    image: "https://images.unsplash.com/photo-1589987607627-616cac5c2c5a?q=80&w=500&auto=format&fit=crop",
-    link: "/dich-vu/tem-nhan-sticker"
-  },
-  {
-    title: "Decal Phản Quang",
-    desc: "Vật liệu 3M cho biển báo và tem xe hội nhóm.",
-    image: "https://images.unsplash.com/photo-1616432043562-3671ea2e5241?q=80&w=500&auto=format&fit=crop",
-    link: "/dich-vu/decal-phan-quang"
-  },
-  {
-    title: "Cắt Gia Công B2B",
-    desc: "Hỗ trợ file vector, cắt lẻ lấy ngay cho thợ.",
-    image: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=500&auto=format&fit=crop",
-    link: "/dich-vu/cat-decal-gia-cong"
-  }
+  { title: "Cắt Chữ & Logo", image: "https://images.unsplash.com/photo-1626708722760-466033488825?q=80&w=500&auto=format&fit=crop", link: "/dich-vu/cat-decal-chu-logo" },
+  { title: "Tem Nhãn Sticker", image: "https://images.unsplash.com/photo-1589987607627-616cac5c2c5a?q=80&w=500&auto=format&fit=crop", link: "/tem-nhan" },
+  { title: "Decal Phản Quang", image: "https://images.unsplash.com/photo-1616432043562-3671ea2e5241?q=80&w=500&auto=format&fit=crop", link: "/phan-quang" },
+  { title: "Cắt Gia Công B2B", image: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=500&auto=format&fit=crop", link: "/gia-cong" }
 ];
 
-const faqs = [
-  { q: "Cắt decal bao lâu thì lấy được?", a: "Với đơn hàng nhỏ dưới 5 mét, bạn có thể lấy ngay sau 15-30 phút." },
-  { q: "Có hỗ trợ thiết kế file vector không?", a: "Có, chúng tôi hỗ trợ kiểm tra và vẽ lại file vector theo yêu cầu." }
+const materialRates = [
+  { id: 'mo', name: 'Decal Mờ (Văn phòng)', price: 120000 },
+  { id: 'mau', name: 'Decal Màu (Thường)', price: 150000 },
+  { id: 'phanquang', name: 'Decal Phản Quang 3M', price: 450000 },
+  { id: 'trong', name: 'Decal Trong/Sữa', price: 180000 }
 ];
 ---
 
-<BaseLayout>
-  <section class="relative bg-white pt-24 pb-20 border-b border-slate-100 overflow-hidden">
-    <div class="absolute inset-0 opacity-[0.03] pointer-events-none" style="background-image: radial-gradient(#0F172A 1px, transparent 1px); background-size: 30px 30px;"></div>
+<BaseLayout title="Cắt Decal Theo Yêu Cầu - Tính Giá & Gửi File Online">
+  
+  <section class="relative h-[80vh] flex items-center overflow-hidden bg-primary">
+    <div class="absolute inset-0 z-0">
+      <img 
+        src="https://images.unsplash.com/photo-1611532736597-de2d4265fba3?q=80&w=2000&auto=format&fit=crop" 
+        class="w-full h-full object-cover opacity-40 scale-105" 
+        alt="Xưởng cắt decal"
+      />
+      <div class="absolute inset-0 bg-gradient-to-r from-primary via-primary/80 to-transparent"></div>
+    </div>
     
     <div class="container mx-auto px-4 relative z-10">
-      <div class="max-w-3xl">
-        <div class="inline-block bg-secondary/20 text-primary px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest mb-6">
-          Xưởng Cắt Decal Chuyên Nghiệp
-        </div>
-        
-        <h1 class="text-3xl md:text-5xl font-heading font-extrabold text-primary leading-tight mb-6">
+      <div class="max-w-2xl">
+        <h1 class="text-3xl md:text-5xl font-heading font-extrabold text-white leading-tight mb-6">
           Giải pháp cắt Decal <br /> 
-          <span class="bg-primary text-secondary px-2 italic">Chính xác & Tốc độ</span>
+          <span class="text-secondary">Chính xác & Giao hàng nhanh</span>
         </h1>
-        
-        <p class="text-lg text-copy-muted mb-10 max-w-xl leading-relaxed">
-          Gia công tại xưởng, không qua trung gian. Hỗ trợ thi công dán kính tận nơi tại <span class="text-primary font-bold">TP.HCM & Bình Định</span>.
+        <p class="text-lg text-white/80 mb-10 leading-relaxed italic">
+          Chuyên dán kính văn phòng, tem nhãn Sticker. Hỗ trợ file AI, PDF, Corel.
         </p>
-        
         <div class="flex flex-wrap gap-4">
-          <a href="https://zalo.me/your-number" class="bg-primary text-secondary px-8 py-4 rounded-custom font-bold text-sm hover:shadow-lg transition-all flex items-center gap-2">
-            ZALO BÁO GIÁ NGAY
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          <a href="#calculator" class="bg-secondary text-primary px-8 py-4 rounded-custom font-bold text-sm hover:scale-105 transition-all">
+            TÍNH GIÁ & GỬI FILE
           </a>
-          <a href="#calculator" class="bg-slate-100 text-primary px-8 py-4 rounded-custom font-bold text-sm hover:bg-slate-200 transition-all">
-            TÍNH GIÁ SƠ BỘ
+          <a href="https://zalo.me/your-number" class="bg-white/10 backdrop-blur-md text-white border border-white/20 px-8 py-4 rounded-custom font-bold text-sm hover:bg-white/20 transition-all">
+            TƯ VẤN ZALO
           </a>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="py-24 bg-background">
+  <section id="calculator" class="py-24 bg-slate-50">
     <div class="container mx-auto px-4">
-      <div class="text-center mb-16">
-        <h2 class="text-2xl md:text-3xl font-heading font-bold text-primary uppercase italic">Dịch vụ chúng tôi cung cấp</h2>
-        <div class="h-1 w-20 bg-secondary mx-auto mt-4"></div>
-      </div>
+      <div class="max-w-5xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-5 gap-8 bg-white rounded-[2rem] shadow-xl overflow-hidden border border-slate-100">
+          
+          <div class="lg:col-span-3 p-8 md:p-12 space-y-8">
+            <h2 class="text-2xl font-heading font-bold text-primary flex items-center gap-3 italic">
+              <span class="w-8 h-8 bg-secondary rounded-full flex items-center justify-center text-sm not-italic">1</span>
+              Thông số đơn hàng
+            </h2>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-        {topServices.map((s) => (
-          <a href={s.link} class="group block bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300">
-            <div class="relative h-48 overflow-hidden">
-              <img src={s.image} alt={s.title} class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
-              <div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-            </div>
-            <div class="p-6">
-              <h3 class="text-lg font-heading font-bold text-primary mb-2 group-hover:text-secondary transition-colors">{s.title}</h3>
-              <p class="text-sm text-copy-muted line-clamp-2 leading-relaxed">{s.desc}</p>
-              <div class="mt-4 flex items-center gap-2 text-xs font-bold text-primary uppercase">
-                Xem thêm 
-                <span class="text-secondary">→</span>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div class="space-y-2">
+                <label class="text-[10px] font-black text-slate-400 uppercase tracking-widest">Loại vật liệu</label>
+                <select id="material" class="w-full p-4 rounded-xl bg-slate-50 border-none focus:ring-2 focus:ring-secondary outline-none">
+                  {materialRates.map(m => <option value={m.price}>{m.name}</option>)}
+                </select>
+              </div>
+              <div class="space-y-2">
+                <label class="text-[10px] font-black text-slate-400 uppercase tracking-widest">Số lượng</label>
+                <input type="number" id="quantity" value="1" min="1" class="w-full p-4 rounded-xl bg-slate-50 border-none focus:ring-2 focus:ring-secondary outline-none" />
+              </div>
+              <div class="space-y-2">
+                <label class="text-[10px] font-black text-slate-400 uppercase tracking-widest">Dài (cm)</label>
+                <input type="number" id="length" placeholder="0" class="w-full p-4 rounded-xl bg-slate-50 border-none focus:ring-2 focus:ring-secondary outline-none" />
+              </div>
+              <div class="space-y-2">
+                <label class="text-[10px] font-black text-slate-400 uppercase tracking-widest">Rộng (cm)</label>
+                <input type="number" id="width" placeholder="0" class="w-full p-4 rounded-xl bg-slate-50 border-none focus:ring-2 focus:ring-secondary outline-none" />
               </div>
             </div>
-          </a>
-        ))}
-      </div>
-    </div>
-  </section>
 
-  <section id="calculator" class="py-20 bg-slate-50">
-    <div class="container mx-auto px-4">
-      <div class="max-w-4xl mx-auto bg-white border border-slate-200 p-8 md:p-12 rounded-[2rem] shadow-sm relative overflow-hidden">
-        <div class="absolute top-0 right-0 p-4 opacity-10">
-            <svg class="w-24 h-24" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14h-2V9h2v8zm4 0h-2V7h2v10z"/></svg>
-        </div>
+            <button id="calcBtn" class="w-full bg-primary text-secondary font-black p-5 rounded-xl hover:brightness-125 transition-all shadow-lg shadow-primary/20">
+              TÍNH GIÁ NGAY
+            </button>
+          </div>
 
-        <div class="relative z-10">
-            <h2 class="text-2xl font-heading font-bold text-primary mb-8 italic">Máy tính báo giá nhanh (VNĐ)</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-end">
-              <div class="space-y-3">
-                <label class="text-[10px] font-black uppercase text-slate-400 tracking-widest">Chiều dài (cm)</label>
-                <input type="number" id="length" placeholder="0" class="w-full p-4 rounded-xl bg-slate-50 border-transparent focus:bg-white focus:ring-2 focus:ring-secondary outline-none transition-all" />
+          <div class="lg:col-span-2 bg-primary p-8 md:p-12 text-white flex flex-col">
+            <h2 class="text-xl font-heading font-bold text-secondary mb-6 italic">Kết quả & Gửi file</h2>
+            
+            <div id="resultBox" class="mb-8 hidden animate-in fade-in duration-500">
+              <span class="text-white/50 text-xs uppercase block mb-1">Tổng cộng dự kiến:</span>
+              <div id="priceResult" class="text-4xl font-black text-secondary tracking-tighter">0đ</div>
+            </div>
+
+            <div class="mt-auto space-y-6">
+              <div class="p-6 border-2 border-dashed border-white/20 rounded-2xl hover:border-secondary transition-colors group relative">
+                <input type="file" id="fileUpload" class="absolute inset-0 opacity-0 cursor-pointer" accept=".ai,.pdf,.eps,.cdr" />
+                <div class="text-center">
+                  <svg class="w-8 h-8 mx-auto mb-3 text-secondary group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                  <p class="text-xs font-bold text-white uppercase mb-1">Tải file thiết kế</p>
+                  <p class="text-[10px] text-white/40">Hỗ trợ: AI, PDF, CDR, EPS</p>
+                </div>
               </div>
-              <div class="space-y-3">
-                <label class="text-[10px] font-black uppercase text-slate-400 tracking-widest">Chiều rộng (cm)</label>
-                <input type="number" id="width" placeholder="0" class="w-full p-4 rounded-xl bg-slate-50 border-transparent focus:bg-white focus:ring-2 focus:ring-secondary outline-none transition-all" />
-              </div>
-              <button id="calcBtn" class="bg-primary text-secondary font-bold p-4 rounded-xl hover:brightness-125 transition-all shadow-lg shadow-primary/10">
-                XEM BÁO GIÁ
+              <p id="fileName" class="text-xs text-secondary italic hidden"></p>
+              
+              <button class="w-full bg-white text-primary font-bold p-4 rounded-xl hover:bg-secondary transition-colors flex items-center justify-center gap-2">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14h2v2h-2v-2zm0-10h2v8h-2V6z"/></svg>
+                GỬI ĐƠN HÀNG ZALO
               </button>
             </div>
-
-            <div id="resultBox" class="mt-10 p-8 bg-primary rounded-2xl hidden animate-in fade-in slide-in-from-bottom-4 duration-500">
-              <div class="flex flex-col md:flex-row justify-between items-center gap-4">
-                <span class="text-white/60 font-medium">Chi phí gia công ước tính:</span>
-                <span id="priceResult" class="text-3xl font-black text-secondary tracking-tighter">0đ</span>
-              </div>
-            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="py-24 bg-white">
-    <div class="container mx-auto px-4 max-w-3xl">
-      <h2 class="text-2xl font-heading font-bold text-primary mb-12 text-center uppercase">Giải đáp thắc mắc</h2>
-      <div class="space-y-4">
-        {faqs.map((faq) => (
-          <details class="group border border-slate-100 rounded-xl overflow-hidden">
-            <summary class="flex justify-between items-center p-6 cursor-pointer list-none font-bold text-primary hover:bg-slate-50 transition-colors">
-              {faq.q}
-              <span class="text-secondary group-open:rotate-180 transition-transform">▼</span>
-            </summary>
-            <div class="px-6 pb-6 text-sm leading-relaxed text-copy-muted">
-              {faq.a}
-            </div>
-          </details>
-        ))}
       </div>
     </div>
   </section>
@@ -152,19 +121,34 @@ const faqs = [
   const btn = document.getElementById('calcBtn');
   const resultBox = document.getElementById('resultBox');
   const priceResult = document.getElementById('priceResult');
+  const fileInput = document.getElementById('fileUpload') as HTMLInputElement;
+  const fileNameDisplay = document.getElementById('fileName');
 
+  // Xử lý hiện tên file khi chọn
+  fileInput?.addEventListener('change', (e) => {
+    const file = (e.target as HTMLInputElement).files?.[0];
+    if (file && fileNameDisplay) {
+      fileNameDisplay.innerText = `📄 Đã chọn: ${file.name}`;
+      fileNameDisplay.classList.remove('hidden');
+    }
+  });
+
+  // Logic tính giá
   btn?.addEventListener('click', () => {
+    const rate = parseFloat((document.getElementById('material') as HTMLSelectElement).value);
+    const qty = parseFloat((document.getElementById('quantity') as HTMLInputElement).value) || 1;
     const l = parseFloat((document.getElementById('length') as HTMLInputElement).value) || 0;
     const w = parseFloat((document.getElementById('width') as HTMLInputElement).value) || 0;
     
-    // Giá tham khảo: 150.000đ/m2
     const area = (l * w) / 10000;
-    const price = Math.max(area * 150000, 30000); 
+    let total = area * rate * qty;
+    
+    // Áp dụng giá sàn
+    if (total < 30000 && l > 0) total = 30000;
 
     if (l > 0 && w > 0) {
-      priceResult!.innerText = new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(price);
+      priceResult!.innerText = new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(total);
       resultBox?.classList.remove('hidden');
-      resultBox?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     }
   });
 </script>
