@@ -1,10 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 
-// Lấy tất cả bài viết từ folder content/blog
 const allPosts = await getCollection('blog');
-
-// Sắp xếp theo ngày mới nhất và lấy 3 bài đầu tiên
 const latestPosts = allPosts
   .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime())
   .slice(0, 3);
@@ -15,13 +12,14 @@ const latestPosts = allPosts
     
     <div class="flex justify-between items-end mb-12 md:mb-16">
       <div>
-        <h2 class="text-2xl md:text-4xl font-black text-slate-900 mb-3 tracking-tight capitalize">
+        <h2 class="text-2xl md:text-4xl tracking-tight text-slate-900 mb-3">
           Chia sẻ kinh nghiệm
         </h2>
         <div class="w-16 h-1 bg-secondary rounded-full"></div>
       </div>
-      <a href="/blog" class="text-lg md:text-[11px] font-bold text-secondary hover:text-slate-900 transition-all uppercase tracking-widest flex items-center gap-2">
-        XEM TẤT CẢ <span class="text-2xl md:text-base">→</span>
+
+      <a href="/blog" class="text-sm md:text-lg font-bold text-secondary hover:text-slate-900 transition-all flex items-center gap-2 border-b-2 border-secondary/30 pb-1 md:pb-2 hover:border-slate-900">
+        Xem tất cả <span class="text-xl md:text-2xl">→</span>
       </a>
     </div>
 
@@ -58,7 +56,6 @@ const latestPosts = allPosts
 </section>
 
 <style>
-  /* Ẩn thanh cuộn */
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
   }
@@ -66,17 +63,10 @@ const latestPosts = allPosts
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
-
-  /* Đảm bảo Font style chân phương */
-  h2, h3, a, span {
-    font-style: normal !important;
-  }
-
-  @media (max-width: 767px) {
-    h2 {
-      /* Bỏ uppercase hoàn toàn trên Mobile */
-      text-transform: none !important;
-      letter-spacing: -0.01em;
-    }
+  
+  /* Reset nhẹ để đảm bảo CSS global của bạn không bị ghi đè bởi các thuộc tính font mặc định của trình duyệt */
+  h2, a {
+    font-style: normal;
+    text-transform: none;
   }
 </style>
