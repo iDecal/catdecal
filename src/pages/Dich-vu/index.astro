@@ -1,0 +1,114 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Calculator from '../../components/Calculator.astro';
+
+const allServices = [
+  {
+    id: "cat-chu",
+    title: "Cắt Chữ & Logo (Decal Cắt Viền)",
+    desc: "Dịch vụ cơ bản phục vụ bảng hiệu, vách kính văn phòng, thông tin liên hệ trên cửa kính và tường.",
+    img: "https://images.unsplash.com/photo-1626708722760-466033488825?q=80&w=600",
+    features: ["Cắt viền sắc nét", "Dễ thi công", "Độ bền màu cao"],
+    material: "mo"
+  },
+  {
+    id: "be-tem",
+    title: "Cắt Tem Nhãn (Bế Tem)",
+    desc: "Gia công cắt theo đường viền (tròn, vuông, hình phức tạp) cho tem bảo hành, nhãn dán sản phẩm, giúp bóc dán dễ dàng.",
+    img: "https://images.unsplash.com/photo-1589987607627-616cac5c2c5a?q=80&w=600",
+    features: ["Cắt bế chính xác", "Lấy ngay trong ngày", "Mọi số lượng"],
+    material: "trong"
+  },
+  {
+    id: "noi-that",
+    title: "Decal Trang Trí Nội Thất",
+    desc: "Hoa văn dán tường, dán kính mờ (decal cát), tạo hình nghệ thuật cho nhà ở, văn phòng và quán cafe.",
+    img: "https://images.unsplash.com/photo-1615873968403-89e068629275?q=80&w=600",
+    features: ["Thẩm mỹ cao", "Che chắn riêng tư", "Vật liệu cao cấp"],
+    material: "mo"
+  },
+  {
+    id: "dan-xe",
+    title: "Cắt Decal Dán Xe",
+    desc: "Sản xuất bộ tem rời, tem phản quang hoặc chi tiết trang trí chuyên dụng cho xe máy và ô tô.",
+    img: "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?q=80&w=600",
+    features: ["Bám dính cực tốt", "Chống tia UV", "Phản quang 3M"],
+    material: "phanquang"
+  },
+  {
+    id: "chuyen-nhiet",
+    title: "Decal Chuyển Nhiệt",
+    desc: "Cắt decal chuyên dụng để ép nhiệt lên áo thun, đồng phục, túi vải với độ bền cao, không bong tróc.",
+    img: "https://images.unsplash.com/photo-1563125287-17559ec18cbb?q=80&w=600",
+    features: ["Co giãn tốt", "Màu sắc đa dạng", "Ép mọi loại vải"],
+    material: "mau"
+  },
+  {
+    id: "kho-lon",
+    title: "Quảng Cáo Khổ Lớn",
+    desc: "Gia công decal dán backdrop sự kiện, bảng hiệu ngoài trời hoặc trang trí dự án quy mô lớn.",
+    img: "https://images.unsplash.com/photo-1506143925201-0252c51780b0?q=80&w=600",
+    features: ["Đáp ứng tiến độ", "Khổ cắt rộng", "Giá gốc tại xưởng"],
+    material: "mau"
+  }
+];
+---
+
+<BaseLayout title="Dịch vụ Cắt Decal Chuyên Nghiệp - CatDecal.vn">
+  
+  <section class="bg-primary pt-24 pb-20 overflow-hidden relative">
+    <div class="absolute right-0 top-0 w-1/3 h-full bg-secondary/5 skew-x-12 translate-x-1/2"></div>
+    <div class="container mx-auto px-4 relative z-10">
+      <h1 class="text-4xl md:text-6xl font-heading font-black italic text-white uppercase mb-6 tracking-tighter">
+        Dịch vụ <span class="text-secondary">Gia công Decal</span>
+      </h1>
+      <p class="text-white/60 max-w-2xl text-lg italic leading-relaxed">
+        Từ cắt chữ viền đơn giản đến bế tem nhãn kỹ thuật cao. Chúng tôi sở hữu công nghệ cắt Nhật Bản chính xác trên mọi loại vật liệu.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-24 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+        {allServices.map((s, index) => (
+          <div class="flex flex-col lg:flex-row gap-8 group">
+            <div class="lg:w-1/2 aspect-[4/3] rounded-3xl overflow-hidden bg-slate-100 relative shadow-lg">
+              <img src={s.img} alt={s.title} class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+              <div class="absolute top-4 left-4 bg-primary text-secondary text-[10px] font-black px-3 py-1 rounded-full uppercase italic shadow-lg">
+                Dịch vụ 0{index + 1}
+              </div>
+            </div>
+            <div class="lg:w-1/2 flex flex-col justify-center">
+              <h2 class="text-2xl font-heading font-extrabold text-primary italic uppercase mb-4 group-hover:text-secondary transition-colors">
+                {s.title}
+              </h2>
+              <p class="text-sm text-copy-muted leading-relaxed mb-6">
+                {s.desc}
+              </p>
+              <ul class="space-y-2 mb-8">
+                {s.features.map(f => (
+                  <li class="flex items-center gap-2 text-[11px] font-bold text-primary/70 uppercase tracking-wider">
+                    <span class="w-1.5 h-1.5 bg-secondary rounded-full"></span> {f}
+                  </li>
+                ))}
+              </ul>
+              <a href={`#calculator`} class="inline-flex items-center gap-2 text-xs font-black uppercase text-primary border-b-2 border-secondary pb-1 self-start hover:gap-4 transition-all">
+                Tính giá ngay <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M17 8l4 4m0 0l-4 4m4-4H3" stroke-width="2"></path></svg>
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <div class="bg-slate-50 py-24 border-t border-slate-100">
+    <div class="container mx-auto px-4 text-center mb-16">
+      <h2 class="text-3xl font-heading font-black text-primary italic uppercase">Báo giá nhanh toàn quốc</h2>
+      <p class="text-copy-muted mt-2 text-sm italic">Chọn vật liệu và nhập kích thước để nhận báo giá dự kiến ngay lập tức.</p>
+    </div>
+    <Calculator />
+  </div>
+
+</BaseLayout>
