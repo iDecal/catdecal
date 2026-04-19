@@ -15,7 +15,9 @@ const latestPosts = allPosts
     
     <div class="flex justify-between items-end mb-12 md:mb-16">
       <div>
-        <h2 class="text-3xl md:text-[13px] font-black md:font-bold text-slate-900 mb-3 md:uppercase md:tracking-[0.2em]">CHIA SẺ KINH NGHIỆM</h2>
+        <h2 class="text-2xl md:text-4xl font-black text-slate-900 mb-3 tracking-tight capitalize">
+          Chia sẻ kinh nghiệm
+        </h2>
         <div class="w-16 h-1 bg-secondary rounded-full"></div>
       </div>
       <a href="/blog" class="text-lg md:text-[11px] font-bold text-secondary hover:text-slate-900 transition-all uppercase tracking-widest flex items-center gap-2">
@@ -65,16 +67,16 @@ const latestPosts = allPosts
     scrollbar-width: none;
   }
 
-  /* Đảm bảo Font style luôn chân phương trên mobile */
+  /* Đảm bảo Font style chân phương */
   h2, h3, a, span {
     font-style: normal !important;
   }
 
   @media (max-width: 767px) {
-    /* Loại bỏ uppercase gắt trên Mobile cho tiêu đề lớn */
     h2 {
-      text-transform: none;
-      letter-spacing: -0.02em;
+      /* Bỏ uppercase hoàn toàn trên Mobile */
+      text-transform: none !important;
+      letter-spacing: -0.01em;
     }
   }
 </style>
