@@ -1,115 +1,59 @@
 ---
-import Layout from '../layouts/BaseLayout.astro';
+// Import các component từ thư mục components
+import Layout from '../layouts/Layout.astro'; // Giả định bạn có file layout chung
+import Header from '../components/Header.astro';
+import HeadersSlide from '../components/HeadersSlide.astro';
+import Hero from '../components/Hero.astro';
+import AboutHome from '../components/AboutHome.astro';
+import ServicesHome from '../components/ServicesHome.astro';
+import MaterialLayout from '../components/MaterialLayout.astro';
+import Calculator from '../components/Calculator.astro';
 import BlogSection from '../components/BlogSection.astro';
 import FAQSection from '../components/FAQSection.astro';
+import Footer from '../components/Footer.astro';
 
-const services = [
-  { 
-    title: "Cắt Decal màu (Quảng cáo)", 
-    desc: "Cắt chữ, logo thương hiệu trên decal sữa, decal trong với độ sắc nét cực cao.",
-    icon: "M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z",
-    link: "/dich-vu/cat-decal-mau"
-  },
-  { 
-    title: "Cắt Decal mờ (Dán kính)", 
-    desc: "Giải pháp trang trí vách kính văn phòng, cửa hàng tinh tế và sang trọng.",
-    icon: "M8 16l2.879-2.879m0 0a3 3 0 104.243-4.242 3 3 0 00-4.243 4.242zM21 12a9 9 0 11-18 0 9 9 0 0118 0z",
-    link: "/dich-vu/cat-decal-mo"
-  },
-  { 
-    title: "Cắt bế Tem nhãn (Sau in)", 
-    desc: "Bế tem nhãn mọi hình dáng, kích thước. Tự động nhận diện bo góc chính xác.",
-    icon: "M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2",
-    link: "/dich-vu/cat-be-tem-nhan"
-  }
-];
+// SEO Meta Data
+const title = "catdecal.vn - Xưởng Gia Công Cắt Decal Chuyên Nghiệp Quy Nhơn";
+const description = "Chuyên cắt gia công decal chữ, logo, bế tem nhãn và cung cấp vật liệu decal phản quang, decal mờ toàn quốc.";
 ---
 
-<Layout title="catdecal.vn - Giải pháp cắt decal gia công chuyên nghiệp toàn quốc">
-  
-  <section class="relative bg-[#2D3436] py-24 md:py-32 overflow-hidden">
-    <div class="max-w-7xl mx-auto px-4 relative z-10 text-center">
-      <h1 class="text-4xl md:text-6xl text-white leading-tight mb-6">
-        Giải pháp cắt decal gia công chuyên nghiệp
-      </h1>
-      <div class="w-24 h-1.5 bg-primary mx-auto mb-8"></div>
-      <p class="text-gray-300 text-lg md:text-xl max-w-3xl mx-auto mb-10">
-        Từ cắt chữ quảng cáo đến tem nhãn kỹ thuật cao. Chúng tôi giúp bạn hoàn thiện sản phẩm với độ chính xác tuyệt đối và giao hàng tận nơi trên toàn quốc.
-      </p>
-      <div class="flex flex-col sm:flex-row justify-center gap-4">
-        <a href="/bao-gia" class="bg-primary text-white px-10 py-4 rounded-full font-bold hover:brightness-110 transition-all text-sm shadow-lg">
-          Tính giá ngay
-        </a>
-        <a href="https://zalo.me/sdt-cua-ban" class="bg-transparent border-2 border-gray-500 text-white px-10 py-4 rounded-full font-bold hover:bg-white hover:text-black transition-all text-sm">
-          Tư vấn Zalo
-        </a>
-      </div>
-    </div>
-    <div class="absolute inset-0 opacity-10 bg-[url('/grid.svg')] bg-center"></div>
-  </section>
+<Layout title={title} description={description}>
+  <Header />
 
-  <section class="py-20 bg-white">
-    <div class="max-w-7xl mx-auto px-4 text-center mb-16">
-      <h2 class="text-3xl text-black mb-3">Dịch vụ thế mạnh</h2>
-      <div class="w-12 h-1 bg-primary mx-auto mb-4"></div>
-      <p class="text-gray-500">Độ chính xác cao - Đáp ứng mọi số lượng</p>
+  <main>
+    <Hero />
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12 text-left">
-        {services.map((service) => (
-          <div class="group p-8 rounded-2xl border border-divider hover:border-primary hover:shadow-xl transition-all duration-300">
-            <div class="w-14 h-14 bg-[#F5F5F5] text-primary rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
-              <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d={service.icon}></path>
-              </svg>
-            </div>
-            <h3 class="text-xl text-black mb-3">{service.title}</h3>
-            <p class="text-gray-500 text-sm leading-relaxed mb-6">{service.desc}</p>
-            <a href={service.link} class="text-primary font-bold text-sm hover:underline">
-              Tìm hiểu thêm →
-            </a>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
+    <HeadersSlide />
 
-  <BlogSection />
+    <AboutHome />
 
-  <FAQSection />
+    <ServicesHome />
 
-  <section class="py-20 bg-white border-t border-divider">
-    <div class="max-w-5xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-      <div>
-        <h2 class="text-3xl text-black mb-4">Gia công từ xa, nhận hàng tận nơi</h2>
-        <div class="w-12 h-1 bg-primary mb-8"></div>
-        <ul class="space-y-6">
-          <li class="flex gap-4">
-            <span class="text-primary font-bold text-xl">01.</span>
-            <div>
-              <p class="font-bold text-black text-sm">Chốt đơn Online</p>
-              <p class="text-gray-500 text-sm">Xử lý file vector và báo giá nhanh chóng qua Zalo/Email.</p>
-            </div>
-          </li>
-          <li class="flex gap-4">
-            <span class="text-primary font-bold text-xl">02.</span>
-            <div>
-              <p class="font-bold text-black text-sm">Đóng gói chuẩn tỉnh</p>
-              <p class="text-gray-500 text-sm">Sử dụng ống cứng chuyên dụng bảo vệ decal tuyệt đối khi gửi xa.</p>
-            </div>
-          </li>
-          <li class="flex gap-4">
-            <span class="text-primary font-bold text-xl">03.</span>
-            <div>
-              <p class="font-bold text-black text-sm">Mạng lưới vận chuyển</p>
-              <p class="text-gray-500 text-sm">Liên kết với các đơn vị vận chuyển uy tín giao hàng toàn quốc.</p>
-            </div>
-          </li>
-        </ul>
-      </div>
-      <div class="relative aspect-video rounded-3xl overflow-hidden shadow-2xl border border-divider">
-        <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=800" alt="Vận chuyển toàn quốc" class="w-full h-full object-cover" />
-      </div>
-    </div>
-  </section>
+    <MaterialLayout />
 
+    <Calculator />
+
+    <BlogSection />
+
+    <FAQSection />
+  </main>
+
+  <Footer />
 </Layout>
+
+<style is:global>
+  /* Bạn có thể thêm các cấu hình font hoặc màu sắc chủ đạo tại đây nếu cần */
+  :root {
+    --color-primary: #e11d48; /* Ví dụ màu đỏ iDecal */
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif; /* Hoặc font bạn đang dùng */
+    background-color: #ffffff;
+    color: #333;
+  }
+</style>
