@@ -1,0 +1,52 @@
+---
+const faqs = [
+  {
+    q: "Làm thế nào để tôi đặt hàng từ xa?",
+    a: "Quy trình rất đơn giản: Bạn gửi file thiết kế qua Zalo hoặc Email. Chúng tôi kiểm tra kỹ thuật, báo giá và thực hiện gia công ngay sau khi chốt đơn. Sản phẩm sẽ được gửi đến tận nơi qua các đơn vị chuyển phát nhanh hoặc nhà xe."
+  },
+  {
+    q: "Xưởng hỗ trợ những định dạng file thiết kế nào?",
+    a: "Để đường cắt đạt độ chính xác cao nhất, chúng tôi khuyến khích khách hàng gửi file định dạng Vector như .AI, .Corel (CDR), .PDF hoặc .EPS. Nếu bạn chỉ có ảnh chụp, chúng tôi hỗ trợ vẽ lại file vector chuẩn máy cắt."
+  },
+  {
+    q: "Quy chuẩn đóng gói hàng gửi tỉnh như thế nào?",
+    a: "Chúng tôi sử dụng ống nhựa PVC hoặc ống giấy cứng chịu lực để cuộn decal. Quy trình này giúp decal không bị gãy nếp, bong tróc đường cắt và đảm bảo an toàn tuyệt đối khi vận chuyển đi xa."
+  },
+  {
+    q: "Thời gian gia công và giao hàng mất bao lâu?",
+    a: "Thời gian gia công thường trong vòng 24h. Thời gian nhận hàng tùy thuộc vào đơn vị vận chuyển: Chuyển phát nhanh từ 2-4 ngày, gửi chành xe có thể nhận ngay trong ngày hoặc hôm sau tùy khu vực."
+  },
+  {
+    q: "Chính sách bảo hành sản phẩm ra sao?",
+    a: "Chúng tôi cam kết lỗi 1 đổi 1 nếu sản phẩm không đúng mẫu mã, sai kích thước file thiết kế đã chốt hoặc hư hỏng nặng do lỗi vận chuyển khi khách hàng có video mở hàng."
+  }
+];
+---
+
+<section class="py-20 bg-[#F5F5F5]">
+  <div class="max-w-4xl mx-auto px-4">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl text-black mb-3">Câu hỏi thường gặp</h2>
+      <div class="w-16 h-1.5 bg-primary mx-auto"></div>
+    </div>
+
+    <div class="space-y-4">
+      {faqs.map((faq) => (
+        <div class="bg-white rounded-xl border border-divider overflow-hidden hover:shadow-md transition-shadow">
+          <div class="p-6">
+            <h3 class="text-lg text-black mb-3 flex items-start gap-3">
+              <span class="text-primary font-bold">Q:</span>
+              {faq.q}
+            </h3>
+            <div class="pl-7 border-l-2 border-gray-100">
+              <p class="text-gray-600 text-sm leading-relaxed">
+                <span class="font-bold text-gray-400 mr-1">A:</span>
+                {faq.a}
+              </p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
