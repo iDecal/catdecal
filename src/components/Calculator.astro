@@ -1,66 +1,85 @@
-<section class="bg-surface p-6 md:p-8 rounded-custom shadow-xl border border-divider max-w-4xl mx-auto my-10">
+<section class="bg-surface p-6 md:p-8 rounded-custom shadow-xl border border-divider max-w-4xl mx-auto my-10 font-sans text-copy">
   <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
     
     <div class="space-y-6">
       <h2 class="text-2xl font-bold text-secondary flex items-center gap-2">
         <span class="w-2 h-8 bg-primary rounded-full"></span>
-        Tính giá theo kích thước
+        Báo giá & Đặt lịch
       </h2>
 
       <div>
-        <label class="block text-sm font-bold text-copy mb-2 uppercase tracking-wide">1. Loại vật liệu & Khổ máy</label>
-        <select id="calc-material" class="w-full p-4 bg-background border border-divider rounded-lg focus:ring-2 focus:ring-primary outline-none appearance-none">
-          <option value="15000" data-name="Decal Màu" data-unit="m tới" data-width="60">Decal Màu (Khổ 60cm)</option>
-          <option value="12000" data-name="Decal Mờ" data-unit="m tới" data-width="120">Decal Mờ (Khổ 120cm)</option>
-          <option value="45000" data-name="Decal Phản Quang" data-unit="m tới" data-width="60">Decal Phản Quang (Khổ 60cm)</option>
+        <label class="block text-sm font-bold mb-2 uppercase tracking-wide text-secondary">1. Chọn loại dịch vụ</label>
+        <select id="calc-material" class="w-full p-4 bg-background border border-divider rounded-lg focus:ring-2 focus:ring-primary outline-none appearance-none cursor-pointer">
+          <option value="15000" data-name="Cắt Decal màu" data-width="60">Cắt Decal màu (Khổ 60cm)</option>
+          <option value="25000" data-name="Cắt Decal màu" data-width="120">Cắt Decal màu (Khổ 120cm)</option>
+          <option value="12000" data-name="Cắt Decal mờ" data-width="120">Cắt Decal mờ (Khổ 120cm)</option>
+          <option value="35000" data-name="Cắt bế Tem nhãn" data-width="100">Cắt bế Tem nhãn (Khổ 100cm)</option>
+          <option value="45000" data-name="Cắt Decal phản quang" data-width="60">Cắt Decal phản quang (Khổ 60cm)</option>
+          <option value="40000" data-name="Cắt Decal chuyển nhiệt" data-width="50">Cắt Decal chuyển nhiệt (Khổ 50cm)</option>
         </select>
-        <p class="text-[10px] text-copy-muted mt-1">* Lưu ý: Chiều rộng file không được vượt quá khổ máy.</p>
       </div>
 
       <div class="grid grid-cols-2 gap-4">
         <div>
-          <label class="block text-sm font-bold text-copy mb-2">Rộng file (cm)</label>
+          <label class="block text-sm font-bold mb-2">Rộng file (cm)</label>
           <input type="number" id="file-width" value="50" class="w-full p-4 bg-background border border-divider rounded-lg outline-none focus:border-primary" />
         </div>
         <div>
-          <label class="block text-sm font-bold text-copy mb-2">Cao file (cm)</label>
+          <label class="block text-sm font-bold mb-2">Cao file (cm)</label>
           <input type="number" id="file-height" value="100" class="w-full p-4 bg-background border border-divider rounded-lg outline-none focus:border-primary" />
         </div>
       </div>
 
-      <div class="grid grid-cols-2 gap-4">
-        <div>
-          <label class="block text-sm font-bold text-copy mb-2 uppercase tracking-wide">Số lượng (tấm)</label>
-          <input type="number" id="file-count" value="1" min="1" class="w-full p-4 bg-background border border-divider rounded-lg focus:ring-2 focus:ring-primary outline-none" />
-        </div>
-        <div>
-          <label class="block text-sm font-bold text-copy mb-2 uppercase tracking-wide">Làm tròn</label>
-          <select id="round-type" class="w-full p-4 bg-background border border-divider rounded-lg outline-none">
-            <option value="standard">Để lẻ (0.1m)</option>
-            <option value="up">Lên mét nguyên</option>
-          </select>
+      <div>
+        <label class="block text-sm font-bold mb-2 uppercase tracking-wide text-secondary">Số lượng tấm</label>
+        <input type="number" id="file-count" value="1" min="1" class="w-full p-4 bg-background border border-divider rounded-lg focus:ring-2 focus:ring-primary outline-none" />
+      </div>
+
+      <div class="pt-4 border-t border-divider space-y-4">
+        <label class="flex items-center gap-3 cursor-pointer group">
+          <div class="relative">
+            <input type="checkbox" id="is-urgent" class="peer hidden" />
+            <div class="w-6 h-6 border-2 border-divider rounded bg-background peer-checked:bg-primary peer-checked:border-primary transition-all"></div>
+            <svg class="absolute top-1 left-1 w-4 h-4 text-white hidden peer-checked:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+          </div>
+          <span class="font-bold text-secondary">Cần nhận ngay trong ngày</span>
+          <span class="text-[10px] bg-red-100 text-red-600 px-2 py-1 rounded-full">+150.000đ phí ưu tiên</span>
+        </label>
+
+        <div id="date-input-wrapper">
+          <label class="block text-sm font-bold mb-2 uppercase tracking-wide text-secondary">Ngày nhận hàng dự kiến</label>
+          <input type="date" id="pickup-date" class="w-full p-4 bg-background border border-divider rounded-lg outline-none focus:border-primary" />
         </div>
       </div>
     </div>
 
-    <div class="bg-secondary rounded-2xl p-8 text-white flex flex-col justify-between shadow-2xl">
-      <div>
-        <p class="text-gray-400 uppercase text-xs font-bold tracking-widest mb-4">Kết quả quy đổi</p>
-        <div class="flex items-baseline gap-2 mb-2">
-          <span id="display-met" class="text-4xl font-bold text-white">0</span>
-          <span class="text-xl text-gray-400">mét tới</span>
-        </div>
-        <div class="flex items-baseline gap-2">
-          <span id="display-total" class="text-6xl font-black text-primary">0</span>
-          <span class="text-2xl font-bold text-primary">đ</span>
-        </div>
+    <div class="bg-secondary rounded-2xl p-8 text-white flex flex-col justify-between shadow-2xl relative overflow-hidden">
+      <div class="relative z-10">
+        <p class="text-gray-400 uppercase text-xs font-bold tracking-[0.2em] mb-6">Chi tiết đơn hàng</p>
         
-        <div id="summary-text" class="mt-8 pt-6 border-t border-white/10 text-sm text-gray-300 space-y-1">
+        <div class="space-y-4">
+          <div class="flex justify-between items-end border-b border-white/10 pb-2">
+            <span class="text-gray-400 text-sm">Tổng mét tới quy đổi:</span>
+            <span class="text-2xl font-bold"><span id="display-met">0</span> m</span>
+          </div>
+          
+          <div class="pt-4">
+            <p class="text-gray-400 text-sm mb-1 text-primary">Thành tiền:</p>
+            <div class="flex items-baseline gap-2">
+              <span id="display-total" class="text-6xl font-black text-primary">0</span>
+              <span class="text-2xl font-bold text-primary">đ</span>
+            </div>
+            <p id="urgent-note" class="text-[10px] text-red-400 mt-2 hidden italic">* Đã bao gồm phí gia công hỏa tốc 150k</p>
+          </div>
+        </div>
+
+        <div id="summary-detail" class="mt-8 text-sm text-gray-300 italic leading-relaxed">
           </div>
       </div>
 
-      <button id="zalo-order-btn" class="mt-8 w-full bg-primary hover:bg-primary-dark text-white font-bold py-4 rounded-xl shadow-lg transition-all flex items-center justify-center gap-2 uppercase">
-        Gửi yêu cầu qua Zalo
+      <button id="zalo-order-btn" class="mt-10 w-full bg-primary hover:bg-primary-dark text-white font-bold py-5 rounded-xl shadow-lg transition-all transform hover:scale-[1.02] flex items-center justify-center gap-3 uppercase tracking-wider text-sm">
+        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.54.36 3.04 1 4.39L2 22l5.61-1c1.35.64 2.85 1 4.39 1 5.52 0 10-4.48 10-10S17.52 2 12 2z"/></svg>
+        Gửi yêu cầu & Chốt ngày nhận
       </button>
     </div>
   </div>
@@ -72,58 +91,69 @@
     const fWidth = document.getElementById('file-width');
     const fHeight = document.getElementById('file-height');
     const fCount = document.getElementById('file-count');
-    const roundType = document.getElementById('round-type');
+    const isUrgent = document.getElementById('is-urgent');
+    const pickupDate = document.getElementById('pickup-date');
+    const dateWrapper = document.getElementById('date-input-wrapper');
+    const urgentNote = document.getElementById('urgent-note');
     
     const totalDisplay = document.getElementById('display-total');
     const metDisplay = document.getElementById('display-met');
-    const summaryDisplay = document.getElementById('summary-text');
+    const summaryDetail = document.getElementById('summary-detail');
     const zaloBtn = document.getElementById('zalo-order-btn');
+
+    // Thiết lập ngày tối thiểu là ngày mai cho ô chọn ngày
+    const tomorrow = new Date();
+    tomorrow.setDate(tomorrow.getDate() + 1);
+    pickupDate.min = tomorrow.toISOString().split('T')[0];
 
     function calculate() {
       const pricePerMet = parseInt(matSelect.value);
       const width = parseFloat(fWidth.value) || 0;
       const height = parseFloat(fHeight.value) || 0;
-      const count = parseInt(fCount.value) || 0;
+      const count = parseInt(fCount.value) || 1;
       const selectedMat = matSelect.options[matSelect.selectedIndex];
       const maxMachineWidth = parseFloat(selectedMat.getAttribute('data-width'));
 
-      // 1. Kiểm tra khổ máy
-      if (width > maxMachineWidth) {
-        fWidth.classList.add('border-primary', 'text-primary');
+      // 1. Logic ẩn/hiện ngày nhận
+      if (isUrgent.checked) {
+        dateWrapper.style.opacity = '0.3';
+        dateWrapper.style.pointerEvents = 'none';
+        urgentNote.classList.remove('hidden');
       } else {
-        fWidth.classList.remove('border-primary', 'text-primary');
+        dateWrapper.style.opacity = '1';
+        dateWrapper.style.pointerEvents = 'auto';
+        urgentNote.classList.add('hidden');
       }
 
-      // 2. Tính số mét tới (Chiều cao * số lượng / 100)
+      // 2. Tính mét tới (Làm tròn lên 1 chữ số thập phân)
       let metToi = (height * count) / 100;
+      metToi = Math.ceil(metToi * 10) / 10; 
+      if (metToi < 1 && metToi > 0) metToi = 1;
 
-      // 3. Logic làm tròn
-      if (roundType.value === 'up') {
-        metToi = Math.ceil(metToi); // 1.2 -> 2
-      } else {
-        metToi = Math.round(metToi * 10) / 10; // 1.23 -> 1.2
-      }
+      // 3. Tính tổng tiền (Cộng thêm 150k nếu tick gấp)
+      const baseTotal = metToi * pricePerMet;
+      const urgentFee = isUrgent.checked ? 150000 : 0;
+      const finalTotal = baseTotal + urgentFee;
 
-      if (metToi < 1 && metToi > 0) metToi = 1; // Tối thiểu 1 mét tới để bõ công cắt
-
-      const total = metToi * pricePerMet;
-
-      // 4. Hiển thị
-      metDisplay.innerText = metToi;
-      totalDisplay.innerText = total.toLocaleString('vi-VN');
+      // 4. Cập nhật giao diện
+      metDisplay.innerText = metToi.toFixed(1);
+      totalDisplay.innerText = finalTotal.toLocaleString('vi-VN');
       
-      summaryDisplay.innerHTML = `
-        <p>Vật liệu: <strong>${selectedMat.getAttribute('data-name')}</strong></p>
-        <p>Kích thước: <strong>${width}x${height} cm</strong> (x${count} tấm)</p>
-        <p>Quy cách: <strong>${metToi} mét tới</strong></p>
+      const matName = selectedMat.getAttribute('data-name');
+      const deliveryInfo = isUrgent.checked ? "Gấp trong ngày" : (pickupDate.value ? `Nhận ngày: ${pickupDate.value}` : "Chưa chọn ngày");
+      
+      summaryDetail.innerHTML = `
+        Dịch vụ: <strong>${matName}</strong><br>
+        Quy cách: ${width}x${height}cm | Số lượng: ${count}<br>
+        Thời gian: <span class="text-primary font-bold">${deliveryInfo}</span>
       `;
 
       // 5. Link Zalo
-      const msg = `Báo giá catdecal.vn:\n- ${selectedMat.getAttribute('data-name')}\n- Kích thước: ${width}x${height}cm\n- Số lượng: ${count} tấm\n- Quy đổi: ${metToi} mét tới\n- Tạm tính: ${total.toLocaleString()}đ`;
-      zaloBtn.onclick = () => window.open(`https://zalo.me/SĐT_CỦA_BẠN?text=${encodeURIComponent(msg)}`, '_blank');
+      const msg = `Chào CatDecal.vn, mình cần báo giá:\n- Loại: ${matName}\n- Quy cách: ${width}x${height}cm (${count} tấm)\n- Thời gian: ${deliveryInfo}\n- Quy đổi: ${metToi} mét tới\n- Tạm tính: ${finalTotal.toLocaleString()}đ`;
+      zaloBtn.onclick = () => window.open(`https://zalo.me/09xxxxxxxx?text=${encodeURIComponent(msg)}`, '_blank');
     }
 
-    [matSelect, fWidth, fHeight, fCount, roundType].forEach(el => el.addEventListener('input', calculate));
+    [matSelect, fWidth, fHeight, fCount, isUrgent, pickupDate].forEach(el => el.addEventListener('input', calculate));
     calculate();
   }
 
