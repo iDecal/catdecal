@@ -1,5 +1,4 @@
 ---
----
 const socials = [
   { 
     name: 'Facebook', 
@@ -107,34 +106,24 @@ const socials = [
 
 <style>
   a { text-decoration: none; }
-
-  /* Brand Color Interaction */
   .social-icon:hover {
     background-color: var(--brand-color);
     border-color: var(--brand-color);
     transform: translateY(-3px);
   }
-  .social-icon:hover .icon-svg {
-    color: white;
-  }
-
+  .social-icon:hover .icon-svg { color: white; }
   @media (max-width: 767px) {
-    .footer-accordion h3 {
-      text-transform: none;
-      letter-spacing: normal;
-    }
+    .footer-accordion h3 { text-transform: none; letter-spacing: normal; }
   }
 </style>
 
 <script>
-  // Script giữ nguyên như bản trước để xử lý accordion mượt mà
   function setupFooter() {
     const accordions = document.querySelectorAll('.footer-accordion');
     accordions.forEach(item => {
       const btn = item.querySelector('.accordion-btn');
       const content = item.querySelector('.footer-content');
       const span = item.querySelector('span');
-
       btn?.addEventListener('click', () => {
         if (window.innerWidth < 768) {
           const isOpen = !content?.classList.contains('hidden');
@@ -151,112 +140,3 @@ const socials = [
   setupFooter();
   document.addEventListener('astro:after-swap', setupFooter);
 </script>
----
-
-<footer class="bg-white text-slate-600 pt-24 pb-12 border-t border-slate-50">
-  <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12 lg:gap-20">
-    
-    <div class="footer-column">
-      <h2 class="text-3xl font-black text-slate-900 mb-6 tracking-tighter">catdecal<span class="text-secondary">.vn</span></h2>
-      <p class="text-sm leading-7 mb-8 text-slate-400">
-        Hệ sinh thái iDecal - Chuyên gia gia công cắt decal và interior film tại Bình Định.
-      </p>
-      <div class="flex gap-4">
-        {socials.map(social => (
-          <a href={social.url} class="w-10 h-10 bg-slate-50 rounded-xl flex items-center justify-center text-slate-400 hover:bg-secondary hover:text-white transition-all p-2.5 shadow-sm" aria-label={social.name} set:html={social.icon}></a>
-        ))}
-      </div>
-    </div>
-
-    <div class="footer-accordion border-b border-slate-50 md:border-0">
-      <button class="w-full flex justify-between items-center py-5 md:py-0 md:cursor-default accordion-btn">
-        <h3 class="text-[11px] font-bold uppercase tracking-[0.2em] text-slate-900">Dịch vụ</h3>
-        <span class="md:hidden text-xl font-light text-secondary">+</span>
-      </button>
-      <div class="footer-content hidden md:block mt-8 pb-8 md:pb-0">
-        <ul class="text-sm space-y-5">
-          <li><a href="/dich-vu/cat-decal-mau" class="hover:text-secondary transition-colors">Cắt Decal quảng cáo</a></li>
-          <li><a href="/dich-vu/cat-decal-mo" class="hover:text-secondary transition-colors">Cắt Decal mờ vách kính</a></li>
-          <li><a href="/dich-vu/cat-be-tem-nhan" class="hover:text-secondary transition-colors">Bế tem nhãn sản phẩm</a></li>
-          <li><a href="/dich-vu/cat-decal-phan-quang" class="hover:text-secondary transition-colors">Cắt Decal phản quang</a></li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="footer-accordion border-b border-slate-50 md:border-0">
-      <button class="w-full flex justify-between items-center py-5 md:py-0 md:cursor-default accordion-btn">
-        <h3 class="text-[11px] font-bold uppercase tracking-[0.2em] text-slate-900">Thông tin</h3>
-        <span class="md:hidden text-xl font-light text-secondary">+</span>
-      </button>
-      <div class="footer-content hidden md:block mt-8 pb-8 md:pb-0">
-        <ul class="text-sm space-y-5">
-          <li><a href="/blog" class="hover:text-secondary transition-colors">Blog kiến thức</a></li>
-          <li><a href="/quy-trinh-dat-hang" class="hover:text-secondary transition-colors">Quy trình đặt hàng</a></li>
-          <li><a href="/giao-hang-thanh-toan" class="hover:text-secondary transition-colors">Giao hàng & Thanh toán</a></li>
-          <li><a href="#" class="hover:text-secondary transition-colors">Chính sách dịch vụ</a></li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="footer-accordion md:border-0">
-      <button class="w-full flex justify-between items-center py-5 md:py-0 md:cursor-default accordion-btn">
-        <h3 class="text-[11px] font-bold uppercase tracking-[0.2em] text-slate-900">Liên hệ</h3>
-        <span class="md:hidden text-xl font-light text-secondary">+</span>
-      </button>
-      <div class="footer-content hidden md:block mt-8 pb-8 md:pb-0">
-        <p class="text-secondary font-black text-2xl mb-2 tracking-tight">0862 208 108</p>
-        <p class="text-slate-400 text-[11px] tracking-wide mb-8">Zalo hỗ trợ 24/7</p>
-        <div class="text-sm text-slate-500 leading-relaxed">
-          <p class="font-bold text-slate-900 mb-1">Xưởng sản xuất:</p>
-          <p>TP. Quy Nhơn, Tỉnh Bình Định</p>
-        </div>
-      </div>
-    </div>
-
-  </div>
-  
-  <div class="max-w-7xl mx-auto px-6 mt-24 pt-8 border-t border-slate-50 text-center">
-    <p class="text-slate-300 text-[10px] font-medium tracking-[0.4em] uppercase">
-      © 2026 CATDECAL.VN — iDecal Ecosystem
-    </p>
-  </div>
-</footer>
-
-<script>
-  function setupFooter() {
-    const accordions = document.querySelectorAll('.footer-accordion');
-    
-    accordions.forEach(item => {
-      const btn = item.querySelector('.accordion-btn');
-      const content = item.querySelector('.footer-content');
-      const span = item.querySelector('span');
-
-      btn?.addEventListener('click', () => {
-        if (window.innerWidth < 768) {
-          const isOpen = !content?.classList.contains('hidden');
-          
-          document.querySelectorAll('.footer-content').forEach(c => c.classList.add('hidden'));
-          document.querySelectorAll('.footer-accordion span').forEach(s => s.textContent = '+');
-
-          if (!isOpen) {
-            content?.classList.remove('hidden');
-            if (span) span.textContent = '−';
-          }
-        }
-      });
-    });
-  }
-
-  setupFooter();
-  document.addEventListener('astro:after-swap', setupFooter);
-</script>
-
-<style>
-  a { text-decoration: none; }
-  @media (max-width: 767px) {
-    .footer-content ul li a {
-      padding: 0.6rem 0;
-      display: block;
-    }
-  }
-</style>
