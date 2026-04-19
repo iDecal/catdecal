@@ -14,8 +14,8 @@
 
 export const brand = {
   // ── Site Identity ──────────────────────────────────────────────────────────
-  name: 'Small Business Starter',
-  tagline: 'Professional service you can trust.',
+  name: 'Dịch vụ cắt Decal',
+  tagline: 'Cắt Decal nhanh - Giao hàng toàn quốc.',
   description:
     'A fast, mobile-first small-business website template built with Astro 6 and Tailwind v4. Fully customisable for any trade or service business.',
   url: 'https://example.com',
@@ -26,7 +26,7 @@ export const brand = {
   // to match (both must stay in sync so Astro can optimise the correct files).
   fonts: {
     body: 'Inter',
-    display: 'Oswald',
+    display: 'Inter',
   },
 
   // ── Colour Palette ─────────────────────────────────────────────────────────
