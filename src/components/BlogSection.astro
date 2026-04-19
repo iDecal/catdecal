@@ -1,5 +1,5 @@
 ---
-// Dữ liệu bài viết tập trung vào chuyên môn kỹ thuật và quy trình giao hàng toàn quốc
+// Dữ liệu bài viết
 const posts = [
   {
     title: "Hướng dẫn chuẩn bị file vector chuẩn cho máy cắt decal",
@@ -25,31 +25,32 @@ const posts = [
 ];
 ---
 
-<section class="py-20 bg-white">
+<section class="py-16 md:py-20 bg-white overflow-hidden">
   <div class="max-w-7xl mx-auto px-4">
-    <div class="flex justify-between items-end mb-12">
+    
+    <div class="flex justify-between items-end mb-10 md:mb-12">
       <div>
-        <h2 class="text-3xl text-black mb-2">Chia sẻ kinh nghiệm gia công</h2>
+        <h2 class="text-2xl md:text-3xl font-bold text-black mb-2 uppercase italic">Chia sẻ kinh nghiệm</h2>
         <div class="w-12 h-1 bg-primary"></div>
       </div>
-      <a href="/blog" class="text-sm font-bold text-primary hover:underline transition-all">
-        Xem tất cả bài viết →
+      <a href="/blog" class="text-xs md:text-sm font-bold text-primary hover:underline transition-all uppercase tracking-tighter">
+        Xem tất cả →
       </a>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <div class="flex md:grid md:grid-cols-3 gap-6 md:gap-8 overflow-x-auto md:overflow-visible snap-x snap-mandatory scrollbar-hide -mx-4 px-4 md:mx-0 md:px-0">
       {posts.map((post) => (
-        <article class="group cursor-pointer">
-          <div class="aspect-[16/10] overflow-hidden rounded-xl border border-divider mb-5">
+        <article class="min-w-[85%] md:min-w-0 snap-start group cursor-pointer">
+          <div class="aspect-[16/10] overflow-hidden rounded-xl border border-slate-100 mb-5 shadow-sm">
             <img 
               src={post.image} 
               alt={post.title} 
               class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
             />
           </div>
-          <div class="space-y-3">
-            <span class="text-xs font-bold text-gray-400 uppercase tracking-widest">{post.date}</span>
-            <h3 class="text-xl text-black group-hover:text-primary transition-colors leading-snug">
+          <div class="space-y-2 md:space-y-3">
+            <span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">{post.date}</span>
+            <h3 class="text-lg md:text-xl font-bold text-black group-hover:text-primary transition-colors leading-tight">
               <a href={post.link}>{post.title}</a>
             </h3>
             <p class="text-gray-500 text-sm leading-relaxed line-clamp-2">
@@ -61,3 +62,22 @@ const posts = [
     </div>
   </div>
 </section>
+
+<style>
+  /* Ẩn thanh cuộn nhưng vẫn giữ tính năng vuốt */
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  /* Typography chân phương */
+  h2, h3, p, span, a {
+    font-style: normal !important;
+  }
+  .italic {
+    font-style: italic !important;
+  }
+</style>
