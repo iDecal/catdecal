@@ -4,28 +4,28 @@ export default {
 	theme: {
 		extend: {
 			colors: {
-				// Đổi Đen thành Primary (Chủ đạo)
-				primary: '#000000',   
+				// Màu Cam đậm làm chủ đạo (Primary)
+				primary: '#EA580C', 
 				
-				// Đổi Vàng chanh thành Secondary (Màu nhấn cho button, link)
-				secondary: '#F59E0B', 
+				// Màu Xám than đậm cho các nút bấm hoặc điểm nhấn cần sự mạnh mẽ
+				secondary: '#334155', 
 				
-				// Màu bổ trợ cho các vùng cần sự nhẹ nhàng
-				accent: '#FAB1A0',    
+				// Màu cam nhạt bổ trợ cho các vùng nhẹ nhàng hoặc hover
+				accent: '#FFEDD5',    
 				
-				// Nền sạch sẽ
+				// Nền trắng sạch sẽ
 				background: '#FFFFFF',
 				
-				// Màu chữ trên nền sáng
-				copy: '#0F172A',
-				'copy-muted': '#475569',
+				// Màu chữ chính (Xám đen để dịu mắt hơn đen thuần)
+				copy: '#1E293B',
+				'copy-muted': '#64748B',
 			},
 			fontFamily: {
 				heading: ['"Be Vietnam Pro"', 'sans-serif'],
 				body: ['Inter', 'sans-serif'],
 			},
 			borderRadius: {
-				'custom': '0.625rem', // Theo chuẩn brand md của bạn
+				'custom': '0.625rem', 
 			}
 		},
 	},
