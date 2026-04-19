@@ -1,0 +1,83 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const pageTitle = "Thư Viện Mẫu Cắt Decal & Thiết Kế Đẹp - catdecal.vn";
+const pageDescription = "Khám phá hàng ngàn mẫu cắt decal vi tính, bế tem nhãn, chữ quảng cáo và interior film đẹp mắt. Hình ảnh thực tế các dự án đã bàn giao tại Bình Định.";
+
+// Dữ liệu mẫu thư viện (Bạn hãy thay bằng link ảnh thật của bạn)
+const libraryData = [
+  { id: 1, category: "Mẫu Tem Nhãn", title: "Tem mật ong bế tròn", url: "https://images.unsplash.com/photo-1510004933391-f9b17ae2bd99?auto=format&fit=crop&q=80&w=600", tag: "Tem Bế" },
+  { id: 2, category: "Quảng Cáo", title: "Cắt chữ Decal Shop thời trang", url: "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?auto=format&fit=crop&q=80&w=600", tag: "Chữ Cắt" },
+  { id: 3, category: "Vách Kính", title: "Decal mờ sọc ngang", url: "https://images.unsplash.com/photo-1503387762-592dea58ef23?auto=format&fit=crop&q=80&w=600", tag: "Dán Kính" },
+  { id: 4, category: "Quảng Cáo", title: "Decal Phản quang xe xe tải", url: "https://images.unsplash.com/photo-1572375992501-4b0892d50c69?auto=format&fit=crop&q=80&w=600", tag: "3M" },
+  { id: 5, category: "Mẫu Tem Nhãn", title: "Tem nhãn bánh kem", url: "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&q=80&w=600", tag: "Tem Bế" },
+  { id: 6, category: "Vách Kính", title: "Mẫu dán kính mờ full", url: "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?auto=format&fit=crop&q=80&w=600", tag: "Dán Kính" },
+];
+
+const categories = ["Tất cả", "Mẫu Tem Nhãn", "Quảng Cáo", "Vách Kính", "3M Phản Quang"];
+---
+
+<BaseLayout title={pageTitle} description={pageDescription}>
+  <section class="bg-[#F5F5F5] py-20 border-b border-divider">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <nav class="flex justify-center space-x-2 text-sm text-gray-500 mb-4">
+        <a href="/" class="hover:text-primary transition-colors">Trang chủ</a>
+        <span>/</span>
+        <span class="text-black font-medium">Thư viện mẫu</span>
+      </nav>
+      
+      <h1 class="text-4xl md:text-5xl font-bold mb-4 text-black uppercase tracking-tighter">THƯ VIỆN THIẾT KẾ</h1>
+      
+      <div class="w-20 h-1.5 bg-primary mx-auto mb-6"></div>
+      
+      <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+        Tìm kiếm ý tưởng cho dự án của bạn từ hàng ngàn mẫu sản phẩm đã hoàn thiện. Chúng tôi hỗ trợ cắt lẻ và gia công số lượng lớn theo yêu cầu.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4">
+      
+      <div class="flex flex-wrap justify-center gap-2 mb-12 border border-divider rounded-full p-2 max-w-2xl mx-auto">
+        {categories.map((cat, index) => (
+          <button class={`px-5 py-2.5 rounded-full text-sm font-medium transition-colors ${index === 0 ? 'bg-primary text-white' : 'text-copy hover:bg-gray-50'}`}>
+            {cat}
+          </button>
+        ))}
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {libraryData.map((item) => (
+          <div class="group bg-white rounded-xl border border-divider overflow-hidden hover:shadow-xl transition-all duration-300">
+            <div class="aspect-video overflow-hidden relative">
+              <img 
+                src={item.url} 
+                alt={item.title} 
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              <span class="absolute top-3 left-3 bg-secondary text-white text-xs font-medium px-3 py-1.5 rounded-full">
+                {item.tag}
+              </span>
+            </div>
+            
+            <div class="p-5">
+              <p class="text-xs text-gray-400 font-medium uppercase tracking-wider mb-1">{item.category}</p>
+              <h3 class="font-bold text-lg text-black">{item.title}</h3>
+              <a href="#" class="mt-4 inline-block text-sm font-medium text-primary hover:text-primary-dark transition-colors">
+                Xem chi tiết →
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+      
+      <div class="mt-16 text-center">
+        <button class="bg-white text-black border-2 border-black px-10 py-3 rounded-full font-bold hover:bg-gray-50 transition-all uppercase text-sm">
+          Xem thêm mẫu
+        </button>
+      </div>
+
+    </div>
+  </section>
+</BaseLayout>
