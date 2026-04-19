@@ -1,0 +1,26 @@
+---
+// src/layouts/ServiceLayout.astro
+import BaseLayout from './BaseLayout.astro';
+import Calculator from '../components/Calculator.astro';
+
+const { title, description, materialId } = Astro.props;
+---
+
+<BaseLayout title={title}>
+  <article class="py-20 bg-white">
+    <div class="container mx-auto px-4 max-w-4xl">
+      <h1 class="text-4xl font-heading font-black italic text-primary uppercase mb-8">{title}</h1>
+      <div class="prose prose-slate max-w-none">
+        <slot /> </div>
+    </div>
+  </article>
+
+  <section class="py-20 bg-slate-50 border-t border-slate-100">
+    <div class="container mx-auto px-4 text-center mb-10">
+      <h2 class="text-2xl font-bold italic text-primary uppercase">Đặt hàng & Tính giá ngay</h2>
+      <p class="text-sm text-copy-muted mt-2">Dành riêng cho dịch vụ: {title}</p>
+    </div>
+    
+    <Calculator defaultMaterial={materialId} />
+  </section>
+</BaseLayout>
