@@ -1,0 +1,117 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const pageTitle = "Cửa hàng vật liệu Decal & Tem nhãn - catdecal.vn";
+const pageDescription = "Cung cấp các loại decal cuộn, decal tấm và dịch vụ cắt bế sẵn giao hàng toàn quốc.";
+
+const products = [
+  {
+    id: 1,
+    name: "Decal mờ dán kính (Cuộn 1.2m)",
+    price: "65.000đ",
+    unit: "mét tới",
+    image: "https://images.unsplash.com/photo-1614332287897-cdc485fa562d?auto=format&fit=crop&q=80&w=400",
+    category: "Vật liệu dán kính"
+  },
+  {
+    id: 2,
+    name: "Decal phản quang 3M 610",
+    price: "180.000đ",
+    unit: "mét tới",
+    image: "https://images.unsplash.com/photo-1572375992501-4b0892d50c69?auto=format&fit=crop&q=80&w=400",
+    category: "Phản quang"
+  },
+  {
+    id: 3,
+    name: "Decal màu chuyển nhiệt PU",
+    price: "95.000đ",
+    unit: "mét tới",
+    image: "https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&q=80&w=400",
+    category: "Ép áo thun"
+  },
+  {
+    id: 4,
+    name: "Gói gia công Tem nhãn (Tấm A3)",
+    price: "15.000đ",
+    unit: "tờ",
+    image: "https://images.unsplash.com/photo-1616464916356-3a777b2b59b1?auto=format&fit=crop&q=80&w=400",
+    category: "Gia công bế"
+  }
+];
+---
+
+<BaseLayout title={pageTitle} description={pageDescription}>
+  <section class="bg-[#F5F5F5] py-16 border-b border-divider">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+        <div class="max-w-2xl">
+          <h1 class="text-3xl md:text-5xl font-bold text-black mb-4 tracking-tighter">Cửa hàng trực tuyến</h1>
+          <div class="w-20 h-1.5 bg-primary mb-6"></div>
+          <p class="text-gray-600 text-lg">
+            Cung cấp vật tư decal chính hãng và các gói gia công sẵn sàng vận chuyển toàn quốc.
+          </p>
+        </div>
+        <div class="flex items-center gap-4 bg-white p-4 rounded-2xl border border-divider shadow-sm">
+          <div class="w-10 h-10 bg-primary/10 text-primary rounded-full flex items-center justify-center">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
+          </div>
+          <div>
+            <p class="text-xs text-gray-500 font-bold">Giỏ hàng</p>
+            <p class="text-sm text-black font-bold">0 sản phẩm</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        {products.map((product) => (
+          <div class="group flex flex-col border border-divider rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300">
+            <div class="relative aspect-square bg-gray-100 overflow-hidden">
+              <img 
+                src={product.image} 
+                alt={product.name} 
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              <span class="absolute top-3 left-3 bg-white px-2 py-1 rounded-lg text-[10px] font-bold text-black shadow-sm uppercase">
+                {product.category}
+              </span>
+            </div>
+            
+            <div class="p-5 flex-1 flex flex-col">
+              <h3 class="text-black font-bold text-lg mb-2 leading-snug group-hover:text-primary transition-colors">
+                {product.name}
+              </h3>
+              <div class="mt-auto pt-4 flex items-center justify-between">
+                <div>
+                  <span class="text-primary font-bold text-xl">{product.price}</span>
+                  <span class="text-gray-400 text-xs ml-1">/ {product.unit}</span>
+                </div>
+                <button class="w-10 h-10 bg-black text-white rounded-xl flex items-center justify-center hover:bg-primary transition-colors shadow-lg">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div class="mt-20 p-8 rounded-3xl bg-[#2D3436] text-white flex flex-col md:flex-row items-center justify-between gap-8">
+        <div class="flex items-center gap-6">
+          <div class="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center text-primary">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+          </div>
+          <div>
+            <h4 class="text-xl font-bold">Giao hàng nhanh toàn quốc</h4>
+            <p class="text-gray-400 text-sm">Hỗ trợ gửi chành xe hoặc chuyển phát nhanh tận nơi.</p>
+          </div>
+        </div>
+        <a href="https://zalo.me/sdt-cua-ban" class="bg-white text-black px-10 py-4 rounded-full font-bold text-sm hover:bg-primary hover:text-white transition-all">
+          Tư vấn sỉ qua Zalo
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
