@@ -1,6 +1,8 @@
 ---
-// Import các component từ thư mục components
-import BaseLayout from '../layouts/BaseLayout.astro';
+// 1. Sửa lại đường dẫn Layout cho đúng với file trong thư mục layouts
+import Layout from '../layouts/BaseLayout.astro';
+
+// 2. Import các components - Lưu ý bỏ các dấu '..' dư thừa nếu file index nằm trong src/pages
 import Header from '../components/Header.astro';
 import HeaderSlide from '../components/HeaderSlide.astro';
 import Hero from '../components/Hero.astro';
@@ -22,38 +24,14 @@ const description = "Chuyên cắt gia công decal chữ, logo, bế tem nhãn v
 
   <main>
     <Hero />
-
     <HeaderSlide />
-
     <AboutHome />
-
     <ServicesHome />
-
     <MaterialLayout />
-
     <Calculator />
-
     <BlogSection />
-
     <FAQSection />
   </main>
 
   <Footer />
 </Layout>
-
-<style is:global>
-  /* Bạn có thể thêm các cấu hình font hoặc màu sắc chủ đạo tại đây nếu cần */
-  :root {
-    --color-primary: #e11d48; /* Ví dụ màu đỏ iDecal */
-  }
-  
-  html {
-    scroll-behavior: smooth;
-  }
-
-  body {
-    font-family: 'Inter', sans-serif; /* Hoặc font bạn đang dùng */
-    background-color: #ffffff;
-    color: #333;
-  }
-</style>
