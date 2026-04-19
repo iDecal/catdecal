@@ -11,7 +11,7 @@ export default {
 				secondary: '#DB1A1A', 
 				
 				// Màu bổ trợ cho các vùng cần sự nhẹ nhàng
-				accent: '#1E293B',    
+				accent: '#FAB1A0',    
 				
 				// Nền sạch sẽ
 				background: '#FFFFFF',
