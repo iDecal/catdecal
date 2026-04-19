@@ -2,44 +2,48 @@
 // src/components/Header.astro
 ---
 
-<header class="bg-white border-b border-slate-200 sticky top-0 z-50 shadow-sm font-heading">
+<header class="bg-surface border-b border-divider sticky top-0 z-50 shadow-sm font-heading">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex justify-between h-20 items-center">
       
       <div class="flex-shrink-0 flex items-center">
-        <a href="/" class="text-2xl font-bold text-[#EB4C4C] tracking-tighter">
-          catdecal<span class="text-slate-800">.vn</span>
+        <a href="/" class="text-2xl font-bold text-primary tracking-tighter flex items-center gap-1">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+          catdecal<span class="text-secondary">.vn</span>
         </a>
       </div>
 
-      <nav class="hidden md:flex space-x-8 items-center">
-        <a href="/" class="text-slate-600 hover:text-[#EB4C4C] font-medium transition-colors">Trang chủ</a>
+      <nav class="hidden md:flex space-x-6 items-center">
+        <a href="/" class="text-copy hover:text-primary font-medium transition-colors">Trang chủ</a>
         
         <div class="relative group py-4">
-          <button class="text-slate-600 group-hover:text-[#EB4C4C] font-medium flex items-center gap-1">
+          <button class="text-copy group-hover:text-primary font-medium flex items-center gap-1 transition-colors">
             Dịch vụ cắt 
-            <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"></path></svg>
+            <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
           </button>
           
-          <div class="absolute hidden group-hover:block w-64 bg-white border border-slate-100 mt-0 rounded-custom shadow-xl overflow-hidden animate-fade-in">
-            <a href="/cat-decal-mau" class="block px-4 py-3 text-sm text-slate-700 hover:bg-slate-50 hover:text-[#EB4C4C] border-b border-slate-50">Cắt Decal màu (Quảng cáo)</a>
-            <a href="/cat-decal-mo" class="block px-4 py-3 text-sm text-slate-700 hover:bg-slate-50 hover:text-[#EB4C4C] border-b border-slate-50">Cắt Decal mờ (Dán kính)</a>
-            <a href="/be-tem-nhan" class="block px-4 py-3 text-sm text-slate-700 hover:bg-slate-50 hover:text-[#EB4C4C] border-b border-slate-50">Cắt bế Tem nhãn (Sau in)</a>
-            <a href="/cat-phan-quang" class="block px-4 py-3 text-sm text-slate-700 hover:bg-slate-50 hover:text-[#EB4C4C]">Cắt Decal Phản quang</a>
+          <div class="absolute hidden group-hover:block w-72 bg-surface border border-divider mt-0 rounded-custom shadow-xl overflow-hidden animate-fade-in">
+            <a href="/cat-decal-mau" class="block px-4 py-3 text-sm text-copy hover:bg-background hover:text-primary border-b border-divider/50">Cắt Decal màu (Quảng cáo)</a>
+            <a href="/cat-decal-mo" class="block px-4 py-3 text-sm text-copy hover:bg-background hover:text-primary border-b border-divider/50">Cắt Decal mờ (Dán kính)</a>
+            <a href="/be-tem-nhan" class="block px-4 py-3 text-sm text-copy hover:bg-background hover:text-primary border-b border-divider/50">Cắt bế Tem nhãn (Sau in)</a>
+            <a href="/cat-decal-phan-quang" class="block px-4 py-3 text-sm text-copy hover:bg-background hover:text-primary border-b border-divider/50">Cắt Decal phản quang</a>
+            <a href="/cat-decal-chuyen-nhiet" class="block px-4 py-3 text-sm text-copy hover:bg-background hover:text-primary">Cắt Decal chuyển nhiệt (Ép áo)</a>
           </div>
         </div>
 
-        <a href="/bao-gia" class="text-slate-600 hover:text-[#EB4C4C] font-medium transition-colors">Bảng tính giá</a>
+        <a href="/bao-gia" class="text-copy hover:text-primary font-medium transition-colors">Báo giá nhanh</a>
+        <a href="/giao-hang-thanh-toan" class="text-copy hover:text-primary font-medium transition-colors">Giao hàng</a>
+        <a href="/thu-vien-mau" class="text-copy hover:text-primary font-medium transition-colors">Thư viện mẫu</a>
       </nav>
 
       <div class="hidden md:block">
-        <a href="https://zalo.me/sdt-cua-ban" target="_blank" class="bg-[#EB4C4C] text-white px-6 py-2.5 rounded-custom font-bold hover:brightness-110 transition-all shadow-md">
-          GỬI FILE BÁO GIÁ
+        <a href="https://zalo.me/sdt-cua-ban" target="_blank" class="bg-primary text-white px-6 py-2.5 rounded-custom font-bold hover:bg-primary-dark transition-all shadow-md">
+          GỬI FILE NGAY
         </a>
       </div>
 
       <div class="md:hidden">
-        <button id="menu-btn" class="p-2 text-slate-800 focus:outline-none" aria-label="Toggle Menu">
+        <button id="menu-btn" class="p-2 text-secondary focus:outline-none" aria-label="Toggle Menu">
           <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path id="icon-path" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
           </svg>
@@ -48,18 +52,33 @@
     </div>
   </div>
 
-  <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 shadow-inner">
+  <div id="mobile-menu" class="hidden md:hidden bg-surface border-t border-divider shadow-inner max-h-[calc(100vh-80px)] overflow-y-auto">
     <div class="px-4 py-6 space-y-4">
-      <a href="/" class="block text-lg font-medium text-slate-800 border-b border-slate-50 pb-2">Trang chủ</a>
-      <div class="space-y-3">
-        <p class="text-xs font-bold text-slate-400 uppercase tracking-widest">Dịch vụ vật liệu</p>
-        <a href="/cat-decal-mau" class="block pl-3 text-slate-700 hover:text-[#EB4C4C]">• Cắt Decal màu</a>
-        <a href="/cat-decal-mo" class="block pl-3 text-slate-700 hover:text-[#EB4C4C]">• Cắt Decal mờ</a>
-        <a href="/be-tem-nhan" class="block pl-3 text-slate-700 hover:text-[#EB4C4C]">• Bế Tem nhãn</a>
+      <a href="/" class="flex items-center gap-2 text-lg font-medium text-copy">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+        Trang chủ
+      </a>
+      
+      <div class="space-y-2">
+        <button id="accordion-btn" class="w-full flex justify-between items-center text-lg font-medium text-copy">
+          Dịch vụ cắt
+          <svg id="accordion-arrow" class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+        </button>
+        <div id="accordion-content" class="hidden pl-6 space-y-3 mt-2 border-l-2 border-divider/50">
+          <a href="/cat-decal-mau" class="block py-1 text-copy-muted hover:text-primary">Cắt Decal màu</a>
+          <a href="/cat-decal-mo" class="block py-1 text-copy-muted hover:text-primary">Cắt Decal mờ</a>
+          <a href="/be-tem-nhan" class="block py-1 text-copy-muted hover:text-primary">Cắt bế Tem nhãn</a>
+          <a href="/cat-decal-phan-quang" class="block py-1 text-copy-muted hover:text-primary">Cắt Decal phản quang</a>
+          <a href="/cat-decal-chuyen-nhiet" class="block py-1 text-copy-muted hover:text-primary">Cắt Decal chuyển nhiệt</a>
+        </div>
       </div>
-      <a href="/bao-gia" class="block text-lg font-medium text-slate-800 border-b border-slate-50 pb-2">Bảng tính giá</a>
-      <div class="pt-2">
-        <a href="https://zalo.me/sdt-cua-ban" class="w-full flex justify-center bg-[#EB4C4C] text-white py-4 rounded-custom font-bold shadow-lg">
+
+      <a href="/bao-gia" class="block text-lg font-medium text-copy">Báo giá nhanh</a>
+      <a href="/giao-hang-thanh-toan" class="block text-lg font-medium text-copy">Giao hàng & Thanh toán</a>
+      <a href="/thu-vien-mau" class="block text-lg font-medium text-copy">Thư viện mẫu</a>
+      
+      <div class="pt-4">
+        <a href="https://zalo.me/sdt-cua-ban" class="w-full flex justify-center bg-primary text-white py-4 rounded-custom font-bold shadow-lg">
           GỬI FILE QUA ZALO
         </a>
       </div>
@@ -68,16 +87,11 @@
 </header>
 
 <script>
-  // Import logic từ file js riêng
   import initMenu from '../scripts/menu.js';
   
-  // Khởi chạy khi trang đã load
-  document.addEventListener('astro:page-load', () => {
-    initMenu();
-  });
-  
-  // Hỗ trợ cho cả trường hợp không dùng View Transitions
+  // Khởi tạo cho cả lần load đầu và View Transitions
   initMenu();
+  document.addEventListener('astro:after-swap', initMenu);
 </script>
 
 <style>
@@ -85,7 +99,7 @@
     animation: fadeIn 0.2s ease-out forwards;
   }
   @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-5px); }
+    from { opacity: 0; transform: translateY(-10px); }
     to { opacity: 1; transform: translateY(0); }
   }
 </style>
