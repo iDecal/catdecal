@@ -1,0 +1,26 @@
+---
+const services = [
+  { title: "Cắt Chữ & Logo", img: "https://images.unsplash.com/photo-1626708722760-466033488825?q=80&w=500", desc: "Decal vách kính văn phòng, logo công ty chính xác tuyệt đối." },
+  { title: "Tem Nhãn Sticker", img: "https://images.unsplash.com/photo-1589987607627-616cac5c2c5a?q=80&w=500", desc: "In và cắt bế tem nhãn sản phẩm lấy ngay, số lượng linh hoạt." },
+  { title: "Decal Phản Quang", img: "https://images.unsplash.com/photo-1616432043562-3671ea2e5241?q=80&w=500", desc: "Vật liệu 3M cao cấp cho biển báo, tem xe, bảo hộ công trình." },
+  { title: "Gia Công B2B", img: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=500", desc: "Hỗ trợ thợ quảng cáo, nhận file vector online, ship toàn quốc." }
+];
+---
+<section class="py-24 bg-slate-50">
+  <div class="container mx-auto px-4 text-center">
+    <h2 class="text-2xl md:text-3xl font-heading font-extrabold text-primary italic mb-16 uppercase">Dịch vụ tại xưởng</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-left">
+      {services.map(s => (
+        <div class="bg-white rounded-2xl overflow-hidden shadow-sm group hover:shadow-xl transition-all">
+          <div class="h-48 overflow-hidden">
+            <img src={s.img} class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt={s.title}/>
+          </div>
+          <div class="p-6 border-t border-slate-50">
+            <h3 class="font-bold text-primary mb-2 group-hover:text-secondary transition-colors">{s.title}</h3>
+            <p class="text-xs text-copy-muted leading-relaxed">{s.desc}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
