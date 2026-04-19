@@ -2,34 +2,114 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 
-// Lấy trực tiếp không qua trung gian để test
 const posts = await getCollection('blog');
+const allPosts = posts.map(post => ({
+  slug: post.slug,
+  ...post.data
+})).sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+
+// Tự động lấy danh sách chuyên mục duy nhất từ các bài viết
+const categories = ["Tất cả", ...new Set(allPosts.map(post => post.category))];
 ---
 
-<BaseLayout title="Blog">
-  <section class="py-20">
+<BaseLayout title="Blog Kiến Thức | CatDecal.vn">
+  <section class="pt-24 pb-12 bg-white">
     <div class="container mx-auto px-4">
-      <h1>BLOG</h1>
       
-      <p class="mb-10 text-slate-400">Số lượng bài viết tìm thấy: {posts.length}</p>
+      <div class="max-w-3xl mb-12">
+        <h1 class="text-5xl font-bold mb-4">BLOG</h1>
+        <p class="text-slate-400">Số lượng bài viết tìm thấy: {allPosts.length}</p>
+      </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        {posts.map((post) => (
-          <article>
-            <a href={`/blog/${post.slug}`}>
-              <img src={post.data.image} alt={post.data.title} class="rounded-2xl mb-4" />
-              <h3 class="text-xl font-bold">{post.data.title}</h3>
-              <p class="text-slate-500">{post.data.excerpt}</p>
-            </a>
-          </article>
+      <div class="flex flex-wrap gap-3 mb-16" id="category-filters">
+        {categories.map((cat) => (
+          <button 
+            data-category={cat}
+            class="filter-btn px-6 py-2 rounded-full text-[11px] font-bold uppercase tracking-widest border border-slate-100 bg-slate-50 text-slate-400 hover:border-secondary/30 hover:text-secondary transition-all cursor-pointer"
+          >
+            {cat}
+          </button>
         ))}
       </div>
 
-      {posts.length === 0 && (
-        <div class="bg-slate-50 p-10 rounded-3xl text-center">
-          <p>Hệ thống chưa tìm thấy file .md nào trong thư mục src/content/blog/</p>
-        </div>
-      )}
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-16" id="blog-grid">
+        {allPosts.map((post) => (
+          <article class="post-card group flex flex-col" data-category={post.category}>
+            <a href={`/blog/${post.slug}`} class="relative block overflow-hidden rounded-2xl mb-6 aspect-video bg-slate-100">
+              <img 
+                src={post.image} 
+                alt={post.title} 
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
+              />
+              <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-lg text-[9px] font-bold text-slate-800 uppercase tracking-tighter">
+                {post.category}
+              </div>
+            </a>
+            
+            <div class="flex-1">
+              <span class="text-[10px] text-slate-300 font-medium mb-2 block">{post.date}</span>
+              <a href={`/blog/${post.slug}`}>
+                <h3 class="text-lg font-bold text-slate-900 group-hover:text-secondary transition-colors line-clamp-2 leading-snug">
+                  {post.title}
+                </h3>
+              </a>
+              <p class="text-sm text-slate-400 line-clamp-3 mt-3 mb-6">
+                {post.excerpt}
+              </p>
+              <a href={`/blog/${post.slug}`} class="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-900 border-b border-slate-200 pb-1 hover:border-secondary hover:text-secondary transition-all">
+                Xem chi tiết
+              </a>
+            </div>
+          </article>
+        ))}
+      </div>
     </div>
   </section>
 </BaseLayout>
+
+<script>
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const posts = document.querySelectorAll('.post-card');
+
+  // Hàm cập nhật trạng thái Active cho nút
+  function setActiveBtn(activeBtn: Element) {
+    filterBtns.forEach(btn => {
+      btn.classList.remove('bg-secondary/10', 'text-secondary', 'border-secondary/20');
+      btn.classList.add('bg-slate-50', 'text-slate-400');
+    });
+    activeBtn.classList.add('bg-secondary/10', 'text-secondary', 'border-secondary/20');
+    activeBtn.classList.remove('bg-slate-50', 'text-slate-400');
+  }
+
+  // Khởi tạo nút "Tất cả" là mặc định
+  if (filterBtns[0]) setActiveBtn(filterBtns[0]);
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const category = btn.getAttribute('data-category');
+      setActiveBtn(btn);
+
+      posts.forEach(post => {
+        const postCat = (post as HTMLElement).getAttribute('data-category');
+        if (category === "Tất cả" || postCat === category) {
+          (post as HTMLElement).style.display = 'flex';
+          (post as HTMLElement).style.opacity = '1';
+        } else {
+          (post as HTMLElement).style.display = 'none';
+          (post as HTMLElement).style.opacity = '0';
+        }
+      });
+    });
+  });
+</script>
+
+<style>
+  /* Loại bỏ các định dạng chữ gắt, để CSS global tự xử lý */
+  h1, h3 {
+    text-transform: none;
+  }
+  
+  .post-card {
+    transition: opacity 0.4s ease-in-out;
+  }
+</style>
