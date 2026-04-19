@@ -1,0 +1,116 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+// Dữ liệu mẫu cho một sản phẩm cụ thể
+const product = {
+  name: "Decal mờ dán kính vách ngăn văn phòng",
+  price: "65.000đ",
+  unit: "mét tới",
+  category: "Vật liệu dán kính",
+  status: "Còn hàng",
+  sku: "DM-001",
+  description: "Dòng decal mờ cát cao cấp chuyên dụng cho văn phòng, giúp tạo không gian riêng tư mà vẫn giữ được ánh sáng tự nhiên. Sản phẩm có độ bền cao, không để lại keo khi bóc bỏ.",
+  specifications: [
+    { label: "Khổ rộng", value: "1.2m" },
+    { label: "Độ dày", value: "0.12mm" },
+    { label: "Chất liệu", value: "PVC cao cấp" },
+    { label: "Bề mặt", value: "Mờ cát (Sandblast)" }
+  ],
+  images: [
+    "https://images.unsplash.com/photo-1614332287897-cdc485fa562d?auto=format&fit=crop&q=80&w=800",
+    "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=800"
+  ]
+};
+---
+
+<BaseLayout title={`${product.name} - catdecal.vn`}>
+  <section class="py-12 md:py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4">
+      
+      <nav class="flex space-x-2 text-xs text-gray-400 mb-8 uppercase tracking-widest font-bold">
+        <a href="/" class="hover:text-primary">Trang chủ</a>
+        <span>/</span>
+        <a href="/shop" class="hover:text-primary">Cửa hàng</a>
+        <span>/</span>
+        <span class="text-black">{product.name}</span>
+      </nav>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
+        
+        <div class="space-y-4">
+          <div class="aspect-square rounded-3xl overflow-hidden border border-divider bg-gray-50">
+            <img src={product.images[0]} alt={product.name} class="w-full h-full object-cover" />
+          </div>
+          <div class="grid grid-cols-4 gap-4">
+            {product.images.map((img) => (
+              <div class="aspect-square rounded-xl overflow-hidden border border-divider cursor-pointer hover:border-primary transition-all">
+                <img src={img} alt="Thumbnail" class="w-full h-full object-cover" />
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div class="flex flex-col">
+          <span class="text-xs font-bold text-primary mb-2 uppercase tracking-widest">{product.category}</span>
+          <h1 class="text-3xl md:text-4xl text-black mb-4 leading-tight">{product.name}</h1>
+          
+          <div class="flex items-center gap-4 mb-6">
+            <span class="text-3xl font-bold text-black">{product.price}</span>
+            <span class="text-gray-400">/ {product.unit}</span>
+            <span class="ml-auto px-3 py-1 bg-green-50 text-green-600 text-[10px] font-bold rounded-full uppercase">{product.status}</span>
+          </div>
+
+          <p class="text-gray-500 leading-relaxed mb-8 border-b border-divider pb-8">
+            {product.description}
+          </p>
+
+          <div class="grid grid-cols-2 gap-y-4 mb-10">
+            {product.specifications.map((spec) => (
+              <div>
+                <p class="text-xs text-gray-400 font-bold uppercase mb-1">{spec.label}</p>
+                <p class="text-black font-medium">{spec.value}</p>
+              </div>
+            ))}
+          </div>
+
+          <div class="flex flex-col sm:flex-row gap-4 mb-8">
+            <div class="flex items-center border border-divider rounded-full px-4 py-2 bg-[#F5F5F5]">
+              <button class="w-8 h-8 flex items-center justify-center text-gray-400 hover:text-black">-</button>
+              <input type="number" value="1" class="w-12 text-center bg-transparent font-bold text-black border-none focus:ring-0" />
+              <button class="w-8 h-8 flex items-center justify-center text-gray-400 hover:text-black">+</button>
+            </div>
+            <button class="flex-1 bg-black text-white px-8 py-4 rounded-full font-bold hover:bg-primary transition-all shadow-lg">
+              Thêm vào giỏ hàng
+            </button>
+          </div>
+
+          <div class="p-6 bg-[#F5F5F5] rounded-2xl space-y-4">
+            <div class="flex items-center gap-3">
+              <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+              <p class="text-sm font-medium text-black">Giao hàng nhanh toàn quốc (Chành xe/CPN)</p>
+            </div>
+            <div class="flex items-center gap-3">
+              <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+              <p class="text-sm font-medium text-black">Hỗ trợ cắt bế theo file vector yêu cầu</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-20">
+        <div class="border-b border-divider mb-10">
+          <button class="border-b-2 border-primary pb-4 px-6 text-sm font-bold text-black uppercase">Mô tả chi tiết</button>
+        </div>
+        <div class="max-w-3xl space-y-6 text-gray-600 leading-relaxed">
+          <h2 class="text-2xl text-black">Quy trình gia công và đặt hàng toàn quốc</h2>
+          <p>Tại catdecal.vn, chúng tôi tối ưu quy trình để bạn có thể nhận hàng gia công chất lượng cao dù ở bất kỳ đâu:</p>
+          <ol class="list-decimal pl-5 space-y-4">
+            <li><strong>Chốt file online:</strong> Gửi file vector qua Zalo để kỹ thuật viên kiểm tra độ sắc nét miễn phí.</li>
+            <li><strong>Gia công chính xác:</strong> Sử dụng hệ thống máy cắt hiện đại đảm bảo sai số dưới 0.1mm.</li>
+            <li><strong>Đóng gói chuyên dụng:</strong> Cuộn decal trong ống nhựa cứng để không bị gãy nếp khi vận chuyển tỉnh.</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
