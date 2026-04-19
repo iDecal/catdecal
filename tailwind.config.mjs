@@ -8,7 +8,7 @@ export default {
 				primary: '#0F172A',   
 				
 				// Đổi Vàng chanh thành Secondary (Màu nhấn cho button, link)
-				secondary: 'DB1A1A', 
+				secondary: '#DB1A1A', 
 				
 				// Màu bổ trợ cho các vùng cần sự nhẹ nhàng
 				accent: '#1E293B',    
