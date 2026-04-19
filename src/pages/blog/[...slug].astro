@@ -1,0 +1,42 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+// 1. Tạo đường dẫn cho từng bài viết
+export async function getStaticPaths() {
+  const blogEntries = await getCollection('blog');
+  return blogEntries.map(entry => ({
+    params: { slug: entry.slug }, props: { entry },
+  }));
+}
+
+// 2. Lấy dữ liệu bài viết
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<BaseLayout title={entry.data.title}>
+  <article class="py-20 max-w-3xl mx-auto px-4">
+    <div class="mb-8">
+      <span class="text-primary font-bold text-xs uppercase tracking-widest">{entry.data.category}</span>
+      <h1 class="text-4xl text-black font-bold mt-2 mb-4 leading-tight">{entry.data.title}</h1>
+      <p class="text-gray-400 text-sm">{entry.data.date}</p>
+    </div>
+
+    <img src={entry.data.image} alt={entry.data.title} class="w-full rounded-2xl mb-10 border border-divider shadow-sm" />
+
+    <div class="prose prose-lg max-w-none text-gray-600 prose-headings:text-black prose-headings:font-bold italic-none">
+      <Content />
+    </div>
+
+    <div class="mt-16 p-8 bg-[#F5F5F5] rounded-2xl border border-divider">
+        <p class="font-bold text-black mb-2">Bạn cần gia công tương tự?</p>
+        <p class="text-sm text-gray-500 mb-6">Liên hệ Zalo để chốt file online và nhận hàng tận nơi toàn quốc.</p>
+        <a href="https://zalo.me/0862208108" class="bg-black text-white px-8 py-3 rounded-full font-bold text-sm hover:bg-primary transition-all">Nhắn Zalo ngay</a>
+    </div>
+  </article>
+</BaseLayout>
+
+<style is:global>
+  .italic-none * { font-style: normal !important; }
+</style>
