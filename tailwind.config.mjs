@@ -16,6 +16,14 @@ export default {
 				},
 				divider: '#e5e5e5',
 			},
+			// Fix lỗi dấu tiếng Việt và tối ưu kích thước
+			lineHeight: {
+				tight: '1.25', // Tăng nhẹ từ 1.1 lên 1.25 để không chạm dấu
+				snug: '1.375',
+			},
+			letterSpacing: {
+				tighter: '-0.02em', // Không nên để quá hẹp (-0.05em dễ lỗi dấu)
+			}
 		},
 	},
 	plugins: [],
