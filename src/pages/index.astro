@@ -1,27 +1,132 @@
 ---
-// 1. Sửa lại đường dẫn Layout cho đúng
-import Layout from '../layouts/BaseLayout.astro';
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import Services from '../components/Services.astro';
 
-// 2. Import các components - Khớp 100% tên file trong thư mục components
-import Hero from '../components/Hero.astro'; 
-import AboutHome from '../components/AboutHome.astro';
-import ServicesHome from '../components/ServicesHome.astro';
-import BlogSection from '../components/BlogSection.astro';
-import FAQSection from '../components/FAQSection.astro';
-
-// SEO Meta Data
-const title = "catdecal.vn - Xưởng Gia Công Cắt Decal Chuyên Nghiệp Quy Nhơn";
-const description = "Chuyên cắt gia công decal chữ, logo, bế tem nhãn và cung cấp vật liệu decal phản quang, decal mờ toàn quốc.";
+// SEO Meta Data tối ưu cho từ khóa "cắt decal"
+const title = "Xưởng Cắt Decal Theo Yêu Cầu - Gia Công Lấy Liền & Giao Hàng Toàn Quốc";
+const description = "Xưởng cắt decal vi tính chuyên nghiệp. Gia công cắt chữ decal dán kính, bế tem nhãn sticker, decal dán xe chính xác 100%. Nhận file online, giá gốc tại xưởng, giao hàng nhanh 63 tỉnh thành.";
 ---
 
 <Layout title={title} description={description}>
+  <Hero />
 
-  <main>
-    <Hero />
-    <AboutHome />
-    <ServicesHome />
-    <BlogSection />
-    <FAQSection />
-  </main>
+  <section class="py-12 bg-white">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div class="flex flex-col items-center text-center p-4">
+          <div class="w-12 h-12 text-primary mb-3">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+          </div>
+          <h3 class="text-black font-bold text-lg mb-1">Cắt Lấy Ngay</h3>
+          <p class="text-copy-light text-sm">Xử lý đơn hàng nhanh, đáp ứng nhu cầu lấy liền.</p>
+        </div>
+        <div class="flex flex-col items-center text-center p-4">
+          <div class="w-12 h-12 text-primary mb-3">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          </div>
+          <h3 class="text-black font-bold text-lg mb-1">Chính Xác 100%</h3>
+          <p class="text-copy-light text-sm">Hệ thống máy cắt Nhật Bản sắc nét từng chi tiết nhỏ.</p>
+        </div>
+        <div class="flex flex-col items-center text-center p-4">
+          <div class="w-12 h-12 text-primary mb-3">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+          </div>
+          <h3 class="text-black font-bold text-lg mb-1">Giao Toàn Quốc</h3>
+          <p class="text-copy-light text-sm">Đóng gói chuyên nghiệp, ship COD 63 tỉnh thành.</p>
+        </div>
+        <div class="flex flex-col items-center text-center p-4">
+          <div class="w-12 h-12 text-primary mb-3">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          </div>
+          <h3 class="text-black font-bold text-lg mb-1">Giá Gốc Tại Xưởng</h3>
+          <p class="text-copy-light text-sm">Không qua trung gian, tối ưu chi phí cho đối tác.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <Services />
+
+  <section class="py-20 bg-surface">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-black text-black uppercase mb-6 leading-tight">
+          Xưởng Gia Công Cắt Decal Vi Tính Chuyên Nghiệp
+        </h2>
+        <div class="w-20 h-1 bg-primary mx-auto"></div>
+      </div>
+      
+      <div class="prose prose-lg max-w-none text-copy-light text-center">
+        <p class="mb-6">
+          Tại <strong>catdecal.vn</strong>, chúng tôi cung cấp giải pháp trọn gói về <strong>cắt decal</strong> chuyên nghiệp. Sử dụng công nghệ máy cắt tiên tiến từ Nhật Bản, chúng tôi đảm bảo mọi đường cắt đều sắc nét, dễ lột và chuẩn xác theo file thiết kế vector của khách hàng.
+        </p>
+        <p class="mb-6">
+          Dù bạn cần cắt chữ decal dán kính văn phòng, bế tem nhãn sticker số lượng ít hay gia công decal quảng cáo quy mô lớn, chúng tôi đều sẵn sàng đáp ứng. Đặc biệt, xưởng nhận <strong>đặt hàng online</strong> và hỗ trợ kiểm tra file kỹ thuật hoàn toàn miễn phí.
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-left mt-10">
+          <ul class="list-none space-y-2">
+            <li class="flex items-start gap-2">
+              <span class="text-primary font-bold">✓</span> Cắt chữ decal trang trí, bảng hiệu.
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-primary font-bold">✓</span> Bế tem nhãn, sticker bế demi.
+            </li>
+          </ul>
+          <ul class="list-none space-y-2">
+            <li class="flex items-start gap-2">
+              <span class="text-primary font-bold">✓</span> Gia công decal phản quang, decal mờ.
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-primary font-bold">✓</span> Cắt decal chuyển nhiệt in áo.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center gap-12">
+      <div class="md:w-1/2">
+        <img src="/images/giao-hang-toan-quoc.jpg" alt="Đóng gói và giao hàng decal toàn quốc" class="rounded-3xl shadow-xl border border-divider" />
+      </div>
+      <div class="md:w-1/2">
+        <h2 class="text-2xl md:text-4xl font-black text-black uppercase mb-6 leading-tight">
+          Đặt Cắt Decal Online - Nhận Hàng Toàn Quốc
+        </h2>
+        <p class="text-copy-light mb-6">
+          Bạn ở xa? Không thành vấn đề. Chúng tôi đã xây dựng quy trình đóng gói tiêu chuẩn: sử dụng ống nhựa chuyên dụng hoặc thùng carton cứng để bảo vệ decal không bị gãy gập trong suốt quá trình vận chuyển.
+        </p>
+        <ul class="space-y-4 mb-8 text-black font-medium">
+          <li class="flex items-center gap-3">
+            <div class="w-6 h-6 bg-primary/10 text-primary rounded-full flex items-center justify-center text-xs">01</div>
+            Kiểm tra và xác nhận file qua Zalo/Email.
+          </li>
+          <li class="flex items-center gap-3">
+            <div class="w-6 h-6 bg-primary/10 text-primary rounded-full flex items-center justify-center text-xs">02</div>
+            Gia công nhanh và đóng gói chống sốc, chống nước.
+          </li>
+          <li class="flex items-center gap-3">
+            <div class="w-6 h-6 bg-primary/10 text-primary rounded-full flex items-center justify-center text-xs">03</div>
+            Giao hàng qua bưu cục uy tín (GHTK, Viettel Post).
+          </li>
+        </ul>
+        <a href="/huong-dan-gui-file" class="bg-black text-white px-8 py-4 rounded-xl font-bold hover:bg-primary transition-all inline-block">
+          Hướng dẫn gửi file
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-primary">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="text-3xl md:text-5xl font-black text-white uppercase mb-8">
+        Bắt đầu dự án của bạn ngay hôm nay
+      </h2>
+      <a href="/bao-gia" class="inline-block bg-white text-black px-12 py-5 rounded-full font-black text-xl hover:bg-black hover:text-white transition-all shadow-2xl">
+        NHẬN BÁO GIÁ NHANH
+      </a>
+    </div>
+  </section>
 </Layout>
