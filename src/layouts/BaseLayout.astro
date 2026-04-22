@@ -1,6 +1,8 @@
 ---
+// Layout.astro
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import '../styles/global.css'; // Đảm bảo bạn đã tạo file này như hướng dẫn trước
 
 interface Props {
   title?: string;
@@ -9,8 +11,8 @@ interface Props {
 }
 
 const { 
-  title = "CATDECAL.VN - Gia công Decal & Interior Film Chuyên Nghiệp", 
-  description = "Dịch vụ cắt decal vi tính, bế tem nhãn, trang trí nội thất và film dán nội thất lấy liền tại Bình Định và TP.HCM.",
+  title = "CATDECAL.VN - Gia công Decal & Trang Trí Chuyên Nghiệp", 
+  description = "Dịch vụ cắt decal vi tính, bế tem nhãn, cắt chữ quảng cáo lấy liền tại Bình Định và TP.HCM.",
   image = "/og-image.jpg" 
 } = Astro.props;
 ---
@@ -29,7 +31,7 @@ const {
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,700;0,800;1,400;1,700;1,800&family=Inter:wght@400;500;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400;1,700&display=swap" rel="stylesheet" />
 
     <meta property="og:type" content="website" />
     <meta property="og:url" content={Astro.url} />
@@ -43,7 +45,7 @@ const {
     <meta property="twitter:description" content={description} />
     <meta property="twitter:image" content={new URL(image, Astro.url)} />
   </head>
-  <body class="bg-white text-[#2f2f2f] font-body antialiased selection:bg-secondary/30">
+  <body class="bg-white text-copy antialiased selection:bg-primary/30">
     
     <Header />
 
@@ -54,52 +56,47 @@ const {
     <Footer />
 
     <style is:global>
-      /* 1. QUẢN LÝ KÍCH THƯỚC & MÀU SẮC FONT CHỮ TOÀN SITE */
+      /* 2. CẤU HÌNH FONT ROBOTO TOÀN SITE */
       :root {
-        --font-main: 'Be Vietnam Pro', sans-serif;
-        --color-text-dark: #2f2f2f; /* Màu đen theo style Cricut */
+        --font-main: 'Roboto', sans-serif;
       }
 
       body {
         font-family: var(--font-main);
-        color: var(--color-text-dark);
       }
 
       h1 {
-        /* text-black giúp tiêu đề có màu đen */
-        @apply text-3xl md:text-5xl lg:text-6xl font-bold tracking-tighter uppercase leading-[1.1] text-black;
+        /* Fix lỗi dấu: tăng leading lên 1.25, đổi màu sang text-copy cho đồng bộ */
+        @apply text-3xl md:text-5xl lg:text-6xl font-black tracking-tighter uppercase leading-[1.25] text-copy;
       }
 
       h2 {
-        @apply text-2xl md:text-4xl font-bold tracking-tight leading-snug text-black;
+        /* Chuyển sang màu secondary (xanh đậm) để trang web có chiều sâu */
+        @apply text-2xl md:text-4xl font-bold tracking-tight leading-snug text-secondary;
       }
 
       h3 {
-        @apply text-xl md:text-2xl font-bold tracking-tight text-black;
+        @apply text-xl md:text-2xl font-bold tracking-tight text-primary;
       }
 
       p {
-        @apply leading-relaxed text-[#4a4a4a]; /* Màu xám đậm cho nội dung text để dễ đọc */
+        @apply leading-relaxed text-copy-light; /* Sử dụng biến màu copy-light của bạn */
       }
 
-      /* 2. TỐI ƯU HIỆU ỨNG */
+      /* TỐI ƯU HIỆU ỨNG */
       html {
         scroll-behavior: smooth;
       }
 
-      /* Custom scrollbar */
+      /* Custom scrollbar sử dụng màu Primary của bạn */
       ::-webkit-scrollbar {
         width: 6px;
       }
       ::-webkit-scrollbar-track {
-        @apply bg-slate-50;
+        @apply bg-surface;
       }
       ::-webkit-scrollbar-thumb {
-        @apply bg-slate-300 rounded-full hover:bg-primary transition-colors;
-      }
-
-      .font-heading {
-        font-family: var(--font-main);
+        @apply bg-primary/40 rounded-full hover:bg-primary transition-colors;
       }
     </style>
   </body>
