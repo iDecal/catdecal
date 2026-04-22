@@ -3,6 +3,10 @@ export default {
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,sss,ts,tsx,vue}'],
 	theme: {
 		extend: {
+			fontFamily: {
+				// Thiết lập Roboto là font sans mặc định của trang
+				sans: ['Roboto', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+			},
 			colors: {
 				primary: {
 					DEFAULT: '#008358',
@@ -16,13 +20,15 @@ export default {
 				},
 				divider: '#e5e5e5',
 			},
-			// Fix lỗi dấu tiếng Việt và tối ưu kích thước
 			lineHeight: {
-				tight: '1.25', // Tăng nhẹ từ 1.1 lên 1.25 để không chạm dấu
+				// Cực kỳ quan trọng để không bị đè dấu tiếng Việt ở H1
+				tight: '1.25', 
 				snug: '1.375',
 			},
 			letterSpacing: {
-				tighter: '-0.02em', // Không nên để quá hẹp (-0.05em dễ lỗi dấu)
+				// Roboto có khoảng cách chữ hơi rộng, -0.01em hoặc -0.02em sẽ giúp tiêu đề trông gọn và chuyên nghiệp hơn
+				tighter: '-0.02em',
+				tight: '-0.01em',
 			}
 		},
 	},
