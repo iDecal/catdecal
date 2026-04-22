@@ -1,7 +1,9 @@
 ---
 title: "Cắt Decal Giá Bao Nhiêu? Bảng Giá Chi Tiết Mới Nhất 2026"
 description: "Cập nhật bảng giá dịch vụ cắt decal vi tính, cắt chữ dán kính, bế tem nhãn tại TP.HCM và Bình Dương. Cam kết giá tại xưởng, sắc nét, lấy nhanh."
-pubDate: 2026-04-22
+excerpt: "Bảng giá chi tiết dịch vụ cắt decal mới nhất 2026. Tìm hiểu các yếu tố ảnh hưởng đến giá và cách nhận báo giá nhanh tại catdecal.vn."
+category: "Báo giá"
+date: 2026-04-22
 author: "iDecal"
 image: "/images/go-bo-decal-sau khi-cat.jpg"
 tags: ["báo giá", "cắt decal", "thi công decal"]
