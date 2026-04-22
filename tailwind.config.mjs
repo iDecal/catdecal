@@ -15,7 +15,7 @@ export default {
 				secondary: '#004d33',
 				surface: '#f5f5f5',
 				copy: {
-					DEFAULT: '#2f2f2f',
+					DEFAULT: '#000000',
 					light: '#626262',
 				},
 				divider: '#e5e5e5',
