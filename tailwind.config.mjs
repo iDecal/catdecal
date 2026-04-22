@@ -5,7 +5,7 @@ export default {
 		extend: {
 			fontFamily: {
 				// Thiết lập Roboto là font sans mặc định của trang
-				sans: ['Roboto', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+				sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
 			},
 			colors: {
 				primary: {
