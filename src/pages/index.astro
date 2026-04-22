@@ -1,118 +1,167 @@
 ---
-const title = "Xưởng Cắt Decal Chuyên Nghiệp - Gia Công Theo Yêu Cầu & Giao Toàn Quốc";
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const title = "Cắt Decal Theo Yêu Cầu - Nhận File & Giao Toàn Quốc | iDecal";
+const description = "Xưởng cắt decal logo, bế tem nhãn sticker lấy liền. Đúng file thiết kế, đóng gói ống nhựa cứng, ship COD 63 tỉnh thành.";
+// SEO Meta Data tối ưu Semantic
+const title = "Cắt Decal Theo Yêu Cầu - Nhận File & Giao Toàn Quốc | iDecal";
+const description = "Xưởng chuyên cắt chữ decal logo, bế tem nhãn sticker lấy liền. Cam kết đúng file thiết kế, đóng gói chống móp méo, ship COD 63 tỉnh thành. Gửi file báo giá ngay!";
 ---
+
 <!doctype html>
 <html lang="vi">
 <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
-        body { font-family: 'Inter', sans-serif; color: #000; }
-        h1, h2, h3 { font-weight: 900; text-transform: uppercase; letter-spacing: -0.05em; }
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: { primary: '#008358', surface: '#f4f4f4', divider: '#e5e5e5' },
+            fontFamily: { sans: ['Inter', 'sans-serif'] },
+          }
+        }
+      }
+    </script>
+    <style is:global>
+        h1, h2, h3 { font-weight: 900; text-transform: uppercase; letter-spacing: -0.02em; line-height: 1; }
+        p { color: #4a4a4a; line-height: 1.6; }
+        .btn-shadow { box-shadow: 0 10px 15px -3px rgba(0, 131, 88, 0.3); }
     </style>
 </head>
-<body class="bg-white">
 
-    <nav class="fixed w-full bg-white/80 backdrop-blur-md border-b z-50 h-20 flex items-center shadow-sm">
+<body class="bg-white text-black font-sans">
+
+    <nav class="fixed w-full bg-white/90 backdrop-blur-md border-b z-50 h-16 flex items-center">
         <div class="max-w-7xl mx-auto px-4 w-full flex justify-between items-center">
-            <span class="text-2xl font-black text-[#008358]">IDECAL.VN</span>
-            <div class="hidden md:flex gap-8 font-bold text-sm">
-                <a href="#services">DỊCH VỤ</a>
-                <a href="#about">NĂNG LỰC</a>
-                <a href="#process">QUY TRÌNH</a>
-                <a href="#blog">KỸ THUẬT</a>
+            <a href="/" class="text-xl font-black text-primary italic">IDECAL.VN</a>
+            <div class="hidden md:flex gap-6 font-bold text-[13px]">
+                <a href="/dich-vu" class="hover:text-primary transition-colors">DỊCH VỤ</a>
+                <a href="/bao-gia" class="hover:text-primary transition-colors">BÁNG GIÁ</a>
+                <a href="/blog" class="hover:text-primary transition-colors">KỸ THUẬT</a>
             </div>
-            <button class="bg-[#008358] text-white px-6 py-2 rounded-full font-bold">ZALO BÁO GIÁ</button>
+            <a href="https://zalo.me/your-number" class="bg-primary text-white px-5 py-2 rounded-full font-bold text-sm">ZALO BÁO GIÁ</a>
         </div>
     </nav>
 
-    <main class="pt-20">
-        <section class="py-20 md:py-32 bg-[#f9f9f9]">
-            <div class="max-w-7xl mx-auto px-4">
-                <h1 class="text-5xl md:text-8xl mb-8 leading-none">CẮT DECAL <br/> <span class="text-[#008358]">CHUYÊN NGHIỆP</span></h1>
-                <p class="text-xl max-w-2xl mb-10 text-gray-600">Hơn 10 năm kinh nghiệm gia công decal vi tính tại TP.HCM. Chúng tôi sở hữu công nghệ máy cắt Nhật Bản, cam kết đường nét sắc sảo, giao hàng thần tốc toàn quốc.</p>
-                <div class="flex gap-4">
-                    <div class="border-l-4 border-[#008358] pl-4">
-                        <span class="block font-black text-2xl">100%</span>
-                        <span class="text-xs uppercase font-bold text-gray-400">Chính xác</span>
-                    </div>
-                    <div class="border-l-4 border-[#008358] pl-4">
-                        <span class="block font-black text-2xl">24H</span>
-                        <span class="text-xs uppercase font-bold text-gray-400">Giao hàng</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="services" class="py-24">
-            <div class="max-w-7xl mx-auto px-4">
-                <h2 class="text-3xl mb-16 border-b-4 border-black inline-block">Dịch vụ cốt lõi</h2>
-                <div class="grid md:grid-cols-3 gap-12">
-                    <div>
-                        <h3 class="text-xl mb-4">01. Cắt Chữ & Logo</h3>
-                        <p class="text-gray-500 text-sm">Chuyên cắt decal trang trí văn phòng, vách kính, biển hiệu. Hỗ trợ cán màng định hình giúp khách hàng tự dán dễ dàng.</p>
-                    </div>
-                    <div>
-                        <h3 class="text-xl mb-4">02. Bế Tem Nhãn</h3>
-                        <p class="text-gray-500 text-sm">Cắt bế sticker, tem nhãn decal giấy, decal nhựa, tem vỡ bảo hành. Đường bế demi chuẩn, dễ lột, không đứt đế.</p>
-                    </div>
-                    <div>
-                        <h3 class="text-xl mb-4">03. Gia Công Thợ (B2B)</h3>
-                        <p class="text-gray-500 text-sm">Giải pháp cho các đơn vị quảng cáo, sự kiện. Gia công số lượng lớn, giá sỉ tận xưởng, đảm bảo tiến độ cực gấp.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="about" class="py-24 bg-black text-white">
-            <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row gap-20">
-                <div class="md:w-1/2">
-                    <h2 class="text-4xl mb-8">Tại sao chọn xưởng iDecal?</h2>
-                    <p class="text-gray-400 mb-6">Chúng tôi không chỉ là đơn vị thương mại. iDecal vận hành xưởng sản xuất trực tiếp tại Thủ Đức và Bình Dương với đội ngũ kỹ thuật am hiểu sâu về vật liệu.</p>
-                    <ul class="space-y-4 font-bold text-sm uppercase">
-                        <li class="flex items-center gap-2"><span class="text-[#008358]">✔</span> Máy cắt Mimaki Nhật Bản đời mới nhất</li>
-                        <li class="flex items-center gap-2"><span class="text-[#008358]">✔</span> Kho vật liệu đa dạng: 3M, Avery, Decal mờ, Phản quang</li>
-                        <li class="flex items-center gap-2"><span class="text-[#008358]">✔</span> Hỗ trợ xử lý file Vector miễn phí</li>
-                    </ul>
-                </div>
-                <div class="md:w-1/2 bg-[#111] p-10 rounded-3xl border border-white/10">
-                    <h3 class="text-[#008358] mb-4">Cam kết chuyên gia</h3>
-                    <p class="text-sm italic text-gray-300">"Mỗi sản phẩm rời xưởng đều được kiểm tra lực dao và độ bám dính. Chúng tôi hiểu rằng một đường cắt lỗi có thể làm hỏng cả chiến dịch quảng cáo của bạn."</p>
-                    <p class="mt-4 font-bold">— Đại diện kỹ thuật iDecal</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="process" class="py-24">
+    <main class="pt-16">
+        
+        <section class="py-16 md:py-28 bg-white border-b">
             <div class="max-w-7xl mx-auto px-4 text-center">
-                <h2 class="text-3xl mb-16 uppercase">Giao hàng toàn quốc chuyên nghiệp</h2>
-                <div class="grid md:grid-cols-4 gap-6">
-                    <div class="p-8 bg-[#f9f9f9] rounded-2xl">
-                        <div class="font-black text-primary text-2xl mb-2">01</div>
-                        <p class="font-bold text-sm uppercase">Nhận file Online</p>
-                    </div>
-                    <div class="p-8 bg-[#f9f9f9] rounded-2xl">
-                        <div class="font-black text-primary text-2xl mb-2">02</div>
-                        <p class="font-bold text-sm uppercase">Gia công tại xưởng</p>
-                    </div>
-                    <div class="p-8 bg-[#f9f9f9] rounded-2xl border-2 border-[#008358]">
-                        <div class="font-black text-primary text-2xl mb-2">03</div>
-                        <p class="font-bold text-sm uppercase">Đóng ống chống móp</p>
-                    </div>
-                    <div class="p-8 bg-[#f9f9f9] rounded-2xl">
-                        <div class="font-black text-primary text-2xl mb-2">04</div>
-                        <p class="font-bold text-sm uppercase">Ship COD 63 tỉnh</p>
-                    </div>
+                <div class="inline-block bg-primary/10 text-primary px-3 py-1 rounded-md text-[10px] font-black uppercase tracking-widest mb-4">Gia công tại xưởng - Không trung gian</div>
+                <h1 class="text-4xl md:text-7xl mb-6">Cắt Decal Theo Yêu Cầu <br/> <span class="text-primary italic">Nhận File & Gửi Toàn Quốc</span></h1>
+                <p class="text-lg md:text-xl max-w-2xl mx-auto mb-10">Cắt chữ decal logo, dán kính nhanh – <strong>đúng file thiết kế</strong> – lấy liền tại chỗ hoặc ship COD tận nhà cực nhanh.</p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="https://zalo.me/your-number" class="bg-black text-white px-10 py-5 rounded-2xl font-black text-lg btn-shadow hover:bg-primary transition-all">GỬI FILE BÁO GIÁ NGAY</a>
+                    <a href="#projects" class="bg-white border-2 border-black px-10 py-5 rounded-2xl font-black text-lg hover:bg-black hover:text-white transition-all">XEM ẢNH THẬT</a>
                 </div>
-                <p class="mt-12 text-sm text-gray-500 italic">* Toàn bộ đơn hàng đi tỉnh đều được đóng trong ống nhựa PVC hoặc thùng cứng chuyên dụng.</p>
             </div>
         </section>
+
+        <section id="projects" class="py-20 bg-surface">
+            <div class="max-w-7xl mx-auto px-4 text-center">
+                <h2 class="text-3xl mb-4 italic">Sản phẩm thực tế tại xưởng</h2>
+                <p class="mb-12">Cam kết đường cắt bén, không răng cưa, đúng kích thước 100%.</p>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="aspect-square bg-slate-300 rounded-2xl overflow-hidden border-4 border-white shadow-sm">
+                        <img src="https://images.unsplash.com/photo-1621252179027-94459d278660?q=80&w=400" alt="Cắt chữ decal dán kính" class="w-full h-full object-cover">
+                    </div>
+                    <div class="aspect-square bg-slate-300 rounded-2xl overflow-hidden border-4 border-white shadow-sm">
+                        <img src="https://images.unsplash.com/photo-1601933513793-120090886c95?q=80&w=400" alt="Bế tem nhãn sticker" class="w-full h-full object-cover">
+                    </div>
+                    <div class="aspect-square bg-slate-300 rounded-2xl overflow-hidden border-4 border-white shadow-sm">
+                        <img src="https://images.unsplash.com/photo-1589987607627-616cac5c2c5a?q=80&w=400" alt="Gia công decal màu" class="w-full h-full object-cover">
+                    </div>
+                    <div class="aspect-square bg-slate-300 rounded-2xl overflow-hidden border-4 border-white shadow-sm">
+                        <img src="https://images.unsplash.com/photo-1615873968403-89e068629275?q=80&w=400" alt="Decal nội thất" class="w-full h-full object-cover">
+                    </div>
+                </div>
+                <div class="mt-10 p-6 bg-white inline-block rounded-3xl border border-divider">
+                    <p class="text-sm font-bold">⭐⭐⭐⭐⭐ "Đúng file thiết kế, đóng gói ống nhựa cực kỹ khi gửi đi tỉnh." - <span class="text-primary italic">Anh Tiến (Quảng cáo Bình Dương)</span></p>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20">
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="bg-black text-white p-10 md:p-20 rounded-[40px] text-center">
+                    <h2 class="text-3xl md:text-5xl mb-8">Nhận Cắt Decal Toàn Quốc</h2>
+                    <p class="text-gray-400 mb-12 max-w-xl mx-auto">Bạn chỉ cần gửi file, chúng tôi lo mọi khâu còn lại cho đến khi hàng tới tay bạn.</p>
+                    <div class="grid md:grid-cols-4 gap-8">
+                        <div>
+                            <div class="text-primary text-3xl font-black mb-2">01.</div>
+                            <h4 class="font-bold text-sm uppercase">Nhận File qua Zalo</h4>
+                        </div>
+                        <div>
+                            <div class="text-primary text-3xl font-black mb-2">02.</div>
+                            <h4 class="font-bold text-sm uppercase">Cắt Máy Nhật</h4>
+                        </div>
+                        <div>
+                            <div class="text-primary text-3xl font-black mb-2">03.</div>
+                            <h4 class="font-bold text-sm uppercase">Đóng Ống Nhựa</h4>
+                        </div>
+                        <div>
+                            <div class="text-primary text-3xl font-black mb-2">04.</div>
+                            <h4 class="font-bold text-sm uppercase">Ship COD Tận Nhà</h4>
+                        </div>
+                    </div>
+                    <a href="tel:0xxx" class="mt-12 inline-block text-primary font-black border-b-2 border-primary pb-1">GỌI NGAY: 0xxx.xxx.xxx</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 bg-white">
+            <div class="max-w-4xl mx-auto px-4">
+                <h2 class="text-3xl mb-10 text-center uppercase">Chuyên gia gia công Decal vi tính</h2>
+                <div class="prose prose-lg max-w-none text-copy-light">
+                    <h3 class="text-xl mb-4">Cắt decal là gì và khi nào bạn cần?</h3>
+                    <p class="mb-6">Dịch vụ <strong>cắt decal</strong> là quá trình sử dụng máy cắt vi tính để cắt các hình khối, chữ cái từ màng nhựa decal. Tại iDecal, chúng tôi giải quyết nhu cầu: dán kính văn phòng, trang trí xe, làm sticker thương hiệu với độ chính xác tuyệt đối.</p>
+                    
+                    <h3 class="text-xl mb-4">Báo giá cắt decal phụ thuộc vào yếu tố nào?</h3>
+                    <p class="mb-6">Giá thường tính theo mét tới hoặc số lượng tem. Bạn có thể xem chi tiết <a href="/bao-gia-cat-decal" class="text-primary underline">Bảng giá cắt decal mới nhất 2026</a> của chúng tại đây.</p>
+                    
+                    <h3 class="text-xl mb-4">Mẹo gửi file thiết kế chuẩn để không bị lỗi</h3>
+                    <p class="mb-6">Máy cắt decal chạy theo đường Vector. Hãy tham khảo bài viết <a href="/huong-dan-xuat-file" class="text-primary underline">Cách xuất file AI, Corel chuẩn</a> để tiết kiệm thời gian gia công.</p>
+                </div>
+            </div>
+        </section>
+
     </main>
 
-    <footer class="bg-white border-t py-12 text-center">
-        <p class="font-black uppercase text-xs tracking-widest">© 2026 IDECAL.VN - EXPERT IN DECAL CUTTING</p>
+    <footer class="bg-surface py-20 border-t">
+        <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-4 gap-12">
+            <div>
+                <h4 class="font-black text-xl mb-6">IDECAL.VN</h4>
+                <p class="text-xs">Chuyên gia cắt decal giao hàng 63 tỉnh thành.</p>
+            </div>
+            <div>
+                <h4 class="font-bold text-sm uppercase mb-6 tracking-widest">Dịch vụ</h4>
+                <ul class="text-sm space-y-3">
+                    <li><a href="/cat-chu-decal" class="hover:text-primary underline decoration-divider">Cắt chữ decal</a></li>
+                    <li><a href="/be-tem-nhan" class="hover:text-primary underline decoration-divider">Bế tem nhãn sticker</a></li>
+                    <li><a href="/decal-dan-kinh" class="hover:text-primary underline decoration-divider">Decal dán kính mờ</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold text-sm uppercase mb-6 tracking-widest">Thanh toán</h4>
+                <p class="text-xs">Chấp nhận chuyển khoản, tiền mặt và Ship COD toàn quốc thông qua GHTK, Viettel Post.</p>
+            </div>
+            <div>
+                <h4 class="font-bold text-sm uppercase mb-6 tracking-widest">Xưởng sản xuất</h4>
+                <p class="text-xs">📍 Thủ Đức, TP.HCM <br/> 📍 Thuận An, Bình Dương</p>
+                <p class="mt-4 font-black text-primary italic text-xl">HOTLINE: 0xxx.xxx.xxx</p>
+            </div>
+        </div>
+        <div class="text-center mt-16 text-[10px] text-gray-400 font-bold tracking-widest uppercase">
+            © 2026 IDECAL - ĐÚNG FILE - ĐÚNG HẸN - ĐÚNG GIÁ
+        </div>
     </footer>
 
 </body>
