@@ -2,9 +2,7 @@
 // src/components/Header.astro
 const navLinks = [
   { name: 'Trang chủ', href: '/' },
-  { 
-    name: 'Dịch vụ & Vật liệu', 
-    href: '#', 
+  { name: 'Dịch vụ & Vật liệu', href: '#', 
     submenu: [
       { name: 'Decal Mờ (Frosted)', href: '/vat-lieu/decal-mo' },
       { name: 'Decal Trong (Clear)', href: '/vat-lieu/decal-trong' },
@@ -14,13 +12,14 @@ const navLinks = [
     ]
   },
   { name: 'Thư viện mẫu', href: '/thu-vien' },
-  { name: 'Blog', href: '/blog' }, 
+  { name: 'Blog', href: '/blog', 
   submenu: [
     { name: 'Kỹ thuật dán decal', href: '/blog/ky-thuat-dan' },
     { name: 'Ứng dụng sáng tạo', href: '/blog/ung-dung' },
     { name: 'Review vật liệu', href: '/blog/vat-lieu' },
     { name: 'Hướng dẫn thiết kế', href: '/blog/thiet-ke' }
   ]
+},
   { name: 'Hướng dẫn gửi file', href: '/huong-dan' },
 ];
 ---
