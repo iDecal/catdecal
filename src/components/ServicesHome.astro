@@ -1,107 +1,72 @@
 ---
+// src/components/Services.astro
 const services = [
   { 
     title: "Cắt Chữ & Logo", 
-    img: "https://images.unsplash.com/photo-1621252179027-94459d278660?q=80&w=400", 
-    desc: "Cắt theo file vector cho văn phòng, cửa hàng." 
+    img: "https://images.unsplash.com/photo-1621252179027-94459d278660?q=80&w=600", 
+    desc: "Gia công cắt chữ decal từ file vector cho văn phòng, shop, biển quảng cáo với độ chính xác tuyệt đối." 
   },
   { 
-    title: "Bế Tem Nhãn", 
-    img: "https://images.unsplash.com/photo-1601933513793-120090886c95?q=80&w=400", 
-    desc: "Cắt bế theo hình thù yêu cầu cho sticker, nhãn chai." 
+    title: "Cắt Bế Tem Nhãn", 
+    img: "https://images.unsplash.com/photo-1601933513793-120090886c95?q=80&w=600", 
+    desc: "Cắt bế sticker, tem nhãn theo hình thù phức tạp. Đường cắt bén, dễ lột, không làm đứt đế decal." 
   },
   { 
-    title: "Cắt Gia Công B2B", 
-    img: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=400", 
-    desc: "Hỗ trợ thợ quảng cáo gia công khối lượng lớn." 
-  }
-];
-
-const materials = [
-  { 
-    name: "Decal Mờ", 
-    img: "https://images.unsplash.com/photo-1626708722760-466033488825?q=80&w=400", 
-    desc: "Dán kính vách ngăn, riêng tư." 
-  },
-  { 
-    name: "Decal Phản Quang", 
-    img: "https://images.unsplash.com/photo-1616432043562-3671ea2e5241?q=80&w=400", 
-    desc: "Vật liệu 3M, biển báo, tem xe." 
-  },
-  { 
-    name: "Decal Màu/Trong", 
-    img: "https://images.unsplash.com/photo-1589987607627-616cac5c2c5a?q=80&w=400", 
-    desc: "Trang trí, dán tường, dán kính." 
-  },
-  { 
-    name: "Decal Nội Thất", 
-    img: "https://images.unsplash.com/photo-1615873968403-89e068629275?q=80&w=400", 
-    desc: "Giả gỗ, giả đá, cao cấp." 
+    title: "Gia Công B2B", 
+    img: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=600", 
+    desc: "Hỗ trợ thợ quảng cáo và đối tác gia công số lượng lớn, đảm bảo tiến độ và chất lượng đồng nhất." 
   }
 ];
 ---
 
-<section class="py-16 md:py-24 bg-slate-50">
-  <div class="container mx-auto px-4">
+<section class="py-16 md:py-24 bg-white">
+  <div class="max-w-7xl mx-auto px-4">
     
-    <div class="mb-20">
-      <div class="flex items-center gap-4 mb-10">
-        <h2 class="text-xl md:text-2xl font-black italic text-primary uppercase whitespace-nowrap">Dịch vụ gia công</h2>
-        <div class="h-px bg-slate-200 flex-grow"></div>
-      </div>
-      
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        {services.map(s => (
-          <div class="group cursor-pointer">
-            <div class="relative aspect-video rounded-2xl overflow-hidden mb-5 shadow-sm">
-              <img 
-                src={s.img} 
-                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
-                alt={s.title} 
-              />
-              <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors"></div>
-            </div>
-            <h3 class="text-lg font-bold text-black mb-2 uppercase italic leading-none">{s.title}</h3>
-            <p class="text-xs text-gray-500 leading-relaxed">{s.desc}</p>
-          </div>
-        ))}
-      </div>
+    <div class="flex items-center gap-4 mb-12">
+      <h2 class="text-2xl md:text-3xl font-black text-black uppercase tracking-tighter shrink-0">
+        Dịch vụ gia công
+      </h2>
+      <div class="h-px bg-divider flex-grow"></div>
     </div>
-
-    <div>
-      <div class="flex items-center gap-4 mb-10">
-        <h2 class="text-xl md:text-2xl font-black italic text-primary uppercase whitespace-nowrap">Kho vật liệu sẵn có</h2>
-        <div class="h-px bg-slate-200 flex-grow"></div>
-      </div>
-
-      <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
-        {materials.map(m => (
-          <div class="group cursor-pointer">
-            <div class="relative aspect-square rounded-2xl overflow-hidden mb-4 shadow-sm">
-              <img 
-                src={m.img} 
-                class="w-full h-full object-cover group-hover:scale-110 transition-all duration-700" 
-                alt={m.name} 
-              />
-              <div class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-            </div>
-            <h3 class="font-bold text-black text-sm uppercase italic mb-1 leading-none">{m.name}</h3>
-            <p class="text-[11px] text-gray-400 leading-tight">{m.desc}</p>
+    
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+      {services.map(s => (
+        <div class="group flex flex-col">
+          <div class="relative aspect-[4/3] rounded-3xl overflow-hidden mb-6 shadow-sm border border-divider">
+            <img 
+              src={s.img} 
+              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" 
+              alt={s.title} 
+            />
+            <div class="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
           </div>
-        ))}
-      </div>
+
+          <h3 class="text-xl md:text-2xl font-bold text-black mb-3 leading-tight">
+            {s.title}
+          </h3>
+          
+          <p class="text-copy-light text-base md:text-lg leading-relaxed mb-6">
+            {s.desc}
+          </p>
+
+          <div class="mt-auto">
+            <a href="/bao-gia" class="inline-flex items-center font-bold text-primary hover:text-primary-dark transition-colors gap-2 group/link">
+              Nhận báo giá
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 transform group-hover/link:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      ))}
     </div>
 
   </div>
 </section>
 
 <style>
-  /* Triệt tiêu in nghiêng toàn bộ */
+  /* Đảm bảo không bị in nghiêng ngoài ý muốn và ép font theo Layout */
   h2, h3, p {
-    font-style: normal !important;
-  }
-  /* Giữ italic cho phong cách iDecal */
-  .italic {
-    font-style: italic !important;
+    font-style: normal;
   }
 </style>
