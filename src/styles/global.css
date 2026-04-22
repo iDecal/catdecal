@@ -5,7 +5,7 @@
 @layer base {
   /* 1. Áp dụng font Roboto và màu chữ mặc định cho toàn trang */
   html {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Inter', sans-serif;
     @apply text-copy antialiased;
   }
 
