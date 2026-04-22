@@ -1,100 +1,147 @@
 ---
 // Header.astro
+const navLinks = [
+  { name: 'Trang chủ', href: '/' },
+  { 
+    name: 'Dịch vụ cắt', 
+    href: '#', 
+    submenu: [
+      { name: 'Cắt chữ Decal', href: '/cat-chu-decal' },
+      { name: 'Cắt bế Sticker', href: '/cat-be-sticker' },
+      { name: 'Cắt Decal mờ', href: '/cat-decal-mo' },
+      { name: 'Cắt Decal phản quang', href: '/cat-decal-phan-quang' }
+    ]
+  },
+  { name: 'Vật liệu', href: '/vat-lieu' },
+  { name: 'Blog', href: '/blog' }, // Thêm mục Blog
+  { name: 'Gửi file', href: '/huong-dan' },
+];
 ---
 
-<header class="bg-white border-b border-divider sticky top-0 z-50 shadow-sm font-heading">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex justify-between h-20 items-center">
+<header class="fixed w-full z-50 bg-black/95 backdrop-blur-md border-b border-white/5">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="flex justify-between items-center h-16 md:h-20">
       
-      <div class="flex items-center">
-        <a href="/" class="flex items-center">
-          <img 
-            src="/images/logo-catdecal.vn.jpg" 
-            alt="catdecal.vn" 
-            class="h-12 w-auto object-contain"
-          />
-        </a>
-      </div>
+      <a href="/" class="z-50">
+        <span class="text-xl md:text-2xl font-bold tracking-tighter text-gold uppercase italic">
+          catdecal<span class="text-white">.vn</span>
+        </span>
+      </a>
 
-      <nav class="hidden md:flex space-x-8 items-center h-full">
-        <a href="/" class="text-copy hover:text-primary font-medium transition-colors">Trang chủ</a>
-        
-        <div class="relative group h-full flex items-center">
-          <a href="/dich-vu" class="text-copy group-hover:text-primary font-medium flex items-center gap-1 transition-colors h-full">
-            Dịch vụ cắt 
-            <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-            </svg>
-          </a>
-
-          <div class="absolute top-full left-0 w-64 bg-white shadow-xl rounded-b-xl border border-divider opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50 py-2 border-t-0">
-            <a href="/dich-vu/cat-decal-mau" class="block px-4 py-3 hover:bg-primary/5 hover:text-primary transition-colors text-sm">Cắt Decal màu (Quảng cáo)</a>
-            <a href="/dich-vu/cat-decal-mo" class="block px-4 py-3 hover:bg-primary/5 hover:text-primary transition-colors text-sm">Cắt Decal mờ (Dán kính)</a>
-            <a href="/dich-vu/cat-be-tem-nhan" class="block px-4 py-3 hover:bg-primary/5 hover:text-primary transition-colors text-sm">Cắt bế Tem nhãn (Sau in)</a>
-            <a href="/dich-vu/cat-decal-phan-quang" class="block px-4 py-3 hover:bg-primary/5 hover:text-primary transition-colors text-sm">Cắt Decal phản quang</a>
-            <a href="/dich-vu/cat-decal-chuyen-nhiet" class="block px-4 py-3 hover:bg-primary/5 hover:text-primary transition-colors text-sm">Cắt Decal chuyển nhiệt (Ép áo)</a>
+      <nav class="hidden md:flex space-x-8 items-center">
+        {navLinks.map((link) => (
+          <div class="relative group">
+            <a href={link.href} class="text-sm font-medium text-gray-300 hover:text-gold transition-colors flex items-center gap-1">
+              {link.name}
+              {link.submenu && <svg class="w-4 h-4 opacity-50 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"/></svg>}
+            </a>
+            
+            {link.submenu && (
+              <div class="absolute left-0 mt-2 w-52 bg-neutral-900 border border-white/10 rounded-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 shadow-2xl overflow-hidden">
+                {link.submenu.map((sub) => (
+                  <a href={sub.href} class="block px-4 py-3 text-sm text-gray-300 hover:bg-gold hover:text-black transition-colors border-b border-white/5 last:border-0">
+                    {sub.name}
+                  </a>
+                ))}
+              </div>
+            )}
           </div>
-        </div>
-
-        <a href="/bao-gia" class="text-copy hover:text-primary font-medium transition-colors">Báo giá nhanh</a>
-        <a href="/giao-hang-thanh-toan" class="text-copy hover:text-primary font-medium transition-colors">Giao hàng</a>
-        <a href="/thu-vien-mau" class="text-copy hover:text-primary font-medium transition-colors">Thư viện mẫu</a>
+        ))}
+        <a href="/bao-gia" class="px-5 py-2 rounded-full text-sm font-bold text-white bg-light-blue hover:bg-blue-600 hover:scale-105 transition-all">Gửi file ngay</a>
       </nav>
 
-      <div class="hidden md:block">
-        <a href="https://zalo.me/0862208108" target="_blank" class="bg-primary text-white px-6 py-2.5 rounded-lg font-bold hover:bg-red-600 transition-all shadow-md uppercase text-sm">
-          Gửi file ngay
-        </a>
+      <button id="menu-btn" class="md:hidden z-50 p-2 text-white outline-none" aria-label="Toggle Menu">
+        <svg id="menu-icon" class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path id="path-top" d="M4 6h16" stroke-width="2" stroke-linecap="round" class="transition-all duration-300"></path>
+          <path id="path-mid" d="M4 12h16" stroke-width="2" stroke-linecap="round" class="transition-all duration-300"></path>
+          <path id="path-bot" d="M4 18h16" stroke-width="2" stroke-linecap="round" class="transition-all duration-300"></path>
+        </svg>
+      </button>
+
+      <div id="mobile-menu" class="fixed inset-0 bg-neutral-950 translate-x-full transition-transform duration-300 md:hidden flex flex-col pt-24 px-6 overflow-y-auto">
+        <div class="flex flex-col space-y-8">
+          {navLinks.map((link) => (
+            <div class="flex flex-col">
+              <a href={link.href} class="text-3xl font-bold text-white flex items-center justify-between group">
+                {link.name}
+                <span class="h-[2px] w-0 bg-gold transition-all group-hover:w-12"></span>
+              </a>
+              
+              {link.submenu && (
+                <div class="grid grid-cols-1 gap-3 mt-4 pl-4 border-l border-white/10">
+                  {link.submenu.map((sub) => (
+                    <a href={sub.href} class="text-lg text-gray-400 hover:text-gold active:text-gold">
+                      {sub.name}
+                    </a>
+                  ))}
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+
+        <div class="mt-auto pb-12 pt-10">
+          <a href="/bao-gia" class="block w-full py-5 rounded-2xl text-center text-xl font-bold text-white bg-light-blue shadow-lg shadow-blue-900/20 active:scale-95 transition-transform uppercase tracking-wider">
+            Gửi file báo giá ngay
+          </a>
+          <p class="text-center text-gray-500 mt-6 text-sm italic">
+            Xưởng gia công cắt decal chính xác 24/7
+          </p>
+        </div>
       </div>
 
-      <div class="md:hidden">
-        <button id="menu-btn" class="p-2 text-black focus:outline-none" aria-label="Toggle Menu">
-          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path id="menu-icon" d="M4 6h16M4 12h16m-7 6h7" stroke-width="2" stroke-linecap="round"></path>
-          </svg>
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-divider shadow-inner">
-    <div class="px-4 py-6 space-y-4">
-      <a href="/" class="block text-lg font-medium border-b border-gray-50 pb-2">Trang chủ</a>
-      <a href="/dich-vu" class="block text-lg font-medium border-b border-gray-50 pb-2">Dịch vụ cắt</a>
-      <a href="/bao-gia" class="block text-lg font-medium border-b border-gray-50 pb-2">Báo giá nhanh</a>
-      <a href="/giao-hang-thanh-toan" class="block text-lg font-medium border-b border-gray-50 pb-2">Giao hàng</a>
-      <a href="https://zalo.me/0862208108" class="w-full block text-center bg-primary text-white py-4 rounded-lg font-bold shadow-lg">GỬI FILE QUA ZALO</a>
     </div>
   </div>
 </header>
 
 <script>
-  function setupMenu() {
-    const btn = document.getElementById('menu-btn');
-    const menu = document.getElementById('mobile-menu');
+  const menuBtn = document.getElementById('menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const pathTop = document.getElementById('path-top');
+  const pathMid = document.getElementById('path-mid');
+  const pathBot = document.getElementById('path-bot');
+  let isOpen = false;
 
-    if (btn && menu) {
-      // Xóa bỏ listener cũ để tránh trùng lặp khi Astro swap trang
-      btn.replaceWith(btn.cloneNode(true));
-      const newBtn = document.getElementById('menu-btn');
-      
-      newBtn?.addEventListener('click', () => {
-        menu.classList.toggle('hidden');
-      });
+  menuBtn?.addEventListener('click', () => {
+    isOpen = !isOpen;
+    
+    // Toggle Menu
+    mobileMenu?.classList.toggle('translate-x-full', !isOpen);
+    
+    // Animate Hamburger to X
+    if (isOpen) {
+      pathTop?.setAttribute('d', 'M6 18L18 6');
+      pathMid?.setAttribute('opacity', '0');
+      pathBot?.setAttribute('d', 'M6 6l12 12');
+      document.body.style.overflow = 'hidden';
+    } else {
+      pathTop?.setAttribute('d', 'M4 6h16');
+      pathMid?.setAttribute('opacity', '1');
+      pathBot?.setAttribute('d', 'M4 18h16');
+      document.body.style.overflow = '';
     }
-  }
+  });
 
-  // Chạy khi lần đầu load trang
-  setupMenu();
-
-  // Chạy lại khi chuyển trang (View Transitions)
-  document.addEventListener('astro:after-swap', setupMenu);
+  // Đóng menu khi click vào link (quan trọng cho Single Page Apps hoặc Anchor links)
+  const mobileLinks = mobileMenu?.querySelectorAll('a');
+  mobileLinks?.forEach(link => {
+    link.addEventListener('click', () => {
+      isOpen = false;
+      mobileMenu?.classList.add('translate-x-full');
+      pathTop?.setAttribute('d', 'M4 6h16');
+      pathMid?.setAttribute('opacity', '1');
+      pathBot?.setAttribute('d', 'M4 18h16');
+      document.body.style.overflow = '';
+    });
+  });
 </script>
 
 <style>
-  /* Đảm bảo ảnh logo không bị méo */
-  img {
-    max-height: 50px;
-    width: auto;
+  #mobile-menu {
+    height: 100dvh;
+    scrollbar-width: none; /* Ẩn scrollbar cho Firefox */
+  }
+  #mobile-menu::-webkit-scrollbar {
+    display: none; /* Ẩn scrollbar cho Chrome/Safari */
   }
 </style>
