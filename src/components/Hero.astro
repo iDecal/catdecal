@@ -1,30 +1,88 @@
 ---
+// Hero.astro
+const features = [
+  { icon: '🎯', text: 'Cắt chính xác từng mm' },
+  { icon: '🚀', text: 'Lấy ngay trong ngày' },
+  { icon: '🎨', text: '50+ mẫu decal màu' }
+];
 ---
-<section class="relative h-[75vh] flex items-center bg-primary overflow-hidden">
-  <div class="absolute inset-0 z-0 opacity-40">
-    <img src="https://images.unsplash.com/photo-1611532736597-de2d4265fba3?q=80&w=2000" class="w-full h-full object-cover" alt="Xưởng cắt decal chuyên nghiệp" />
-    <div class="absolute inset-0 bg-gradient-to-r from-primary via-primary/60 to-transparent"></div>
-  </div>
+
+<section class="relative bg-neutral-950 overflow-hidden min-h-[90dvh] flex items-center">
   
-  <div class="container mx-auto px-4 relative z-10">
-    <div class="max-w-2xl">
-      <div class="inline-block bg-secondary text-primary px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest mb-6">
-        Hệ thống gia công toàn quốc
+  <div class="absolute inset-0 z-0">
+    <img 
+      src="/images/hero-decal-cutting.jpg" 
+      alt="Cận cảnh máy cắt decal đang hoạt động" 
+      class="w-full h-full object-cover object-center opacity-30 aspect-video md:aspect-auto"
+    />
+    <div class="absolute inset-0 bg-gradient-to-b from-neutral-950/80 via-neutral-950/50 to-neutral-950"></div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-20 md:py-32">
+    <div class="grid md:grid-cols-12 gap-12 items-center">
+      
+      <div class="md:col-span-7 flex flex-col space-y-6 text-center md:text-left">
+        
+        <span class="inline-flex items-center px-4 py-1.5 rounded-full text-xs font-semibold tracking-wider text-gold uppercase bg-gold/10 border border-gold/20 self-center md:self-start">
+          Xưởng gia công cắt decal uy tín
+        </span>
+
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tighter text-white leading-tight">
+          CẮT DECAL <span class="text-gold italic">CHUYÊN NGHIỆP</span><br class="hidden sm:block"/>
+          CHÍNH XÁC TỪNG MILIMET
+        </h1>
+
+        <p class="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto md:mx-0">
+          Chuyên gia công cắt chữ quảng cáo, sticker, decal trang trí và phản quang. Hỗ trợ lột và cán màng định hình, khách hàng chỉ cần dán. Lấy ngay trong ngày.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 pt-6 justify-center md:justify-start">
+          <a
+            href="/bao-gia"
+            class="inline-flex items-center justify-center px-8 py-4 border border-transparent rounded-xl shadow-sm text-lg font-bold text-white bg-light-blue hover:bg-blue-600 hover:scale-105 transition-all uppercase tracking-wide"
+          >
+            Gửi file báo giá ngay
+          </a>
+          <a
+            href="/vat-lieu"
+            class="inline-flex items-center justify-center px-8 py-4 border border-white/20 rounded-xl text-lg font-medium text-white hover:bg-white/5 transition-colors"
+          >
+            Xem bảng mã màu
+          </a>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-10 border-t border-white/10 mt-10">
+          {features.map(feature => (
+            <div class="flex items-center gap-3 bg-neutral-900/50 p-4 rounded-xl border border-white/5">
+              <span class="text-3xl">{feature.icon}</span>
+              <p class="text-sm font-medium text-gray-300">{feature.text}</p>
+            </div>
+          ))}
+        </div>
+
       </div>
-      <h1 class="text-4xl md:text-6xl font-heading font-extrabold text-white leading-[1.1] mb-6 uppercase italic">
-        Cắt Decal <br/> <span class="text-secondary">Chính xác & Siêu tốc</span>
-      </h1>
-      <p class="text-lg text-white/70 mb-10 italic leading-relaxed max-w-lg">
-        Gửi file online - Nhận hàng tận nơi. Quy trình đóng gói chuyên nghiệp chống gãy gập cho khách hàng toàn quốc.
-      </p>
-      <div class="flex flex-wrap gap-4">
-        <a href="#calculator" class="bg-secondary text-primary px-8 py-4 rounded-xl font-black hover:scale-105 transition-all shadow-lg shadow-secondary/20">
-          TÍNH GIÁ & GỬI FILE
-        </a>
-        <a href="https://zalo.me/your-number" class="bg-white/10 backdrop-blur-md text-white border border-white/20 px-8 py-4 rounded-xl font-bold hover:bg-white/20 transition-all">
-          TƯ VẤN ZALO
-        </a>
+
+      <div class="md:col-span-5 hidden md:block">
+        <div class="aspect-square bg-neutral-900 rounded-3xl border-4 border-white/5 p-6 shadow-2xl relative overflow-hidden group">
+          <img 
+            src="/images/decal-sample-mandala.png" 
+            alt="Mẫu decal mandala cắt chi tiết nhỏ" 
+            class="w-full h-full object-contain transition-transform duration-500 group-hover:scale-110"
+          />
+          <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+            <span class="text-gold font-bold text-lg uppercase tracking-wider">Cắt chi tiết cực nhỏ</span>
+          </div>
+        </div>
       </div>
+
     </div>
   </div>
+
 </section>
+
+<style>
+  /* Fix cho Tailwind v4 nếu cần custom thêm */
+  h1 {
+    text-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  }
+</style>
