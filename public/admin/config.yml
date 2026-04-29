@@ -2,35 +2,6 @@ backend:
   name: github
   repo: iDecal/catdecal
   branch: main
+  # CHÚ Ý: Hai dòng này giúp bỏ qua Netlify để dùng Worker của bạn
   base_url: https://catdecal-gatekeeper.ideals-net.workers.dev
   auth_endpoint: auth
-
-media_folder: "public/images/uploads"
-public_folder: "/images/uploads"
-
-collections:
-  # Phần quản lý Blog
-  - name: "blog"
-    label: "Bài viết Blog"
-    folder: "src/content/blog"
-    create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    fields:
-      - { label: "Tiêu đề", name: "title", widget: "string" }
-      - { label: "Tóm tắt", name: "excerpt", widget: "text" }
-      - { label: "Danh mục", name: "category", widget: "string" }
-      - { label: "Ngày đăng", name: "date", widget: "datetime" }
-      - { label: "Ảnh đại diện", name: "image", widget: "image" }
-      - { label: "Nội dung bài viết", name: "body", widget: "markdown" }
-
-  # Phần quản lý Dịch vụ
-  - name: "services"
-    label: "Dịch vụ Decal"
-    folder: "src/content/services"
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - { label: "Tên dịch vụ", name: "title", widget: "string" }
-      - { label: "Mô tả SEO", name: "description", widget: "string" }
-      - { label: "Ảnh sản phẩm", name: "featured_image", widget: "image" }
-      - { label: "Chi tiết dịch vụ", name: "body", widget: "markdown" }
