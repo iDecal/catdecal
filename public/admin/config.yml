@@ -5,7 +5,6 @@ backend:
   base_url: https://catdecal-gatekeeper.ideals-net.workers.dev
   auth_endpoint: auth
 
-# Sửa lại đường dẫn này cho đúng với cấu trúc ảnh của bạn
 media_folder: "public/images"
 public_folder: "/images"
 
@@ -14,7 +13,6 @@ collections:
     label: "Dịch vụ Decal"
     folder: "src/content/services"
     create: true
-    slug: "{{slug}}"
     fields:
       - { label: "Tên dịch vụ", name: "title", widget: "string" }
       - { label: "Mô tả SEO", name: "description", widget: "string" }
@@ -25,11 +23,8 @@ collections:
     label: "Bài viết Blog"
     folder: "src/content/blog"
     create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
       - { label: "Tiêu đề", name: "title", widget: "string" }
       - { label: "Tóm tắt", name: "excerpt", widget: "text" }
-      - { label: "Danh mục", name: "category", widget: "string" }
-      - { label: "Ngày đăng", name: "date", widget: "datetime" }
-      - { label: "Ảnh đại diện", name: "image", widget: "image" }
+      - { label: "Ngày đăng", name: "date", widget: "string" }
       - { label: "Nội dung bài viết", name: "body", widget: "markdown" }
