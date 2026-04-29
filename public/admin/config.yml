@@ -1,0 +1,20 @@
+backend:
+  name: github
+  repo: iDecal/catdecal # Đường dẫn repo GitHub của bạn
+  branch: main
+
+media_folder: "public/images/uploads" # Nơi lưu ảnh bạn tải lên
+public_folder: "/images/uploads"
+
+collections:
+  - name: "services"
+    label: "Dịch vụ Decal"
+    folder: "src/content/services" # Nơi lưu file bài viết
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Tiêu đề dịch vụ", name: "title", widget: "string" }
+      - { label: "Mô tả ngắn (SEO)", name: "description", widget: "string" }
+      - { label: "Ảnh đại diện", name: "featured_image", widget: "image" }
+      - { label: "Nội dung chi tiết", name: "body", widget: "markdown" } 
+      # Widget markdown ở đây sẽ hiện ra khung soạn thảo như Word cho bạn
