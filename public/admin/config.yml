@@ -2,20 +2,34 @@ backend:
   name: github
   repo: iDecal/catdecal
   branch: main
-  # Kiểm tra kỹ từng chữ ở đây:
   base_url: https://catdecal-gatekeeper.ideals-net.workers.dev
   auth_endpoint: auth
 
-media_folder: "public/images/uploads"
-public_folder: "/images/uploads"
+# Sửa lại đường dẫn này cho đúng với cấu trúc ảnh của bạn
+media_folder: "public/images"
+public_folder: "/images"
 
 collections:
   - name: "services"
     label: "Dịch vụ Decal"
     folder: "src/content/services"
     create: true
+    slug: "{{slug}}"
     fields:
       - { label: "Tên dịch vụ", name: "title", widget: "string" }
       - { label: "Mô tả SEO", name: "description", widget: "string" }
       - { label: "Ảnh đại diện", name: "featured_image", widget: "image" }
       - { label: "Nội dung chi tiết", name: "body", widget: "markdown" }
+
+  - name: "blog"
+    label: "Bài viết Blog"
+    folder: "src/content/blog"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Tiêu đề", name: "title", widget: "string" }
+      - { label: "Tóm tắt", name: "excerpt", widget: "text" }
+      - { label: "Danh mục", name: "category", widget: "string" }
+      - { label: "Ngày đăng", name: "date", widget: "datetime" }
+      - { label: "Ảnh đại diện", name: "image", widget: "image" }
+      - { label: "Nội dung bài viết", name: "body", widget: "markdown" }
