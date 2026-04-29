@@ -2,6 +2,8 @@ backend:
   name: github
   repo: iDecal/catdecal
   branch: main
+  base_url: https://catdecal-gatekeeper.ideals-net.workers.dev
+  auth_endpoint: auth
 
 media_folder: "public/images/uploads"
 public_folder: "/images/uploads"
