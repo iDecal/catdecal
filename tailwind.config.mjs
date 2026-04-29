@@ -4,23 +4,22 @@ export default {
 	theme: {
 		extend: {
 			colors: {
-				// Thêm dòng này để sửa lỗi build
-				secondary: '#004d33', 
-                
+				// ĐỊNH NGHĨA CÁC MÀU BỊ THIẾU Ở ĐÂY
+				primary: '#006d83',
+				secondary: '#004d33',
+				surface: '#f5f5f5',
+				copy: {
+					DEFAULT: '#3c434a', // Class 'text-copy' sẽ lấy màu này
+					light: '#646970',   // Class 'text-copy-light'
+				},
+				divider: '#e5e5e5',
+				// Các màu thương hiệu khác nếu cần
 				brand: {
 					red: '#D92128',
 					cyan: '#32B8E8',
-					lime: '#A7C928',
-					purple: '#B855A1',
-				},
-				admin: {
-					dark: '#2c3338',
-					blue: '#2271b1',
-					surface: '#f0f0f1',
-					border: '#dcdcde',
 				}
 			},
-            // ... các phần khác giữ nguyên
+            // ... giữ các phần font hoặc spacing khác
 		},
 	},
 	plugins: [],
