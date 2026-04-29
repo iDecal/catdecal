@@ -5,7 +5,7 @@ import sitemap from '@astrojs/sitemap';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://idecal.vn',
-   output: 'hybrid', 
+   output: 'static', 
   integrations: [tailwind(), sitemap()],
   // Tích hợp Tailwind CSS
   integrations: [tailwind()],
