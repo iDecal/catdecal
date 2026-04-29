@@ -1,4 +1,3 @@
-// src/lib/contentful.ts
 import contentful from "contentful";
 
 export const contentfulClient = contentful.createClient({
