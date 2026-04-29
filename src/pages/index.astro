@@ -1,14 +1,100 @@
 ---
-// 1. Khai báo biến title ở đây
-const title = "CATDECAL.VN - Cắt Decal & Giao Hàng Toàn Quốc";
-const description = "Dịch vụ gia công decal chuyên nghiệp, đóng gói ống nhựa PVC bảo vệ tuyệt đối.";
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
 
-import Layout from '../layouts/BaseLayout.astro'; // Hoặc BaseLayout tùy tên file của bạn
+// Thông tin chuẩn SEO
+const title = "Xưởng Cắt Decal Vi Tính Chuyên Nghiệp | catdecal.vn";
+const description = "Dịch vụ gia công cắt decal mờ, decal màu, phản quang công nghệ Nhật Bản. Đóng gói ống nhựa PVC chuyên nghiệp, giao hàng toàn quốc.";
 ---
 
 <Layout title={title} description={description}>
-  <section>
-    <h1>{title}</h1>
-    <p>Chào mừng bạn đến với xưởng decal của chúng tôi.</p>
+  <section class="relative bg-surface py-16 md:py-28 px-4 overflow-hidden">
+    <div class="max-w-7xl mx-auto">
+      <div class="max-w-3xl">
+        <span class="text-primary font-bold tracking-widest uppercase text-sm mb-4 block">
+          Công nghệ cắt Nhật Bản
+        </span>
+        <h1 class="text-4xl md:text-6xl font-black text-copy leading-tight mb-6">
+          XƯỞNG GIA CÔNG <br/>
+          <span class="text-primary">CẮT DECAL</span> UY TÍN
+        </h1>
+        <p class="text-lg text-copy-light mb-10 leading-relaxed max-w-xl">
+          Đơn vị chuyên cắt decal vi tính hàng đầu. Chúng tôi tự hào với quy trình 
+          <strong>đóng gói ống nhựa PVC</strong> độc quyền, bảo vệ sản phẩm tuyệt đối 
+          trong quá trình vận chuyển toàn quốc.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a href="/bao-gia" class="bg-primary hover:bg-secondary text-white px-8 py-4 rounded-xl font-bold transition-all shadow-lg hover:-translate-y-1">
+            Nhận báo giá ngay
+          </a>
+          <a href="/thu-vien" class="bg-white border border-divider hover:border-primary text-copy px-8 py-4 rounded-xl font-bold transition-all">
+            Xem mẫu thiết kế
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 px-4">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-copy mb-4">Dịch vụ cắt decal chuyên nghiệp</h2>
+        <p class="text-copy-light">Giải pháp tối ưu cho văn phòng, quảng cáo và bán lẻ</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="group p-8 bg-white border border-divider rounded-2xl hover:shadow-2xl transition-all">
+          <div class="w-12 h-12 bg-primary/10 text-primary rounded-lg flex items-center justify-center mb-6">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Cắt Decal Mờ</h3>
+          <p class="text-sm text-copy-light mb-4">Cắt logo, hoa văn trang trí vách kính văn phòng tại Quận 1, Quận 7 và Thủ Đức.</p>
+          <a href="/vat-lieu/decal-mo" class="text-primary font-semibold text-sm">Tìm hiểu thêm →</a>
+        </div>
+
+        <div class="group p-8 bg-white border border-divider rounded-2xl hover:shadow-2xl transition-all">
+          <div class="w-12 h-12 bg-primary/10 text-primary rounded-lg flex items-center justify-center mb-6">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M7 7h10v10H7z"/></svg>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Sticker & Tem Nhãn</h3>
+          <p class="text-sm text-copy-light mb-4">In bế tem nhãn sản phẩm, sticker theo yêu cầu cho các shop bán hàng online.</p>
+          <a href="/dich-vu/sticker-tem-be" class="text-primary font-semibold text-sm">Tìm hiểu thêm →</a>
+        </div>
+
+        <div class="group p-8 bg-white border border-divider rounded-2xl hover:shadow-2xl transition-all">
+          <div class="w-12 h-12 bg-primary/10 text-primary rounded-lg flex items-center justify-center mb-6">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Decal Phản Quang</h3>
+          <p class="text-sm text-copy-light mb-4">Sử dụng vật liệu 3M cao cấp, cắt chữ phản quang cho biển báo và xe tải.</p>
+          <a href="/vat-lieu/decal-phan-quang" class="text-primary font-semibold text-sm">Tìm hiểu thêm →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-copy text-white px-4">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12">
+      <div class="flex-1">
+        <h2 class="text-3xl font-bold mb-6">Quy trình đóng gói PVC "Không móp méo"</h2>
+        <p class="text-gray-300 mb-6 leading-relaxed">
+          Chúng tôi hiểu rằng decal rất dễ bị gãy gập trong quá trình vận chuyển. Vì vậy, mọi đơn hàng 
+          tại <strong>catdecal.vn</strong> đều được đóng trong ống nhựa cứng, dán kín hai đầu.
+        </p>
+        <ul class="space-y-4">
+          <li class="flex items-center gap-3">
+            <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>
+            An toàn 100% khi gửi đi tỉnh
+          </li>
+          <li class="flex items-center gap-3">
+            <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>
+            Chống thấm nước và va đập
+          </li>
+        </ul>
+      </div>
+      <div class="flex-1 bg-gray-700 aspect-video rounded-2xl flex items-center justify-center">
+        <span class="text-gray-500">Ảnh minh họa đóng gói ống nhựa PVC</span>
+      </div>
+    </div>
   </section>
 </Layout>
