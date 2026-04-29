@@ -5,16 +5,16 @@ backend:
   base_url: https://decap-cms-proxy-gateway.vercel.app
   auth_endpoint: auth
 
-media_folder: "public/uploads"
-public_folder: "/uploads"
+media_folder: "public/images"
+public_folder: "/images"
 
 collections:
-  - name: "blog"
-    label: "Blog"
-    folder: "src/content/blog"
+  - name: "services"
+    label: "Dịch vụ Decal"
+    folder: "src/content/services"
     create: true
-    slug: "{{slug}}"
     fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Date", name: "date", widget: "datetime" }
-      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Tên dịch vụ", name: "title", widget: "string" }
+      - { label: "Mô tả SEO", name: "description", widget: "string" }
+      - { label: "Ảnh đại diện", name: "featured_image", widget: "image" }
+      - { label: "Nội dung chi tiết", name: "body", widget: "markdown" }
