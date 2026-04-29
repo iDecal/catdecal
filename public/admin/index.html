@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.css" />
 </head>
 <body>
+  <div id="nc-root"></div>
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
   <script>
     CMS.init({
@@ -14,34 +15,36 @@
           name: "github",
           repo: "iDecal/catdecal",
           branch: "main",
-          // ĐỊA CHỈ NÀY ĐÃ ĐƯỢC XÁC NHẬN SỐNG TRONG HÌNH 10 CỦA BẠN
           base_url: "https://catdecal-gatekeeper.ideals-net.workers.dev",
           auth_endpoint: "auth"
         },
-        display_name: "Hệ thống quản trị iDecal",
+        load_config_file: false,
+        display_name: "iDecal Content Manager",
         media_folder: "public/images",
         public_folder: "/images",
         collections: [
           {
-            name: "services",
+            name: "ds_dich_vu",
             label: "Dịch vụ Decal",
             folder: "src/content/services",
             create: true,
             fields: [
-              { label: "Tên dịch vụ", name: "title", widget: "string" },
+              { label: "Tiêu đề", name: "title", widget: "string" },
               { label: "Mô tả SEO", name: "description", widget: "string" },
               { label: "Ảnh đại diện", name: "featured_image", widget: "image" },
               { label: "Nội dung", name: "body", widget: "markdown" }
             ]
           },
           {
-            name: "blog",
-            label: "Blog",
+            name: "ds_blog",
+            label: "Tin tức Blog",
             folder: "src/content/blog",
             create: true,
             fields: [
               { label: "Tiêu đề", name: "title", widget: "string" },
-              { label: "Ngày", name: "date", widget: "string" },
+              { label: "Tóm tắt", name: "excerpt", widget: "text" },
+              { label: "Ngày đăng", name: "date", widget: "string" },
+              { label: "Hình ảnh", name: "image", widget: "image" },
               { label: "Nội dung", name: "body", widget: "markdown" }
             ]
           }
