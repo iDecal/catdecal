@@ -4,30 +4,42 @@ export default {
 	theme: {
 		extend: {
 			fontFamily: {
-				// Thiết lập Roboto là font sans mặc định của trang
+				// WordPress sử dụng hệ thống font hệ điều hành, Inter rất phù hợp để thay thế
 				sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
 			},
 			colors: {
+				// Màu chủ đạo theo phong cách Admin WP
 				primary: {
-					DEFAULT: '#006d83',
-					dark: '#006b48',
+					DEFAULT: '#2271b1', // Màu xanh đặc trưng của nút và link trong WP
+					dark: '#135e96',    // Màu khi hover
+					contrast: '#f6f7f7',
 				},
-				secondary: '#004d33',
-				surface: '#f5f5f5',
+				// Sidebar và Topbar (Màu xám đen WP)
+				admin: {
+					sidebar: '#2c3338',
+					hover: '#1d2327',
+					sub: '#262c33',
+				},
+				// Màu nền và bề mặt
+				surface: {
+					DEFAULT: '#f0f0f1', // Nền xám nhạt đặc trưng của WP Admin
+					white: '#ffffff',
+				},
 				copy: {
-					DEFAULT: '#000000',
-					light: '#626262',
+					DEFAULT: '#3c434a', // Màu chữ chính (không dùng đen tuyền)
+					light: '#646970',   // Màu chữ chú thích
 				},
-				divider: '#e5e5e5',
+				divider: '#dcdcde',     // Màu viền chuẩn WP
+			},
+			boxShadow: {
+				// WP sử dụng đổ bóng rất nhẹ hoặc viền mảnh
+				'wp': '0 1px 1px rgba(0,0,0,.04)',
 			},
 			lineHeight: {
-				// Cực kỳ quan trọng để không bị đè dấu tiếng Việt ở H1
-				tight: '1.25', 
-				snug: '1.375',
+				tight: '1.3', 
+				snug: '1.5',
 			},
 			letterSpacing: {
-				// Roboto có khoảng cách chữ hơi rộng, -0.01em hoặc -0.02em sẽ giúp tiêu đề trông gọn và chuyên nghiệp hơn
-				tighter: '-0.02em',
 				tight: '-0.01em',
 			}
 		},
