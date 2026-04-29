@@ -3,7 +3,7 @@
 const title = "CATDECAL.VN - Cắt Decal & Giao Hàng Toàn Quốc";
 const description = "Dịch vụ gia công decal chuyên nghiệp, đóng gói ống nhựa PVC bảo vệ tuyệt đối.";
 
-import Layout from '../layouts/Layout.astro'; // Hoặc BaseLayout tùy tên file của bạn
+import BaseLayout from '../layouts/BaseLayout.astro'; // Hoặc BaseLayout tùy tên file của bạn
 ---
 
 <Layout title={title} description={description}>
@@ -11,4 +11,4 @@ import Layout from '../layouts/Layout.astro'; // Hoặc BaseLayout tùy tên fil
     <h1>{title}</h1>
     <p>Chào mừng bạn đến với xưởng decal của chúng tôi.</p>
   </section>
-</Layout>
+</BaseLayout>
