@@ -2,11 +2,11 @@
 <html>
 <head>
   <meta charset="utf-8" />
-  <title>iDecal Admin</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>iDecal Admin Control</title>
   <link rel="stylesheet" href="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.css" />
 </head>
 <body>
-  <div id="nc-root"></div>
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
   <script>
     CMS.init({
@@ -15,16 +15,16 @@
           name: "github",
           repo: "iDecal/catdecal",
           branch: "main",
+          // Đã sửa đúng chính tả ideals-net (có s) theo ảnh của bạn
           base_url: "https://catdecal-gatekeeper.ideals-net.workers.dev",
           auth_endpoint: "auth"
         },
-        load_config_file: false,
-        display_name: "iDecal Content Manager",
+        load_config_file: false, // Lệnh này để dứt điểm lỗi "unique names"
         media_folder: "public/images",
         public_folder: "/images",
         collections: [
           {
-            name: "ds_dich_vu",
+            name: "decal_services",
             label: "Dịch vụ Decal",
             folder: "src/content/services",
             create: true,
@@ -36,15 +36,13 @@
             ]
           },
           {
-            name: "ds_blog",
+            name: "decal_blog",
             label: "Tin tức Blog",
             folder: "src/content/blog",
             create: true,
             fields: [
               { label: "Tiêu đề", name: "title", widget: "string" },
-              { label: "Tóm tắt", name: "excerpt", widget: "text" },
-              { label: "Ngày đăng", name: "date", widget: "string" },
-              { label: "Hình ảnh", name: "image", widget: "image" },
+              { label: "Ngày", name: "date", widget: "string" },
               { label: "Nội dung", name: "body", widget: "markdown" }
             ]
           }
