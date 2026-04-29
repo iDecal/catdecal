@@ -2,8 +2,8 @@ backend:
   name: github
   repo: iDecal/catdecal
   branch: main
-  # Tên miền chính xác dựa trên tài khoản của bạn:
-  base_url: https://catdecal-gatekeeper.ideals-net.workers.dev
+  # Sửa chính xác thành idecal-net (không có s)
+  base_url: https://catdecal-gatekeeper.idecal-net.workers.dev
   auth_endpoint: auth
 
 media_folder: "public/images"
