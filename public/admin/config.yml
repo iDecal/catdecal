@@ -1,21 +1,18 @@
 backend:
   name: github
-  repo: iDecal/catdecal
+  repo: your-username/your-repo-name
   branch: main
-  # Phải có chữ 's' ở ideals-net như trong hình Cloudflare của bạn
-  base_url: https://catdecal-gatekeeper.ideals-net.workers.dev
-  auth_endpoint: auth
 
-media_folder: "public/images"
-public_folder: "/images"
+media_folder: "public/uploads"
+public_folder: "/uploads"
 
 collections:
-  - name: "services"
-    label: "Dịch vụ Decal"
-    folder: "src/content/services"
+  - name: "blog"
+    label: "Blog"
+    folder: "src/content/blog"
     create: true
+    slug: "{{slug}}"
     fields:
-      - { label: "Tên dịch vụ", name: "title", widget: "string" }
-      - { label: "Mô tả SEO", name: "description", widget: "string" }
-      - { label: "Ảnh đại diện", name: "featured_image", widget: "image" }
-      - { label: "Nội dung chi tiết", name: "body", widget: "markdown" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Body", name: "body", widget: "markdown" }
