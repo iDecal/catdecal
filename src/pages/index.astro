@@ -1,123 +1,120 @@
 ---
 // src/pages/index.astro
-import Layout from '../layouts/BaseLayout.astro';
+import Layout from '../layouts/Layout.astro';
 
-// Cấu hình các dịch vụ theo màu sắc logo
+// Các mã màu từ logo
+const colors = {
+  red: "#E31B23",      // Đỏ
+  blue: "#00AEEF",     // Xanh Dương
+  green: "#8DC63F",    // Xanh Lá
+  purple: "#A64499",   // Tím
+  black: "#1A1A1A"     // Đen cho chữ
+};
+
 const services = [
   {
     title: "Cắt Decal Vi Tính",
-    desc: "Cắt chữ, logo dán kính văn phòng, xe cộ sắc nét trên máy cắt Nhật Bản.",
-    color: "border-red-600",
-    icon: "✂️"
+    desc: "Cắt chữ, logo dán kính văn phòng, xe cộ sắc nét trên máy Nhật Bản.",
+    bgColor: "bg-[#E31B23]/10", // Nền đỏ nhạt
+    borderColor: "border-[#E31B23]",
+    image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=600&auto=format&fit=crop",
+    label: "Custom logo (viền đỏ)"
   },
   {
     title: "Bế Tem Nhãn",
     desc: "Cắt mọi hình dạng đặc thù cho bao bì sản phẩm, mỹ phẩm, thực phẩm.",
-    color: "border-blue-500",
-    icon: "🏷️"
+    bgColor: "bg-[#00AEEF]/10", // Nền xanh dương nhạt
+    borderColor: "border-[#00AEEF]",
+    image: "https://images.unsplash.com/photo-1612817288484-6f916006741a?q=80&w=600&auto=format&fit=crop",
+    label: "Product label (viền xanh)"
   },
   {
     title: "Dán Kính & Phim",
     desc: "Thi công decal mờ văn phòng, phim cách nhiệt Solar chống nóng.",
-    color: "border-green-500",
-    icon: "🏢"
+    bgColor: "bg-[#8DC63F]/10", // Nền xanh lá nhạt
+    borderColor: "border-[#8DC63F]",
+    image: "https://images.unsplash.com/photo-1522204523234-8729aa6e3d5f?q=80&w=600&auto=format&fit=crop",
+    label: "Privacy decal (viền xanh)"
   },
   {
     title: "Decal Chuyển Nhiệt",
     desc: "Cắt phim in áo thun, đồng phục chuyên nghiệp, bền màu.",
-    color: "border-purple-600",
-    icon: "👕"
-  }
-];
-
-// Dữ liệu FAQ cho khách hàng
-const faqs = [
-  {
-    q: "Catdecal có giao hàng toàn quốc không?",
-    a: "Có, chúng tôi hỗ trợ ship COD hoặc gửi chành xe nhanh chóng đến tất cả các tỉnh thành trên toàn quốc."
-  },
-  {
-    q: "Thời gian hoàn thành đơn hàng là bao lâu?",
-    a: "Các đơn hàng cắt lẻ thường hoàn thành ngay trong ngày. Đơn hàng số lượng lớn mất từ 1-3 ngày."
-  },
-  {
-    q: "Tôi cần cung cấp file định dạng gì?",
-    a: "Tốt nhất là các file vector (AI, Corel, PDF). Nếu bạn chỉ có hình ảnh, chúng tôi hỗ trợ vẽ lại file miễn phí."
-  },
-  {
-    q: "Giá cắt decal được tính như thế nào?",
-    a: "Giá dựa trên loại chất liệu (thường, phản quang, 3M), độ phức tạp của đường cắt và tổng diện tích."
+    bgColor: "bg-[#A64499]/10", // Nền tím nhạt
+    borderColor: "border-[#A64499]",
+    image: "https://images.unsplash.com/photo-1576566588028-4147f3842f27?q=80&w=600&auto=format&fit=crop",
+    label: "Heat transfer (viền tím)"
   }
 ];
 ---
 
 <Layout title="Catdecal.vn - Cắt Decal Chuyên Nghiệp | Giao Hàng Toàn Quốc">
-  <main class="bg-white text-gray-800">
+  <main class="text-[#1A1A1A] font-sans">
     
-    <section class="relative bg-gradient-to-br from-[#00AEEF] to-blue-700 text-white py-24 px-4 text-center">
-      <div class="max-w-4xl mx-auto">
-        <h1 class="text-4xl md:text-6xl font-bold mb-6 drop-shadow-md">CẮT DECAL CHUYÊN NGHIỆP</h1>
-        <p class="text-xl opacity-95 mb-10 max-w-2xl mx-auto">Sắc nét từng chi tiết - Giao hàng toàn quốc - Giải pháp tem nhãn và dán kính tối ưu 2026</p>
+    <!-- Hero Section: Nền trắng với Text đen và Banner hình ảnh -->
+    <section class="relative h-[450px] flex items-center justify-center overflow-hidden">
+      <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1600&auto=format&fit=crop" 
+           class="absolute inset-0 w-full h-full object-cover opacity-20" alt="Background" />
+      <div class="relative z-10 text-center px-4">
+        <h1 class="text-4xl md:text-6xl font-black mb-4 uppercase tracking-tight">
+          CẮT DECAL CHUYÊN NGHIỆP
+        </h1>
+        <p class="text-lg md:text-xl font-medium mb-10 max-w-2xl mx-auto">
+          Sắc nét từng chi tiết - Giao hàng toàn quốc - Giá tốt nhất 2026
+        </p>
         <div class="flex flex-wrap justify-center gap-4">
-          <a href="#prices" class="bg-[#E31B23] hover:bg-red-700 text-white px-10 py-4 rounded-full font-bold shadow-lg transition-all transform hover:scale-105">Xem Bảng Giá</a>
-          <a href="https://zalo.me/your_number" class="bg-[#8DC63F] hover:bg-green-600 text-white px-10 py-4 rounded-full font-bold shadow-lg transition-all transform hover:scale-105">Tư Vấn Zalo</a>
+          <button class="bg-[#E31B23] text-white px-8 py-3 rounded-md font-bold hover:opacity-90 transition">Xem Bảng Giá 2026</button>
+          <button class="bg-[#8DC63F] text-white px-8 py-3 rounded-md font-bold hover:opacity-90 transition">Tư Vấn Zalo</button>
         </div>
       </div>
     </section>
 
-    <section class="py-20 px-4 max-w-6xl mx-auto">
-      <div class="text-center mb-16">
-        <h2 class="text-3xl font-bold mb-4">Dịch Vụ Trọng Tâm</h2>
-        <div class="w-24 h-1 bg-[#E31B23] mx-auto"></div>
-      </div>
-      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+    <!-- Services Section -->
+    <section class="py-16 px-4 max-w-7xl mx-auto">
+      <h2 class="text-3xl font-bold text-center mb-12 uppercase">Dịch Vụ Nổi Bật</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
         {services.map(s => (
-          <div class={`p-8 border-t-4 ${s.color} bg-gray-50 rounded-b-xl shadow-sm hover:shadow-xl transition-all duration-300 group`}>
-            <div class="text-4xl mb-6 group-hover:scale-110 transition-transform inline-block">{s.icon}</div>
-            <h3 class="font-bold text-xl mb-3 text-gray-900">{s.title}</h3>
-            <p class="text-gray-600 leading-relaxed">{s.desc}</p>
+          <div class={`rounded-xl border-2 ${s.borderColor} ${s.bgColor} overflow-hidden transition-transform hover:scale-[1.02]`}>
+            <img src={s.image} alt={s.title} class="w-full h-48 object-cover border-b-2 border-inherit" />
+            <div class="p-5">
+              <h3 class="font-black text-xl mb-2 uppercase">{s.title}</h3>
+              <p class="text-sm font-medium leading-snug mb-4">{s.desc}</p>
+              <span class="text-xs font-bold opacity-70 uppercase tracking-widest italic">{s.label}</span>
+            </div>
           </div>
         ))}
       </div>
     </section>
 
-    <section class="py-20 px-4 bg-gray-100">
-      <div class="max-w-3xl mx-auto">
-        <h2 class="text-3xl font-bold text-center mb-12">Câu Hỏi Thường Gặp</h2>
-        <div class="space-y-4">
-          {faqs.map(faq => (
-            <details class="group bg-white p-6 rounded-xl shadow-sm open:shadow-md transition-all">
-              <summary class="font-bold text-lg cursor-pointer list-none flex justify-between items-center text-[#00AEEF]">
-                {faq.q}
-                <span class="text-2xl group-open:rotate-180 transition-transform">+</span>
-              </summary>
-              <div class="mt-4 text-gray-700 border-t pt-4 leading-relaxed">
-                {faq.a}
-              </div>
-            </details>
-          ))}
-        </div>
+    <!-- FAQ & Info Section -->
+    <section class="py-12 px-4 max-w-7xl mx-auto grid md:grid-cols-3 gap-8 border-t border-gray-200">
+      <!-- FAQ -->
+      <div class="md:col-span-1 bg-gray-50 p-6 rounded-xl">
+        <h3 class="font-bold text-xl mb-6 flex justify-between">FAQ <span>[+]</span></h3>
+        <ul class="space-y-4 font-bold text-sm">
+          <li class="flex justify-between border-b pb-2">Giao hàng toàn quốc? <span class="text-blue-500">+</span></li>
+          <li class="flex justify-between border-b pb-2">Cam kết chất lượng? <span class="text-blue-500">+</span></li>
+          <li class="flex justify-between border-b pb-2">Thời gian hoàn thành? <span class="text-blue-500">+</span></li>
+        </ul>
       </div>
-    </section>
 
-    <section class="py-24 px-4 text-center">
-      <div class="max-w-2xl mx-auto bg-white p-10 rounded-2xl border-2 border-dashed border-gray-200">
-        <h2 class="text-3xl font-bold mb-4 text-[#A64499]">Bạn cần báo giá nhanh sau 5 phút?</h2>
-        <p class="mb-8 text-gray-600 text-lg italic">"Giao hàng toàn quốc - Khảo sát tận nơi tại TP.HCM & Bình Dương"</p>
-        <div class="text-4xl font-black text-[#E31B23] mb-6 tracking-wider">09xx xxx xxx</div>
-        <p class="text-sm text-gray-400 uppercase tracking-widest font-semibold">Phục vụ tận tâm - Uy tín dẫn đầu</p>
+      <!-- Map/Visual -->
+      <div class="md:col-span-1">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/e/e4/Vietnam_location_map.svg" 
+             class="w-full h-48 object-contain opacity-60" alt="Giao hàng toàn quốc" />
+        <p class="text-center font-bold mt-4 uppercase text-xs">Vận chuyển 63 tỉnh thành</p>
+      </div>
+
+      <!-- Contact -->
+      <div class="md:col-span-1 flex flex-col justify-center items-center bg-[#00AEEF]/5 p-6 rounded-xl border border-[#00AEEF]/20">
+        <h3 class="font-bold text-lg mb-4">Liên Hệ & Vận Chuyển</h3>
+        <div class="flex gap-4 mb-4">
+           <span class="w-10 h-10 bg-[#00AEEF] rounded-full flex items-center justify-center text-white font-bold">Z</span>
+           <span class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold">P</span>
+           <span class="w-10 h-10 bg-[#8DC63F] rounded-full flex items-center justify-center text-white font-bold">D</span>
+        </div>
+        <div class="text-3xl font-black text-[#E31B23]">09xx xxx xxx</div>
       </div>
     </section>
 
   </main>
-</Layout>
-
-<style>
-  /* Tối ưu font và hiệu ứng cuộn */
-  html {
-    scroll-behavior: smooth;
-  }
-  body {
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
-  }
-</style>
+</astro>
