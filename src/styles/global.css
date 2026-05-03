@@ -1,50 +1,10 @@
+/* src/styles/global.css */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  /* 1. Áp dụng font Roboto và màu chữ mặc định cho toàn trang */
-  html {
-    font-family: 'Inter', sans-serif;
-    @apply text-copy antialiased;
-  }
-
-  /* 2. Cấu hình tiêu đề H1: Dành cho Hero, cần to và mạnh mẽ */
-  h1 {
-    @apply text-4xl md:text-6xl font-black uppercase tracking-tighter leading-tight;
-  }
-
-  /* 3. Cấu hình H2: Dành cho tiêu đề các mục Dịch vụ, Vật liệu */
-  h2 {
-    @apply text-2xl md:text-4xl font-bold tracking-tight leading-snug text-secondary;
-  }
-
-  /* 4. Cấu hình H3: Dành cho tên sản phẩm nhỏ hoặc sticker */
-  h3 {
-    @apply text-xl md:text-2xl font-bold leading-snug text-primary;
-  }
-
-  /* 5. Cấu hình đoạn văn (Body text) */
-  p {
-    @apply text-base md:text-lg text-copy-light leading-relaxed;
-  }
-
-  /* 6. Fix lỗi dấu cho các thẻ in đậm */
-  strong, b {
-    @apply font-bold text-copy;
-  }
-  /* Khoảng cách dưới cho tất cả các thẻ tiêu đề trong nội dung */
-article h2, .prose h2 {
-  margin-bottom: 1.5rem; /* Khoảng 24px */
-  margin-top: 2rem;    /* Khoảng cách với đoạn văn phía trên */
-}
-
-article h3, .prose h3 {
-  margin-bottom: 1rem;  /* Khoảng 16px */
-}
-
-/* Nếu bạn dùng Tailwind Typography (plugin prose) */
-.prose h2 {
-  @apply mb-6 mt-8;
-}
+/* custom thêm */
+body {
+  @apply bg-white text-gray-900;
 }
