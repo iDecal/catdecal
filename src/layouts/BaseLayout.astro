@@ -1,103 +1,24 @@
 ---
-// Layout.astro
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import '../styles/global.css'; // Đảm bảo bạn đã tạo file này như hướng dẫn trước
+// src/layouts/BaseLayout.astro
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import SEO from "../components/SEO.astro";
 
-interface Props {
-  title?: string;
-  description?: string;
-  image?: string;
-}
-
-const { 
-  title = "CATDECAL.VN - Gia công Decal & Trang Trí Chuyên Nghiệp", 
-  description = "Dịch vụ cắt decal vi tính, bế tem nhãn, cắt chữ quảng cáo lấy liền tại Bình Định và TP.HCM.",
-  image = "/og-image.jpg" 
-} = Astro.props;
+const { title, description } = Astro.props;
 ---
 
-<!doctype html>
 <html lang="vi">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
-
-    <title>{title}</title>
-    <meta name="title" content={title} />
-    <meta name="description" content={description} />
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,700;0,900;1,400;1,700&display=swap" rel="stylesheet" />
-
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content={Astro.url} />
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
-    <meta property="og:image" content={new URL(image, Astro.url)} />
-
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content={Astro.url} />
-    <meta property="twitter:title" content={title} />
-    <meta property="twitter:description" content={description} />
-    <meta property="twitter:image" content={new URL(image, Astro.url)} />
+    <SEO title={title} description={description} />
   </head>
-  <body class="bg-white text-copy antialiased selection:bg-primary/30">
-    
+
+  <body>
     <Header />
 
-    <main> 
-      <slot /> 
+    <main>
+      <slot />
     </main>
 
     <Footer />
-
-    <style is:global>
-      /* 2. CẤU HÌNH FONT INTER TOÀN SITE */
-      :root {
-        --font-main: 'Inter', sans-serif;
-      }
-
-      body {
-        font-family: var(--font-main);
-      }
-
-      h1 {
-        /* Fix lỗi dấu: tăng leading lên 1.25, đổi màu sang text-copy cho đồng bộ */
-        @apply text-3xl md:text-5xl lg:text-6xl font-black tracking-tighter uppercase leading-[1.25] text-copy;
-      }
-
-      h2 {
-        /* Chuyển sang màu secondary (xanh đậm) để trang web có chiều sâu */
-        @apply text-2xl md:text-4xl font-bold tracking-tight leading-snug text-secondary;
-      }
-
-      h3 {
-        @apply text-xl md:text-2xl font-bold tracking-tight text-primary;
-      }
-
-      p {
-        @apply leading-relaxed text-copy-light; /* Sử dụng biến màu copy-light của bạn */
-      }
-
-      /* TỐI ƯU HIỆU ỨNG */
-      html {
-        scroll-behavior: smooth;
-      }
-
-      /* Custom scrollbar sử dụng màu Primary của bạn */
-      ::-webkit-scrollbar {
-        width: 6px;
-      }
-      ::-webkit-scrollbar-track {
-        @apply bg-surface;
-      }
-      ::-webkit-scrollbar-thumb {
-        @apply bg-primary/40 rounded-full hover:bg-primary transition-colors;
-      }
-    </style>
   </body>
 </html>
