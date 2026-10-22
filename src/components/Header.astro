@@ -1,0 +1,29 @@
+---
+interface Props { active?: string }
+const { active = '' } = Astro.props;
+const links = [
+  { id: 'home', href: '/', label: 'Trang chủ' },
+  { id: 'service', href: '/dich-vu/', label: 'Dịch vụ cắt decal' },
+  { id: 'materials', href: '/vat-lieu/', label: 'Vật liệu' },
+  { id: 'about', href: '/gioi-thieu/', label: 'Về chúng tôi' },
+  { id: 'blog', href: '/blog/', label: 'Blog' }
+];
+---
+<div style="background: #111; color: #F6F4EF; font-size: 12px; padding: 10px 24px; display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: center; text-align: center">
+  <span>Cắt decal theo yêu cầu · TP.HCM · Giao hàng toàn quốc</span>
+  <span>Hotline / Zalo: <a href="tel:0866077040" style="color:inherit">0866 077 040</a></span>
+  <span>Email: <a href="mailto:hi@idecal.vn" style="color:inherit">hi@idecal.vn</a></span>
+</div>
+<header style="max-width: 1200px; margin: 0 auto; padding: 20px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px">
+  <a href="/" style="text-decoration: none; font-weight: 900; font-size: 19px; letter-spacing: -0.02em; color: #111; display: flex; align-items: center; gap: 10px">
+    <svg aria-hidden="true" width="28" height="28" viewBox="0 0 28 28"><rect x="2" y="2" width="24" height="24" rx="4" fill="#FFD60A"></rect><path d="M8 20 L20 8 M8 8 L20 20" stroke="#111" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="1 4"></path></svg>
+    CatDecal.vn
+  </a>
+  <nav aria-label="Menu chính" style="display: flex; flex-wrap: wrap; gap: 8px 28px; font-weight: 600; font-size: 14px">
+    <a href="/#san-pham" style="text-decoration: none; padding: 10px 0">Sản phẩm</a>
+    {links.map((l) => (
+      <a href={l.href} aria-current={active === l.id ? 'page' : undefined} style={'text-decoration: none; padding: 10px 0;' + (active === l.id ? ' border-bottom: 3px solid #FFD60A' : '')}>{l.label}</a>
+    ))}
+  </nav>
+  <a href="/dich-vu/" style="background: #111; color: #F6F4EF; text-decoration: none; font-weight: 700; font-size: 14px; padding: 13px 22px; border-radius: 999px">Gửi file nhận báo giá</a>
+</header>
