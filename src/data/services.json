@@ -1,0 +1,34 @@
+[
+  {
+    "slug": "cat-decal-theo-file",
+    "name": "Cắt decal theo file thiết kế",
+    "short": "Gia công decal từ file AI, CDR, SVG, PDF theo kích thước và số lượng yêu cầu.",
+    "sample": "AI · SVG",
+    "scene": "kinh",
+    "ink": "#FFFFFF"
+  },
+  {
+    "slug": "cat-decal-chu-logo",
+    "name": "Cắt decal chữ và logo",
+    "short": "Cắt chữ cửa hàng, logo thương hiệu, nội dung riêng trên nhiều bề mặt.",
+    "sample": "LOGO",
+    "scene": "kinh",
+    "ink": "#FFFFFF"
+  },
+  {
+    "slug": "cat-decal-dan-kinh",
+    "name": "Cắt decal dán kính",
+    "short": "Decal mờ, decal màu và họa tiết riêng cho cửa kính, vách văn phòng.",
+    "sample": "OFFICE",
+    "scene": "mo",
+    "ink": "#FFFFFF"
+  },
+  {
+    "slug": "cat-decal-tem-nhan",
+    "name": "Cắt decal tem nhãn theo yêu cầu",
+    "short": "Cắt tem chữ, ký hiệu và hình dạng riêng theo số lượng cần sản xuất.",
+    "sample": "TEM",
+    "scene": "xe",
+    "ink": "#FFD60A"
+  }
+]
