@@ -1,0 +1,13 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "decal-cat-chu",
+  "compatibility_date": "2026-10-01",
+  "main": "worker/index.js",
+  // Tạo R2 bucket trước khi bật binding bên dưới.
+  // "r2_buckets": [{ "binding": "QUOTES_BUCKET", "bucket_name": "decal-quote-files" }],
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS",
+    "not_found_handling": "404-page"
+  }
+}
