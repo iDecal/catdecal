@@ -1,0 +1,306 @@
+[
+  {
+    "slug": "chu-dan-kinh",
+    "href": "/san-pham/chu-dan-kinh/",
+    "cat": "kinh",
+    "scene": "kinh",
+    "ink": "#FFFFFF",
+    "name": "Chữ dán kính cửa hàng",
+    "desc": "Tên quán, giờ mở cửa, số điện thoại. Cắt sắc nét, dễ dán.",
+    "sample": "MỞ CỬA",
+    "page": {
+      "tag": "Kính & cửa",
+      "name": "Chữ dán kính cửa hàng",
+      "desc": "Tên quán, giờ mở cửa, số điện thoại và biển thông báo cắt sắc nét từ decal, dán thẳng lên kính cửa hàng. Mẫu có sẵn, chọn kích thước và màu là đặt được.",
+      "sample": "MỞ CỬA",
+      "kind": "kinh",
+      "surface": "#6F8E8B",
+      "colors": [
+        {
+          "name": "Trắng",
+          "hex": "#FFFFFF"
+        },
+        {
+          "name": "Đen",
+          "hex": "#111111"
+        },
+        {
+          "name": "Vàng",
+          "hex": "#FFC400"
+        },
+        {
+          "name": "Cam",
+          "hex": "#FF8A3D"
+        }
+      ],
+      "sizes": [
+        "Nhỏ [KÍCH THƯỚC]",
+        "Vừa [KÍCH THƯỚC]",
+        "Lớn [KÍCH THƯỚC]"
+      ],
+      "highlights": [
+        "Cắt từng nét chữ rõ ràng, không bị dính chân chữ",
+        "Kèm giấy chuyển để dán đúng vị trí, không lệch dòng",
+        "Dán được nhiều lần cho kính phẳng, sạch"
+      ],
+      "uses": [
+        "Cửa kính cửa hàng",
+        "Quán ăn, quán cà phê",
+        "Tiệm làm tóc, spa",
+        "Phòng khám, văn phòng"
+      ]
+    }
+  },
+  {
+    "slug": "decal-mo-van-phong",
+    "href": "/san-pham/decal-mo-van-phong/",
+    "cat": "kinh",
+    "scene": "mo",
+    "ink": "#FFFFFF",
+    "name": "Decal mờ dán kính văn phòng",
+    "desc": "Họa tiết và chữ trên nền kính mờ, tạo riêng tư mà vẫn sáng.",
+    "sample": "OFFICE",
+    "page": {
+      "tag": "Kính & cửa",
+      "name": "Decal mờ dán kính văn phòng",
+      "desc": "Họa tiết và chữ cắt từ decal mờ, dán lên vách kính để tạo sự riêng tư mà văn phòng vẫn sáng. Có thể dán dải, dán họa tiết hoặc dán tên phòng.",
+      "sample": "OFFICE",
+      "kind": "mo",
+      "surface": "#5E7C80",
+      "colors": [
+        {
+          "name": "Trắng mờ",
+          "hex": "#FFFFFF"
+        },
+        {
+          "name": "Xám nhạt",
+          "hex": "#DDE5E4"
+        },
+        {
+          "name": "Đen",
+          "hex": "#111111"
+        }
+      ],
+      "sizes": [
+        "Nhỏ [KÍCH THƯỚC]",
+        "Vừa [KÍCH THƯỚC]",
+        "Lớn [KÍCH THƯỚC]"
+      ],
+      "highlights": [
+        "Che tầm nhìn từ ngoài vào mà vẫn lấy sáng",
+        "Họa tiết cắt đều tay, nối dải liền mạch",
+        "Bóc ra không để lại keo khi dán đúng bề mặt kính"
+      ],
+      "uses": [
+        "Vách kính văn phòng",
+        "Phòng họp",
+        "Cửa kính phòng khám",
+        "Tiệm làm đẹp"
+      ]
+    }
+  },
+  {
+    "slug": "tem-chu-xe",
+    "href": "/san-pham/tem-chu-xe/",
+    "cat": "xe",
+    "scene": "xe",
+    "ink": "#FFD60A",
+    "name": "Tem chữ dán xe",
+    "desc": "Tên, logo, số điện thoại dán thân xe, kính xe, thùng xe.",
+    "sample": "GARAGE",
+    "page": {
+      "tag": "Xe",
+      "name": "Tem chữ dán xe",
+      "desc": "Tên, logo, số điện thoại cắt từ decal bền màu, dán thân xe, kính xe hoặc thùng xe. Chọn mẫu có sẵn hoặc gửi nội dung để bên mình chỉnh.",
+      "sample": "GARAGE",
+      "kind": "xe",
+      "surface": "#3B4A5A",
+      "colors": [
+        {
+          "name": "Trắng",
+          "hex": "#FFFFFF"
+        },
+        {
+          "name": "Vàng",
+          "hex": "#FFC400"
+        },
+        {
+          "name": "Cam",
+          "hex": "#FF8A3D"
+        },
+        {
+          "name": "Xanh lá",
+          "hex": "#4ADE80"
+        }
+      ],
+      "sizes": [
+        "Nhỏ [KÍCH THƯỚC]",
+        "Vừa [KÍCH THƯỚC]",
+        "Lớn [KÍCH THƯỚC]"
+      ],
+      "highlights": [
+        "Chất liệu chịu nắng mưa dùng ngoài trời",
+        "Cắt sắc nét cả với chữ nhỏ và nét mảnh",
+        "Kèm giấy chuyển để dán thẳng hàng trên thân xe"
+      ],
+      "uses": [
+        "Xe ô tô",
+        "Xe máy",
+        "Xe tải, xe dịch vụ",
+        "Xe đạp, xe điện"
+      ]
+    }
+  },
+  {
+    "slug": "ten-ca-nhan",
+    "href": "/san-pham/ten-ca-nhan/",
+    "cat": "qua",
+    "scene": "ten",
+    "ink": "#FFD60A",
+    "name": "Decal tên cá nhân",
+    "desc": "Dán bình nước, laptop, vali, hộp bút. Chọn font và màu theo ý bạn.",
+    "sample": "Minh",
+    "page": {
+      "tag": "Quà tặng",
+      "name": "Decal tên cá nhân",
+      "desc": "Tên bạn cắt từ decal, dán lên bình nước, laptop, vali hoặc hộp bút. Món quà nhỏ, dễ nhận ra đồ của mình.",
+      "sample": "Minh",
+      "kind": "ten",
+      "surface": "#4B5563",
+      "colors": [
+        {
+          "name": "Trắng",
+          "hex": "#FFFFFF"
+        },
+        {
+          "name": "Vàng",
+          "hex": "#FFC400"
+        },
+        {
+          "name": "Hồng",
+          "hex": "#F9A8D4"
+        },
+        {
+          "name": "Cam",
+          "hex": "#FF8A3D"
+        }
+      ],
+      "sizes": [
+        "Nhỏ [KÍCH THƯỚC]",
+        "Vừa [KÍCH THƯỚC]",
+        "Lớn [KÍCH THƯỚC]"
+      ],
+      "highlights": [
+        "Gửi tên bạn muốn, bên mình cắt theo mẫu chữ đã chọn",
+        "Nét chữ nhỏ vẫn sắc, dán lên bề mặt cong dễ dàng",
+        "Phù hợp làm quà tặng, quà sinh nhật, quà cho lớp"
+      ],
+      "uses": [
+        "Bình nước",
+        "Laptop, điện thoại",
+        "Vali, ba lô",
+        "Hộp bút, dụng cụ học tập"
+      ]
+    }
+  },
+  {
+    "slug": "hotline-xe",
+    "href": "/san-pham/hotline-xe/",
+    "cat": "xe",
+    "scene": "quang",
+    "ink": "#F2F2F2",
+    "name": "Tem số điện thoại dán xe tải",
+    "desc": "Dòng liên hệ và số điện thoại to, dễ đọc, dán thùng xe tải, xe dịch vụ.",
+    "sample": "HOTLINE",
+    "page": {
+      "tag": "Xe",
+      "name": "Tem số điện thoại dán xe tải",
+      "desc": "Dòng chữ liên hệ và số điện thoại cắt từ decal, dán thùng xe tải, xe dịch vụ. Gửi số điện thoại và tên, bên mình dựng theo mẫu rồi cắt.",
+      "sample": "HOTLINE",
+      "kind": "quang",
+      "surface": "#2B2F36",
+      "colors": [
+        {
+          "name": "Trắng bạc",
+          "hex": "#F2F2F2"
+        },
+        {
+          "name": "Vàng",
+          "hex": "#FFC400"
+        },
+        {
+          "name": "Đỏ",
+          "hex": "#E11D2E"
+        }
+      ],
+      "sizes": [
+        "Nhỏ [KÍCH THƯỚC]",
+        "Vừa [KÍCH THƯỚC]",
+        "Lớn [KÍCH THƯỚC]"
+      ],
+      "highlights": [
+        "Chữ và số to, dễ đọc khi xe đang chạy",
+        "Có thể chọn decal phản quang để dễ thấy ban đêm",
+        "Dựng sẵn theo mẫu, chỉ cần điền số điện thoại"
+      ],
+      "uses": [
+        "Xe tải",
+        "Xe dịch vụ, giao hàng",
+        "Thùng hàng, container",
+        "Xe taxi, xe hợp đồng"
+      ]
+    }
+  },
+  {
+    "slug": "ten-hoc-tap",
+    "href": "/san-pham/ten-hoc-tap/",
+    "cat": "qua",
+    "scene": "ten",
+    "ink": "#FFD60A",
+    "name": "Bộ decal tên đồ dùng học tập",
+    "desc": "Bộ decal tên nhỏ dán hộp bút, sách vở, bình nước của học sinh.",
+    "sample": "An",
+    "page": {
+      "tag": "Quà tặng",
+      "name": "Bộ decal tên đồ dùng học tập",
+      "desc": "Bộ decal tên nhỏ để dán lên hộp bút, sách vở, bình nước, cặp sách của học sinh. Gửi tên bé, bên mình dựng bộ nhiều kích thước và cắt sẵn.",
+      "sample": "An",
+      "kind": "ten",
+      "surface": "#4B5563",
+      "colors": [
+        {
+          "name": "Trắng",
+          "hex": "#FFFFFF"
+        },
+        {
+          "name": "Vàng",
+          "hex": "#FFC400"
+        },
+        {
+          "name": "Hồng",
+          "hex": "#F472B6"
+        },
+        {
+          "name": "Xanh dương",
+          "hex": "#38BDF8"
+        }
+      ],
+      "sizes": [
+        "Bộ nhỏ [SỐ MIẾNG]",
+        "Bộ vừa [SỐ MIẾNG]",
+        "Bộ lớn [SỐ MIẾNG]"
+      ],
+      "highlights": [
+        "Nhiều kích thước trong một bộ, dán được nhiều đồ dùng",
+        "Chữ nhỏ vẫn cắt gọn nét, bóc dán dễ",
+        "Hợp làm quà tặng đầu năm học"
+      ],
+      "uses": [
+        "Hộp bút, sách vở",
+        "Bình nước",
+        "Cặp sách",
+        "Đồ dùng cả lớp"
+      ]
+    }
+  }
+]

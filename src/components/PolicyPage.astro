@@ -1,0 +1,17 @@
+---
+import Layout from '../layouts/Layout.astro';
+interface Section { heading: string; bullets: string[] }
+interface Props { title: string; heading: string; intro: string; sections: Section[] }
+const { title, heading, intro, sections } = Astro.props;
+---
+<Layout title={`${title} | CatDecal.vn`} description={`${heading}. CatDecal.vn – hỗ trợ tại TP.HCM, giao hàng toàn quốc.`}>
+  <main class="policy-page">
+    <nav class="crumb" aria-label="Đường dẫn"><a href="/">Trang chủ</a><span> / </span><span>{title}</span></nav>
+    <div class="policy-hero"><span class="eyebrow">TRUNG TÂM HỖ TRỢ KHÁCH HÀNG</span><h1>{heading}</h1><p>{intro}</p></div>
+    <div class="policy-columns">
+      <article class="policy-body">{sections.map((s,i)=><section class="policy-section"><div class="section-number">{String(i+1).padStart(2,'0')}</div><div><h2>{s.heading}</h2><ul>{s.bullets.map(b=><li>{b}</li>)}</ul></div></section>)}</article>
+      <aside class="policy-aside"><div class="aside-label">Cần hỗ trợ đơn hàng?</div><h2>Chúng tôi luôn sẵn sàng tiếp nhận.</h2><p>Gửi mã đơn và hình ảnh liên quan để được hỗ trợ chính xác.</p><a class="policy-primary" href="tel:0866077040">Gọi 0866 077 040 ↗</a><a class="policy-secondary" href="mailto:hi@idecal.vn">Email: hi@idecal.vn</a><a class="policy-secondary" href="/lien-he/">Xem thông tin liên hệ →</a></aside>
+    </div>
+    <p class="policy-note">Lưu ý: Nội dung chính sách là bản dự thảo để chủ website kiểm tra và phê duyệt trước khi công bố chính thức. Các trường hợp cụ thể được xử lý theo thỏa thuận đơn hàng và quy định pháp luật hiện hành.</p>
+  </main>
+</Layout>

@@ -1,0 +1,64 @@
+---
+interface Props { active?: string }
+const { active = '' } = Astro.props;
+const links = [
+  { id: 'home', href: '/', label: 'Trang chủ' },
+  { id: 'service', href: '/dich-vu/', label: 'Dịch vụ' },
+  { id: 'products', href: '/san-pham/', label: 'Sản phẩm mẫu' },
+  { id: 'materials', href: '/vat-lieu/', label: 'Vật liệu' },
+  { id: 'about', href: '/gioi-thieu/', label: 'Giới thiệu' },
+  { id: 'blog', href: '/blog/', label: 'Hướng dẫn' },
+  { id: 'contact', href: '/lien-he/', label: 'Liên hệ' }
+];
+---
+<div class="announcement">
+  <div class="announcement-inner">
+    <span>Cắt decal theo yêu cầu tại TP.HCM · Giao hàng toàn quốc</span>
+    <span class="announcement-contact"><a href="tel:0866077040">0866 077 040</a><span aria-hidden="true">·</span><a href="mailto:hi@idecal.vn">hi@idecal.vn</a></span>
+  </div>
+</div>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="brand" aria-label="CatDecal.vn - Trang chủ">
+      <svg aria-hidden="true" width="34" height="34" viewBox="0 0 34 34"><rect x="0" y="0" width="34" height="34" rx="10" fill="#FFC928"/><path d="M10 24 24 10M10 10l14 14" stroke="#171717" stroke-width="2.7" stroke-linecap="round" stroke-dasharray="2 4"/></svg>
+      <span>CatDecal<span class="brand-domain">.vn</span></span>
+    </a>
+    <nav class="desktop-nav" aria-label="Điều hướng chính">
+      {links.map(l => <a href={l.href} aria-current={active === l.id ? 'page' : undefined}>{l.label}</a>)}
+    </nav>
+    <a href="/dich-vu/#yeu-cau" class="header-cta">Gửi file báo giá <span aria-hidden="true">↗</span></a>
+    <button class="menu-toggle" type="button" aria-label="Mở menu" aria-controls="mobile-navigation" aria-expanded="false" data-menu-toggle>
+      <svg class="menu-open-icon" width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      <svg class="menu-close-icon" width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      <span>Menu</span>
+    </button>
+  </div>
+  <nav id="mobile-navigation" class="mobile-navigation" aria-label="Menu trên điện thoại" hidden>
+    <div class="mobile-nav-links">
+      {links.map(l => <a href={l.href} aria-current={active === l.id ? 'page' : undefined}>{l.label}<span aria-hidden="true">→</span></a>)}
+    </div>
+    <a class="mobile-quote" href="/dich-vu/#yeu-cau">Gửi file nhận báo giá <span aria-hidden="true">↗</span></a>
+    <div class="mobile-contact"><a href="tel:0866077040">Gọi: 0866 077 040</a><a href="mailto:hi@idecal.vn">hi@idecal.vn</a></div>
+  </nav>
+</header>
+<script>
+  const toggle = document.querySelector<HTMLButtonElement>('[data-menu-toggle]');
+  const menu = document.getElementById('mobile-navigation');
+  if (toggle && menu) {
+    const setOpen = (open: boolean) => {
+      toggle.setAttribute('aria-expanded', String(open));
+      toggle.setAttribute('aria-label', open ? 'Đóng menu' : 'Mở menu');
+      menu.hidden = !open;
+      document.body.classList.toggle('mobile-menu-open', open);
+    };
+    toggle.addEventListener('click', () => setOpen(toggle.getAttribute('aria-expanded') !== 'true'));
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && !menu.hidden) { setOpen(false); toggle.focus(); }
+    });
+    menu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => setOpen(false)));
+    document.addEventListener('click', event => {
+      if (!menu.hidden && event.target instanceof Node && !menu.contains(event.target) && !toggle.contains(event.target)) setOpen(false);
+    });
+    window.matchMedia('(min-width: 981px)').addEventListener('change', event => { if (event.matches) setOpen(false); });
+  }
+</script>

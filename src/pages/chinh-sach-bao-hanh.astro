@@ -1,0 +1,30 @@
+---
+import PolicyPage from '../components/PolicyPage.astro';
+const sections = [
+  {
+    "heading": "Phạm vi tiếp nhận",
+    "bullets": [
+      "Decal bị cắt sai nội dung, kích thước, màu sắc hoặc số lượng so với đơn hàng đã xác nhận.",
+      "Sản phẩm có lỗi gia công hoặc hư hại được ghi nhận khi nhận hàng.",
+      "Khách vui lòng giữ hình ảnh sản phẩm, bao bì và mã đơn để được kiểm tra nhanh."
+    ]
+  },
+  {
+    "heading": "Trường hợp cần kiểm tra riêng",
+    "bullets": [
+      "Độ bền decal phụ thuộc vật liệu, bề mặt dán, thời tiết, thao tác thi công và điều kiện sử dụng.",
+      "Bề mặt dán chưa sạch, ẩm, bong sơn hoặc dán sai hướng dẫn có thể ảnh hưởng độ bám.",
+      "Không mặc định bảo hành các lỗi phát sinh do tự thi công sai cách hoặc sử dụng ngoài điều kiện được tư vấn; từng trường hợp sẽ được xem xét cụ thể."
+    ]
+  },
+  {
+    "heading": "Quy trình hỗ trợ",
+    "bullets": [
+      "Gửi mã đơn, hình ảnh/video mô tả và thông tin liên hệ qua Zalo hoặc email.",
+      "CatDecal đối chiếu thông số đã duyệt và phản hồi phương án xử lý.",
+      "Phương án có thể là hướng dẫn khắc phục, cắt lại phần lỗi hoặc giải pháp khác sau khi hai bên thống nhất."
+    ]
+  }
+];
+---
+<PolicyPage title={"Chính sách bảo hành"} heading={"Bảo hành và hỗ trợ sau mua"} intro={"CatDecal hỗ trợ kiểm tra và xử lý những vấn đề liên quan đến chất lượng gia công, vật liệu hoặc sai khác so với nội dung đơn đã xác nhận."} sections={sections} />

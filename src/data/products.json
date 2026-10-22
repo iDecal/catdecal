@@ -1,0 +1,818 @@
+[
+  {
+    "slug": "open-kinh",
+    "href": "/san-pham/open-kinh/",
+    "cat": "decal-dan-kinh",
+    "scene": "kinh",
+    "ink": "#FFFFFF",
+    "name": "Chữ OPEN dán kính",
+    "desc": "Mẫu chữ open dán kính có sẵn, chọn màu và kích thước khi gửi yêu cầu.",
+    "sample": "OPEN",
+    "page": {
+      "tag": "Decal dán kính & cửa hàng",
+      "name": "Chữ OPEN dán kính",
+      "desc": "Mẫu chữ open dán kính có sẵn, chọn màu và kích thước khi gửi yêu cầu.",
+      "sample": "OPEN",
+      "kind": "kinh",
+      "surface": "#6F8E8B",
+      "colors": [
+        {
+          "name": "Trắng",
+          "hex": "#FFFFFF"
+        },
+        {
+          "name": "Vàng",
+          "hex": "#FFC400"
+        },
+        {
+          "name": "Đen",
+          "hex": "#111111"
+        },
+        {
+          "name": "Cam",
+          "hex": "#FF5A24"
+        }
+      ],
+      "sizes": [
+        "Nhỏ [KÍCH THƯỚC]",
+        "Vừa [KÍCH THƯỚC]",
+        "Lớn [KÍCH THƯỚC]"
+      ],
+      "highlights": [
+        "Thiết kế sẵn, đặt là có, không cần gửi file",
+        "Nét chữ dày, dễ đọc từ xa",
+        "Kèm lớp định hình để dán đúng vị trí"
+      ],
+      "uses": [
+        "Cửa kính cửa hàng",
+        "Quán ăn, quán cà phê",
+        "Tiệm làm tóc, spa",
+        "Phòng khám"
+      ]
+    }
+  },
+  {
+    "slug": "close-kinh",
+    "href": "/san-pham/close-kinh/",
+    "cat": "decal-dan-kinh",
+    "scene": "kinh",
+    "ink": "#FFFFFF",
+    "name": "Chữ CLOSED dán kính",
+    "desc": "Mẫu chữ closed dán kính có sẵn, chọn màu và kích thước khi gửi yêu cầu.",
+    "sample": "CLOSED",
+    "page": {
+      "tag": "Decal dán kính & cửa hàng",
+      "name": "Chữ CLOSED dán kính",
+      "desc": "Mẫu chữ closed dán kính có sẵn, chọn màu và kích thước khi gửi yêu cầu.",
+      "sample": "CLOSED",
+      "kind": "kinh",
+      "surface": "#6F8E8B",
+      "colors": [
+        {
+          "name": "Trắng",
+          "hex": "#FFFFFF"
+        },
+        {
+          "name": "Vàng",
+          "hex": "#FFC400"
+        },
+        {
+          "name": "Đen",
+          "hex": "#111111"
+        },
+        {
+          "name": "Cam",
+          "hex": "#FF5A24"
+        }
+      ],
+      "sizes": [
+        "Nhỏ [KÍCH THƯỚC]",
+        "Vừa [KÍCH THƯỚC]",
+        "Lớn [KÍCH THƯỚC]"
+      ],
+      "highlights": [
+        "Thiết kế sẵn, đặt là có, không cần gửi file",
+        "Nét chữ dày, dễ đọc từ xa",
+        "Kèm lớp định hình để dán đúng vị trí"
+      ],
+      "uses": [
+        "Cửa kính cửa hàng",
+        "Quán ăn, quán cà phê",
+        "Tiệm làm tóc, spa",
+        "Phòng khám"
+      ]
+    }
+  },
+  {
+    "slug": "welcome-kinh",
+    "href": "/san-pham/welcome-kinh/",
+    "cat": "decal-dan-kinh",
+    "scene": "kinh",
+    "ink": "#FFFFFF",
+    "name": "Chữ WELCOME dán kính",
+    "desc": "Mẫu chữ welcome dán kính có sẵn, chọn màu và kích thước khi gửi yêu cầu.",
+    "sample": "WELCOME",
+    "page": {
+      "tag": "Decal dán kính & cửa hàng",
+      "name": "Chữ WELCOME dán kính",
+      "desc": "Mẫu chữ welcome dán kính có sẵn, chọn màu và kích thước khi gửi yêu cầu.",
+      "sample": "WELCOME",
+      "kind": "kinh",
+      "surface": "#6F8E8B",
+      "colors": [
+        {
+          "name": "Trắng",
+          "hex": "#FFFFFF"
+        },
+        {
+          "name": "Vàng",
+          "hex": "#FFC400"
+        },
+        {
+          "name": "Đen",
+          "hex": "#111111"
+        },
+        {
+          "name": "Cam",
+          "hex": "#FF5A24"
+        }
+      ],
+      "sizes": [
+        "Nhỏ [KÍCH THƯỚC]",
+        "Vừa [KÍCH THƯỚC]",
+        "Lớn [KÍCH THƯỚC]"
+      ],
+      "highlights": [
+        "Thiết kế sẵn, đặt là có, không cần gửi file",
+        "Nét chữ dày, dễ đọc từ xa",
+        "Kèm lớp định hình để dán đúng vị trí"
+      ],
+      "uses": [
+        "Cửa kính cửa hàng",
+        "Quán ăn, quán cà phê",
+        "Tiệm làm tóc, spa",
+        "Phòng khám"
+      ]
+    }
+  },
+  {
+    "slug": "push-pull-kinh",
+    "href": "/san-pham/push-pull-kinh/",
+    "cat": "decal-dan-kinh",
+    "scene": "kinh",
+    "ink": "#FFFFFF",
+    "name": "Bộ chữ PUSH / PULL",
+    "desc": "Mẫu bộ chữ push / pull có sẵn, chọn màu và kích thước khi gửi yêu cầu.",
+    "sample": "PUSH / PULL",
+    "page": {
+      "tag": "Decal dán kính & cửa hàng",
+      "name": "Bộ chữ PUSH / PULL",
+      "desc": "Mẫu bộ chữ push / pull có sẵn, chọn màu và kích thước khi gửi yêu cầu.",
+      "sample": "PUSH / PULL",
+      "kind": "kinh",
+      "surface": "#6F8E8B",
+      "colors": [
+        {
+          "name": "Trắng",
+          "hex": "#FFFFFF"
+        },
+        {
+          "name": "Vàng",
+          "hex": "#FFC400"
+        },
+        {
+          "name": "Đen",
+          "hex": "#111111"
+        },
+        {
+          "name": "Cam",
+          "hex": "#FF5A24"
+        }
+      ],
+      "sizes": [
+        "Nhỏ [KÍCH THƯỚC]",
+        "Vừa [KÍCH THƯỚC]",
+        "Lớn [KÍCH THƯỚC]"
+      ],
+      "highlights": [
+        "Thiết kế sẵn, đặt là có, không cần gửi file",
+        "Nét chữ dày, dễ đọc từ xa",
+        "Kèm lớp định hình để dán đúng vị trí"
+      ],
+      "uses": [
+        "Cửa kính cửa hàng",
+        "Quán ăn, quán cà phê",
+        "Tiệm làm tóc, spa",
+        "Phòng khám"
+      ]
+    }
+  },
+  {
+    "slug": "chu-dan-tuong",
+    "href": "/san-pham/chu-dan-tuong/",
+    "cat": "decal-trang-tri",
+    "scene": "tuong",
+    "ink": "#111111",
+    "name": "Chữ Welcome trang trí",
+    "desc": "Mẫu chữ welcome trang trí có sẵn, chọn màu và kích thước khi gửi yêu cầu.",
+    "sample": "Welcome",
+    "page": {
+      "tag": "Decal chữ & trang trí tường",
+      "name": "Chữ Welcome trang trí",
+      "desc": "Mẫu chữ welcome trang trí có sẵn, chọn màu và kích thước khi gửi yêu cầu.",
+      "sample": "Welcome",
+      "kind": "tuong",
+      "surface": "#E9E2D3",
+      "colors": [
+        {
+          "name": "Đen",
+          "hex": "#111111"
+        },
+        {
+          "name": "Nâu",
+          "hex": "#6B4A2B"
+        },
+        {
+          "name": "Xanh rêu",
+          "hex": "#3F5E3A"
+        },
+        {
+          "name": "Cam đất",
+          "hex": "#C2410C"
+        }
+      ],
+      "sizes": [
+        "Nhỏ [KÍCH THƯỚC]",
+        "Vừa [KÍCH THƯỚC]",
+        "Lớn [KÍCH THƯỚC]"
+      ],
+      "highlights": [
+        "Dán nhanh, không cần khoan hay sơn lại",
+        "Giữ đúng khoảng cách giữa các chữ nhờ giấy chuyển",
+        "Có thể đổi nội dung chữ theo ý bạn"
+      ],
+      "uses": [
+        "Quán cà phê, nhà hàng",
+        "Lớp học, trung tâm",
+        "Phòng ngủ, phòng khách",
+        "Văn phòng, không gian làm việc"
+      ]
+    }
+  },
+  {
+    "slug": "khau-hieu-tuong",
+    "href": "/san-pham/khau-hieu-tuong/",
+    "cat": "decal-trang-tri",
+    "scene": "tuong",
+    "ink": "#111111",
+    "name": "Chữ Coffee trang trí",
+    "desc": "Mẫu chữ coffee trang trí có sẵn, chọn màu và kích thước khi gửi yêu cầu.",
+    "sample": "Coffee",
+    "page": {
+      "tag": "Decal chữ & trang trí tường",
+      "name": "Chữ Coffee trang trí",
+      "desc": "Mẫu chữ coffee trang trí có sẵn, chọn màu và kích thước khi gửi yêu cầu.",
+      "sample": "Coffee",
+      "kind": "tuong",
+      "surface": "#E9E2D3",
+      "colors": [
+        {
+          "name": "Đen",
+          "hex": "#111111"
+        },
+        {
+          "name": "Nâu",
+          "hex": "#6B4A2B"
+        },
+        {
+          "name": "Trắng",
+          "hex": "#FFFFFF"
+        },
+        {
+          "name": "Vàng",
+          "hex": "#FFC400"
+        }
+      ],
+      "sizes": [
+        "Nhỏ [KÍCH THƯỚC]",
+        "Vừa [KÍCH THƯỚC]",
+        "Lớn [KÍCH THƯỚC]"
+      ],
+      "highlights": [
+        "Thiết kế sẵn theo phong cách quán cà phê",
+        "Dán nhanh lên tường phẳng, không cần khoan đục",
+        "Có thể đổi chữ theo thương hiệu của bạn"
+      ],
+      "uses": [
+        "Quán cà phê, quán trà",
+        "Tiệm bánh",
+        "Nhà hàng",
+        "Không gian làm việc"
+      ]
+    }
+  },
+  {
+    "slug": "home-sweet-home",
+    "href": "/san-pham/home-sweet-home/",
+    "cat": "decal-trang-tri",
+    "scene": "tuong",
+    "ink": "#111111",
+    "name": "Decal Home Sweet Home",
+    "desc": "Mẫu decal home sweet home có sẵn, chọn màu và kích thước khi gửi yêu cầu.",
+    "sample": "Home sweet home",
+    "page": {
+      "tag": "Decal chữ & trang trí tường",
+      "name": "Decal Home Sweet Home",
+      "desc": "Mẫu decal home sweet home có sẵn, chọn màu và kích thước khi gửi yêu cầu.",
+      "sample": "Home sweet home",
+      "kind": "tuong",
+      "surface": "#E9E2D3",
+      "colors": [
+        {
+          "name": "Đen",
+          "hex": "#111111"
+        },
+        {
+          "name": "Nâu",
+          "hex": "#6B4A2B"
+        },
+        {
+          "name": "Xanh rêu",
+          "hex": "#3F5E3A"
+        },
+        {
+          "name": "Cam đất",
+          "hex": "#C2410C"
+        }
+      ],
+      "sizes": [
+        "Nhỏ [KÍCH THƯỚC]",
+        "Vừa [KÍCH THƯỚC]",
+        "Lớn [KÍCH THƯỚC]"
+      ],
+      "highlights": [
+        "Dán nhanh, không cần khoan hay sơn lại",
+        "Giữ đúng khoảng cách giữa các chữ nhờ giấy chuyển",
+        "Có thể đổi nội dung chữ theo ý bạn"
+      ],
+      "uses": [
+        "Quán cà phê, nhà hàng",
+        "Lớp học, trung tâm",
+        "Phòng ngủ, phòng khách",
+        "Văn phòng, không gian làm việc"
+      ]
+    }
+  },
+  {
+    "slug": "good-vibes",
+    "href": "/san-pham/good-vibes/",
+    "cat": "decal-trang-tri",
+    "scene": "tuong",
+    "ink": "#111111",
+    "name": "Decal Good Vibes",
+    "desc": "Mẫu decal good vibes có sẵn, chọn màu và kích thước khi gửi yêu cầu.",
+    "sample": "Good Vibes",
+    "page": {
+      "tag": "Decal chữ & trang trí tường",
+      "name": "Decal Good Vibes",
+      "desc": "Mẫu decal good vibes có sẵn, chọn màu và kích thước khi gửi yêu cầu.",
+      "sample": "Good Vibes",
+      "kind": "tuong",
+      "surface": "#E9E2D3",
+      "colors": [
+        {
+          "name": "Đen",
+          "hex": "#111111"
+        },
+        {
+          "name": "Nâu",
+          "hex": "#6B4A2B"
+        },
+        {
+          "name": "Xanh rêu",
+          "hex": "#3F5E3A"
+        },
+        {
+          "name": "Cam đất",
+          "hex": "#C2410C"
+        }
+      ],
+      "sizes": [
+        "Nhỏ [KÍCH THƯỚC]",
+        "Vừa [KÍCH THƯỚC]",
+        "Lớn [KÍCH THƯỚC]"
+      ],
+      "highlights": [
+        "Dán nhanh, không cần khoan hay sơn lại",
+        "Giữ đúng khoảng cách giữa các chữ nhờ giấy chuyển",
+        "Có thể đổi nội dung chữ theo ý bạn"
+      ],
+      "uses": [
+        "Quán cà phê, nhà hàng",
+        "Lớp học, trung tâm",
+        "Phòng ngủ, phòng khách",
+        "Văn phòng, không gian làm việc"
+      ]
+    }
+  },
+  {
+    "slug": "decal-phan-quang",
+    "href": "/san-pham/decal-phan-quang/",
+    "cat": "decal-xe",
+    "scene": "quang",
+    "ink": "#F2F2F2",
+    "name": "Decal TAXI phản quang",
+    "desc": "Mẫu decal taxi phản quang có sẵn, chọn màu và kích thước khi gửi yêu cầu.",
+    "sample": "TAXI",
+    "page": {
+      "tag": "Decal chữ & ký hiệu dán xe",
+      "name": "Decal TAXI phản quang",
+      "desc": "Mẫu decal taxi phản quang có sẵn, chọn màu và kích thước khi gửi yêu cầu.",
+      "sample": "TAXI",
+      "kind": "quang",
+      "surface": "#2B2F36",
+      "colors": [
+        {
+          "name": "Trắng bạc",
+          "hex": "#F2F2F2"
+        },
+        {
+          "name": "Vàng",
+          "hex": "#FFC400"
+        },
+        {
+          "name": "Cam",
+          "hex": "#FF8A3D"
+        }
+      ],
+      "sizes": [
+        "Nhỏ [KÍCH THƯỚC]",
+        "Vừa [KÍCH THƯỚC]",
+        "Lớn [KÍCH THƯỚC]"
+      ],
+      "highlights": [
+        "Phản chiếu ánh đèn, dễ thấy hơn vào ban đêm",
+        "Phù hợp xe chạy dịch vụ và xe chở hàng",
+        "Cắt gọn nét, dán thẳng hàng nhờ giấy chuyển"
+      ],
+      "uses": [
+        "Xe taxi, xe dịch vụ",
+        "Xe tải",
+        "Biển cảnh báo",
+        "Thùng hàng, container"
+      ]
+    }
+  },
+  {
+    "slug": "xe-hang",
+    "href": "/san-pham/xe-hang/",
+    "cat": "decal-xe",
+    "scene": "quang",
+    "ink": "#F2F2F2",
+    "name": "Decal chữ XE HÀNG",
+    "desc": "Mẫu decal chữ xe hàng có sẵn, chọn màu và kích thước khi gửi yêu cầu.",
+    "sample": "XE HÀNG",
+    "page": {
+      "tag": "Decal chữ & ký hiệu dán xe",
+      "name": "Decal chữ XE HÀNG",
+      "desc": "Mẫu decal chữ xe hàng có sẵn, chọn màu và kích thước khi gửi yêu cầu.",
+      "sample": "XE HÀNG",
+      "kind": "quang",
+      "surface": "#2B2F36",
+      "colors": [
+        {
+          "name": "Trắng bạc",
+          "hex": "#F2F2F2"
+        },
+        {
+          "name": "Vàng",
+          "hex": "#FFC400"
+        },
+        {
+          "name": "Cam",
+          "hex": "#FF8A3D"
+        }
+      ],
+      "sizes": [
+        "Nhỏ [KÍCH THƯỚC]",
+        "Vừa [KÍCH THƯỚC]",
+        "Lớn [KÍCH THƯỚC]"
+      ],
+      "highlights": [
+        "Phản chiếu ánh đèn, dễ thấy hơn vào ban đêm",
+        "Phù hợp xe chạy dịch vụ và xe chở hàng",
+        "Cắt gọn nét, dán thẳng hàng nhờ giấy chuyển"
+      ],
+      "uses": [
+        "Xe taxi, xe dịch vụ",
+        "Xe tải",
+        "Biển cảnh báo",
+        "Thùng hàng, container"
+      ]
+    }
+  },
+  {
+    "slug": "delivery",
+    "href": "/san-pham/delivery/",
+    "cat": "decal-xe",
+    "scene": "quang",
+    "ink": "#F2F2F2",
+    "name": "Decal DELIVERY",
+    "desc": "Mẫu decal delivery có sẵn, chọn màu và kích thước khi gửi yêu cầu.",
+    "sample": "DELIVERY",
+    "page": {
+      "tag": "Decal chữ & ký hiệu dán xe",
+      "name": "Decal DELIVERY",
+      "desc": "Mẫu decal delivery có sẵn, chọn màu và kích thước khi gửi yêu cầu.",
+      "sample": "DELIVERY",
+      "kind": "quang",
+      "surface": "#2B2F36",
+      "colors": [
+        {
+          "name": "Trắng bạc",
+          "hex": "#F2F2F2"
+        },
+        {
+          "name": "Vàng",
+          "hex": "#FFC400"
+        },
+        {
+          "name": "Cam",
+          "hex": "#FF8A3D"
+        }
+      ],
+      "sizes": [
+        "Nhỏ [KÍCH THƯỚC]",
+        "Vừa [KÍCH THƯỚC]",
+        "Lớn [KÍCH THƯỚC]"
+      ],
+      "highlights": [
+        "Phản chiếu ánh đèn, dễ thấy hơn vào ban đêm",
+        "Phù hợp xe chạy dịch vụ và xe chở hàng",
+        "Cắt gọn nét, dán thẳng hàng nhờ giấy chuyển"
+      ],
+      "uses": [
+        "Xe taxi, xe dịch vụ",
+        "Xe tải",
+        "Biển cảnh báo",
+        "Thùng hàng, container"
+      ]
+    }
+  },
+  {
+    "slug": "caution",
+    "href": "/san-pham/caution/",
+    "cat": "decal-xe",
+    "scene": "quang",
+    "ink": "#F2F2F2",
+    "name": "Decal CAUTION phản quang",
+    "desc": "Mẫu decal caution phản quang có sẵn, chọn màu và kích thước khi gửi yêu cầu.",
+    "sample": "CAUTION",
+    "page": {
+      "tag": "Decal chữ & ký hiệu dán xe",
+      "name": "Decal CAUTION phản quang",
+      "desc": "Mẫu decal caution phản quang có sẵn, chọn màu và kích thước khi gửi yêu cầu.",
+      "sample": "CAUTION",
+      "kind": "quang",
+      "surface": "#2B2F36",
+      "colors": [
+        {
+          "name": "Trắng bạc",
+          "hex": "#F2F2F2"
+        },
+        {
+          "name": "Vàng",
+          "hex": "#FFC400"
+        },
+        {
+          "name": "Cam",
+          "hex": "#FF8A3D"
+        }
+      ],
+      "sizes": [
+        "Nhỏ [KÍCH THƯỚC]",
+        "Vừa [KÍCH THƯỚC]",
+        "Lớn [KÍCH THƯỚC]"
+      ],
+      "highlights": [
+        "Phản chiếu ánh đèn, dễ thấy hơn vào ban đêm",
+        "Phù hợp xe chạy dịch vụ và xe chở hàng",
+        "Cắt gọn nét, dán thẳng hàng nhờ giấy chuyển"
+      ],
+      "uses": [
+        "Xe taxi, xe dịch vụ",
+        "Xe tải",
+        "Biển cảnh báo",
+        "Thùng hàng, container"
+      ]
+    }
+  },
+  {
+    "slug": "no-smoking",
+    "href": "/san-pham/no-smoking/",
+    "cat": "decal-ky-hieu",
+    "scene": "kinh",
+    "ink": "#FFFFFF",
+    "name": "Decal NO SMOKING",
+    "desc": "Mẫu decal no smoking có sẵn, chọn màu và kích thước khi gửi yêu cầu.",
+    "sample": "NO SMOKING",
+    "page": {
+      "tag": "Decal ký hiệu & chỉ dẫn",
+      "name": "Decal NO SMOKING",
+      "desc": "Mẫu decal no smoking có sẵn, chọn màu và kích thước khi gửi yêu cầu.",
+      "sample": "NO SMOKING",
+      "kind": "kinh",
+      "surface": "#6F8E8B",
+      "colors": [
+        {
+          "name": "Trắng",
+          "hex": "#FFFFFF"
+        },
+        {
+          "name": "Vàng",
+          "hex": "#FFC400"
+        },
+        {
+          "name": "Đen",
+          "hex": "#111111"
+        },
+        {
+          "name": "Cam",
+          "hex": "#FF5A24"
+        }
+      ],
+      "sizes": [
+        "Nhỏ [KÍCH THƯỚC]",
+        "Vừa [KÍCH THƯỚC]",
+        "Lớn [KÍCH THƯỚC]"
+      ],
+      "highlights": [
+        "Thiết kế sẵn, đặt là có, không cần gửi file",
+        "Nét chữ dày, dễ đọc từ xa",
+        "Kèm lớp định hình để dán đúng vị trí"
+      ],
+      "uses": [
+        "Cửa kính cửa hàng",
+        "Quán ăn, quán cà phê",
+        "Tiệm làm tóc, spa",
+        "Phòng khám"
+      ]
+    }
+  },
+  {
+    "slug": "wifi-free",
+    "href": "/san-pham/wifi-free/",
+    "cat": "decal-ky-hieu",
+    "scene": "kinh",
+    "ink": "#FFFFFF",
+    "name": "Decal FREE WIFI",
+    "desc": "Mẫu decal free wifi có sẵn, chọn màu và kích thước khi gửi yêu cầu.",
+    "sample": "FREE WIFI",
+    "page": {
+      "tag": "Decal ký hiệu & chỉ dẫn",
+      "name": "Decal FREE WIFI",
+      "desc": "Mẫu decal free wifi có sẵn, chọn màu và kích thước khi gửi yêu cầu.",
+      "sample": "FREE WIFI",
+      "kind": "kinh",
+      "surface": "#6F8E8B",
+      "colors": [
+        {
+          "name": "Trắng",
+          "hex": "#FFFFFF"
+        },
+        {
+          "name": "Vàng",
+          "hex": "#FFC400"
+        },
+        {
+          "name": "Đen",
+          "hex": "#111111"
+        },
+        {
+          "name": "Cam",
+          "hex": "#FF5A24"
+        }
+      ],
+      "sizes": [
+        "Nhỏ [KÍCH THƯỚC]",
+        "Vừa [KÍCH THƯỚC]",
+        "Lớn [KÍCH THƯỚC]"
+      ],
+      "highlights": [
+        "Thiết kế sẵn, đặt là có, không cần gửi file",
+        "Nét chữ dày, dễ đọc từ xa",
+        "Kèm lớp định hình để dán đúng vị trí"
+      ],
+      "uses": [
+        "Cửa kính cửa hàng",
+        "Quán ăn, quán cà phê",
+        "Tiệm làm tóc, spa",
+        "Phòng khám"
+      ]
+    }
+  },
+  {
+    "slug": "cam-do-xe",
+    "href": "/san-pham/cam-do-xe/",
+    "cat": "decal-ky-hieu",
+    "scene": "kinh",
+    "ink": "#FFFFFF",
+    "name": "Decal CẤM ĐỖ XE",
+    "desc": "Mẫu decal cấm đỗ xe có sẵn, chọn màu và kích thước khi gửi yêu cầu.",
+    "sample": "CẤM ĐỖ XE",
+    "page": {
+      "tag": "Decal ký hiệu & chỉ dẫn",
+      "name": "Decal CẤM ĐỖ XE",
+      "desc": "Mẫu decal cấm đỗ xe có sẵn, chọn màu và kích thước khi gửi yêu cầu.",
+      "sample": "CẤM ĐỖ XE",
+      "kind": "kinh",
+      "surface": "#6F8E8B",
+      "colors": [
+        {
+          "name": "Trắng",
+          "hex": "#FFFFFF"
+        },
+        {
+          "name": "Vàng",
+          "hex": "#FFC400"
+        },
+        {
+          "name": "Đen",
+          "hex": "#111111"
+        },
+        {
+          "name": "Cam",
+          "hex": "#FF5A24"
+        }
+      ],
+      "sizes": [
+        "Nhỏ [KÍCH THƯỚC]",
+        "Vừa [KÍCH THƯỚC]",
+        "Lớn [KÍCH THƯỚC]"
+      ],
+      "highlights": [
+        "Thiết kế sẵn, đặt là có, không cần gửi file",
+        "Nét chữ dày, dễ đọc từ xa",
+        "Kèm lớp định hình để dán đúng vị trí"
+      ],
+      "uses": [
+        "Cửa kính cửa hàng",
+        "Quán ăn, quán cà phê",
+        "Tiệm làm tóc, spa",
+        "Phòng khám"
+      ]
+    }
+  },
+  {
+    "slug": "loi-ra",
+    "href": "/san-pham/loi-ra/",
+    "cat": "decal-ky-hieu",
+    "scene": "kinh",
+    "ink": "#FFFFFF",
+    "name": "Decal EXIT",
+    "desc": "Mẫu decal exit có sẵn, chọn màu và kích thước khi gửi yêu cầu.",
+    "sample": "EXIT",
+    "page": {
+      "tag": "Decal ký hiệu & chỉ dẫn",
+      "name": "Decal EXIT",
+      "desc": "Mẫu decal exit có sẵn, chọn màu và kích thước khi gửi yêu cầu.",
+      "sample": "EXIT",
+      "kind": "kinh",
+      "surface": "#6F8E8B",
+      "colors": [
+        {
+          "name": "Trắng",
+          "hex": "#FFFFFF"
+        },
+        {
+          "name": "Vàng",
+          "hex": "#FFC400"
+        },
+        {
+          "name": "Đen",
+          "hex": "#111111"
+        },
+        {
+          "name": "Cam",
+          "hex": "#FF5A24"
+        }
+      ],
+      "sizes": [
+        "Nhỏ [KÍCH THƯỚC]",
+        "Vừa [KÍCH THƯỚC]",
+        "Lớn [KÍCH THƯỚC]"
+      ],
+      "highlights": [
+        "Thiết kế sẵn, đặt là có, không cần gửi file",
+        "Nét chữ dày, dễ đọc từ xa",
+        "Kèm lớp định hình để dán đúng vị trí"
+      ],
+      "uses": [
+        "Cửa kính cửa hàng",
+        "Quán ăn, quán cà phê",
+        "Tiệm làm tóc, spa",
+        "Phòng khám"
+      ]
+    }
+  }
+]

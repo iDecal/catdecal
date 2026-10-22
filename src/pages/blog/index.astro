@@ -1,0 +1,41 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Scene from '../../components/Scene.astro';
+
+---
+<Layout title="Blog: kinh nghiệm dùng decal | CatDecal.vn" description="Hướng dẫn dán decal và cách chọn chất liệu decal cắt chữ." active="blog">
+
+  <div style="max-width: 1200px; margin: 0 auto; padding: 32px 24px 80px; display: flex; flex-direction: column; gap: 40px">
+    <div style="display: flex; flex-direction: column; gap: 12px; max-width: 720px">
+      <div style="font-weight: 700; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase">Blog</div>
+      <h1 style="margin: 0; font-size: 40px; line-height: 1.05; letter-spacing: -0.035em; font-weight: 900">Kinh nghiệm dùng decal cắt chữ</h1>
+      <p style="margin: 0; font-size: 16px; line-height: 1.6">Hướng dẫn dán, cách chọn chất liệu và những mẹo nhỏ để decal đẹp và bền hơn.</p>
+    </div>
+
+    <div style="display: flex; flex-wrap: wrap; gap: 24px">
+      <a href="/blog/dan-decal-kinh/" style="flex: 1 1 360px; min-width: 0; box-sizing: border-box; text-decoration: none; color: #111; background: #fff; border-radius: 24px; overflow: hidden; display: flex; flex-direction: column">
+        <div style="width: 100%">
+          <Scene scene="kinh" ink="#FFFFFF" label="MỞ CỬA" />
+        </div>
+        <div style="padding: 26px 28px 30px; display: flex; flex-direction: column; gap: 10px">
+          <div style="font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase">Hướng dẫn · 20/10/2026</div>
+          <div style="font-weight: 900; font-size: 22px; line-height: 1.2; letter-spacing: -0.02em">Cách dán decal chữ lên kính cửa hàng không bị bọt khí</div>
+          <div style="font-size: 15px; line-height: 1.6">Các bước chuẩn bị, đặt vị trí và bóc giấy chuyển để chữ dán thẳng, phẳng và sạch.</div>
+          <div style="font-weight: 800; font-size: 14px; margin-top: 4px">Đọc bài →</div>
+        </div>
+      </a>
+      <a href="/blog/chon-chat-lieu/" style="flex: 1 1 360px; min-width: 0; box-sizing: border-box; text-decoration: none; color: #111; background: #fff; border-radius: 24px; overflow: hidden; display: flex; flex-direction: column">
+        <div style="width: 100%">
+          <Scene scene="mau" />
+        </div>
+        <div style="padding: 26px 28px 30px; display: flex; flex-direction: column; gap: 10px">
+          <div style="font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase">Chất liệu · 20/10/2026</div>
+          <div style="font-weight: 900; font-size: 22px; line-height: 1.2; letter-spacing: -0.02em">Chọn chất liệu decal cắt chữ: trơn, ánh kim, phản quang hay mờ?</div>
+          <div style="font-size: 15px; line-height: 1.6">So sánh nhanh bốn loại decal phổ biến và cách chọn theo nơi dán, mục đích sử dụng.</div>
+          <div style="font-weight: 800; font-size: 14px; margin-top: 4px">Đọc bài →</div>
+        </div>
+      </a>
+    </div>
+  </div>
+
+</Layout>

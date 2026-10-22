@@ -1,0 +1,28 @@
+---
+import PolicyPage from '../components/PolicyPage.astro';
+const sections = [
+  {
+    "heading": "Đơn gia công theo yêu cầu",
+    "bullets": [
+      "Vì được sản xuất riêng theo file, tên, màu hoặc kích thước khách duyệt, đơn đã bắt đầu sản xuất thường không thể đổi chỉ vì thay đổi ý định.",
+      "Nếu CatDecal gia công sai so với thông tin đã xác nhận hoặc phát sinh lỗi thuộc trách nhiệm sản xuất, khách được hỗ trợ kiểm tra và thống nhất cách xử lý phù hợp."
+    ]
+  },
+  {
+    "heading": "Sản phẩm thiết kế sẵn",
+    "bullets": [
+      "Khi nhận hàng, khách nên kiểm tra mã mẫu, số lượng, kích thước, tình trạng sản phẩm trước khi dán.",
+      "Trường hợp giao sai mẫu, thiếu số lượng hoặc có lỗi sản phẩm, vui lòng liên hệ kèm ảnh để được hỗ trợ."
+    ]
+  },
+  {
+    "heading": "Quy trình đổi trả và hoàn tiền",
+    "bullets": [
+      "Liên hệ hotline/Zalo 0866 077 040 hoặc email hi@idecal.vn và cung cấp mã đơn.",
+      "Gửi hình ảnh lỗi và bao bì; tạm thời chưa thi công khi phát hiện sai sót.",
+      "Phí vận chuyển đổi trả, phương thức và thời điểm hoàn tiền sẽ được thông báo khi xác minh trường hợp cụ thể và tuân theo quy định áp dụng."
+    ]
+  }
+];
+---
+<PolicyPage title={"Chính sách đổi trả & hoàn tiền"} heading={"Đổi trả minh bạch, theo từng loại đơn"} intro={"Sản phẩm cắt theo yêu cầu và sản phẩm mẫu có sẵn được xem xét theo đặc điểm đơn hàng và tình trạng thực tế."} sections={sections} />

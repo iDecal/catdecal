@@ -1,0 +1,143 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Scene from '../components/Scene.astro';
+const list = [
+  { title: 'Dán chữ lên kính cửa hàng', length: '[THỜI LƯỢNG]', desc: 'Cách làm sạch kính, đặt vị trí, miết và bóc lớp định hình để chữ thẳng hàng và không bọt khí.' },
+  { title: 'Dán decal lên xe', length: '[THỜI LƯỢNG]', desc: 'Cách dán lên thân xe và kính xe, xử lý bề mặt cong và các góc khó.' },
+  { title: 'Dán chữ lên tường', length: '[THỜI LƯỢNG]', desc: 'Cách dán lên tường sơn phẳng, căn thẳng dòng chữ lớn mà không cần khoan hay đục.' }
+];
+const active = list[0];
+const videos = list.map((v, i) => ({ ...v, i, cls: i === 0 ? 'vbtn on' : 'vbtn' }));
+---
+<Layout title="Về chúng tôi | CatDecal.vn" description="Máy cắt của Nhật, decal có lớp định hình dễ dán và video hướng dẫn từng bước." active="about">
+
+  <!-- Giới thiệu -->
+  <div style="max-width: 1200px; margin: 0 auto; padding: 40px 24px 72px; display: flex; flex-wrap: wrap; gap: 48px; align-items: center">
+    <div style="flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 24px">
+      <div style="font-weight: 700; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase">Về chúng tôi</div>
+      <h1 style="margin: 0; font-size: 42px; line-height: 1.05; letter-spacing: -0.035em; font-weight: 900">Cắt chuẩn từng nét, dán dễ từng bước.</h1>
+      <p style="margin: 0; font-size: 16px; line-height: 1.7; max-width: 540px">CatDecal.vn chuyên bán decal cắt chữ làm sẵn và nhận cắt decal theo yêu cầu. Chúng tôi tập trung vào ba việc: cắt chính xác, giúp người mua dán dễ, và hướng dẫn tận tình bằng video.</p>
+      <p style="margin: 0; font-size: 15px; line-height: 1.7; max-width: 540px">[Viết 2–3 câu về câu chuyện của bạn: bắt đầu từ khi nào, tại sao làm decal, phục vụ ai.]</p>
+    </div>
+    <div style="flex: 1 1 380px; min-width: 0">
+      <div style="background: #111; border-radius: 24px; padding: 28px">
+        <svg role="img" aria-label="Đường dao cắt đi quanh chữ A trên tấm decal" viewBox="0 0 520 320" style="width: 100%; height: auto; display: block">
+          <rect width="520" height="320" rx="12" fill="#1E1E1E"></rect>
+          <text x="260" y="230" text-anchor="middle" font-family="Be Vietnam Pro, sans-serif" font-weight="900" font-size="220" fill="#FFC928" stroke="#FFF9E9" stroke-width="2.5" stroke-dasharray="9 7" paint-order="stroke">Aa</text>
+          <text x="32" y="296" font-family="Be Vietnam Pro, sans-serif" font-weight="600" font-size="15" fill="#FFF9E9">Đường dao theo sát nét chữ</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3 điểm khác biệt -->
+  <div style="background: #111; color: #FFF9E9; padding: 56px 0">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; flex-direction: column; gap: 40px">
+      <div style="display: flex; flex-direction: column; gap: 12px; max-width: 720px">
+        <div style="font-weight: 700; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: #FFC928">Điểm khác biệt</div>
+        <h2 style="margin: 0; font-size: 34px; line-height: 1.1; letter-spacing: -0.03em; font-weight: 900">Ba điều làm nên khác biệt</h2>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; gap: 20px">
+        <div style="flex: 1 1 300px; min-width: 0; box-sizing: border-box; border: 1px solid #3A3A3A; border-radius: 20px; padding: 28px 24px; display: flex; flex-direction: column; gap: 14px">
+          <div style="font-weight: 900; font-size: 27px; color: #FFC928">01</div>
+          <svg role="img" aria-label="Minh họa máy cắt decal với tấm decal đang được cắt" viewBox="0 0 240 100" style="width: 100%; max-width: 280px; height: auto; display: block"><rect x="24" y="14" width="192" height="44" rx="8" fill="#FFC928" stroke="#FFF9E9" stroke-width="2"></rect><rect x="40" y="28" width="160" height="8" rx="4" fill="#111"></rect><path d="M112 20 L128 20 L120 40 Z" fill="#111"></path><rect x="52" y="50" width="136" height="40" rx="4" fill="#FFF9E9"></rect><text x="120" y="82" text-anchor="middle" font-family="Be Vietnam Pro, sans-serif" font-weight="900" font-size="30" fill="none" stroke="#111" stroke-width="1.5" stroke-dasharray="4 3">Aa</text></svg>
+          <h3 style="margin: 0; font-size: 19px; font-weight: 800">Máy cắt của Nhật</h3>
+          <div style="font-size: 15px; line-height: 1.7">Chúng tôi dùng máy cắt decal sản xuất tại Nhật [TÊN MÁY / HÃNG]. Dao cắt ổn định giúp đường cắt sạch, chữ nhỏ và nét mảnh vẫn giữ được hình dáng, góc chữ sắc, không bị rách hay dính chân chữ.</div>
+        </div>
+        <div style="flex: 1 1 300px; min-width: 0; box-sizing: border-box; border: 1px solid #3A3A3A; border-radius: 20px; padding: 28px 24px; display: flex; flex-direction: column; gap: 14px">
+          <div style="font-weight: 900; font-size: 27px; color: #FFC928">02</div>
+          <svg role="img" aria-label="Minh họa lớp định hình đang được bóc khỏi chữ decal" viewBox="0 0 240 100" style="width: 100%; max-width: 280px; height: auto; display: block"><rect x="30" y="30" width="160" height="50" rx="6" fill="#FFC928"></rect><text x="110" y="68" text-anchor="middle" font-family="Be Vietnam Pro, sans-serif" font-weight="900" font-size="32" fill="#111">AB</text><path d="M30 30 H190 V64 L168 80 H30 Z" fill="#FFF9E9" fill-opacity="0.35" stroke="#FFF9E9" stroke-width="2" stroke-dasharray="5 4"></path><path d="M190 30 L214 14 L214 52 L190 64 Z" fill="#FFF9E9" fill-opacity="0.6" stroke="#FFF9E9" stroke-width="2"></path></svg>
+          <h3 style="margin: 0; font-size: 19px; font-weight: 800">Lớp định hình dễ dán</h3>
+          <div style="font-size: 15px; line-height: 1.7">Mỗi sản phẩm đều có lớp định hình (giấy chuyển) phủ lên mặt chữ. Lớp này giữ nguyên khoảng cách giữa các chữ và các nét, bạn chỉ cần đặt cả tấm lên bề mặt, miết rồi bóc lớp định hình ra là xong.</div>
+        </div>
+        <div style="flex: 1 1 300px; min-width: 0; box-sizing: border-box; border: 1px solid #3A3A3A; border-radius: 20px; padding: 28px 24px; display: flex; flex-direction: column; gap: 14px">
+          <div style="font-weight: 900; font-size: 27px; color: #FFC928">03</div>
+          <svg role="img" aria-label="Minh họa màn hình phát video hướng dẫn" viewBox="0 0 240 100" style="width: 100%; max-width: 280px; height: auto; display: block"><rect x="40" y="10" width="160" height="66" rx="8" fill="none" stroke="#FFF9E9" stroke-width="3"></rect><path d="M108 28 L136 43 L108 58 Z" fill="#FFC928"></path><rect x="96" y="84" width="48" height="5" rx="2.5" fill="#FFF9E9"></rect><rect x="52" y="64" width="90" height="4" rx="2" fill="#FFC928"></rect></svg>
+          <h3 style="margin: 0; font-size: 19px; font-weight: 800">Có video hướng dẫn</h3>
+          <div style="font-size: 15px; line-height: 1.7">Mỗi loại bề mặt như kính, xe, tường đều có video hướng dẫn dán từng bước. Bạn xem một lần là tự dán được, không cần có kinh nghiệm.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Lớp định hình: cách hoạt động -->
+  <div style="padding: 56px 0">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; flex-wrap: wrap; gap: 48px; align-items: center">
+      <div style="flex: 1 1 380px; min-width: 0">
+        <div style="background: #fff; border-radius: 24px; padding: 24px">
+          <svg role="img" aria-label="Ba lớp của sản phẩm: lớp định hình ở trên, chữ decal ở giữa, giấy nền ở dưới" viewBox="0 0 520 340" style="width: 100%; height: auto; display: block">
+            <rect x="40" y="40" width="440" height="56" rx="8" fill="#DDE5E4" stroke="#111" stroke-width="2"></rect>
+            <text x="260" y="75" text-anchor="middle" font-family="Be Vietnam Pro, sans-serif" font-weight="700" font-size="18" fill="#111">Lớp định hình (giấy chuyển)</text>
+            <rect x="40" y="120" width="440" height="56" rx="8" fill="#FFC928" stroke="#111" stroke-width="2"></rect>
+            <text x="260" y="155" text-anchor="middle" font-family="Be Vietnam Pro, sans-serif" font-weight="700" font-size="18" fill="#111">Chữ decal đã cắt</text>
+            <rect x="40" y="200" width="440" height="56" rx="8" fill="#FFF9E9" stroke="#111" stroke-width="2"></rect>
+            <text x="260" y="235" text-anchor="middle" font-family="Be Vietnam Pro, sans-serif" font-weight="700" font-size="18" fill="#111">Giấy nền (bóc ra khi dán)</text>
+            <path d="M260 280 L260 322" stroke="#111" stroke-width="3" stroke-linecap="round"></path>
+            <path d="M248 310 L260 324 L272 310" stroke="#111" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </div>
+      </div>
+      <div style="flex: 1 1 400px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+        <h2 style="margin: 0; font-size: 29px; line-height: 1.15; letter-spacing: -0.03em; font-weight: 900">Dán trong ba động tác</h2>
+        <div style="display: flex; flex-direction: column; gap: 14px; font-size: 15px; line-height: 1.7">
+          <div style="display: flex; gap: 14px; align-items: flex-start"><div style="flex: none; width: 36px; height: 36px; border-radius: 50%; background: #111; color: #FFF9E9; font-weight: 800; display: flex; align-items: center; justify-content: center">1</div><div><b>Bóc giấy nền.</b> Chữ vẫn dính trên lớp định hình, giữ đúng vị trí.</div></div>
+          <div style="display: flex; gap: 14px; align-items: flex-start"><div style="flex: none; width: 36px; height: 36px; border-radius: 50%; background: #111; color: #FFF9E9; font-weight: 800; display: flex; align-items: center; justify-content: center">2</div><div><b>Đặt lên bề mặt và miết.</b> Miết từ giữa ra ngoài để chữ bám chắc.</div></div>
+          <div style="display: flex; gap: 14px; align-items: flex-start"><div style="flex: none; width: 36px; height: 36px; border-radius: 50%; background: #111; color: #FFF9E9; font-weight: 800; display: flex; align-items: center; justify-content: center">3</div><div><b>Bóc lớp định hình.</b> Chữ ở lại trên bề mặt, thẳng hàng như đã thiết kế.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Video hướng dẫn -->
+  <div style="background: #fff; padding: 56px 0">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; flex-direction: column; gap: 32px">
+      <div style="display: flex; flex-direction: column; gap: 12px; max-width: 720px">
+        <div style="font-weight: 700; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase">Video hướng dẫn</div>
+        <h2 style="margin: 0; font-size: 34px; line-height: 1.1; letter-spacing: -0.03em; font-weight: 900">Xem là dán được</h2>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; gap: 24px; align-items: flex-start">
+        <div style="flex: 2 1 460px; min-width: 0; display: flex; flex-direction: column; gap: 14px">
+          <div style="width: 100%; aspect-ratio: 16 / 9; background: #111; border-radius: 20px; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 14px; color: #FFF9E9; text-align: center; padding: 16px; box-sizing: border-box">
+            <svg role="img" aria-label="Nút phát video" width="72" height="72" viewBox="0 0 72 72"><circle cx="36" cy="36" r="34" fill="#FFC928"></circle><path d="M29 22 L52 36 L29 50 Z" fill="#111"></path></svg>
+            <div style="font-size: 13px; font-weight: 600">[CHÈN VIDEO: <span id="v-title-ph">{active.title}</span>]</div>
+          </div>
+          <div id="v-title" style="font-weight: 800; font-size: 19px">{active.title}</div>
+          <div id="v-desc" style="font-size: 15px; line-height: 1.7">{active.desc}</div>
+        </div>
+        <div style="flex: 1 1 280px; min-width: 0; display: flex; flex-direction: column; gap: 12px">
+          {videos.map((v) => (<>
+            <button type="button" class={v.cls} data-i={v.i}>
+              <span style="font-weight: 800; font-size: 15px">{v.title}</span>
+              <span style="font-size: 13px">{v.length}</span>
+            </button>
+          </>))}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div style="background: #FFC928; padding: 52px 0">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; flex-wrap: wrap; gap: 24px; align-items: center; justify-content: space-between">
+      <div style="flex: 1 1 400px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
+        <h2 style="margin: 0; font-size: 32px; line-height: 1.1; letter-spacing: -0.03em; font-weight: 900">Sẵn sàng thử chưa?</h2>
+        <div style="font-size: 15px; line-height: 1.6">Chọn mẫu có sẵn hoặc gửi file để bên mình cắt theo yêu cầu.</div>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; gap: 12px">
+        <a href="/" style="background: #111; color: #FFF9E9; text-decoration: none; font-weight: 800; font-size: 15px; padding: 16px 28px; border-radius: 999px">Xem sản phẩm</a>
+        <a href="/dich-vu/" style="border: 2px solid #111; color: #111; text-decoration: none; font-weight: 700; font-size: 15px; padding: 14px 26px; border-radius: 999px">Gửi yêu cầu tư vấn</a>
+      </div>
+    </div>
+  </div>
+
+</Layout>
+<script define:vars={{ list }}>
+  const btns = Array.from(document.querySelectorAll('.vbtn'));
+  btns.forEach((b) => b.addEventListener('click', () => {
+    const v = list[Number(b.dataset.i)];
+    btns.forEach((x) => x.classList.toggle('on', x === b));
+    document.getElementById('v-title-ph').textContent = v.title;
+    document.getElementById('v-title').textContent = v.title;
+    document.getElementById('v-desc').textContent = v.desc;
+  }));
+</script>

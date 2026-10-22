@@ -1,0 +1,42 @@
+[
+  {
+    "slug": "decal-dan-kinh",
+    "name": "Decal dán kính & cửa hàng",
+    "desc": "Mẫu chữ OPEN, giờ mở cửa, thông báo và trang trí kính cho cửa hàng, văn phòng.",
+    "scene": "kinh",
+    "ink": "#FFFFFF",
+    "sample": "OPEN",
+    "image": "/images/services/decal-dan-kinh.svg",
+    "count": 4
+  },
+  {
+    "slug": "decal-trang-tri",
+    "name": "Decal chữ & trang trí tường",
+    "desc": "Mẫu câu chữ trang trí nhà ở, quán cà phê, studio, khu vực tiếp khách.",
+    "scene": "tuong",
+    "ink": "#111111",
+    "sample": "Welcome",
+    "image": "/images/services/decal-trang-tri.svg",
+    "count": 4
+  },
+  {
+    "slug": "decal-xe",
+    "name": "Decal chữ & ký hiệu dán xe",
+    "desc": "Mẫu chữ phản quang, nhận diện xe và ký hiệu dán xe theo mẫu sẵn.",
+    "scene": "quang",
+    "ink": "#F2F2F2",
+    "sample": "TAXI",
+    "image": "/images/services/decal-xe.svg",
+    "count": 4
+  },
+  {
+    "slug": "decal-ky-hieu",
+    "name": "Decal ký hiệu & chỉ dẫn",
+    "desc": "Các mẫu thông báo ngắn, ký hiệu phổ biến, dễ lựa chọn cho cửa hàng và văn phòng.",
+    "scene": "kinh",
+    "ink": "#FFFFFF",
+    "sample": "NO SMOKING",
+    "image": "/images/services/decal-ky-hieu.svg",
+    "count": 4
+  }
+]

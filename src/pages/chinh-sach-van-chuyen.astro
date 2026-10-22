@@ -1,0 +1,29 @@
+---
+import PolicyPage from '../components/PolicyPage.astro';
+const sections = [
+  {
+    "heading": "Khu vực phục vụ",
+    "bullets": [
+      "TP. Hồ Chí Minh: có thể trao đổi phương án lấy hàng hoặc giao hàng phù hợp.",
+      "Các tỉnh, thành khác: gửi hàng qua đơn vị vận chuyển theo địa chỉ khách cung cấp."
+    ]
+  },
+  {
+    "heading": "Thời gian thực hiện",
+    "bullets": [
+      "Thời gian gia công được xác nhận sau khi nhận đủ file, thông số và nội dung duyệt mẫu.",
+      "Thời gian giao hàng phụ thuộc đơn vị vận chuyển, địa chỉ nhận và điều kiện thực tế.",
+      "Đơn cần gấp hoặc lấy trong ngày chỉ được xác nhận sau khi kiểm tra năng lực sản xuất."
+    ]
+  },
+  {
+    "heading": "Phí và kiểm tra khi nhận",
+    "bullets": [
+      "Phí vận chuyển được thông báo trước khi khách xác nhận đặt hàng.",
+      "Kiểm tra kiện hàng và chụp ảnh khi phát hiện móp, rách, ướt hoặc thiếu sản phẩm.",
+      "Liên hệ ngay CatDecal nếu có bất thường để phối hợp xử lý."
+    ]
+  }
+];
+---
+<PolicyPage title={"Chính sách vận chuyển"} heading={"Sản xuất tại TP.HCM, giao hàng toàn quốc"} intro={"CatDecal tiếp nhận đơn tại TP. Hồ Chí Minh và hỗ trợ gửi hàng đến các tỉnh, thành trên toàn quốc."} sections={sections} />

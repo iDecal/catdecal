@@ -1,0 +1,27 @@
+---
+import PolicyPage from '../components/PolicyPage.astro';
+const sections = [
+  {
+    "heading": "Nội dung thiết kế",
+    "bullets": [
+      "Khách chịu trách nhiệm về quyền sử dụng các nội dung do mình cung cấp, bao gồm logo, nhãn hiệu, hình ảnh và thông điệp.",
+      "CatDecal có thể đề nghị xác minh hoặc từ chối những yêu cầu không phù hợp quy định pháp luật."
+    ]
+  },
+  {
+    "heading": "Thông tin và báo giá",
+    "bullets": [
+      "Hình ảnh minh họa, màu sắc trên màn hình và mô tả sản phẩm có thể khác nhẹ so với thành phẩm thực tế.",
+      "Báo giá cuối cùng được xác nhận sau khi đối chiếu file, thông số và yêu cầu gia công."
+    ]
+  },
+  {
+    "heading": "Thay đổi thông tin",
+    "bullets": [
+      "Khách cần kiểm tra kỹ nội dung, chính tả, kích thước, màu và số lượng trước khi duyệt.",
+      "Các yêu cầu sửa đổi sau khi bắt đầu sản xuất có thể làm thay đổi chi phí hoặc tiến độ và cần được xác nhận lại."
+    ]
+  }
+];
+---
+<PolicyPage title={"Điều khoản sử dụng"} heading={"Quy định sử dụng website CatDecal.vn"} intro={"Khi gửi yêu cầu, khách cần cung cấp nội dung chính xác và bảo đảm có quyền sử dụng các tệp, hình ảnh, nhãn hiệu trong đơn hàng."} sections={sections} />

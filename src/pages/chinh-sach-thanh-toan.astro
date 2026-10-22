@@ -1,0 +1,27 @@
+---
+import PolicyPage from '../components/PolicyPage.astro';
+const sections = [
+  {
+    "heading": "Xác nhận đơn",
+    "bullets": [
+      "Đơn theo yêu cầu được báo giá sau khi kiểm tra file, vật liệu, kích thước và số lượng.",
+      "CatDecal chỉ bắt đầu sản xuất theo nội dung và điều kiện thanh toán mà hai bên đã xác nhận."
+    ]
+  },
+  {
+    "heading": "Phương thức thanh toán",
+    "bullets": [
+      "Phương thức chuyển khoản hoặc thanh toán khác (nếu có) sẽ được nhân viên xác nhận trực tiếp.",
+      "Không chuyển tiền đến tài khoản do người lạ cung cấp hoặc đường dẫn thanh toán không được CatDecal xác nhận."
+    ]
+  },
+  {
+    "heading": "Hóa đơn và hoàn tiền",
+    "bullets": [
+      "Nhu cầu chứng từ/hóa đơn cần thông báo khi đặt hàng để được hướng dẫn.",
+      "Trường hợp hoàn tiền, hình thức và thời gian xử lý được thống nhất sau khi xác minh yêu cầu."
+    ]
+  }
+];
+---
+<PolicyPage title={"Chính sách thanh toán"} heading={"Thanh toán rõ ràng trước khi sản xuất"} intro={"Giá trị đơn hàng, khoản cần thanh toán và chi phí phát sinh được xác nhận trong báo giá hoặc thông tin đặt hàng."} sections={sections} />

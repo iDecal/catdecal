@@ -1,0 +1,10 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import categories from '../../data/categories.json';
+---
+<Layout title="Danh mục decal thiết kế sẵn | CatDecal.vn" description="Khám phá các danh mục decal dán kính, trang trí, decal xe và ký hiệu; nhiều mẫu để lựa chọn." active="products">
+<main class="catalog"><div class="lead"><p class="eyebrow">Bộ sưu tập decal</p><h1>Chọn danh mục, khám phá nhiều mẫu decal</h1><p>Các mẫu thiết kế sẵn được chia theo mục đích sử dụng. Mở một danh mục để xem các mẫu và chọn màu, kích thước phù hợp. Cần làm nội dung riêng? <a href="/dich-vu/">Xem dịch vụ cắt theo yêu cầu</a>.</p></div><div class="category-grid">{categories.map(c=><a class="category-card" href={'/san-pham/danh-muc/'+c.slug+'/'}><img src={c.image} alt={'Hình minh họa '+c.name} loading="lazy"/><div class="copy"><span class="small">{c.count} mẫu tham khảo</span><h2>{c.name}</h2><p>{c.desc}</p><strong>Xem tất cả mẫu →</strong></div></a>)}</div></main>
+</Layout>
+<style>
+.catalog{max-width:1200px;margin:auto;padding:48px 24px 90px}.lead{max-width:780px;margin-bottom:34px}.eyebrow{font-weight:900;text-transform:uppercase;letter-spacing:.14em;font-size:12px}.lead h1{font-size:clamp(32px,5vw,55px);letter-spacing:-.04em;line-height:1.12;margin:13px 0}.lead p,.copy p{line-height:1.7}.category-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}.category-card{display:block;overflow:hidden;background:#fff;color:#171717;text-decoration:none;border-radius:23px;box-shadow:0 12px 36px #0000000a;transition:transform .2s}.category-card:hover{transform:translateY(-4px)}.category-card img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover}.copy{padding:24px}.copy h2{font-size:24px;line-height:1.25;margin:8px 0}.copy p{margin:0 0 20px}.copy strong{display:inline-block;background:#ffda13;padding:12px 16px;border-radius:30px}.small{font-size:12px;text-transform:uppercase;letter-spacing:.1em;font-weight:800}@media(max-width:650px){.category-grid{grid-template-columns:1fr}.catalog{padding:30px 16px 70px}}
+</style>

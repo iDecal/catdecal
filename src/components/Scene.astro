@@ -1,0 +1,165 @@
+---
+interface Props { scene?: 'kinh'|'mo'|'xe'|'quang'|'tuong'|'ten'|'may'|'mau'; ink?: string; label?: string }
+const { scene = 'kinh', ink = '#FFFFFF', label = 'Aa' } = Astro.props;
+---
+<div style="width: 100%; line-height: 0; font-family: 'Be Vietnam Pro', system-ui, sans-serif">
+
+  {scene === 'kinh' && (<>
+    <svg role="img" aria-label="Cửa kính cửa hàng có chữ decal dán" viewBox="0 0 480 300" style="width: 100%; height: auto; display: block">
+      <rect width="480" height="300" fill="#E9E2D3"></rect>
+      <rect y="262" width="480" height="38" fill="#B9B3A6"></rect>
+      <rect x="40" y="26" width="400" height="236" rx="6" fill="#111"></rect>
+      <rect x="52" y="38" width="376" height="212" fill="#6F8E8B"></rect>
+      <path d="M52 38 L190 38 L52 200 Z" fill="#fff" opacity="0.14"></path>
+      <path d="M230 38 L270 38 L100 250 L60 250 Z" fill="#fff" opacity="0.08"></path>
+      <rect x="238" y="38" width="4" height="212" fill="#111"></rect>
+      <rect x="224" y="140" width="6" height="44" rx="3" fill="#E9E2D3"></rect>
+      <rect x="250" y="140" width="6" height="44" rx="3" fill="#E9E2D3"></rect>
+      <text x="240" y="118" text-anchor="middle" font-size="46" font-weight="900" letter-spacing="-1" fill={ink}>{label}</text>
+      <rect x="448" y="226" width="22" height="36" rx="3" fill="#8A5A3C"></rect>
+      <ellipse cx="459" cy="212" rx="18" ry="22" fill="#4C8A5B"></ellipse>
+    </svg>
+  </>)}
+
+  {scene === 'mo' && (<>
+    <svg role="img" aria-label="Vách kính văn phòng dán decal mờ và chữ" viewBox="0 0 480 300" style="width: 100%; height: auto; display: block">
+      <rect width="480" height="300" fill="#E9E2D3"></rect>
+      <rect y="260" width="480" height="40" fill="#C8C2B4"></rect>
+      <rect x="24" y="30" width="140" height="230" fill="#111"></rect>
+      <rect x="170" y="30" width="140" height="230" fill="#111"></rect>
+      <rect x="316" y="30" width="140" height="230" fill="#111"></rect>
+      <rect x="30" y="36" width="128" height="218" fill="#5E7C80"></rect>
+      <rect x="176" y="36" width="128" height="218" fill="#5E7C80"></rect>
+      <rect x="322" y="36" width="128" height="218" fill="#5E7C80"></rect>
+      <rect x="40" y="224" width="100" height="30" fill="#111" opacity="0.2"></rect>
+      <rect x="186" y="224" width="100" height="30" fill="#111" opacity="0.2"></rect>
+      <rect x="332" y="224" width="100" height="30" fill="#111" opacity="0.2"></rect>
+      <rect x="30" y="160" width="128" height="62" fill="#fff" opacity="0.55"></rect>
+      <rect x="176" y="160" width="128" height="62" fill="#fff" opacity="0.55"></rect>
+      <rect x="322" y="160" width="128" height="62" fill="#fff" opacity="0.55"></rect>
+      <text x="240" y="112" text-anchor="middle" font-size="44" font-weight="900" letter-spacing="-1" fill={ink}>{label}</text>
+    </svg>
+  </>)}
+
+  {scene === 'xe' && (<>
+    <svg role="img" aria-label="Xe ô tô dán chữ decal trên thân xe" viewBox="0 0 480 300" style="width: 100%; height: auto; display: block">
+      <rect width="480" height="300" fill="#9FB0BF"></rect>
+      <rect y="246" width="480" height="54" fill="#3A4048"></rect>
+      <path d="M0 274 H480" stroke="#E9E2D3" stroke-width="3" stroke-dasharray="26 18"></path>
+      <path d="M50 215 L50 175 Q50 160 70 157 L150 150 L190 112 Q200 104 215 104 L310 104 Q325 104 335 118 L365 150 L410 158 Q430 162 430 180 L430 215 Z" fill="#1F2933"></path>
+      <path d="M165 150 L197 118 L240 118 L240 150 Z" fill="#9FB0BF"></path>
+      <path d="M252 118 L308 118 L338 150 L252 150 Z" fill="#9FB0BF"></path>
+      <circle cx="125" cy="218" r="30" fill="#111"></circle>
+      <circle cx="125" cy="218" r="13" fill="#9FB0BF"></circle>
+      <circle cx="355" cy="218" r="30" fill="#111"></circle>
+      <circle cx="355" cy="218" r="13" fill="#9FB0BF"></circle>
+      <text x="240" y="194" text-anchor="middle" font-size="30" font-weight="900" letter-spacing="1" fill={ink}>{label}</text>
+    </svg>
+  </>)}
+
+  {scene === 'quang' && (<>
+    <svg role="img" aria-label="Xe tải ban đêm với chữ decal phản quang" viewBox="0 0 480 300" style="width: 100%; height: auto; display: block">
+      <rect width="480" height="300" fill="#2B2F36"></rect>
+      <circle cx="60" cy="40" r="2" fill="#fff"></circle>
+      <circle cx="150" cy="24" r="2" fill="#fff"></circle>
+      <circle cx="260" cy="48" r="2" fill="#fff"></circle>
+      <circle cx="350" cy="22" r="2" fill="#fff"></circle>
+      <circle cx="430" cy="52" r="2" fill="#fff"></circle>
+      <rect y="246" width="480" height="54" fill="#1B1E23"></rect>
+      <path d="M404 190 L480 150 L480 236 Z" fill="#FFE9A6" opacity="0.28"></path>
+      <rect x="30" y="64" width="262" height="146" rx="6" fill="#3E444E"></rect>
+      <path d="M292 108 L350 108 L402 160 L402 210 L292 210 Z" fill="#4A515D"></path>
+      <path d="M306 120 L344 120 L378 156 L306 156 Z" fill="#2B2F36"></path>
+      <rect x="392" y="182" width="10" height="14" rx="3" fill="#FFE9A6"></rect>
+      <rect x="30" y="184" width="262" height="10" fill={ink}></rect>
+      <text x="161" y="160" text-anchor="middle" font-size="58" font-weight="900" letter-spacing="2" fill={ink}>{label}</text>
+      <circle cx="94" cy="216" r="26" fill="#111"></circle>
+      <circle cx="94" cy="216" r="10" fill="#6B7280"></circle>
+      <circle cx="228" cy="216" r="26" fill="#111"></circle>
+      <circle cx="228" cy="216" r="10" fill="#6B7280"></circle>
+      <circle cx="350" cy="216" r="26" fill="#111"></circle>
+      <circle cx="350" cy="216" r="10" fill="#6B7280"></circle>
+    </svg>
+  </>)}
+
+  {scene === 'tuong' && (<>
+    <svg role="img" aria-label="Phòng khách có chữ decal dán trên tường" viewBox="0 0 480 300" style="width: 100%; height: auto; display: block">
+      <rect width="480" height="300" fill="#E9E2D3"></rect>
+      <rect y="246" width="480" height="54" fill="#C9B79C"></rect>
+      <text x="240" y="126" text-anchor="middle" font-size="62" font-weight="900" letter-spacing="-1" fill={ink}>{label}</text>
+      <rect x="100" y="204" width="28" height="46" rx="10" fill="#5E7C80"></rect>
+      <rect x="352" y="204" width="28" height="46" rx="10" fill="#5E7C80"></rect>
+      <rect x="114" y="186" width="252" height="64" rx="14" fill="#6F8E8B"></rect>
+      <rect x="130" y="176" width="100" height="46" rx="12" fill="#86A8A4"></rect>
+      <rect x="250" y="176" width="100" height="46" rx="12" fill="#86A8A4"></rect>
+      <rect x="40" y="150" width="4" height="100" fill="#111"></rect>
+      <path d="M22 150 L62 150 L52 118 L32 118 Z" fill="#FFC400"></path>
+      <rect x="408" y="212" width="36" height="38" rx="4" fill="#8A5A3C"></rect>
+      <ellipse cx="418" cy="196" rx="14" ry="26" fill="#4C8A5B"></ellipse>
+      <ellipse cx="438" cy="200" rx="12" ry="22" fill="#3F7A50"></ellipse>
+    </svg>
+  </>)}
+
+  {scene === 'ten' && (<>
+    <svg role="img" aria-label="Laptop và bình nước dán decal tên cá nhân" viewBox="0 0 480 300" style="width: 100%; height: auto; display: block">
+      <rect width="480" height="300" fill="#4B5563"></rect>
+      <rect y="250" width="480" height="50" fill="#374151"></rect>
+      <rect x="36" y="64" width="240" height="160" rx="10" fill="#1F2933"></rect>
+      <rect x="20" y="224" width="272" height="12" rx="6" fill="#6B7280"></rect>
+      <text x="156" y="160" text-anchor="middle" font-size="46" font-weight="900" letter-spacing="-1" fill={ink}>{label}</text>
+      <rect x="338" y="30" width="44" height="30" rx="8" fill="#6B7280"></rect>
+      <rect x="322" y="54" width="76" height="196" rx="24" fill="#111"></rect>
+      <text x="360" y="162" text-anchor="middle" font-size="22" font-weight="900" fill={ink}>{label}</text>
+    </svg>
+  </>)}
+
+  {scene === 'may' && (<>
+    <svg role="img" aria-label="Máy cắt decal đang cắt chữ" viewBox="0 0 480 300" style="width: 100%; height: auto; display: block">
+      <rect width="480" height="300" fill="#E9E2D3"></rect>
+      <rect y="250" width="480" height="50" fill="#C8C2B4"></rect>
+      <rect x="110" y="66" width="260" height="44" rx="22" fill={ink}></rect>
+      <rect x="100" y="206" width="12" height="44" fill="#111"></rect>
+      <rect x="368" y="206" width="12" height="44" fill="#111"></rect>
+      <rect x="70" y="100" width="340" height="106" rx="16" fill="#111"></rect>
+      <rect x="92" y="122" width="236" height="10" rx="5" fill="#3A3A3A"></rect>
+      <circle cx="376" cy="127" r="7" fill="#FFC928"></circle>
+      <rect x="350" y="150" width="40" height="12" rx="6" fill="#3A3A3A"></rect>
+      <path d="M130 206 L350 206 L378 258 L102 258 Z" fill={ink}></path>
+      <text x="240" y="244" text-anchor="middle" font-size="44" font-weight="900" fill="none" stroke="#111" stroke-width="1.6" stroke-dasharray="5 4">{label}</text>
+    </svg>
+  </>)}
+
+  {scene === 'mau' && (<>
+    <svg role="img" aria-label="Bốn loại decal: màu trơn, ánh kim, phản quang và mờ" viewBox="0 0 480 300" style="width: 100%; height: auto; display: block">
+      <defs>
+        <linearGradient id="gKim" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#B59A4A"></stop>
+          <stop offset="0.5" stop-color="#F3E3A0"></stop>
+          <stop offset="1" stop-color="#B59A4A"></stop>
+        </linearGradient>
+        <pattern id="pQuang" width="14" height="14" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+          <rect width="7" height="14" fill="#D4D4D4"></rect>
+        </pattern>
+        <pattern id="pMo" width="10" height="10" patternUnits="userSpaceOnUse">
+          <circle cx="5" cy="5" r="2" fill="#fff" opacity="0.5"></circle>
+        </pattern>
+      </defs>
+      <rect width="480" height="300" fill="#2B2F36"></rect>
+      <rect x="20" y="36" width="96" height="190" rx="10" fill="#FFC928"></rect>
+      <rect x="132" y="36" width="96" height="190" rx="10" fill="url(#gKim)"></rect>
+      <rect x="244" y="36" width="96" height="190" rx="10" fill="#F2F2F2"></rect>
+      <rect x="244" y="36" width="96" height="190" rx="10" fill="url(#pQuang)"></rect>
+      <rect x="356" y="36" width="104" height="190" rx="10" fill="#6F8E8B"></rect>
+      <rect x="356" y="36" width="104" height="190" rx="10" fill="url(#pMo)"></rect>
+      <text x="68" y="146" text-anchor="middle" font-size="36" font-weight="900" fill="#111">Aa</text>
+      <text x="180" y="146" text-anchor="middle" font-size="36" font-weight="900" fill="#6B5410">Aa</text>
+      <text x="292" y="146" text-anchor="middle" font-size="36" font-weight="900" fill="#111">Aa</text>
+      <text x="408" y="146" text-anchor="middle" font-size="36" font-weight="900" fill="#fff">Aa</text>
+      <text x="68" y="262" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">Trơn</text>
+      <text x="180" y="262" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">Ánh kim</text>
+      <text x="292" y="262" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">Phản quang</text>
+      <text x="408" y="262" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">Mờ</text>
+    </svg>
+  </>)}
+
+</div>

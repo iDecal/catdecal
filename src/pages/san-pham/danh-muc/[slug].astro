@@ -1,0 +1,15 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import Scene from '../../../components/Scene.astro';
+import categories from '../../../data/categories.json';
+import { products } from '../../../data/products';
+export function getStaticPaths() { return categories.map((category)=>({params:{slug:category.slug},props:{category}})); }
+const {category}=Astro.props;
+const items=products.filter(p=>p.cat===category.slug);
+---
+<Layout title={`${category.name} | CatDecal.vn`} description={category.desc} active="products">
+<main class="category-page"><a href="/san-pham/" class="back">← Tất cả danh mục</a><header><div><p class="tiny">DANH MỤC · {items.length} MẪU</p><h1>{category.name}</h1><p>{category.desc} Các mẫu dưới đây là ví dụ thiết kế sẵn; giá, vật liệu và kích thước được xác nhận trước khi đặt.</p></div><img src={category.image} alt={'Minh họa '+category.name}/></header><div class="items">{items.map(p=><article class="item"><Scene scene={p.scene} ink={p.ink} label={p.sample}/><div class="body"><h2>{p.name}</h2><p>{p.desc}</p><a href={p.href}>Xem mẫu & lựa chọn →</a></div></article>)}</div><aside><strong>Không tìm thấy nội dung phù hợp?</strong> CatDecal nhận cắt theo thiết kế riêng. <a href="/dich-vu/#yeu-cau">Gửi file nhận báo giá →</a></aside></main>
+</Layout>
+<style>
+.category-page{max-width:1200px;margin:auto;padding:36px 24px 90px}.back{font-weight:800}.category-page header{display:grid;grid-template-columns:1.3fr 1fr;gap:30px;align-items:center;margin:25px 0 35px}.category-page header h1{font-size:clamp(32px,4vw,51px);letter-spacing:-.035em;line-height:1.1}.category-page header p{line-height:1.7;max-width:660px}.category-page header img{width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:23px}.tiny{font-size:13px;font-weight:900;letter-spacing:.12em}.items{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:19px}.item{background:#fff;border-radius:20px;overflow:hidden}.body{padding:22px}.body h2{font-size:20px;margin:0 0 8px}.body p{font-size:14px;line-height:1.65}.body a{display:inline-block;margin-top:10px;border-radius:99px;padding:12px 17px;background:#111;color:#fff;font-weight:800;text-decoration:none}aside{background:#ffde28;border-radius:20px;margin-top:34px;padding:25px;line-height:1.8}aside a{color:#111;font-weight:800}@media(max-width:850px){.items{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:600px){.category-page{padding:27px 16px 70px}.category-page header{grid-template-columns:1fr}.items{grid-template-columns:1fr}}
+</style>

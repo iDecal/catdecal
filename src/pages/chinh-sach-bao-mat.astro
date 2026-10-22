@@ -1,0 +1,30 @@
+---
+import PolicyPage from '../components/PolicyPage.astro';
+const sections = [
+  {
+    "heading": "Thông tin được tiếp nhận",
+    "bullets": [
+      "Tên, số điện thoại, email, địa chỉ nhận hàng và nội dung khách chủ động gửi.",
+      "File thiết kế, hình ảnh tham chiếu và yêu cầu kỹ thuật để kiểm tra khả năng gia công.",
+      "Dữ liệu kỹ thuật cơ bản phát sinh khi truy cập website, tùy theo nền tảng vận hành."
+    ]
+  },
+  {
+    "heading": "Mục đích sử dụng và chia sẻ",
+    "bullets": [
+      "Liên hệ báo giá, xác nhận thông số, sản xuất, vận chuyển và hỗ trợ đơn hàng.",
+      "Chỉ chia sẻ thông tin cần thiết với đơn vị giao hàng hoặc nhà cung cấp dịch vụ hỗ trợ đơn hàng khi cần.",
+      "Không công khai hoặc sử dụng file thiết kế khách gửi để quảng bá nếu chưa có sự đồng ý phù hợp."
+    ]
+  },
+  {
+    "heading": "Quyền liên hệ và bảo vệ dữ liệu",
+    "bullets": [
+      "Khách có thể gửi yêu cầu kiểm tra, chỉnh sửa hoặc đề nghị xử lý dữ liệu qua hi@idecal.vn.",
+      "Thời gian lưu dữ liệu phụ thuộc mục đích xử lý, yêu cầu vận hành và nghĩa vụ pháp lý áp dụng.",
+      "Không nên gửi mật khẩu, thông tin thanh toán nhạy cảm hoặc dữ liệu không cần thiết trong file thiết kế."
+    ]
+  }
+];
+---
+<PolicyPage title={"Chính sách bảo mật"} heading={"Thông tin khách hàng và file thiết kế"} intro={"CatDecal sử dụng thông tin do khách cung cấp để tư vấn, báo giá, xử lý đơn hàng và hỗ trợ sau bán."} sections={sections} />
